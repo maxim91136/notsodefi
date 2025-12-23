@@ -14,17 +14,17 @@ const rawValues: Record<string, number | null> = {
   // Chain Score (A1-A4)
   A1: 25,   // Good Nakamoto coefficient with many pools
   A2: 20,   // Top 5 pools control ~20% of stake
-  A3: 3,    // Multiple node implementations (Cardano-node, Daedalus, etc.)
+  A3: 1,    // Only cardano-node (Haskell), no alternative implementations
   A4: 50,   // Moderate cloud concentration
 
   // Control Score (B5-B8)
-  B5: 4,    // IOG (IOHK), Cardano Foundation, Emurgo - diversified but coordinated
+  B5: 2,    // IOG dominates development, Foundation/Emurgo have less influence
   B6: 3,    // IOG primarily controls core development
   B7: 5,    // Cardano Foundation holds trademark
   B8: 5,    // Treasury controlled by governance (Catalyst)
 
   // Fairness Score (C9-C10)
-  C9: 17,   // ~17% to IOHK, Foundation, Emurgo in ICO
+  C9: 25,   // ~25% to insiders (IOG 17.9%, Foundation 5.4%, Emurgo 2.5%)
   C10: 7,   // Project Catalyst - on-chain voting for treasury
 };
 
