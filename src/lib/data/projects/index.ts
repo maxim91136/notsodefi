@@ -6,8 +6,9 @@ import { Project } from '@/lib/framework';
 import { bitcoin } from './bitcoin';
 import { ethereum } from './ethereum';
 import { solana } from './solana';
+import { xrp } from './xrp';
 
-export const projects: Project[] = [bitcoin, ethereum, solana];
+export const projects: Project[] = [bitcoin, ethereum, solana, xrp];
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
@@ -24,4 +25,4 @@ export function getProjectsByScore(
   });
 }
 
-export { bitcoin, ethereum, solana };
+export { bitcoin, ethereum, solana, xrp };
