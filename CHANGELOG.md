@@ -2,6 +2,27 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.5.0-rc1] - 2025-12-24
+
+### Added
+- **Bittensor Integration**
+  - Taostats API Fetcher (requires API key)
+  - Block number, accounts, subnets, validators, active keys tracking
+  - TAO Workflow (`data-tao.yml`) runs daily at 6:00 UTC
+- **Bittensor in Leaderboard**
+  - Full decentralization scoring (hybrid consensus, fair launch, no premine)
+  - Live Network Data card on /projects/bittensor
+
+### Changed
+- **7 Chains Now Supported**: BTC, ETH, SOL, XRP, BNB, ZEC, TAO
+- Updated README with all supported chains table
+- Compact footer for mobile
+
+### Infrastructure
+- `scripts/fetch-tao.ts` - Bittensor data fetch script
+- `data/tao.json` - Cached Bittensor network data
+- `TAOSTATS_API_KEY` repo secret required
+
 ## [0.4.9] - 2025-12-23
 
 ### Added
