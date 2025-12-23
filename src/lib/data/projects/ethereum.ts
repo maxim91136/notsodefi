@@ -1,0 +1,44 @@
+/**
+ * Ethereum (ETH) - Decentralization Assessment
+ *
+ * Smart contract platform, launched 2015.
+ * Transitioned to Proof-of-Stake in 2022 (The Merge).
+ */
+
+import { Project } from '@/lib/framework';
+import { calculateProjectScores } from '@/lib/framework';
+
+// Raw assessment values
+const rawValues = {
+  // Chain Score (A1-A4)
+  A1: 2,    // Nakamoto Coefficient ~2 (Lido + Coinbase dominate staking)
+  A2: 65,   // Top 5 staking entities control ~65%
+  A3: 3,    // 3+ clients (Geth, Nethermind, Besu, Erigon)
+  A4: 60,   // ~60% nodes in cloud infrastructure
+
+  // Control Score (B5-B8)
+  B5: 6,    // Ethereum Foundation influential but not dominant
+  B6: 8,    // Multiple client teams, diverse maintainers
+  B7: 6,    // EF controls ethereum.org but many frontends exist
+  B8: 0,    // N/A - no protocol-level multisig
+
+  // Fairness Score (C9-C10)
+  C9: 15,   // ~15% premine (ICO + foundation)
+  C10: 25,  // Insiders hold significant but diluted share
+};
+
+export const ethereum: Project = {
+  id: 'ethereum',
+  name: 'Ethereum',
+  symbol: 'ETH',
+  website: 'https://ethereum.org',
+  description:
+    'Decentralized platform for smart contracts. Transitioned from PoW to PoS in 2022.',
+  scores: calculateProjectScores(rawValues),
+  lastUpdated: '2024-12-01',
+  sources: [
+    'https://rated.network',
+    'https://clientdiversity.org',
+    'https://ethernodes.org',
+  ],
+};

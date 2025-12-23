@@ -1,0 +1,72 @@
+/**
+ * Control Score Criteria (B5-B8)
+ *
+ * Measures power and control structures around the protocol.
+ */
+
+import { Criterion } from '../types';
+
+export const controlCriteria: Criterion[] = [
+  {
+    id: 'B5',
+    name: 'Corporate/Foundation Capture',
+    description:
+      'Is there a dominant company/foundation controlling roadmap, marketing, and hiring? Can the project survive without them?',
+    category: 'control',
+    mappings: [
+      { min: 9, max: 11, score: [9, 10], label: 'No corporate owner (Bitcoin-style)' },
+      { min: 6, max: 9, score: [6, 8], label: 'Multiple orgs, none dominant' },
+      { min: 2, max: 6, score: [2, 5], label: 'One entity controls de facto' },
+      { min: 0, max: 2, score: [0, 2], label: 'Full "CEO chain"' },
+    ],
+    sources: [
+      'https://fintechmagazine.com/articles/top-10-layer-1-blockchain-networks',
+      'https://oakresearch.io/en/reports/sectors/layer-1-report-year-2024',
+    ],
+  },
+  {
+    id: 'B6',
+    name: 'Repo/Protocol Ownership',
+    description:
+      'Distribution of merge rights in core repositories (clients, specs). More distributed is better.',
+    category: 'control',
+    mappings: [
+      { min: 8, max: 11, score: [8, 10], label: 'Many maintainers from different orgs' },
+      { min: 5, max: 8, score: [5, 7], label: 'Mix of company + community' },
+      { min: 0, max: 5, score: [1, 4], label: 'Almost only one company team' },
+    ],
+    sources: ['https://oakresearch.io/en/reports/sectors/layer-1-report-year-2024'],
+  },
+  {
+    id: 'B7',
+    name: 'Brand & Frontend Control',
+    description:
+      'Who owns brand, domains, main frontends, official wallets/apps? Decentralized ownership is better.',
+    category: 'control',
+    mappings: [
+      { min: 8, max: 11, score: [8, 10], label: 'Brand in DAO/community + multiple frontends' },
+      { min: 3, max: 8, score: [3, 7], label: 'Foundation holds brand & main frontend' },
+      { min: 0, max: 3, score: [1, 3], label: 'Single corporate frontend, no alternatives' },
+    ],
+    sources: [
+      'https://www.ainvest.com/news/aave-brand-decentralization-vote-pivotal-moment-dao-governance-token-utility-2512/',
+      'https://cryptonews.net/news/defi/32174155/',
+    ],
+  },
+  {
+    id: 'B8',
+    name: 'Treasury & Upgrade Keys',
+    description:
+      'Composition of treasury/upgrade multisigs and admin keys. More independent signers is better.',
+    category: 'control',
+    mappings: [
+      { min: 10, max: Infinity, score: [8, 10], label: '>= 10 independent signers' },
+      { min: 5, max: 10, score: [4, 7], label: '5-9 signers, partly team/VC' },
+      { min: 0, max: 5, score: [1, 3], label: '2-4 core dev/founder signers' },
+    ],
+    sources: [
+      'https://bbx.com/article/506587',
+      'https://oakresearch.io/en/reports/sectors/layer-1-report-year-2024',
+    ],
+  },
+];
