@@ -24,24 +24,27 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 
 The framework distinguishes between different consensus mechanisms:
 
-- **PoW** (Proof of Work) - Bitcoin, etc.
-- **PoS** (Proof of Stake) - Ethereum, etc.
-- **DPoS** (Delegated Proof of Stake) - EOS, Tron, etc.
-- **Hybrid** - Bittensor, Decred, etc.
+- **PoW** (Proof of Work) - Bitcoin, Zcash
+- **PoS** (Proof of Stake) - Ethereum, Solana
+- **DPoS** (Delegated Proof of Stake) - BNB Chain
+- **Federated** - XRP
+- **Hybrid** - Bittensor
 
 Some criteria may be N/A depending on the consensus type.
 
-## Data Sources
+## Supported Chains
 
-Automated data fetching from multiple APIs:
+| Chain | Symbol | Consensus | Data Source |
+|-------|--------|-----------|-------------|
+| Bitcoin | BTC | PoW | [Bitnodes](https://bitnodes.io) + [Blockchain.info](https://blockchain.info) |
+| Ethereum | ETH | PoS | Beacon API |
+| Solana | SOL | PoS | Solana RPC |
+| XRP | XRP | Federated | [XRPL](https://xrpl.org) |
+| BNB Chain | BNB | DPoS | BNB Chain RPC |
+| Zcash | ZEC | PoW | [Blockchair](https://blockchair.com) |
+| Bittensor | TAO | Hybrid | [Taostats](https://taostats.io) |
 
-| Chain | Node Data | Validator/Mining | Governance |
-|-------|-----------|------------------|------------|
-| Bitcoin | [Bitnodes](https://bitnodes.io) | [Blockchain.com](https://blockchain.com/pools) | N/A |
-| Ethereum | [Ethernodes](https://ethernodes.org) | [Rated Network](https://rated.network) | [Snapshot](https://snapshot.org) |
-| Solana | [SolanaBeach](https://solanabeach.io) | [SolanaBeach](https://solanabeach.io) | Manual |
-
-Code control metrics via [GitHub API](https://docs.github.com/en/rest).
+All data is fetched daily via GitHub Actions.
 
 ## Development
 
