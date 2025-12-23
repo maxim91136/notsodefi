@@ -2,25 +2,7 @@
 
 All notable changes to the NotSoDeFi Framework.
 
-## [0.3.0-rc3] - 2025-12-23
-
-### Changed
-- Improved `release.sh` with README validation and better output
-- Release script now checks VERSION, CHANGELOG, and README
-
-## [0.3.0-rc2] - 2025-12-23
-
-### Added
-- Dynamic footer with version, date, and author link
-- `release.sh` script for automated release management
-- README: Data sources table, project structure, release command
-
-### Changed
-- Footer now reads version from VERSION file
-- Removed duplicate version display from homepage
-- Fixed Next.js version in docs (15, not 16)
-
-## [0.3.0-rc1] - 2025-12-23
+## [0.3.0] - 2025-12-23
 
 ### Added
 - **Data Source Schema** for automated API fetching
@@ -32,16 +14,19 @@ All notable changes to the NotSoDeFi Framework.
   - Bitcoin: bitnodes (nodes), blockchain.com (pools)
   - Ethereum: rated (validators), ethernodes (nodes/clients)
   - Solana: solanabeach (validators, stake, clients)
-- Dynamic version display on homepage (reads from VERSION file)
-- Verified premine data: BTC 0%, ETH 20%, SOL 48%
+- Dynamic footer with version, date, and author link
+- `release.sh` script for automated release management
+- README: Data sources table, project structure
 
 ### Changed
 - Ethereum C9 (Premine) corrected from 15% to 20%
-- Data architecture prepared for GitHub Actions + Cloudflare KV
+- Footer now reads version from VERSION file
+- GitHub header link now points to actual repository
 
 ### Infrastructure
 - `src/lib/data/sources/` - Data source types and mappings
 - `src/lib/data/fetchers/` - API fetcher base classes
+- `scripts/release.sh` - Automated release workflow
 
 ## [0.2.0] - 2025-12-23
 

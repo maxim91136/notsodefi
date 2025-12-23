@@ -30,7 +30,7 @@ export function Header() {
               Calculator
             </Link>
             <a
-              href="https://github.com"
+              href="https://github.com/maxim91136/notsodefi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-white/70 hover:text-white transition-colors"
