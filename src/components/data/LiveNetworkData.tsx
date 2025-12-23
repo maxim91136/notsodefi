@@ -10,6 +10,7 @@ import {
   getBitcoinData,
   getSolanaData,
   getEthereumData,
+  getXrpData,
 } from '@/lib/data/network-data';
 
 interface MetricRowProps {
@@ -148,6 +149,33 @@ export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
           <MetricRow label="Head Slot" value={data.metrics.headSlot} />
           <MetricRow label="Finalized Epoch" value={data.metrics.finalizedEpoch} />
           <MetricRow label="Sync Distance" value={data.metrics.syncDistance} />
+          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
+            Updated {formatTimeAgo(data.lastUpdated)}
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (projectId === 'xrp') {
+    const data = getXrpData();
+    return (
+      <Card className="border-gray-500/30">
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="font-semibold text-gray-400">Live Network Data</h3>
+              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'XRPL (s1.ripple.com)'}</p>
+            </div>
+            <StatusBadge status={data.fetchStatus} />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <MetricRow label="Validation Quorum" value={data.metrics.validationQuorum} />
+          <MetricRow label="Validated Ledger" value={data.metrics.validatedLedgerSeq} />
+          <MetricRow label="Connected Peers" value={data.metrics.connectedPeers} />
+          <MetricRow label="Server State" value={data.metrics.serverState} />
+          <MetricRow label="Build Version" value={data.metrics.buildVersion} />
           <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
             Updated {formatTimeAgo(data.lastUpdated)}
           </div>

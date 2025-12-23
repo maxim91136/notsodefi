@@ -33,6 +33,14 @@ export interface EthereumMetrics {
   syncDistance: number | null;
 }
 
+export interface XrpMetrics {
+  connectedPeers: number | null;
+  validationQuorum: number | null;
+  validatedLedgerSeq: number | null;
+  serverState: string | null;
+  buildVersion: string | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -58,6 +66,10 @@ export function getEthereumData(): NetworkData<EthereumMetrics> {
   return loadJsonFile<NetworkData<EthereumMetrics>>('ethereum.json');
 }
 
+export function getXrpData(): NetworkData<XrpMetrics> {
+  return loadJsonFile<NetworkData<XrpMetrics>>('xrp.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -66,6 +78,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getSolanaData();
     case 'ethereum':
       return getEthereumData();
+    case 'xrp':
+      return getXrpData();
     default:
       return null;
   }
@@ -82,6 +96,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const btc = getBitcoinData();
   const sol = getSolanaData();
   const eth = getEthereumData();
+  const xrp = getXrpData();
 
   return [
     {
@@ -101,6 +116,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: eth.fetchStatus,
       lastUpdated: eth.lastUpdated,
       source: eth.source || 'Beacon API',
+    },
+    {
+      chain: 'XRP',
+      status: xrp.fetchStatus,
+      lastUpdated: xrp.lastUpdated,
+      source: xrp.source || 'XRPL (s1.ripple.com)',
     },
   ];
 }

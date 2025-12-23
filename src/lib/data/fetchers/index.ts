@@ -17,5 +17,8 @@ export { SolanaRpcFetcher, getSolanaRpcFetcher } from './solana-rpc';
 // Ethereum fetchers
 export { EthereumBeaconFetcher, getEthereumBeaconFetcher } from './ethereum-beacon';
 
+// XRP Ledger fetchers
+export { XrplFetcher, getXrplFetcher } from './xrpl';
+
 // TODO: Implement these fetchers
 // export { GitHubFetcher } from './github';
