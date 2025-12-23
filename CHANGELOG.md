@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.5.2] - 2025-12-24
+
+### Changed
+- **UI Cleanup**: Removed separate Methodology card, integrated into page intro
+- **ADA Scores**: Corrected Cardano decentralization ratings
+  - A3: 1 (only cardano-node implementation)
+  - B5: 2 (IOG dominates development)
+  - C9: 25% (actual insider allocation)
+
 ## [0.5.1] - 2025-12-24
 
 ### Added
