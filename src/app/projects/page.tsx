@@ -35,15 +35,7 @@ export default function ProjectsPage() {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-        <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-          <h3 className="font-semibold text-white mb-2">Methodology</h3>
-          <p className="text-sm text-white/60">
-            Scores are calculated using 10 criteria across 3 categories. Data is
-            collected from public sources and updated periodically. This is an
-            educational tool, not financial advice.
-          </p>
-        </div>
+      <div className="mt-8">
         <ApiStatusCard />
       </div>
     </div>
