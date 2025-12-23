@@ -14,6 +14,7 @@ import {
   getBnbData,
   getZecData,
   getTaoData,
+  getAdaData,
 } from '@/lib/data/network-data';
 
 interface MetricRowProps {
@@ -262,6 +263,34 @@ export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
           <MetricRow label="Total Issued" value={data.metrics.issued ? Math.round(data.metrics.issued) : null} unit="TAO" />
           <MetricRow label="Validators (all subnets)" value={data.metrics.totalValidators} />
           <MetricRow label="Active Keys" value={data.metrics.totalActiveKeys} />
+          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
+            Updated {formatTimeAgo(data.lastUpdated)}
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (projectId === 'cardano') {
+    const data = getAdaData();
+    return (
+      <Card className="border-sky-500/30">
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="font-semibold text-sky-400">Live Network Data</h3>
+              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'Blockfrost'}</p>
+            </div>
+            <StatusBadge status={data.fetchStatus} />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <MetricRow label="Epoch" value={data.metrics.epoch} />
+          <MetricRow label="Blocks (epoch)" value={data.metrics.blockCount} />
+          <MetricRow label="TXs (epoch)" value={data.metrics.txCount} />
+          <MetricRow label="Live Stake" value={data.metrics.liveStake ? Math.round(data.metrics.liveStake / 1e6) : null} unit="M ADA" />
+          <MetricRow label="Active Stake" value={data.metrics.activeStake ? Math.round(data.metrics.activeStake / 1e6) : null} unit="M ADA" />
+          <MetricRow label="Total Pools" value={data.metrics.totalPools} />
           <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
             Updated {formatTimeAgo(data.lastUpdated)}
           </div>

@@ -1,0 +1,36 @@
+name: "ADA: Fetch Network Data"
+
+on:
+  schedule:
+    - cron: '30 6 * * *'  # Daily at 6:30 UTC (30 min after TAO)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Fetch ADA data
+        env:
+          BLOCKFROST_PROJECT_ID: ${{ secrets.BLOCKFROST_PROJECT_ID }}
+        run: npx tsx scripts/fetch-ada.ts
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet data/ada.json || (
+            git add data/ada.json
+            git commit -m "chore(data): ADA - update network metrics"
+            git push
+          )

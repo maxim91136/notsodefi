@@ -67,6 +67,17 @@ export interface TaoMetrics {
   totalActiveKeys: number | null;
 }
 
+export interface AdaMetrics {
+  epoch: number | null;
+  blockCount: number | null;
+  txCount: number | null;
+  totalSupply: number | null;
+  circulatingSupply: number | null;
+  liveStake: number | null;
+  activeStake: number | null;
+  totalPools: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -108,6 +119,10 @@ export function getTaoData(): NetworkData<TaoMetrics> {
   return loadJsonFile<NetworkData<TaoMetrics>>('tao.json');
 }
 
+export function getAdaData(): NetworkData<AdaMetrics> {
+  return loadJsonFile<NetworkData<AdaMetrics>>('ada.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -124,6 +139,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getZecData();
     case 'bittensor':
       return getTaoData();
+    case 'cardano':
+      return getAdaData();
     default:
       return null;
   }
@@ -144,6 +161,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const bnb = getBnbData();
   const zec = getZecData();
   const tao = getTaoData();
+  const ada = getAdaData();
 
   return [
     {
@@ -187,6 +205,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: tao.fetchStatus,
       lastUpdated: tao.lastUpdated,
       source: tao.source || 'Taostats',
+    },
+    {
+      chain: 'ADA',
+      status: ada.fetchStatus,
+      lastUpdated: ada.lastUpdated,
+      source: ada.source || 'Blockfrost',
     },
   ];
 }

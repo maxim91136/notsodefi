@@ -29,5 +29,8 @@ export { ZcashFetcher, getZcashFetcher } from './zcash';
 // Bittensor fetchers
 export { BittensorFetcher, getBittensorFetcher } from './bittensor';
 
+// Cardano fetchers
+export { CardanoFetcher, getCardanoFetcher } from './cardano';
+
 // TODO: Implement these fetchers
 // export { GitHubFetcher } from './github';
