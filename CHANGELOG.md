@@ -2,6 +2,21 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.6] - 2025-12-23
+
+### Added
+- **Live Network Data Card** on project pages
+  - Shows real-time metrics from daily fetches
+  - Displays data source and "Updated Xm ago" timestamp
+  - Status badge (Live/Partial/Error)
+- **API Status Card** on projects overview
+  - Pipeline status for all chains (BTC/SOL/ETH)
+  - Source attribution and freshness indicator
+
+### UI/UX
+- Data transparency: Every metric shows source + timestamp
+- Color-coded status indicators
+
 ## [0.4.5] - 2025-12-23
 
 ### Added
