@@ -2,7 +2,7 @@
 
 All notable changes to the NotSoDeFi Framework.
 
-## [0.5.0-rc1] - 2025-12-24
+## [0.5.0] - 2025-12-24
 
 ### Added
 - **Bittensor Integration**
