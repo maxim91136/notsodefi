@@ -36,7 +36,7 @@ export const solana: Project = {
   description:
     'High-performance blockchain optimized for speed and low fees. Single-client architecture.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2024-12-23',
+  lastUpdated: '2025-12-23',
   sources: [
     'https://solanabeach.io',
     'https://chainspect.app/chain/solana',

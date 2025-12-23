@@ -36,7 +36,7 @@ export const ethereum: Project = {
   description:
     'Decentralized platform for smart contracts. Transitioned from PoW to PoS in 2022.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2024-12-23',
+  lastUpdated: '2025-12-23',
   sources: [
     'https://rated.network',
     'https://clientdiversity.org',

@@ -1,16 +1,8 @@
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
 import { Card, CardContent, CardHeader } from '@/components/ui';
 import { getAllCriteria, CATEGORIES } from '@/lib/framework';
 
-function getVersion(): string {
-  const versionPath = path.join(process.cwd(), 'VERSION');
-  return fs.readFileSync(versionPath, 'utf-8').trim();
-}
-
 export default function HomePage() {
-  const version = getVersion();
   const criteria = getAllCriteria();
   const chainCriteria = criteria.filter((c) => c.category === 'chain');
   const controlCriteria = criteria.filter((c) => c.category === 'control');
@@ -126,11 +118,6 @@ export default function HomePage() {
           Explore Projects
         </Link>
       </section>
-
-      {/* Version Footer */}
-      <footer className="mt-20 pt-8 border-t border-white/10 text-center">
-        <p className="text-sm text-white/30 font-mono">v{version}</p>
-      </footer>
     </div>
   );
 }

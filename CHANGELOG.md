@@ -2,7 +2,19 @@
 
 All notable changes to the NotSoDeFi Framework.
 
-## [0.3.0-rc1] - 2024-12-23
+## [0.3.0-rc2] - 2025-12-23
+
+### Added
+- Dynamic footer with version, date, and author link
+- `release.sh` script for automated release management
+- README: Data sources table, project structure, release command
+
+### Changed
+- Footer now reads version from VERSION file
+- Removed duplicate version display from homepage
+- Fixed Next.js version in docs (15, not 16)
+
+## [0.3.0-rc1] - 2025-12-23
 
 ### Added
 - **Data Source Schema** for automated API fetching
@@ -25,7 +37,7 @@ All notable changes to the NotSoDeFi Framework.
 - `src/lib/data/sources/` - Data source types and mappings
 - `src/lib/data/fetchers/` - API fetcher base classes
 
-## [0.2.0] - 2024-12-23
+## [0.2.0] - 2025-12-23
 
 ### Added
 - **Consensus Type** field for projects (`pow`, `pos`, `dpos`, `hybrid`)
@@ -40,7 +52,7 @@ All notable changes to the NotSoDeFi Framework.
 ### Fixed
 - Bitcoin score now more accurately reflects PoW characteristics
 
-## [0.1.0] - 2024-12-23
+## [0.1.0] - 2025-12-23
 
 ### Added
 - Initial framework implementation

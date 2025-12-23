@@ -31,6 +31,18 @@ The framework distinguishes between different consensus mechanisms:
 
 Some criteria may be N/A depending on the consensus type.
 
+## Data Sources
+
+Automated data fetching from multiple APIs:
+
+| Chain | Node Data | Validator/Mining | Governance |
+|-------|-----------|------------------|------------|
+| Bitcoin | [Bitnodes](https://bitnodes.io) | [Blockchain.com](https://blockchain.com/pools) | N/A |
+| Ethereum | [Ethernodes](https://ethernodes.org) | [Rated Network](https://rated.network) | [Snapshot](https://snapshot.org) |
+| Solana | [SolanaBeach](https://solanabeach.io) | [SolanaBeach](https://solanabeach.io) | Manual |
+
+Code control metrics via [GitHub API](https://docs.github.com/en/rest).
+
 ## Development
 
 ```bash
@@ -42,11 +54,32 @@ npm run dev
 
 # Build for production
 npm run build
+
+# Create a release
+./scripts/release.sh 0.3.0-rc3
+```
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js pages
+├── components/             # React components
+│   ├── layout/            # Header, Footer
+│   ├── scores/            # Score display components
+│   └── ui/                # Base UI components
+└── lib/
+    ├── framework/         # Scoring logic & criteria
+    ├── data/
+    │   ├── projects/      # Project definitions
+    │   ├── sources/       # API source mappings
+    │   └── fetchers/      # API fetcher classes
+    └── utils/             # Helper functions
 ```
 
 ## Tech Stack
 
-- Next.js 16 (Static Export)
+- Next.js 15 (Static Export)
 - TypeScript
 - Tailwind CSS
 - Cloudflare Pages

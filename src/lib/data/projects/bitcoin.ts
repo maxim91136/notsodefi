@@ -36,7 +36,7 @@ export const bitcoin: Project = {
   description:
     'The first decentralized cryptocurrency. Proof-of-Work consensus with no central authority.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2024-12-23',
+  lastUpdated: '2025-12-23',
   sources: [
     'https://miningpoolstats.stream/bitcoin',
     'https://bitnodes.io',
