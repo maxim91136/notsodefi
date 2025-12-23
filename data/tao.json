@@ -1,0 +1,14 @@
+{
+  "lastUpdated": "2025-12-24T00:00:00.000Z",
+  "source": "taostats.io",
+  "metrics": {
+    "blockNumber": null,
+    "accounts": null,
+    "subnets": null,
+    "totalStaked": null,
+    "issued": null,
+    "totalValidators": null,
+    "totalActiveKeys": null
+  },
+  "fetchStatus": "failed"
+}

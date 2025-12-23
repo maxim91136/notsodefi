@@ -13,6 +13,7 @@ import {
   getXrpData,
   getBnbData,
   getZecData,
+  getTaoData,
 } from '@/lib/data/network-data';
 
 interface MetricRowProps {
@@ -232,6 +233,35 @@ export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
           <MetricRow label="Difficulty" value={data.metrics.difficulty} />
           <MetricRow label="Hashrate (24h)" value={data.metrics.hashrate24h ? Math.round(data.metrics.hashrate24h / 1e9) : null} unit="GH/s" />
           <MetricRow label="Mempool TXs" value={data.metrics.mempoolTxs} />
+          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
+            Updated {formatTimeAgo(data.lastUpdated)}
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (projectId === 'bittensor') {
+    const data = getTaoData();
+    return (
+      <Card className="border-cyan-500/30">
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="font-semibold text-cyan-400">Live Network Data</h3>
+              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'Taostats'}</p>
+            </div>
+            <StatusBadge status={data.fetchStatus} />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <MetricRow label="Block Number" value={data.metrics.blockNumber} />
+          <MetricRow label="Accounts" value={data.metrics.accounts} />
+          <MetricRow label="Subnets" value={data.metrics.subnets} />
+          <MetricRow label="Total Staked" value={data.metrics.totalStaked ? Math.round(data.metrics.totalStaked) : null} unit="TAO" />
+          <MetricRow label="Total Issued" value={data.metrics.issued ? Math.round(data.metrics.issued) : null} unit="TAO" />
+          <MetricRow label="Validators (all subnets)" value={data.metrics.totalValidators} />
+          <MetricRow label="Active Keys" value={data.metrics.totalActiveKeys} />
           <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
             Updated {formatTimeAgo(data.lastUpdated)}
           </div>

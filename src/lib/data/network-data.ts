@@ -57,6 +57,16 @@ export interface ZecMetrics {
   nodes: number | null;
 }
 
+export interface TaoMetrics {
+  blockNumber: number | null;
+  accounts: number | null;
+  subnets: number | null;
+  totalStaked: number | null;
+  issued: number | null;
+  totalValidators: number | null;
+  totalActiveKeys: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -94,6 +104,10 @@ export function getZecData(): NetworkData<ZecMetrics> {
   return loadJsonFile<NetworkData<ZecMetrics>>('zec.json');
 }
 
+export function getTaoData(): NetworkData<TaoMetrics> {
+  return loadJsonFile<NetworkData<TaoMetrics>>('tao.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -108,6 +122,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getBnbData();
     case 'zcash':
       return getZecData();
+    case 'bittensor':
+      return getTaoData();
     default:
       return null;
   }
@@ -127,6 +143,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const xrp = getXrpData();
   const bnb = getBnbData();
   const zec = getZecData();
+  const tao = getTaoData();
 
   return [
     {
@@ -164,6 +181,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: zec.fetchStatus,
       lastUpdated: zec.lastUpdated,
       source: zec.source || 'Blockchair',
+    },
+    {
+      chain: 'TAO',
+      status: tao.fetchStatus,
+      lastUpdated: tao.lastUpdated,
+      source: tao.source || 'Taostats',
     },
   ];
 }

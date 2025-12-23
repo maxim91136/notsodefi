@@ -26,5 +26,8 @@ export { BnbChainFetcher, getBnbChainFetcher } from './bnb-chain';
 // Zcash fetchers
 export { ZcashFetcher, getZcashFetcher } from './zcash';
 
+// Bittensor fetchers
+export { BittensorFetcher, getBittensorFetcher } from './bittensor';
+
 // TODO: Implement these fetchers
 // export { GitHubFetcher } from './github';
