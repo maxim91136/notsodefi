@@ -2,6 +2,21 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.8] - 2025-12-23
+
+### Added
+- **BNB Chain Integration**
+  - BNB Chain Fetcher using public RPC (bsc-dataseed.binance.org)
+  - Block number, peer count, validator count, gas price tracking
+  - BNB Workflow (`data-bnb.yml`) runs daily at 5:00 UTC
+- **BNB in Leaderboard**
+  - Full decentralization scoring (21 validators, DPoS, Binance controlled)
+  - Live Network Data card on /projects/bnb
+
+### Infrastructure
+- `scripts/fetch-bnb.ts` - BNB data fetch script
+- `data/bnb.json` - Cached BNB network data
+
 ## [0.4.7] - 2025-12-23
 
 ### Added
