@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, Badge } from '@/components/ui';
 import { ScoreSummary, CriterionRow } from '@/components/scores';
+import { LiveNetworkData } from '@/components/data';
 import { getProjectById, projects } from '@/lib/data';
 import { getCriteriaByCategory } from '@/lib/framework';
 import { formatDate } from '@/lib/utils';
@@ -68,11 +69,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </div>
 
       {/* Score Summary */}
-      <Card className="mb-12">
+      <Card className="mb-8">
         <CardContent className="py-8">
           <ScoreSummary scores={project.scores} />
         </CardContent>
       </Card>
+
+      {/* Live Network Data */}
+      <div className="mb-8">
+        <LiveNetworkData projectId={project.id} />
+      </div>
 
       {/* Detailed Breakdown */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
