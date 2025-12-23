@@ -2,6 +2,29 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.3.0-rc1] - 2024-12-23
+
+### Added
+- **Data Source Schema** for automated API fetching
+  - `DataSourceProvider` types: bitnodes, ethernodes, solanabeach, github, etc.
+  - `CriterionDataMapping` with primary sources and fallbacks
+  - `ProjectDataSources` for chain-specific API configurations
+- **Base Fetcher** class with rate limiting and error handling
+- **Project-specific API mappings**:
+  - Bitcoin: bitnodes (nodes), blockchain.com (pools)
+  - Ethereum: rated (validators), ethernodes (nodes/clients)
+  - Solana: solanabeach (validators, stake, clients)
+- Dynamic version display on homepage (reads from VERSION file)
+- Verified premine data: BTC 0%, ETH 20%, SOL 48%
+
+### Changed
+- Ethereum C9 (Premine) corrected from 15% to 20%
+- Data architecture prepared for GitHub Actions + Cloudflare KV
+
+### Infrastructure
+- `src/lib/data/sources/` - Data source types and mappings
+- `src/lib/data/fetchers/` - API fetcher base classes
+
 ## [0.2.0] - 2024-12-23
 
 ### Added

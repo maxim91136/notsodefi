@@ -23,7 +23,7 @@ const rawValues: Record<string, number | null> = {
   B8: null, // N/A - No protocol-level treasury multisig
 
   // Fairness Score (C9-C10)
-  C9: 15,   // ~15% premine (ICO + foundation)
+  C9: 20,   // ~20% premine (9.9% founders + 9.9% foundation)
   C10: 25,  // Insiders hold significant but diluted share
 };
 
