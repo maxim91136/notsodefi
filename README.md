@@ -43,6 +43,7 @@ Some criteria may be N/A depending on the consensus type.
 | BNB Chain | BNB | DPoS | BNB Chain RPC |
 | Zcash | ZEC | PoW | [Blockchair](https://blockchair.com) |
 | Bittensor | TAO | Hybrid | [Taostats](https://taostats.io) |
+| Cardano | ADA | PoS | [Blockfrost](https://blockfrost.io) |
 
 All data is fetched daily via GitHub Actions.
 

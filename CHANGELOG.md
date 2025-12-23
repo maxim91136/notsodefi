@@ -2,6 +2,25 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.5.1] - 2025-12-24
+
+### Added
+- **Cardano Integration**
+  - Blockfrost API Fetcher (requires project ID)
+  - Epoch, block count, tx count, stake metrics, pool count
+  - ADA Workflow (`data-ada.yml`) runs daily at 6:30 UTC
+- **Cardano in Leaderboard**
+  - Full decentralization scoring (PoS, Ouroboros, ~3000 pools)
+  - Live Network Data card on /projects/cardano
+
+### Changed
+- **8 Chains Now Supported**: BTC, ETH, SOL, XRP, BNB, ZEC, TAO, ADA
+
+### Infrastructure
+- `scripts/fetch-ada.ts` - Cardano data fetch script
+- `data/ada.json` - Cached Cardano network data
+- `BLOCKFROST_PROJECT_ID` repo secret required
+
 ## [0.5.0] - 2025-12-24
 
 ### Added
