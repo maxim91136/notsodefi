@@ -2,6 +2,12 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.3.0-rc3] - 2025-12-23
+
+### Changed
+- Improved `release.sh` with README validation and better output
+- Release script now checks VERSION, CHANGELOG, and README
+
 ## [0.3.0-rc2] - 2025-12-23
 
 ### Added
