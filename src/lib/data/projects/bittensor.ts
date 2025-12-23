@@ -32,7 +32,7 @@ export const bittensor: Project = {
   id: 'bittensor',
   name: 'Bittensor',
   symbol: 'TAO',
-  consensusType: 'dpos',
+  consensusType: 'hybrid',
   website: 'https://bittensor.com',
   description:
     'Decentralized AI/ML network with 90+ subnets. Fair launch, no premine. Yuma Consensus.',
