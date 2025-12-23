@@ -8,8 +8,8 @@
 import { Project } from '@/lib/framework';
 import { calculateProjectScores } from '@/lib/framework';
 
-// Raw assessment values
-const rawValues = {
+// Raw assessment values (null = N/A, not applicable)
+const rawValues: Record<string, number | null> = {
   // Chain Score (A1-A4)
   A1: 19,   // Nakamoto Coefficient ~19 (validators)
   A2: 35,   // Top 5 validators control ~35%
@@ -31,11 +31,12 @@ export const solana: Project = {
   id: 'solana',
   name: 'Solana',
   symbol: 'SOL',
+  consensusType: 'pos',
   website: 'https://solana.com',
   description:
     'High-performance blockchain optimized for speed and low fees. Single-client architecture.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2024-12-01',
+  lastUpdated: '2024-12-23',
   sources: [
     'https://solanabeach.io',
     'https://chainspect.app/chain/solana',

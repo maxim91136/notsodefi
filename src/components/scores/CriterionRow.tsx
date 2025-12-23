@@ -9,6 +9,7 @@ interface CriterionRowProps {
 }
 
 export function CriterionRow({ criterion, score }: CriterionRowProps) {
+  const isNA = score?.score === null;
   const displayScore = score?.score ?? 0;
 
   return (
@@ -29,13 +30,19 @@ export function CriterionRow({ criterion, score }: CriterionRowProps) {
       </div>
 
       {/* Score */}
-      <div
-        className={`flex-shrink-0 px-3 py-1 rounded-lg ${getScoreBgColor(displayScore)}`}
-      >
-        <span className={`text-lg font-bold ${getScoreTextColor(displayScore)}`}>
-          {displayScore.toFixed(1)}
-        </span>
-      </div>
+      {isNA ? (
+        <div className="flex-shrink-0 px-3 py-1 rounded-lg bg-white/5">
+          <span className="text-lg font-bold text-white/30">N/A</span>
+        </div>
+      ) : (
+        <div
+          className={`flex-shrink-0 px-3 py-1 rounded-lg ${getScoreBgColor(displayScore)}`}
+        >
+          <span className={`text-lg font-bold ${getScoreTextColor(displayScore)}`}>
+            {displayScore.toFixed(1)}
+          </span>
+        </div>
+      )}
     </div>
   );
 }

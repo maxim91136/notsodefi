@@ -37,10 +37,10 @@ export interface Criterion {
 export interface CriterionScore {
   /** Reference to criterion ID */
   criterionId: string;
-  /** Raw input value */
-  rawValue: number | string;
-  /** Calculated score (0-10) */
-  score: number;
+  /** Raw input value (null = N/A, not applicable) */
+  rawValue: number | string | null;
+  /** Calculated score (0-10), null if N/A */
+  score: number | null;
   /** Optional notes/explanation */
   notes?: string;
 }
@@ -48,6 +48,9 @@ export interface CriterionScore {
 // ============================================================================
 // Project Types
 // ============================================================================
+
+/** Consensus mechanism type */
+export type ConsensusType = 'pow' | 'pos' | 'dpos' | 'hybrid';
 
 export interface ProjectScores {
   /** Chain Score (0-10) - technical/economic decentralization */
@@ -69,6 +72,8 @@ export interface Project {
   name: string;
   /** Token symbol */
   symbol?: string;
+  /** Consensus mechanism */
+  consensusType: ConsensusType;
   /** Logo URL or path */
   logo?: string;
   /** Project website */

@@ -8,8 +8,8 @@
 import { Project } from '@/lib/framework';
 import { calculateProjectScores } from '@/lib/framework';
 
-// Raw assessment values
-const rawValues = {
+// Raw assessment values (null = N/A, not applicable)
+const rawValues: Record<string, number | null> = {
   // Chain Score (A1-A4)
   A1: 2,    // Nakamoto Coefficient ~2 (Lido + Coinbase dominate staking)
   A2: 65,   // Top 5 staking entities control ~65%
@@ -20,7 +20,7 @@ const rawValues = {
   B5: 6,    // Ethereum Foundation influential but not dominant
   B6: 8,    // Multiple client teams, diverse maintainers
   B7: 6,    // EF controls ethereum.org but many frontends exist
-  B8: 0,    // N/A - no protocol-level multisig
+  B8: null, // N/A - No protocol-level treasury multisig
 
   // Fairness Score (C9-C10)
   C9: 15,   // ~15% premine (ICO + foundation)
@@ -31,11 +31,12 @@ export const ethereum: Project = {
   id: 'ethereum',
   name: 'Ethereum',
   symbol: 'ETH',
+  consensusType: 'pos',
   website: 'https://ethereum.org',
   description:
     'Decentralized platform for smart contracts. Transitioned from PoW to PoS in 2022.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2024-12-01',
+  lastUpdated: '2024-12-23',
   sources: [
     'https://rated.network',
     'https://clientdiversity.org',

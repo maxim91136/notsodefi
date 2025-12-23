@@ -84,9 +84,10 @@ export function calculateTotalScore(
 
 /**
  * Calculate all scores for a project from raw criterion values.
+ * Values can be null to indicate N/A (not applicable).
  */
 export function calculateProjectScores(
-  rawValues: Record<string, number>
+  rawValues: Record<string, number | null>
 ): ProjectScores {
   const criterionScores: CriterionScore[] = [];
   const scores: Record<string, number> = {};
@@ -96,6 +97,18 @@ export function calculateProjectScores(
 
   for (const criterion of allCriteria) {
     const rawValue = rawValues[criterion.id];
+
+    // Handle N/A values (null)
+    if (rawValue === null) {
+      criterionScores.push({
+        criterionId: criterion.id,
+        rawValue: null,
+        score: null,
+        notes: 'N/A - Not applicable',
+      });
+      continue;
+    }
+
     if (rawValue !== undefined) {
       const score = getScoreFromMapping(rawValue, criterion.mappings);
       scores[criterion.id] = score;
@@ -107,7 +120,7 @@ export function calculateProjectScores(
     }
   }
 
-  // Calculate category scores
+  // Calculate category scores (N/A values are automatically ignored)
   const chainScore = calculateCategoryScore(chainCriteria, scores);
   const controlScore = calculateCategoryScore(controlCriteria, scores);
   const fairnessScore = calculateCategoryScore(fairnessCriteria, scores);

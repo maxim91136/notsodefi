@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NotSoDeFi
 
-## Getting Started
+**Measuring Real Decentralization**
 
-First, run the development server:
+A framework for objectively measuring blockchain and protocol decentralization. Because "decentralized" doesn't mean what most projects claim it means.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Live: [notsodefi.com](https://notsodefi.com)
+
+## The Framework
+
+Three scores, ten criteria:
+
+| Score | Weight | What it measures |
+|-------|--------|------------------|
+| **Chain Score** | 40% | Technical/economic decentralization (Nakamoto Coefficient, validator concentration, client diversity, node geography) |
+| **Control Score** | 40% | Power structures (corporate capture, repo ownership, brand control, treasury keys) |
+| **Fairness Score** | 20% | Launch/distribution fairness (premine, token distribution, governance power) |
+
+```
+TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Consensus Types
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The framework distinguishes between different consensus mechanisms:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **PoW** (Proof of Work) - Bitcoin, etc.
+- **PoS** (Proof of Stake) - Ethereum, etc.
+- **DPoS** (Delegated Proof of Stake) - EOS, Tron, etc.
+- **Hybrid** - Bittensor, Decred, etc.
 
-## Learn More
+Some criteria may be N/A depending on the consensus type.
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Install dependencies
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run dev server
+npm run dev
 
-## Deploy on Vercel
+# Build for production
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 16 (Static Export)
+- TypeScript
+- Tailwind CSS
+- Cloudflare Pages
+
+## License
+
+MIT
