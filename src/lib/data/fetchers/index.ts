@@ -23,5 +23,8 @@ export { XrplFetcher, getXrplFetcher } from './xrpl';
 // BNB Chain fetchers
 export { BnbChainFetcher, getBnbChainFetcher } from './bnb-chain';
 
+// Zcash fetchers
+export { ZcashFetcher, getZcashFetcher } from './zcash';
+
 // TODO: Implement these fetchers
 // export { GitHubFetcher } from './github';

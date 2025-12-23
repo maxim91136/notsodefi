@@ -12,6 +12,7 @@ import {
   getEthereumData,
   getXrpData,
   getBnbData,
+  getZecData,
 } from '@/lib/data/network-data';
 
 interface MetricRowProps {
@@ -204,6 +205,33 @@ export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
           <MetricRow label="Validators" value={data.metrics.validatorCount} />
           <MetricRow label="Gas Price" value={data.metrics.gasPrice} unit="Gwei" />
           <MetricRow label="Chain ID" value={data.metrics.chainId} />
+          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
+            Updated {formatTimeAgo(data.lastUpdated)}
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (projectId === 'zcash') {
+    const data = getZecData();
+    return (
+      <Card className="border-amber-500/30">
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="font-semibold text-amber-400">Live Network Data</h3>
+              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'Blockchair'}</p>
+            </div>
+            <StatusBadge status={data.fetchStatus} />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <MetricRow label="Block Height" value={data.metrics.blocks} />
+          <MetricRow label="Network Nodes" value={data.metrics.nodes} />
+          <MetricRow label="Difficulty" value={data.metrics.difficulty} />
+          <MetricRow label="Hashrate (24h)" value={data.metrics.hashrate24h ? Math.round(data.metrics.hashrate24h / 1e9) : null} unit="GH/s" />
+          <MetricRow label="Mempool TXs" value={data.metrics.mempoolTxs} />
           <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
             Updated {formatTimeAgo(data.lastUpdated)}
           </div>

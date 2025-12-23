@@ -49,6 +49,14 @@ export interface BnbMetrics {
   chainId: number | null;
 }
 
+export interface ZecMetrics {
+  blocks: number | null;
+  difficulty: number | null;
+  hashrate24h: number | null;
+  mempoolTxs: number | null;
+  nodes: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -82,6 +90,10 @@ export function getBnbData(): NetworkData<BnbMetrics> {
   return loadJsonFile<NetworkData<BnbMetrics>>('bnb.json');
 }
 
+export function getZecData(): NetworkData<ZecMetrics> {
+  return loadJsonFile<NetworkData<ZecMetrics>>('zec.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -94,6 +106,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getXrpData();
     case 'bnb':
       return getBnbData();
+    case 'zcash':
+      return getZecData();
     default:
       return null;
   }
@@ -112,6 +126,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const eth = getEthereumData();
   const xrp = getXrpData();
   const bnb = getBnbData();
+  const zec = getZecData();
 
   return [
     {
@@ -143,6 +158,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: bnb.fetchStatus,
       lastUpdated: bnb.lastUpdated,
       source: bnb.source || 'BNB Chain RPC',
+    },
+    {
+      chain: 'ZEC',
+      status: zec.fetchStatus,
+      lastUpdated: zec.lastUpdated,
+      source: zec.source || 'Blockchair',
     },
   ];
 }
