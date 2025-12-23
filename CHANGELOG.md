@@ -2,6 +2,20 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.4] - 2025-12-23
+
+### Added
+- **Solana RPC Fetcher** using official public RPC
+  - Validator counts (total, active)
+  - Nakamoto Coefficient calculation
+  - Top 5 stake concentration
+  - Node count and client versions
+- **SOL Workflow** (`data-sol.yml`) runs daily at 6:30 UTC
+
+### Infrastructure
+- `scripts/fetch-sol.ts` - Solana data fetch script
+- `data/solana.json` - Cached Solana network data
+
 ## [0.4.3] - 2025-12-23
 
 ### Fixed
