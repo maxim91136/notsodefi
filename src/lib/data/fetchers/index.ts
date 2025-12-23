@@ -11,7 +11,9 @@ export type { FetcherConfig, FetchResult } from './base';
 export { BitnodesFetcher, getBitnodesFetcher } from './bitnodes';
 export { BlockchainFetcher, getBlockchainFetcher } from './blockchain';
 
+// Solana fetchers
+export { SolanaRpcFetcher, getSolanaRpcFetcher } from './solana-rpc';
+
 // TODO: Implement these fetchers
-// export { SolanaBeachFetcher } from './solanabeach';
 // export { GitHubFetcher } from './github';
 // export { EthernodesFetcher } from './ethernodes';

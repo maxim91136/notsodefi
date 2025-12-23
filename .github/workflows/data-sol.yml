@@ -1,0 +1,34 @@
+name: "SOL: Fetch Network Data"
+
+on:
+  schedule:
+    - cron: '30 6 * * *'  # Daily at 6:30 UTC (30 min after BTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Fetch Solana data
+        run: npx tsx scripts/fetch-sol.ts
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet data/solana.json || (
+            git add data/solana.json
+            git commit -m "chore(data): SOL - update network metrics"
+            git push
+          )
