@@ -2,6 +2,24 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.0] - 2025-12-23
+
+### Added
+- **Bitcoin Data Fetcher** using Bitnodes API
+  - `BitnodesFetcher` class with sampling for geo/cloud data
+  - Fetches total nodes, cloud percentage, geographic concentration
+  - Rate limiting and error handling
+- **GitHub Actions Workflow** for automated data updates
+  - Daily scheduled fetch at 06:00 UTC
+  - Manual trigger with chain selection
+  - Auto-commit updated data
+- **Data directory** with `data/bitcoin.json`
+- **Fetch script** `scripts/fetch-btc.ts`
+
+### Infrastructure
+- `.github/workflows/fetch-data.yml` - Automated data pipeline
+- `data/` - Cached network data (updated daily)
+
 ## [0.3.0] - 2025-12-23
 
 ### Added
