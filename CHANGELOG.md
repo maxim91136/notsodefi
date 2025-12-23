@@ -2,6 +2,16 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.3] - 2025-12-23
+
+### Fixed
+- **BTC Workflow** now has write permissions for auto-commits
+- Workflow tested and working in production
+
+### Changed
+- Renamed workflow file to `data-btc.yml` with name "BTC: Fetch Network Data"
+- Single-chain workflow structure (modular per coin)
+
 ## [0.4.2] - 2025-12-23
 
 ### Changed
