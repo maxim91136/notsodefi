@@ -2,6 +2,17 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.2] - 2025-12-23
+
+### Changed
+- **Enhanced release.sh** with automatic git tags and GitHub releases
+  - Creates git tag and GitHub release automatically
+  - Extracts changelog notes for release description
+- **Modular GitHub Actions workflow**
+  - Separate jobs: `btc`, `sol`, `eth` (selectable)
+  - Clear naming: "Data: Fetch Decentralization Metrics"
+  - Commit messages with ticker prefix (BTC, SOL, ETH)
+
 ## [0.4.1] - 2025-12-23
 
 ### Added

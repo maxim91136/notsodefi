@@ -1,60 +1,123 @@
-name: Fetch Network Data
+name: "Data: Fetch Decentralization Metrics"
 
 on:
-  # Daily at 6:00 UTC
   schedule:
-    - cron: '0 6 * * *'
-  # Manual trigger
+    - cron: '0 6 * * *'  # Daily at 6:00 UTC
   workflow_dispatch:
     inputs:
       chain:
-        description: 'Chain to fetch (btc, all)'
-        required: false
+        description: 'Select chain to update'
+        required: true
         default: 'all'
+        type: choice
+        options:
+          - all
+          - btc
+          - sol
+          - eth
       full:
-        description: 'Run full fetch with sampling'
+        description: 'Include sampling (40+ API calls per chain)'
         required: false
-        default: 'false'
+        default: false
+        type: boolean
 
 jobs:
-  fetch-btc:
+  # ===========================================================================
+  # BTC - Bitcoin (Proof of Work)
+  # ===========================================================================
+  btc:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.chain == 'btc' || github.event.inputs.chain == 'all' || github.event_name == 'schedule' }}
+    if: ${{ inputs.chain == 'btc' || inputs.chain == 'all' || github.event_name == 'schedule' }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
 
       - name: Fetch Bitcoin data
-        run: |
-          if [ "${{ github.event.inputs.full }}" = "true" ]; then
-            npx tsx scripts/fetch-btc.ts --full
-          else
-            npx tsx scripts/fetch-btc.ts
-          fi
+        run: npx tsx scripts/fetch-btc.ts ${{ inputs.full && '--full' || '' }}
 
-      - name: Commit and push
+      - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          if git diff --quiet data/; then
-            echo "No changes to commit"
-          else
-            git add data/
-            git commit -m "chore: update Bitcoin network data
-
-            Automated data fetch via GitHub Actions
-
-            🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+          git diff --quiet data/bitcoin.json || (
+            git add data/bitcoin.json
+            git commit -m "chore(data): BTC - update network metrics"
             git push
+          )
+
+  # ===========================================================================
+  # SOL - Solana (Proof of Stake)
+  # ===========================================================================
+  sol:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.chain == 'sol' || inputs.chain == 'all' || github.event_name == 'schedule' }}
+    needs: btc  # Run sequentially to avoid git conflicts
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main  # Get latest after BTC push
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Fetch Solana data
+        run: |
+          if [ -f scripts/fetch-sol.ts ]; then
+            npx tsx scripts/fetch-sol.ts
+          else
+            echo "Solana fetcher not yet implemented"
           fi
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet data/solana.json 2>/dev/null || (
+            git add data/solana.json
+            git commit -m "chore(data): SOL - update network metrics"
+            git push
+          ) || true
+
+  # ===========================================================================
+  # ETH - Ethereum (Proof of Stake)
+  # ===========================================================================
+  eth:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.chain == 'eth' || inputs.chain == 'all' || github.event_name == 'schedule' }}
+    needs: sol  # Run sequentially
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Fetch Ethereum data
+        run: |
+          if [ -f scripts/fetch-eth.ts ]; then
+            npx tsx scripts/fetch-eth.ts
+          else
+            echo "Ethereum fetcher not yet implemented"
+          fi
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet data/ethereum.json 2>/dev/null || (
+            git add data/ethereum.json
+            git commit -m "chore(data): ETH - update network metrics"
+            git push
+          ) || true

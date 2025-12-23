@@ -35,7 +35,7 @@ echo ""
 # Pre-flight Checks
 # ============================================================================
 
-echo -e "${YELLOW}[1/6] Checking documentation...${NC}"
+echo -e "${YELLOW}[1/8] Checking documentation...${NC}"
 
 # Check VERSION file
 echo "$VERSION" > VERSION
@@ -63,7 +63,7 @@ echo -e "  ${YELLOW}!${NC} Remember to update README.md if needed"
 # Build
 # ============================================================================
 
-echo -e "${YELLOW}[2/6] Running build...${NC}"
+echo -e "${YELLOW}[2/8] Running build...${NC}"
 if npm run build > /dev/null 2>&1; then
     echo -e "  ${GREEN}✓${NC} Build successful"
 else
@@ -75,7 +75,7 @@ fi
 # Git Status
 # ============================================================================
 
-echo -e "${YELLOW}[3/6] Checking git status...${NC}"
+echo -e "${YELLOW}[3/8] Checking git status...${NC}"
 if [ -z "$(git status --porcelain)" ]; then
     echo -e "  ${YELLOW}!${NC} No changes to commit"
     echo -e "  Exiting - nothing to release."
@@ -87,7 +87,7 @@ echo -e "  ${GREEN}✓${NC} Changes detected"
 # Git Commit
 # ============================================================================
 
-echo -e "${YELLOW}[4/6] Committing changes...${NC}"
+echo -e "${YELLOW}[4/8] Committing changes...${NC}"
 git add -A
 git commit -m "$(cat <<EOF
 feat: v${VERSION}
@@ -105,15 +105,38 @@ echo -e "  ${GREEN}✓${NC} Committed"
 # Git Push
 # ============================================================================
 
-echo -e "${YELLOW}[5/6] Pushing to origin...${NC}"
+echo -e "${YELLOW}[5/8] Pushing to origin...${NC}"
 git push origin main
 echo -e "  ${GREEN}✓${NC} Pushed to origin/main"
+
+# ============================================================================
+# Git Tag
+# ============================================================================
+
+echo -e "${YELLOW}[6/8] Creating git tag...${NC}"
+git tag "v${VERSION}"
+git push origin "v${VERSION}"
+echo -e "  ${GREEN}✓${NC} Tag v${VERSION} created and pushed"
+
+# ============================================================================
+# GitHub Release
+# ============================================================================
+
+echo -e "${YELLOW}[7/8] Creating GitHub release...${NC}"
+# Extract changelog entry for this version
+RELEASE_NOTES=$(grep -A 50 "\[${VERSION}\]" CHANGELOG.md | tail -n +2 | sed '/^## \[/,$d')
+
+gh release create "v${VERSION}" \
+  --title "v${VERSION}" \
+  --notes "${RELEASE_NOTES}"
+
+echo -e "  ${GREEN}✓${NC} GitHub release created"
 
 # ============================================================================
 # Done
 # ============================================================================
 
-echo -e "${YELLOW}[6/6] Verifying...${NC}"
+echo -e "${YELLOW}[8/8] Verifying...${NC}"
 COMMIT_HASH=$(git rev-parse --short HEAD)
 echo -e "  ${GREEN}✓${NC} Commit: ${COMMIT_HASH}"
 
@@ -122,6 +145,7 @@ echo -e "${GREEN}╔════════════════════
 echo -e "${GREEN}║${NC}    ${GREEN}✓ Released v${VERSION}${NC}              ${GREEN}║${NC}"
 echo -e "${GREEN}╚════════════════════════════════════════╝${NC}"
 echo ""
+echo -e "  ${BLUE}https://github.com/maxim91136/notsodefi/releases/tag/v${VERSION}${NC}"
 echo -e "  Cloudflare auto-deploys in ~1-2 min"
 echo -e "  ${BLUE}https://notsodefi.com${NC}"
 echo ""
