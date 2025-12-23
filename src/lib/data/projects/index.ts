@@ -7,8 +7,9 @@ import { bitcoin } from './bitcoin';
 import { ethereum } from './ethereum';
 import { solana } from './solana';
 import { xrp } from './xrp';
+import { bnb } from './bnb';
 
-export const projects: Project[] = [bitcoin, ethereum, solana, xrp];
+export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb];
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
@@ -25,4 +26,4 @@ export function getProjectsByScore(
   });
 }
 
-export { bitcoin, ethereum, solana, xrp };
+export { bitcoin, ethereum, solana, xrp, bnb };

@@ -41,6 +41,14 @@ export interface XrpMetrics {
   buildVersion: string | null;
 }
 
+export interface BnbMetrics {
+  blockNumber: number | null;
+  peerCount: number | null;
+  validatorCount: number | null;
+  gasPrice: number | null;
+  chainId: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -70,6 +78,10 @@ export function getXrpData(): NetworkData<XrpMetrics> {
   return loadJsonFile<NetworkData<XrpMetrics>>('xrp.json');
 }
 
+export function getBnbData(): NetworkData<BnbMetrics> {
+  return loadJsonFile<NetworkData<BnbMetrics>>('bnb.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -80,6 +92,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getEthereumData();
     case 'xrp':
       return getXrpData();
+    case 'bnb':
+      return getBnbData();
     default:
       return null;
   }
@@ -97,6 +111,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const sol = getSolanaData();
   const eth = getEthereumData();
   const xrp = getXrpData();
+  const bnb = getBnbData();
 
   return [
     {
@@ -122,6 +137,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: xrp.fetchStatus,
       lastUpdated: xrp.lastUpdated,
       source: xrp.source || 'XRPL (s1.ripple.com)',
+    },
+    {
+      chain: 'BNB',
+      status: bnb.fetchStatus,
+      lastUpdated: bnb.lastUpdated,
+      source: bnb.source || 'BNB Chain RPC',
     },
   ];
 }

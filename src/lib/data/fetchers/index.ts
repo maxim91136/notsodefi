@@ -20,5 +20,8 @@ export { EthereumBeaconFetcher, getEthereumBeaconFetcher } from './ethereum-beac
 // XRP Ledger fetchers
 export { XrplFetcher, getXrplFetcher } from './xrpl';
 
+// BNB Chain fetchers
+export { BnbChainFetcher, getBnbChainFetcher } from './bnb-chain';
+
 // TODO: Implement these fetchers
 // export { GitHubFetcher } from './github';

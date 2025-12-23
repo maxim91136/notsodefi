@@ -11,6 +11,7 @@ import {
   getSolanaData,
   getEthereumData,
   getXrpData,
+  getBnbData,
 } from '@/lib/data/network-data';
 
 interface MetricRowProps {
@@ -176,6 +177,33 @@ export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
           <MetricRow label="Connected Peers" value={data.metrics.connectedPeers} />
           <MetricRow label="Server State" value={data.metrics.serverState} />
           <MetricRow label="Build Version" value={data.metrics.buildVersion} />
+          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
+            Updated {formatTimeAgo(data.lastUpdated)}
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (projectId === 'bnb') {
+    const data = getBnbData();
+    return (
+      <Card className="border-yellow-500/30">
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="font-semibold text-yellow-400">Live Network Data</h3>
+              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'BNB Chain RPC'}</p>
+            </div>
+            <StatusBadge status={data.fetchStatus} />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <MetricRow label="Block Number" value={data.metrics.blockNumber} />
+          <MetricRow label="Peer Count" value={data.metrics.peerCount} />
+          <MetricRow label="Validators" value={data.metrics.validatorCount} />
+          <MetricRow label="Gas Price" value={data.metrics.gasPrice} unit="Gwei" />
+          <MetricRow label="Chain ID" value={data.metrics.chainId} />
           <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
             Updated {formatTimeAgo(data.lastUpdated)}
           </div>
