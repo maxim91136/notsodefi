@@ -7,8 +7,9 @@
 export { BaseFetcher } from './base';
 export type { FetcherConfig, FetchResult } from './base';
 
-// Implemented fetchers
+// Bitcoin fetchers
 export { BitnodesFetcher, getBitnodesFetcher } from './bitnodes';
+export { BlockchainFetcher, getBlockchainFetcher } from './blockchain';
 
 // TODO: Implement these fetchers
 // export { SolanaBeachFetcher } from './solanabeach';

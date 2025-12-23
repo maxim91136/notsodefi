@@ -2,6 +2,19 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.1] - 2025-12-23
+
+### Added
+- **Blockchain.info Fetcher** for mining pool data
+  - `BlockchainFetcher` class for hashrate/pool metrics
+  - Top 5 pool concentration, largest pool %, pool diversity
+- **Consensus Type Labels** in project table
+  - Visual badges: PoW (orange), PoS (blue), DPoS (purple), Hybrid (cyan)
+
+### Changed
+- `fetch-btc.ts` now fetches both node and pool data
+- Updated `bitcoin.json` with mining pool metrics
+
 ## [0.4.0] - 2025-12-23
 
 ### Added

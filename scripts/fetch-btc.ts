@@ -2,29 +2,28 @@
 /**
  * Fetch Bitcoin Network Data
  *
- * Uses Bitnodes API to fetch decentralization metrics.
+ * Uses Bitnodes + Blockchain.info APIs to fetch decentralization metrics.
  * Saves results to data/bitcoin.json
  *
- * Usage: npx tsx scripts/fetch-btc.ts
+ * Usage: npx tsx scripts/fetch-btc.ts [--full]
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
 
-// Import the fetcher
 import { getBitnodesFetcher } from '../src/lib/data/fetchers/bitnodes';
+import { getBlockchainFetcher } from '../src/lib/data/fetchers/blockchain';
 
 interface BitcoinData {
   lastUpdated: string;
   metrics: {
+    // Node metrics (Bitnodes)
     totalNodes: number | null;
     cloudPercentage: number | null;
-    geographicConcentration: number | null;
-  };
-  confidence: {
-    totalNodes: number;
-    cloudPercentage: number;
-    geographicConcentration: number;
+    // Mining metrics (Blockchain.info)
+    top5PoolConcentration: number | null;
+    largestPoolPercentage: number | null;
+    poolDiversity: number | null;
   };
   fetchStatus: 'success' | 'partial' | 'failed';
 }
@@ -32,58 +31,79 @@ interface BitcoinData {
 async function main() {
   console.log('Fetching Bitcoin network data...\n');
 
-  const fetcher = getBitnodesFetcher();
+  const bitnodes = getBitnodesFetcher();
+  const blockchain = getBlockchainFetcher();
+
   const data: BitcoinData = {
     lastUpdated: new Date().toISOString(),
     metrics: {
       totalNodes: null,
       cloudPercentage: null,
-      geographicConcentration: null,
-    },
-    confidence: {
-      totalNodes: 0,
-      cloudPercentage: 0,
-      geographicConcentration: 0,
+      top5PoolConcentration: null,
+      largestPoolPercentage: null,
+      poolDiversity: null,
     },
     fetchStatus: 'failed',
   };
 
   let successCount = 0;
 
-  // 1. Fetch total nodes (1 API call)
-  console.log('1. Fetching total nodes...');
+  // 1. Fetch total nodes (Bitnodes - 1 API call)
+  console.log('1. Fetching total nodes (Bitnodes)...');
   try {
-    const totalNodes = await fetcher.getTotalNodes();
+    const totalNodes = await bitnodes.getTotalNodes();
     if (totalNodes) {
       data.metrics.totalNodes = totalNodes.value as number;
-      data.confidence.totalNodes = totalNodes.confidence;
       console.log(`   Total nodes: ${totalNodes.value}`);
       successCount++;
-    } else {
-      console.log('   Failed to fetch total nodes');
     }
   } catch (e) {
     console.log('   Error:', e);
   }
 
-  // Note: Sampling methods use ~40 API calls each
-  // With 50/day limit, we can only run one sampling per day
-  // For now, we just fetch total nodes (the reliable metric)
-  // Cloud/geo data can be fetched manually or with API key
+  // 2. Fetch mining pool data (Blockchain.info - no rate limit)
+  console.log('\n2. Fetching mining pool data (Blockchain.info)...');
+  try {
+    const top5 = await blockchain.getTop5PoolConcentration();
+    if (top5) {
+      data.metrics.top5PoolConcentration = top5.value as number;
+      console.log(`   Top 5 pool concentration: ${top5.value}%`);
+      successCount++;
+    }
+  } catch (e) {
+    console.log('   Error:', e);
+  }
 
-  console.log('\n2. Cloud/geographic data requires sampling (40 API calls)');
-  console.log('   Skipping to preserve API quota');
-  console.log('   Run with --full flag to fetch all metrics');
+  try {
+    const largest = await blockchain.getLargestPoolPercentage();
+    if (largest) {
+      data.metrics.largestPoolPercentage = largest.value as number;
+      console.log(`   Largest pool: ${largest.value}%`);
+      successCount++;
+    }
+  } catch (e) {
+    console.log('   Error:', e);
+  }
 
-  // Check if --full flag is passed
+  try {
+    const diversity = await blockchain.getPoolDiversity();
+    if (diversity) {
+      data.metrics.poolDiversity = diversity.value as number;
+      console.log(`   Pool diversity: ${diversity.value} significant pools`);
+      successCount++;
+    }
+  } catch (e) {
+    console.log('   Error:', e);
+  }
+
+  // 3. Cloud percentage (optional - uses 40 API calls from Bitnodes)
   if (process.argv.includes('--full')) {
     console.log('\n3. Fetching cloud percentage (sampling ~40 nodes)...');
     try {
-      const cloudPct = await fetcher.getCloudPercentageSampled(40);
+      const cloudPct = await bitnodes.getCloudPercentageSampled(40);
       if (cloudPct) {
         data.metrics.cloudPercentage = cloudPct.value as number;
-        data.confidence.cloudPercentage = cloudPct.confidence;
-        console.log(`   Cloud nodes: ${cloudPct.value}% (confidence: ${cloudPct.confidence})`);
+        console.log(`   Cloud nodes: ${cloudPct.value}%`);
         successCount++;
       }
     } catch (e) {
@@ -91,14 +111,8 @@ async function main() {
     }
   }
 
-  // Determine fetch status
-  if (successCount === 0) {
-    data.fetchStatus = 'failed';
-  } else if (successCount < 3) {
-    data.fetchStatus = 'partial';
-  } else {
-    data.fetchStatus = 'success';
-  }
+  // Determine status
+  data.fetchStatus = successCount === 0 ? 'failed' : successCount >= 4 ? 'success' : 'partial';
 
   // Save to file
   const dataDir = path.join(process.cwd(), 'data');
@@ -109,13 +123,10 @@ async function main() {
   const outputPath = path.join(dataDir, 'bitcoin.json');
   fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
 
-  console.log(`\nData saved to ${outputPath}`);
-  console.log(`Status: ${data.fetchStatus}`);
+  console.log(`\nSaved to ${outputPath}`);
+  console.log(`Status: ${data.fetchStatus} (${successCount} metrics)`);
 
-  // Exit with error if failed
-  if (data.fetchStatus === 'failed') {
-    process.exit(1);
-  }
+  if (data.fetchStatus === 'failed') process.exit(1);
 }
 
 main().catch((e) => {
