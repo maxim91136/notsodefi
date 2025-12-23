@@ -13,8 +13,8 @@ export function Header() {
               <span className="text-white">NotSo</span>
               <span className="text-red-500">DeFi</span>
             </span>
-            <span className="px-1.5 py-0.5 text-[10px] font-medium bg-yellow-500/20 text-yellow-400 rounded border border-yellow-500/30">
-              Experimental
+            <span className="px-1 py-0.5 text-[9px] font-medium bg-yellow-500/20 text-yellow-400 rounded border border-yellow-500/30">
+              Beta
             </span>
           </Link>
 
