@@ -14,6 +14,8 @@ export { BlockchainFetcher, getBlockchainFetcher } from './blockchain';
 // Solana fetchers
 export { SolanaRpcFetcher, getSolanaRpcFetcher } from './solana-rpc';
 
+// Ethereum fetchers
+export { EthereumBeaconFetcher, getEthereumBeaconFetcher } from './ethereum-beacon';
+
 // TODO: Implement these fetchers
 // export { GitHubFetcher } from './github';
-// export { EthernodesFetcher } from './ethernodes';
