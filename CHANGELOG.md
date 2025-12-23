@@ -2,6 +2,21 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.9] - 2025-12-23
+
+### Added
+- **Zcash Integration**
+  - Zcash Fetcher using Blockchair API
+  - Block height, nodes, difficulty, hashrate tracking
+  - ZEC Workflow (`data-zec.yml`) runs daily at 5:30 UTC
+- **Zcash in Leaderboard**
+  - Full decentralization scoring (PoW, dev fund, ECC/Foundation)
+  - Live Network Data card on /projects/zcash
+
+### Infrastructure
+- `scripts/fetch-zec.ts` - Zcash data fetch script
+- `data/zec.json` - Cached Zcash network data
+
 ## [0.4.8] - 2025-12-23
 
 ### Added
