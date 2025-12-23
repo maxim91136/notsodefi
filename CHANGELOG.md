@@ -2,6 +2,22 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.5] - 2025-12-23
+
+### Added
+- **Ethereum Beacon API Fetcher** using PublicNode
+  - Connected peers, head slot, finalized epoch
+  - Sync distance monitoring
+- **ETH Workflow** (`data-eth.yml`) runs daily at 4:00 UTC
+
+### Changed
+- Workflow schedules shifted to 3:00-4:00 UTC window
+  - BTC: 3:00 UTC | SOL: 3:30 UTC | ETH: 4:00 UTC
+
+### Infrastructure
+- `scripts/fetch-eth.ts` - Ethereum data fetch script
+- `data/ethereum.json` - Cached Ethereum network data
+
 ## [0.4.4] - 2025-12-23
 
 ### Added
@@ -10,7 +26,7 @@ All notable changes to the NotSoDeFi Framework.
   - Nakamoto Coefficient calculation
   - Top 5 stake concentration
   - Node count and client versions
-- **SOL Workflow** (`data-sol.yml`) runs daily at 6:30 UTC
+- **SOL Workflow** (`data-sol.yml`) runs daily at 3:30 UTC
 
 ### Infrastructure
 - `scripts/fetch-sol.ts` - Solana data fetch script

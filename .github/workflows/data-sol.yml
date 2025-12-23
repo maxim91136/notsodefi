@@ -2,7 +2,7 @@ name: "SOL: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '30 6 * * *'  # Daily at 6:30 UTC (30 min after BTC)
+    - cron: '30 3 * * *'  # Daily at 3:30 UTC (30 min after BTC)
   workflow_dispatch:
 
 permissions:

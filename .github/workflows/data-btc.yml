@@ -2,7 +2,7 @@ name: "BTC: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Daily at 6:00 UTC
+    - cron: '0 3 * * *'  # Daily at 3:00 UTC
   workflow_dispatch:
     inputs:
       full:
