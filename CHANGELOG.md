@@ -2,6 +2,24 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.4.7] - 2025-12-23
+
+### Added
+- **XRP Ledger Integration**
+  - XRPL Fetcher using public JSON-RPC (s1.ripple.com)
+  - Validation quorum and ledger sequence tracking
+  - XRP Workflow (`data-xrp.yml`) runs daily at 4:30 UTC
+- **XRP in Leaderboard**
+  - Full decentralization scoring (100% premine, federated consensus)
+  - Live Network Data card on /projects/xrp
+
+### Framework
+- New consensus type: `federated` for XRPL-style consensus
+
+### Infrastructure
+- `scripts/fetch-xrp.ts` - XRP data fetch script
+- `data/xrp.json` - Cached XRP network data
+
 ## [0.4.6] - 2025-12-23
 
 ### Added
