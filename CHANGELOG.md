@@ -2,6 +2,24 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.5.3] - 2025-12-24
+
+### Added
+- **Avalanche Integration**
+  - Avalanche P-Chain API Fetcher (public RPC)
+  - Validator count, active validators, total staked, P-Chain height
+  - AVAX Workflow (`data-avax.yml`) runs daily at 7:00 UTC
+- **Avalanche in Leaderboard**
+  - Full decentralization scoring (PoS, Snowman consensus)
+  - Live Network Data card on /projects/avalanche
+
+### Changed
+- **9 Chains Now Supported**: BTC, ETH, SOL, XRP, BNB, ZEC, TAO, ADA, AVAX
+
+### Infrastructure
+- `scripts/fetch-avax.ts` - Avalanche data fetch script
+- `data/avax.json` - Cached Avalanche network data
+
 ## [0.5.2] - 2025-12-24
 
 ### Changed

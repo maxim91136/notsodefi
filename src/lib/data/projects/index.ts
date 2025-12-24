@@ -11,8 +11,9 @@ import { bnb } from './bnb';
 import { zcash } from './zcash';
 import { bittensor } from './bittensor';
 import { cardano } from './cardano';
+import { avalanche } from './avalanche';
 
-export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano];
+export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche];
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
@@ -29,4 +30,4 @@ export function getProjectsByScore(
   });
 }
 
-export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano };
+export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche };

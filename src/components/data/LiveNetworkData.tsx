@@ -15,6 +15,7 @@ import {
   getZecData,
   getTaoData,
   getAdaData,
+  getAvaxData,
 } from '@/lib/data/network-data';
 
 interface MetricRowProps {
@@ -291,6 +292,33 @@ export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
           <MetricRow label="Live Stake" value={data.metrics.liveStake ? Math.round(data.metrics.liveStake / 1e6) : null} unit="M ADA" />
           <MetricRow label="Active Stake" value={data.metrics.activeStake ? Math.round(data.metrics.activeStake / 1e6) : null} unit="M ADA" />
           <MetricRow label="Total Pools" value={data.metrics.totalPools} />
+          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
+            Updated {formatTimeAgo(data.lastUpdated)}
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (projectId === 'avalanche') {
+    const data = getAvaxData();
+    return (
+      <Card className="border-red-500/30">
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="font-semibold text-red-400">Live Network Data</h3>
+              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'api.avax.network'}</p>
+            </div>
+            <StatusBadge status={data.fetchStatus} />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <MetricRow label="Total Validators" value={data.metrics.totalValidators} />
+          <MetricRow label="Active Validators" value={data.metrics.activeValidators} />
+          <MetricRow label="Total Staked" value={data.metrics.totalStaked ? Math.round(data.metrics.totalStaked / 1e6) : null} unit="M AVAX" />
+          <MetricRow label="P-Chain Height" value={data.metrics.pChainHeight} />
+          <MetricRow label="Network" value={data.metrics.networkName} />
           <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
             Updated {formatTimeAgo(data.lastUpdated)}
           </div>

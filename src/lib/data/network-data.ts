@@ -78,6 +78,14 @@ export interface AdaMetrics {
   totalPools: number | null;
 }
 
+export interface AvaxMetrics {
+  totalValidators: number | null;
+  activeValidators: number | null;
+  totalStaked: number | null;
+  pChainHeight: number | null;
+  networkName: string | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -123,6 +131,10 @@ export function getAdaData(): NetworkData<AdaMetrics> {
   return loadJsonFile<NetworkData<AdaMetrics>>('ada.json');
 }
 
+export function getAvaxData(): NetworkData<AvaxMetrics> {
+  return loadJsonFile<NetworkData<AvaxMetrics>>('avax.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -141,6 +153,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getTaoData();
     case 'cardano':
       return getAdaData();
+    case 'avalanche':
+      return getAvaxData();
     default:
       return null;
   }
@@ -162,6 +176,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const zec = getZecData();
   const tao = getTaoData();
   const ada = getAdaData();
+  const avax = getAvaxData();
 
   return [
     {
@@ -211,6 +226,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: ada.fetchStatus,
       lastUpdated: ada.lastUpdated,
       source: ada.source || 'Blockfrost',
+    },
+    {
+      chain: 'AVAX',
+      status: avax.fetchStatus,
+      lastUpdated: avax.lastUpdated,
+      source: avax.source || 'api.avax.network',
     },
   ];
 }

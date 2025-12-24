@@ -25,7 +25,7 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 The framework distinguishes between different consensus mechanisms:
 
 - **PoW** (Proof of Work) - Bitcoin, Zcash
-- **PoS** (Proof of Stake) - Ethereum, Solana
+- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche
 - **DPoS** (Delegated Proof of Stake) - BNB Chain
 - **Federated** - XRP
 - **Hybrid** - Bittensor
@@ -44,6 +44,7 @@ Some criteria may be N/A depending on the consensus type.
 | Zcash | ZEC | PoW | [Blockchair](https://blockchair.com) |
 | Bittensor | TAO | Hybrid | [Taostats](https://taostats.io) |
 | Cardano | ADA | PoS | [Blockfrost](https://blockfrost.io) |
+| Avalanche | AVAX | PoS | [Avalanche API](https://api.avax.network) |
 
 All data is fetched daily via GitHub Actions.
 
