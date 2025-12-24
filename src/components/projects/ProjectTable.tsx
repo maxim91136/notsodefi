@@ -22,6 +22,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
       <table className="w-full">
         <thead>
           <tr className="border-b border-white/10">
+            <th className="text-center py-3 px-4 text-sm font-medium text-white/50 w-12">
+              #
+            </th>
             <th className="text-left py-3 px-4 text-sm font-medium text-white/50">
               Project
             </th>
@@ -43,13 +46,16 @@ export function ProjectTable({ projects }: ProjectTableProps) {
           </tr>
         </thead>
         <tbody>
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const consensus = CONSENSUS_LABELS[project.consensusType];
             return (
             <tr
               key={project.id}
               className="border-b border-white/5 hover:bg-white/5 transition-colors"
             >
+              <td className="py-4 px-4 text-center">
+                <span className="text-white/40 font-mono">{index + 1}</span>
+              </td>
               <td className="py-4 px-4">
                 <Link
                   href={`/projects/${project.id}`}
