@@ -2,6 +2,22 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.5] - 2025-12-24
+
+### Added
+- **Bitcoin Cash (BCH)** - 14th project with full data pipeline
+  - Blockchair API fetcher for network stats (603 nodes, 7.4 EH/s)
+  - Daily workflow at 5:50 UTC
+  - Inherited Bitcoin's fair launch (no additional premine)
+  - High mining concentration: ViaBTC 37% alone
+
+### Scoring
+| Project | Score | Rank |
+|---------|-------|------|
+| Bitcoin Cash | 6.6 | ~#5 |
+
+Bitcoin fork != automatic high score. ViaBTC dominance hurts.
+
 ## [0.6.4] - 2025-12-24
 
 ### Added

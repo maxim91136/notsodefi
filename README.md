@@ -24,7 +24,7 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 
 The framework distinguishes between different consensus mechanisms:
 
-- **PoW** (Proof of Work) - Bitcoin, Dogecoin, Litecoin, Monero, Zcash
+- **PoW** (Proof of Work) - Bitcoin, Bitcoin Cash, Dogecoin, Litecoin, Monero, Zcash
 - **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
 - **Federated** - XRP
@@ -37,6 +37,7 @@ Some criteria may be N/A depending on the consensus type.
 | Chain | Symbol | Consensus | Data Source |
 |-------|--------|-----------|-------------|
 | Bitcoin | BTC | PoW | [Bitnodes](https://bitnodes.io) + [Blockchain.info](https://blockchain.info) |
+| Bitcoin Cash | BCH | PoW | [Blockchair](https://blockchair.com) |
 | Dogecoin | DOGE | PoW | [Blockchair](https://blockchair.com) |
 | Litecoin | LTC | PoW | [Blockchair](https://blockchair.com) |
 | Monero | XMR | PoW | [Blockchair](https://blockchair.com) |
