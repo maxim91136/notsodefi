@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2025-12-24T00:00:58.504Z",
+  "lastUpdated": "2025-12-24T07:17:55.650Z",
   "source": "api.avax.network",
   "metrics": {
-    "totalValidators": 772,
-    "activeValidators": 706,
-    "totalStaked": 170898561,
-    "pChainHeight": 23880623,
+    "totalValidators": 775,
+    "activeValidators": 711,
+    "totalStaked": 173805279,
+    "pChainHeight": 23885427,
     "networkName": "mainnet"
   },
   "fetchStatus": "success"
