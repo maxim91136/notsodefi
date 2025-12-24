@@ -2,6 +2,24 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.5.4] - 2025-12-24
+
+### Added
+- **Tron Integration**
+  - TronGrid API Fetcher (public API)
+  - Witnesses (Super Representatives), votes, block height
+  - TRX Workflow (`data-trx.yml`) runs daily at 7:30 UTC
+- **Tron in Leaderboard**
+  - Full decentralization scoring (DPoS, 27 SRs)
+  - Live Network Data card on /projects/tron
+
+### Changed
+- **10 Chains Now Supported**: BTC, ETH, SOL, XRP, BNB, ZEC, TAO, ADA, AVAX, TRX
+
+### Infrastructure
+- `scripts/fetch-trx.ts` - Tron data fetch script
+- `data/trx.json` - Cached Tron network data
+
 ## [0.5.3] - 2025-12-24
 
 ### Added

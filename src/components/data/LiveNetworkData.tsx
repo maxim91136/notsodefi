@@ -16,6 +16,7 @@ import {
   getTaoData,
   getAdaData,
   getAvaxData,
+  getTrxData,
 } from '@/lib/data/network-data';
 
 interface MetricRowProps {
@@ -319,6 +320,33 @@ export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
           <MetricRow label="Total Staked" value={data.metrics.totalStaked ? Math.round(data.metrics.totalStaked / 1e6) : null} unit="M AVAX" />
           <MetricRow label="P-Chain Height" value={data.metrics.pChainHeight} />
           <MetricRow label="Network" value={data.metrics.networkName} />
+          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
+            Updated {formatTimeAgo(data.lastUpdated)}
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (projectId === 'tron') {
+    const data = getTrxData();
+    return (
+      <Card className="border-rose-500/30">
+        <CardHeader>
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="font-semibold text-rose-400">Live Network Data</h3>
+              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'api.trongrid.io'}</p>
+            </div>
+            <StatusBadge status={data.fetchStatus} />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <MetricRow label="Total Witnesses" value={data.metrics.totalWitnesses} />
+          <MetricRow label="Active SRs" value={data.metrics.activeWitnesses} />
+          <MetricRow label="Total Votes" value={data.metrics.totalVotes ? Math.round(data.metrics.totalVotes / 1e9) : null} unit="B" />
+          <MetricRow label="Latest Block" value={data.metrics.latestBlock} />
+          <MetricRow label="Connected Peers" value={data.metrics.connectedPeers} />
           <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
             Updated {formatTimeAgo(data.lastUpdated)}
           </div>

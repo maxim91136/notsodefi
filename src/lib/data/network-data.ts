@@ -86,6 +86,14 @@ export interface AvaxMetrics {
   networkName: string | null;
 }
 
+export interface TrxMetrics {
+  totalWitnesses: number | null;
+  activeWitnesses: number | null;
+  totalVotes: number | null;
+  latestBlock: number | null;
+  connectedPeers: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -135,6 +143,10 @@ export function getAvaxData(): NetworkData<AvaxMetrics> {
   return loadJsonFile<NetworkData<AvaxMetrics>>('avax.json');
 }
 
+export function getTrxData(): NetworkData<TrxMetrics> {
+  return loadJsonFile<NetworkData<TrxMetrics>>('trx.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -155,6 +167,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getAdaData();
     case 'avalanche':
       return getAvaxData();
+    case 'tron':
+      return getTrxData();
     default:
       return null;
   }
@@ -177,6 +191,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const tao = getTaoData();
   const ada = getAdaData();
   const avax = getAvaxData();
+  const trx = getTrxData();
 
   return [
     {
@@ -232,6 +247,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: avax.fetchStatus,
       lastUpdated: avax.lastUpdated,
       source: avax.source || 'api.avax.network',
+    },
+    {
+      chain: 'TRX',
+      status: trx.fetchStatus,
+      lastUpdated: trx.lastUpdated,
+      source: trx.source || 'api.trongrid.io',
     },
   ];
 }

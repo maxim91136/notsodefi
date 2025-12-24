@@ -26,7 +26,7 @@ The framework distinguishes between different consensus mechanisms:
 
 - **PoW** (Proof of Work) - Bitcoin, Zcash
 - **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche
-- **DPoS** (Delegated Proof of Stake) - BNB Chain
+- **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
 - **Federated** - XRP
 - **Hybrid** - Bittensor
 
@@ -45,6 +45,7 @@ Some criteria may be N/A depending on the consensus type.
 | Bittensor | TAO | Hybrid | [Taostats](https://taostats.io) |
 | Cardano | ADA | PoS | [Blockfrost](https://blockfrost.io) |
 | Avalanche | AVAX | PoS | [Avalanche API](https://api.avax.network) |
+| Tron | TRX | DPoS | [TronGrid](https://api.trongrid.io) |
 
 All data is fetched daily via GitHub Actions.
 
