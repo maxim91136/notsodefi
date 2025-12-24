@@ -1,0 +1,34 @@
+name: "DOT: Fetch Network Data"
+
+on:
+  schedule:
+    - cron: '55 5 * * *'  # Daily at 5:55 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Fetch DOT data
+        run: npx tsx scripts/fetch-dot.ts
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet data/polkadot.json || (
+            git add data/polkadot.json
+            git commit -m "chore(data): DOT - update network metrics"
+            git push
+          )

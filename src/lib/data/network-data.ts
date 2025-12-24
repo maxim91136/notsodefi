@@ -125,6 +125,17 @@ export interface BchMetrics {
   nodes: number | null;
 }
 
+export interface DotMetrics {
+  blockNumber: number | null;
+  era: number | null;
+  activeValidators: number | null;
+  waitingValidators: number | null;
+  nominationPools: number | null;
+  totalAccounts: number | null;
+  activeNominators: number | null;
+  totalStaked: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -194,6 +205,10 @@ export function getBchData(): NetworkData<BchMetrics> {
   return loadJsonFile<NetworkData<BchMetrics>>('bitcoincash.json');
 }
 
+export function getDotData(): NetworkData<DotMetrics> {
+  return loadJsonFile<NetworkData<DotMetrics>>('polkadot.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -224,6 +239,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getDogeData();
     case 'bitcoincash':
       return getBchData();
+    case 'polkadot':
+      return getDotData();
     default:
       return null;
   }
@@ -251,6 +268,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const xmr = getXmrData();
   const doge = getDogeData();
   const bch = getBchData();
+  const dot = getDotData();
 
   return [
     {
@@ -336,6 +354,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: bch.fetchStatus,
       lastUpdated: bch.lastUpdated,
       source: bch.source || 'Blockchair',
+    },
+    {
+      chain: 'DOT',
+      status: dot.fetchStatus,
+      lastUpdated: dot.lastUpdated,
+      source: dot.source || 'Subscan',
     },
   ];
 }

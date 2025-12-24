@@ -2,6 +2,22 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.6] - 2025-12-24
+
+### Added
+- **Polkadot (DOT)** - 15th project with full data pipeline
+  - Subscan API fetcher for network stats (600 validators, 655 waiting)
+  - Daily workflow at 5:55 UTC
+  - NPoS consensus with very high Nakamoto coefficient (~149-173)
+  - No sudo since July 2020 - fully decentralized governance
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Polkadot | ~6.8 | High NC but ICO/premine hurts |
+
+Very high technical decentralization (600 validators, Nakamoto ~149), but 30% founders + 58% ICO allocation affects fairness score.
+
 ## [0.6.5] - 2025-12-24
 
 ### Added

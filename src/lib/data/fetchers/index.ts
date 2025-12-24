@@ -32,5 +32,23 @@ export { BittensorFetcher, getBittensorFetcher } from './bittensor';
 // Cardano fetchers
 export { CardanoFetcher, getCardanoFetcher } from './cardano';
 
-// TODO: Implement these fetchers
-// export { GitHubFetcher } from './github';
+// Avalanche fetchers
+export { AvalancheFetcher } from './avalanche';
+
+// Tron fetchers
+export { TronFetcher } from './tron';
+
+// Litecoin fetchers
+export { LitecoinFetcher } from './litecoin';
+
+// Monero fetchers
+export { MoneroFetcher } from './monero';
+
+// Dogecoin fetchers
+export { DogecoinFetcher } from './dogecoin';
+
+// Bitcoin Cash fetchers
+export { BitcoinCashFetcher } from './bitcoincash';
+
+// Polkadot fetchers
+export { PolkadotFetcher, getPolkadotFetcher } from './polkadot';
