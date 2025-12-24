@@ -2,6 +2,22 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.3] - 2025-12-24
+
+### Added
+- **Monero (XMR)** - 12th project with full data pipeline
+  - Blockchair API fetcher for network stats (5.92 GH/s RandomX)
+  - Daily workflow at 5:40 UTC
+  - Fair launch, no premine, grassroots community
+  - High pool concentration warning (SupportXMR 44%, Top 2 = 65%)
+
+### Scoring
+| Project | Score | Rank |
+|---------|-------|------|
+| Monero | 7.0 | #3 |
+
+**Top 3 now all PoW fair-launch chains**: BTC, LTC, XMR
+
 ## [0.6.2] - 2025-12-24
 
 ### Added
