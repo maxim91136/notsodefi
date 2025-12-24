@@ -2,6 +2,17 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.1] - 2025-12-24
+
+### Changed
+- **UI**: Leaderboard rows fully clickable with arrow indicator
+- **ETH B5**: 6 → 4 (EF has more soft power than initially rated)
+
+### Scoring Impact
+| Project | Score | Change |
+|---------|-------|--------|
+| Ethereum | 5.9 | -0.2 |
+
 ## [0.6.0] - 2025-12-24
 
 ### Added
