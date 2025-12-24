@@ -48,13 +48,18 @@ export function ProjectTable({ projects }: ProjectTableProps) {
         <tbody>
           {projects.map((project, index) => {
             const consensus = CONSENSUS_LABELS[project.consensusType];
+            const isFirst = index === 0;
             return (
             <tr
               key={project.id}
-              className="border-b border-white/5 hover:bg-white/5 transition-colors"
+              className={`border-b border-white/5 hover:bg-white/5 transition-colors ${
+                isFirst ? 'bg-yellow-500/5 shadow-[inset_0_0_20px_rgba(234,179,8,0.1)]' : ''
+              }`}
             >
               <td className="py-4 px-4 text-center">
-                <span className="text-white/40 font-mono">{index + 1}</span>
+                <span className={`font-mono ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}>
+                  {index + 1}
+                </span>
               </td>
               <td className="py-4 px-4">
                 <Link
