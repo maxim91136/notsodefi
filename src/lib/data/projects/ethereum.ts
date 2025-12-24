@@ -17,7 +17,7 @@ const rawValues: Record<string, number | null> = {
   A4: 60,   // ~60% nodes in cloud infrastructure
 
   // Control Score (B5-B9)
-  B5: 6,    // Ethereum Foundation influential but not dominant
+  B5: 4,    // EF has significant soft power: treasury, roadmap influence, grants
   B6: 8,    // Multiple client teams, diverse maintainers
   B7: 6,    // EF controls ethereum.org but many frontends exist
   B8: null, // N/A - No protocol-level treasury multisig
@@ -37,7 +37,7 @@ export const ethereum: Project = {
   description:
     'Decentralized platform for smart contracts. Transitioned from PoW to PoS in 2022.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-12-23',
+  lastUpdated: '2025-12-24',
   sources: [
     'https://rated.network',
     'https://clientdiversity.org',
