@@ -117,6 +117,14 @@ export interface DogeMetrics {
   nodes: number | null;
 }
 
+export interface BchMetrics {
+  blocks: number | null;
+  difficulty: number | null;
+  hashrate24h: number | null;
+  mempoolTxs: number | null;
+  nodes: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -182,6 +190,10 @@ export function getDogeData(): NetworkData<DogeMetrics> {
   return loadJsonFile<NetworkData<DogeMetrics>>('dogecoin.json');
 }
 
+export function getBchData(): NetworkData<BchMetrics> {
+  return loadJsonFile<NetworkData<BchMetrics>>('bitcoincash.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -210,6 +222,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getXmrData();
     case 'dogecoin':
       return getDogeData();
+    case 'bitcoincash':
+      return getBchData();
     default:
       return null;
   }
@@ -236,6 +250,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const ltc = getLtcData();
   const xmr = getXmrData();
   const doge = getDogeData();
+  const bch = getBchData();
 
   return [
     {
@@ -315,6 +330,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: doge.fetchStatus,
       lastUpdated: doge.lastUpdated,
       source: doge.source || 'Blockchair',
+    },
+    {
+      chain: 'BCH',
+      status: bch.fetchStatus,
+      lastUpdated: bch.lastUpdated,
+      source: bch.source || 'Blockchair',
     },
   ];
 }
