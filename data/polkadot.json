@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2025-12-24T20:48:20.646Z",
+  "lastUpdated": "2025-12-24T20:52:24.379Z",
   "source": "polkadot.subscan.io",
   "metrics": {
-    "blockNumber": 29213077,
+    "blockNumber": 29213116,
     "era": 0,
     "activeValidators": 600,
     "waitingValidators": 655,
