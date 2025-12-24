@@ -17,8 +17,7 @@ export default function ProjectsPage() {
         <h1 className="text-4xl font-bold mb-4">Projects</h1>
         <p className="text-white/60 max-w-2xl">
           Decentralization scores for major blockchain projects. Scores are calculated
-          using 10 criteria across 3 categories. Click any project to see detailed
-          breakdown. This is an educational tool, not financial advice.
+          using 10 criteria across 3 categories. This is an educational tool, not financial advice.
         </p>
       </div>
 
