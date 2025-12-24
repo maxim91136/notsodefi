@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Project, ConsensusType } from '@/lib/framework';
 import { getScoreTextColor } from '@/lib/utils';
 
@@ -17,6 +17,8 @@ const CONSENSUS_LABELS: Record<ConsensusType, { label: string; color: string }> 
 };
 
 export function ProjectTable({ projects }: ProjectTableProps) {
+  const router = useRouter();
+
   return (
     <div className="overflow-x-auto">
       <table className="w-full">
@@ -43,6 +45,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             <th className="text-center py-3 px-4 text-sm font-medium text-green-400/70">
               Fairness
             </th>
+            <th className="w-8"></th>
           </tr>
         </thead>
         <tbody>
@@ -52,7 +55,8 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             return (
             <tr
               key={project.id}
-              className={`border-b border-white/5 hover:bg-white/5 transition-colors ${
+              onClick={() => router.push(`/projects/${project.id}`)}
+              className={`border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer group ${
                 isFirst ? 'bg-yellow-500/5 shadow-[inset_0_0_20px_rgba(234,179,8,0.1)]' : ''
               }`}
             >
@@ -62,15 +66,12 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                 </span>
               </td>
               <td className="py-4 px-4">
-                <Link
-                  href={`/projects/${project.id}`}
-                  className="flex items-center gap-2 hover:text-white transition-colors"
-                >
+                <div className="flex items-center gap-2">
                   <span className="font-medium text-white">{project.name}</span>
                   {project.symbol && (
                     <span className="text-sm text-white/40">{project.symbol}</span>
                   )}
-                </Link>
+                </div>
               </td>
               <td className="py-4 px-4 text-center">
                 <span className={`px-2 py-1 rounded text-xs font-medium ${consensus.color}`}>
@@ -97,6 +98,11 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               <td className="py-4 px-4 text-center">
                 <span className="text-white/70">
                   {project.scores.fairnessScore.toFixed(1)}
+                </span>
+              </td>
+              <td className="py-4 px-2 text-center">
+                <span className="text-white/30 group-hover:text-white/60 transition-colors">
+                  →
                 </span>
               </td>
             </tr>
