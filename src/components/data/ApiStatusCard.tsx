@@ -61,9 +61,6 @@ export function ApiStatusCard() {
             </div>
           ))}
         </div>
-        <p className="mt-4 text-xs text-white/40">
-          Data updates daily at 3:00-7:30 UTC via GitHub Actions.
-        </p>
       </CardContent>
     </Card>
   );
