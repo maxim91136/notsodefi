@@ -2,6 +2,11 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.3.1] - 2025-12-24
+
+### Fixed
+- **Data Pipeline Status**: Added missing LTC and XMR to API status display
+
 ## [0.6.3] - 2025-12-24
 
 ### Added

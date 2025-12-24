@@ -94,6 +94,21 @@ export interface TrxMetrics {
   connectedPeers: number | null;
 }
 
+export interface LtcMetrics {
+  blocks: number | null;
+  difficulty: number | null;
+  hashrate24h: number | null;
+  mempoolTxs: number | null;
+  nodes: number | null;
+}
+
+export interface XmrMetrics {
+  blocks: number | null;
+  difficulty: number | null;
+  hashrate24h: number | null;
+  mempoolTxs: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -147,6 +162,14 @@ export function getTrxData(): NetworkData<TrxMetrics> {
   return loadJsonFile<NetworkData<TrxMetrics>>('trx.json');
 }
 
+export function getLtcData(): NetworkData<LtcMetrics> {
+  return loadJsonFile<NetworkData<LtcMetrics>>('litecoin.json');
+}
+
+export function getXmrData(): NetworkData<XmrMetrics> {
+  return loadJsonFile<NetworkData<XmrMetrics>>('monero.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -169,6 +192,10 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getAvaxData();
     case 'tron':
       return getTrxData();
+    case 'litecoin':
+      return getLtcData();
+    case 'monero':
+      return getXmrData();
     default:
       return null;
   }
@@ -192,6 +219,8 @@ export function getAllApiStatuses(): ApiStatus[] {
   const ada = getAdaData();
   const avax = getAvaxData();
   const trx = getTrxData();
+  const ltc = getLtcData();
+  const xmr = getXmrData();
 
   return [
     {
@@ -253,6 +282,18 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: trx.fetchStatus,
       lastUpdated: trx.lastUpdated,
       source: trx.source || 'api.trongrid.io',
+    },
+    {
+      chain: 'LTC',
+      status: ltc.fetchStatus,
+      lastUpdated: ltc.lastUpdated,
+      source: ltc.source || 'Blockchair',
+    },
+    {
+      chain: 'XMR',
+      status: xmr.fetchStatus,
+      lastUpdated: xmr.lastUpdated,
+      source: xmr.source || 'Blockchair',
     },
   ];
 }
