@@ -2,6 +2,22 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.7] - 2025-12-24
+
+### Added
+- **Cosmos Hub (ATOM)** - 16th project with full data pipeline
+  - Cosmos REST API fetcher (rest.cosmos.directory)
+  - Daily workflow at 6:00 UTC
+  - Tendermint/CometBFT BFT consensus
+  - ~200 validators, Nakamoto coefficient ~6-7
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Cosmos | ~5.8 | Lower NC than expected, ICO allocation |
+
+Nakamoto Coefficient ~6-7, Top 5 = 36%. 20% to founders/foundation, 80% ICO. Gaia client dominance.
+
 ## [0.6.6] - 2025-12-24
 
 ### Added

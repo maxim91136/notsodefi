@@ -52,3 +52,6 @@ export { BitcoinCashFetcher } from './bitcoincash';
 
 // Polkadot fetchers
 export { PolkadotFetcher, getPolkadotFetcher } from './polkadot';
+
+// Cosmos fetchers
+export { CosmosFetcher, getCosmosFetcher } from './cosmos';

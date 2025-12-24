@@ -136,6 +136,15 @@ export interface DotMetrics {
   totalStaked: number | null;
 }
 
+export interface AtomMetrics {
+  blockHeight: number | null;
+  chainId: string | null;
+  activeValidators: number | null;
+  totalBonded: number | null;
+  totalUnbonded: number | null;
+  top5Concentration: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -209,6 +218,10 @@ export function getDotData(): NetworkData<DotMetrics> {
   return loadJsonFile<NetworkData<DotMetrics>>('polkadot.json');
 }
 
+export function getAtomData(): NetworkData<AtomMetrics> {
+  return loadJsonFile<NetworkData<AtomMetrics>>('cosmos.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -241,6 +254,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getBchData();
     case 'polkadot':
       return getDotData();
+    case 'cosmos':
+      return getAtomData();
     default:
       return null;
   }
@@ -269,6 +284,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const doge = getDogeData();
   const bch = getBchData();
   const dot = getDotData();
+  const atom = getAtomData();
 
   return [
     {
@@ -360,6 +376,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: dot.fetchStatus,
       lastUpdated: dot.lastUpdated,
       source: dot.source || 'Subscan',
+    },
+    {
+      chain: 'ATOM',
+      status: atom.fetchStatus,
+      lastUpdated: atom.lastUpdated,
+      source: atom.source || 'Cosmos REST API',
     },
   ];
 }
