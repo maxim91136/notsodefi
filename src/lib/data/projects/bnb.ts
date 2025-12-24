@@ -17,11 +17,12 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Only one official client
   A4: 85,   // Most validators run in datacenter/cloud
 
-  // Control Score (B5-B8)
+  // Control Score (B5-B9)
   B5: 1,    // Binance has near-total control
   B6: 2,    // Development controlled by Binance
   B7: 1,    // Binance owns brand completely
   B8: 1,    // Binance controls protocol upgrades
+  B9: 0,    // KILL-SWITCH: Binance can halt/freeze chain unilaterally
 
   // Fairness Score (C9-C10)
   C9: 50,   // BNB was ICO token, Binance holds large supply

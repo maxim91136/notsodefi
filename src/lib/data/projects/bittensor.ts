@@ -17,11 +17,12 @@ const rawValues: Record<string, number | null> = {
   A3: 2,    // Bittensor SDK + Subtensor implementations
   A4: 70,   // High cloud usage for AI compute requirements
 
-  // Control Score (B5-B8)
+  // Control Score (B5-B9)
   B5: 4,    // Opentensor Foundation primary but growing ecosystem
   B6: 3,    // Opentensor controls main implementations
   B7: 3,    // Foundation controls trademark and branding
   B8: 4,    // Foundation-controlled treasury
+  B9: 7,    // Subnet structure limits halt capability, foundation influence moderate
 
   // Fairness Score (C9-C10)
   C9: 0,    // No premine - fair launch

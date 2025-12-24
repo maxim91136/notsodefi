@@ -16,11 +16,12 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // 1 dominant client (Solana Labs client)
   A4: 75,   // ~75% nodes in cloud (AWS, etc.)
 
-  // Control Score (B5-B8)
+  // Control Score (B5-B9)
   B5: 3,    // Solana Labs/Foundation heavily dominant
   B6: 2,    // Almost entirely Solana Labs controlled
   B7: 2,    // Solana Labs controls brand, main frontend
   B8: 4,    // Foundation multisig, limited signers
+  B9: 3,    // Has had coordinated halts, validators can be pressured
 
   // Fairness Score (C9-C10)
   C9: 48,   // ~48% to team/VCs/foundation

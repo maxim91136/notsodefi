@@ -16,11 +16,12 @@ const rawValues: Record<string, number | null> = {
   A3: 3,    // 3+ clients (Geth, Nethermind, Besu, Erigon)
   A4: 60,   // ~60% nodes in cloud infrastructure
 
-  // Control Score (B5-B8)
+  // Control Score (B5-B9)
   B5: 6,    // Ethereum Foundation influential but not dominant
   B6: 8,    // Multiple client teams, diverse maintainers
   B7: 6,    // EF controls ethereum.org but many frontends exist
   B8: null, // N/A - No protocol-level treasury multisig
+  B9: 10,   // No halt capability - decentralized PoS validators
 
   // Fairness Score (C9-C10)
   C9: 20,   // ~20% premine (9.9% founders + 9.9% foundation)

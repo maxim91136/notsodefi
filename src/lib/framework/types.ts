@@ -63,6 +63,8 @@ export interface ProjectScores {
   totalScore: number;
   /** Individual criterion scores */
   criterionScores: CriterionScore[];
+  /** Kill-Switch Veto: true if B8 < threshold, capping totalScore */
+  killSwitchActive?: boolean;
 }
 
 export interface Project {

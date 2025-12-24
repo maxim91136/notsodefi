@@ -17,11 +17,12 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Only cardano-node (Haskell), no alternative implementations
   A4: 50,   // Moderate cloud concentration
 
-  // Control Score (B5-B8)
+  // Control Score (B5-B9)
   B5: 2,    // IOG dominates development, Foundation/Emurgo have less influence
   B6: 3,    // IOG primarily controls core development
   B7: 5,    // Cardano Foundation holds trademark
   B8: 5,    // Treasury controlled by governance (Catalyst)
+  B9: 10,   // No halt capability - decentralized stake pools
 
   // Fairness Score (C9-C10)
   C9: 25,   // ~25% to insiders (IOG 17.9%, Foundation 5.4%, Emurgo 2.5%)

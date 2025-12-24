@@ -1,5 +1,5 @@
 /**
- * Control Score Criteria (B5-B8)
+ * Control Score Criteria (B5-B9)
  *
  * Measures power and control structures around the protocol.
  */
@@ -67,6 +67,22 @@ export const controlCriteria: Criterion[] = [
     sources: [
       'https://bbx.com/article/506587',
       'https://oakresearch.io/en/reports/sectors/layer-1-report-year-2024',
+    ],
+  },
+  {
+    id: 'B9',
+    name: 'Admin Halt Capability',
+    description:
+      'Can a single entity or small group unilaterally halt, freeze, or censor the chain? This is a critical centralization risk.',
+    category: 'control',
+    mappings: [
+      { min: 9, max: 11, score: 10, label: 'No halt capability - truly unstoppable' },
+      { min: 5, max: 9, score: [5, 8], label: 'Emergency halt requires broad consensus' },
+      { min: 1, max: 5, score: [1, 4], label: 'Foundation/team can coordinate halt' },
+      { min: 0, max: 1, score: 0, label: 'Single entity can halt/freeze chain' },
+    ],
+    sources: [
+      'https://arxiv.org/html/2407.10302v1',
     ],
   },
 ];

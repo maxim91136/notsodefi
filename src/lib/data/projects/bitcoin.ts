@@ -16,11 +16,12 @@ const rawValues: Record<string, number | null> = {
   A3: 2,    // 2 major clients (Bitcoin Core dominant, btcd)
   A4: 45,   // ~45% nodes in cloud/datacenter
 
-  // Control Score (B5-B8)
+  // Control Score (B5-B9)
   B5: 10,   // No corporate owner - true decentralization
   B6: 7,    // Bitcoin Core has diverse maintainers
   B7: 9,    // No single entity controls brand
   B8: null, // N/A - No protocol treasury or upgrade keys
+  B9: 10,   // No halt capability - truly unstoppable PoW chain
 
   // Fairness Score (C9-C10)
   C9: 0,    // 0% premine - fair launch

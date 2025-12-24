@@ -17,11 +17,12 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Primarily avalanchego client
   A4: 70,   // High cloud/datacenter usage
 
-  // Control Score (B5-B8)
+  // Control Score (B5-B9)
   B5: 3,    // Ava Labs dominant, Foundation exists
   B6: 2,    // Ava Labs controls core development
   B7: 2,    // Ava Labs owns brand and main frontends
   B8: 3,    // Foundation treasury, limited governance
+  B9: 8,    // No single-entity halt - decentralized validators
 
   // Fairness Score (C9-C10)
   C9: 42,   // ~42% to team/investors (10% team, 9.26% foundation, etc.)
