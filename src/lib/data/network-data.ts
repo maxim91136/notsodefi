@@ -109,6 +109,14 @@ export interface XmrMetrics {
   mempoolTxs: number | null;
 }
 
+export interface DogeMetrics {
+  blocks: number | null;
+  difficulty: number | null;
+  hashrate24h: number | null;
+  mempoolTxs: number | null;
+  nodes: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -170,6 +178,10 @@ export function getXmrData(): NetworkData<XmrMetrics> {
   return loadJsonFile<NetworkData<XmrMetrics>>('monero.json');
 }
 
+export function getDogeData(): NetworkData<DogeMetrics> {
+  return loadJsonFile<NetworkData<DogeMetrics>>('dogecoin.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -196,6 +208,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getLtcData();
     case 'monero':
       return getXmrData();
+    case 'dogecoin':
+      return getDogeData();
     default:
       return null;
   }
@@ -221,6 +235,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const trx = getTrxData();
   const ltc = getLtcData();
   const xmr = getXmrData();
+  const doge = getDogeData();
 
   return [
     {
@@ -294,6 +309,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: xmr.fetchStatus,
       lastUpdated: xmr.lastUpdated,
       source: xmr.source || 'Blockchair',
+    },
+    {
+      chain: 'DOGE',
+      status: doge.fetchStatus,
+      lastUpdated: doge.lastUpdated,
+      source: doge.source || 'Blockchair',
     },
   ];
 }

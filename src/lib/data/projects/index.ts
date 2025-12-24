@@ -15,8 +15,9 @@ import { avalanche } from './avalanche';
 import { tron } from './tron';
 import { litecoin } from './litecoin';
 import { monero } from './monero';
+import { dogecoin } from './dogecoin';
 
-export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero];
+export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin];
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
@@ -33,4 +34,4 @@ export function getProjectsByScore(
   });
 }
 
-export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero };
+export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin };
