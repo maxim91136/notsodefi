@@ -2,6 +2,22 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.4] - 2025-12-24
+
+### Added
+- **Dogecoin (DOGE)** - 13th project with full data pipeline
+  - Blockchair API fetcher for network stats (524 nodes, 3.6 PH/s)
+  - Daily workflow at 5:45 UTC
+  - Merged mining with Litecoin (same pool distribution)
+  - Fair launch, no premine, community-driven
+
+### Scoring
+| Project | Score | Rank |
+|---------|-------|------|
+| Dogecoin | 7.0 | #3 |
+
+**Top 3 all community/fair-launch coins**: BTC, LTC, DOGE 🐕
+
 ## [0.6.3.1] - 2025-12-24
 
 ### Fixed
