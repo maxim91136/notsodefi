@@ -2,6 +2,12 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.5.5] - 2025-12-24
+
+### Changed
+- **Leaderboard**: Added rank column with golden glow for #1
+- **UI Cleanup**: Removed redundant update time text from API Status card
+
 ## [0.5.4] - 2025-12-24
 
 ### Added
