@@ -2,6 +2,28 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.0] - 2025-12-24
+
+### Added
+- **B9 "Admin Halt Capability"** - New criterion measuring if single entity can halt/freeze chain
+- **Kill-Switch Veto** - Projects with B9=0 are automatically capped at 2.0 total score
+  - Affected: BNB Chain, XRP, Tron
+
+### Changed
+- **11 Criteria** - Framework now has 11 criteria (was 10)
+- **Updated Scores** - All projects re-scored with B9 values
+- **UI Updates** - Main page and projects page describe kill-switch cap
+
+### Scoring Impact
+| Project | Score | Status |
+|---------|-------|--------|
+| Bitcoin | 7.3 | Leader |
+| Ethereum | 6.1 | |
+| Cardano | 5.7 | |
+| BNB | 2.0 | Kill-Switch Capped |
+| XRP | 2.0 | Kill-Switch Capped |
+| Tron | 2.0 | Kill-Switch Capped |
+
 ## [0.5.5] - 2025-12-24
 
 ### Changed
