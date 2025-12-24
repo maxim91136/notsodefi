@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2025-12-23T22:00:39.213Z",
+  "lastUpdated": "2025-12-24T03:55:12.340Z",
   "metrics": {
-    "totalNodes": 24341,
+    "totalNodes": 23340,
     "cloudPercentage": null,
-    "top5PoolConcentration": 45,
-    "largestPoolPercentage": 20,
+    "top5PoolConcentration": 46,
+    "largestPoolPercentage": 19,
     "poolDiversity": 4
   },
   "fetchStatus": "success"
