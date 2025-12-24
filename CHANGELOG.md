@@ -2,6 +2,19 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.2] - 2025-12-24
+
+### Added
+- **Litecoin (LTC)** - 11th project with full data pipeline
+  - Blockchair API fetcher for network stats (956 nodes, 2.6 PH/s)
+  - Daily workflow at 5:35 UTC
+  - Fair launch, no premine, Charlie Lee stepped back
+
+### Scoring
+| Project | Score | Rank |
+|---------|-------|------|
+| Litecoin | 7.1 | #2 |
+
 ## [0.6.1] - 2025-12-24
 
 ### Changed

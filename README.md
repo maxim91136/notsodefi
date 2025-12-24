@@ -24,7 +24,7 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 
 The framework distinguishes between different consensus mechanisms:
 
-- **PoW** (Proof of Work) - Bitcoin, Zcash
+- **PoW** (Proof of Work) - Bitcoin, Litecoin, Zcash
 - **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
 - **Federated** - XRP
@@ -37,6 +37,7 @@ Some criteria may be N/A depending on the consensus type.
 | Chain | Symbol | Consensus | Data Source |
 |-------|--------|-----------|-------------|
 | Bitcoin | BTC | PoW | [Bitnodes](https://bitnodes.io) + [Blockchain.info](https://blockchain.info) |
+| Litecoin | LTC | PoW | [Blockchair](https://blockchair.com) |
 | Ethereum | ETH | PoS | Beacon API |
 | Solana | SOL | PoS | Solana RPC |
 | XRP | XRP | Federated | [XRPL](https://xrpl.org) |
