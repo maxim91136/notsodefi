@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.7.1] - 2025-12-25
+
+### Added
+- **NPoS Consensus Type** - Polkadot now shows NPoS (emerald badge) instead of PoS
+- **Gandhi Quote** on homepage: "First they ignore you, then they laugh at you, then they fight you, then you win."
+
+### Changed
+- Polkadot consensus type: PoS → NPoS (Nominated Proof of Stake)
+
 ## [0.7.0] - 2025-12-25
 
 ### Added
