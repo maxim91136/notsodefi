@@ -20,6 +20,20 @@ export default function HomePage() {
           Measuring real decentralization. Because &quot;decentralized&quot; doesn&apos;t
           mean what most projects claim it means.
         </p>
+
+        {/* Core Principles */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-mono text-white/80">
+            Don&apos;t trust, verify
+          </span>
+          <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-mono text-white/80">
+            No hype, just facts
+          </span>
+          <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-mono text-white/80">
+            Decentralization ≠ Price
+          </span>
+        </div>
+
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/projects"
