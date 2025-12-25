@@ -71,6 +71,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   {project.symbol && (
                     <span className="text-sm text-white/40">{project.symbol}</span>
                   )}
+                  {project.scores.killSwitchActive && (
+                    <span className="text-red-500" title="Kill-Switch Active - Score capped at 2.0">⚠️</span>
+                  )}
                 </div>
               </td>
               <td className="py-4 px-4 text-center">

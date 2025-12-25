@@ -24,6 +24,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 {project.symbol && (
                   <Badge>{project.symbol}</Badge>
                 )}
+                {project.scores.killSwitchActive && (
+                  <span className="text-red-500" title="Kill-Switch Active - Score capped at 2.0">⚠️</span>
+                )}
               </div>
               <p className="mt-1 text-sm text-white/50 line-clamp-2">
                 {project.description}
