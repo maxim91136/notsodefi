@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2025-12-24T04:27:55.113Z",
+  "lastUpdated": "2025-12-25T04:29:38.787Z",
   "source": "ethereum-beacon-api.publicnode.com",
   "metrics": {
-    "connectedPeers": 214,
-    "headSlot": 13310538,
-    "finalizedEpoch": 415952,
+    "connectedPeers": 205,
+    "headSlot": 13317746,
+    "finalizedEpoch": 416177,
     "syncDistance": 0
   },
   "fetchStatus": "success"
