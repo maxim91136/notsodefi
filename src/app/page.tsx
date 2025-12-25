@@ -132,6 +132,13 @@ export default function HomePage() {
           Explore Projects
         </Link>
       </section>
+
+      {/* Quote */}
+      <section className="text-center mt-16">
+        <p className="text-white/40 italic font-mono text-sm">
+          &quot;First they ignore you, then they laugh at you, then they fight you, then you win.&quot;
+        </p>
+      </section>
     </div>
   );
 }
