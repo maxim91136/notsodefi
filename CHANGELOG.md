@@ -2,6 +2,26 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.7.0] - 2025-12-25
+
+### Added
+- **Kaspa (KAS)** - 18th project with full data pipeline
+  - Kaspa REST API fetcher (api.kaspa.org)
+  - Daily workflow at 8:00 UTC
+  - GHOSTDAG consensus (PoW blockDAG)
+  - **TRUE FAIR LAUNCH**: 0% premine, no ICO, no team allocation
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Kaspa | ~7.0 | Fair launch champion - no premine |
+
+**Key findings:**
+- 100% mineable, kHeavyHash algorithm (ASIC mining)
+- DAGlabs renounced ownership - fully community-run
+- ~473 PH/s hashrate, 27B/28.7B KAS circulating
+- No kill-switch (B9=10) - PoW with no admin controls
+
 ## [0.6.9] - 2025-12-25
 
 ### Added

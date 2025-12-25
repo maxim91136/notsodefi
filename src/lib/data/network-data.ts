@@ -155,6 +155,16 @@ export interface HypeMetrics {
   nakamotoCoefficient: number | null;
 }
 
+export interface KasMetrics {
+  networkName: string | null;
+  blockCount: number | null;
+  difficulty: number | null;
+  hashrate: number | null;
+  circulatingSupply: number | null;
+  maxSupply: number | null;
+  blockReward: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -236,6 +246,10 @@ export function getHypeData(): NetworkData<HypeMetrics> {
   return loadJsonFile<NetworkData<HypeMetrics>>('hyperliquid.json');
 }
 
+export function getKasData(): NetworkData<KasMetrics> {
+  return loadJsonFile<NetworkData<KasMetrics>>('kaspa.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -272,6 +286,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getAtomData();
     case 'hyperliquid':
       return getHypeData();
+    case 'kaspa':
+      return getKasData();
     default:
       return null;
   }
@@ -302,6 +318,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const dot = getDotData();
   const atom = getAtomData();
   const hype = getHypeData();
+  const kas = getKasData();
 
   return [
     {
@@ -405,6 +422,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: hype.fetchStatus,
       lastUpdated: hype.lastUpdated,
       source: hype.source || 'Hyperliquid API',
+    },
+    {
+      chain: 'KAS',
+      status: kas.fetchStatus,
+      lastUpdated: kas.lastUpdated,
+      source: kas.source || 'Kaspa REST API',
     },
   ];
 }

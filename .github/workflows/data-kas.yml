@@ -1,0 +1,34 @@
+name: "KAS: Fetch Network Data"
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Daily at 8:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Fetch KAS data
+        run: npx tsx scripts/fetch-kas.ts
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet data/kaspa.json || (
+            git add data/kaspa.json
+            git commit -m "chore(data): KAS - update network metrics"
+            git push
+          )
