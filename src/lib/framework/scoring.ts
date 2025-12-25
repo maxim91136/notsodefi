@@ -136,7 +136,8 @@ export function calculateProjectScores(
   const chainScore = calculateCategoryScore(chainCriteria, scores);
   const controlScore = calculateCategoryScore(controlCriteria, scores);
   const fairnessScore = calculateCategoryScore(fairnessCriteria, scores);
-  let totalScore = calculateTotalScore(chainScore, controlScore, fairnessScore);
+  const uncappedScore = calculateTotalScore(chainScore, controlScore, fairnessScore);
+  let totalScore = uncappedScore;
 
   // Kill-Switch Veto: If B9 score < threshold, cap total score
   // Chains where single entity can halt/freeze can't score high regardless of other metrics
@@ -151,6 +152,7 @@ export function calculateProjectScores(
     controlScore: Math.round(controlScore * 10) / 10,
     fairnessScore: Math.round(fairnessScore * 10) / 10,
     totalScore: Math.round(totalScore * 10) / 10,
+    uncappedScore: Math.round(uncappedScore * 10) / 10,
     criterionScores,
     killSwitchActive,
   };

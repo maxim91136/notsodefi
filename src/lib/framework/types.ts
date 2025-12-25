@@ -61,9 +61,11 @@ export interface ProjectScores {
   fairnessScore: number;
   /** Total Score = 0.4*Chain + 0.4*Control + 0.2*Fairness */
   totalScore: number;
+  /** Uncapped total score (before kill-switch cap) - used for sorting */
+  uncappedScore: number;
   /** Individual criterion scores */
   criterionScores: CriterionScore[];
-  /** Kill-Switch Veto: true if B8 < threshold, capping totalScore */
+  /** Kill-Switch Veto: true if B9 < threshold, capping totalScore */
   killSwitchActive?: boolean;
 }
 

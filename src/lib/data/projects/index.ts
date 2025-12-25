@@ -34,7 +34,15 @@ export function getProjectsByScore(
   return [...projects].sort((a, b) => {
     const aScore = a.scores[sortBy];
     const bScore = b.scores[sortBy];
-    return order === 'desc' ? bScore - aScore : aScore - bScore;
+    const primaryDiff = order === 'desc' ? bScore - aScore : aScore - bScore;
+
+    // If scores are equal, use uncappedScore as tiebreaker (for kill-switch capped projects)
+    if (primaryDiff === 0) {
+      return order === 'desc'
+        ? b.scores.uncappedScore - a.scores.uncappedScore
+        : a.scores.uncappedScore - b.scores.uncappedScore;
+    }
+    return primaryDiff;
   });
 }
 
