@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2025-12-24T05:25:46.536Z",
+  "lastUpdated": "2025-12-25T05:25:40.498Z",
   "source": "bsc-dataseed.binance.org",
   "metrics": {
-    "blockNumber": 72735898,
-    "peerCount": 18,
+    "blockNumber": 72851066,
+    "peerCount": 15,
     "validatorCount": 21,
     "gasPrice": 0,
     "chainId": 56
