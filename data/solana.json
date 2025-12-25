@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2025-12-24T04:09:44.349Z",
+  "lastUpdated": "2025-12-25T04:12:02.021Z",
   "metrics": {
-    "totalValidators": 817,
-    "activeValidators": 801,
+    "totalValidators": 815,
+    "activeValidators": 797,
     "nakamotoCoefficient": 19,
-    "top5Concentration": 14.5,
-    "largestValidatorPercentage": 3.5,
-    "totalNodes": 5483,
-    "clientVersions": 21
+    "top5Concentration": 14.8,
+    "largestValidatorPercentage": 3.8,
+    "totalNodes": 5383,
+    "clientVersions": 23
   },
   "fetchStatus": "success"
 }
