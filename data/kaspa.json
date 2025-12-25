@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2025-12-25T20:58:22.149Z",
+  "lastUpdated": "2025-12-25T21:04:15.215Z",
   "source": "api.kaspa.org",
   "metrics": {
     "networkName": "kaspa-mainnet",
-    "blockCount": 44919929,
-    "difficulty": 23621280926718910,
-    "hashrate": 473,
-    "circulatingSupply": 27051022783,
+    "blockCount": 44923443,
+    "difficulty": 23554594749107892,
+    "hashrate": 472,
+    "circulatingSupply": 27051035605,
     "maxSupply": 28704035605,
     "blockReward": 3.6708096
   },
