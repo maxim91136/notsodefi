@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2025-12-24T07:43:55.756Z",
+  "lastUpdated": "2025-12-25T07:41:43.148Z",
   "source": "api.trongrid.io",
   "metrics": {
     "totalWitnesses": 432,
     "activeWitnesses": 27,
-    "totalVotes": 43549486099,
-    "latestBlock": 78633169,
+    "totalVotes": 43602094640,
+    "latestBlock": 78661917,
     "connectedPeers": 30
   },
   "fetchStatus": "success"
