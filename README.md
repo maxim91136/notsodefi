@@ -25,7 +25,7 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 The framework distinguishes between different consensus mechanisms:
 
 - **PoW** (Proof of Work) - Bitcoin, Bitcoin Cash, Dogecoin, Litecoin, Monero, Zcash
-- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Polkadot, Cosmos
+- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Polkadot, Cosmos, Hyperliquid
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
 - **Federated** - XRP
 - **Hybrid** - Bittensor
@@ -52,6 +52,7 @@ Some criteria may be N/A depending on the consensus type.
 | Tron | TRX | DPoS | [TronGrid](https://api.trongrid.io) |
 | Polkadot | DOT | PoS | [Subscan](https://polkadot.subscan.io) |
 | Cosmos Hub | ATOM | PoS | [Cosmos REST API](https://rest.cosmos.directory) |
+| Hyperliquid | HYPE | PoS | [Hyperliquid API](https://api.hyperliquid.xyz) |
 
 All data is fetched daily via GitHub Actions.
 

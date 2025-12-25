@@ -1,0 +1,14 @@
+{
+  "lastUpdated": "2025-12-25T20:28:30.057Z",
+  "source": "api.hyperliquid.xyz",
+  "metrics": {
+    "totalValidators": 30,
+    "activeValidators": 24,
+    "totalStake": 42957083560,
+    "foundationStake": 25192367129,
+    "foundationPercent": 58.65,
+    "top5Concentration": 60.71,
+    "nakamotoCoefficient": 3
+  },
+  "fetchStatus": "success"
+}

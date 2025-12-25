@@ -55,3 +55,6 @@ export { PolkadotFetcher, getPolkadotFetcher } from './polkadot';
 
 // Cosmos fetchers
 export { CosmosFetcher, getCosmosFetcher } from './cosmos';
+
+// Hyperliquid fetchers
+export { HyperliquidFetcher, getHyperliquidFetcher } from './hyperliquid';

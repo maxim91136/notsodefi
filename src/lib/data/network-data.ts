@@ -145,6 +145,16 @@ export interface AtomMetrics {
   top5Concentration: number | null;
 }
 
+export interface HypeMetrics {
+  totalValidators: number | null;
+  activeValidators: number | null;
+  totalStake: number | null;
+  foundationStake: number | null;
+  foundationPercent: number | null;
+  top5Concentration: number | null;
+  nakamotoCoefficient: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -222,6 +232,10 @@ export function getAtomData(): NetworkData<AtomMetrics> {
   return loadJsonFile<NetworkData<AtomMetrics>>('cosmos.json');
 }
 
+export function getHypeData(): NetworkData<HypeMetrics> {
+  return loadJsonFile<NetworkData<HypeMetrics>>('hyperliquid.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -256,6 +270,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getDotData();
     case 'cosmos':
       return getAtomData();
+    case 'hyperliquid':
+      return getHypeData();
     default:
       return null;
   }
@@ -285,6 +301,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const bch = getBchData();
   const dot = getDotData();
   const atom = getAtomData();
+  const hype = getHypeData();
 
   return [
     {
@@ -382,6 +399,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: atom.fetchStatus,
       lastUpdated: atom.lastUpdated,
       source: atom.source || 'Cosmos REST API',
+    },
+    {
+      chain: 'HYPE',
+      status: hype.fetchStatus,
+      lastUpdated: hype.lastUpdated,
+      source: hype.source || 'Hyperliquid API',
     },
   ];
 }

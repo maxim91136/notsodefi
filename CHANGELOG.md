@@ -2,6 +2,26 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.8] - 2025-12-25
+
+### Added
+- **Hyperliquid (HYPE)** - 17th project with full data pipeline
+  - Hyperliquid API fetcher (api.hyperliquid.xyz)
+  - Daily workflow at 7:00 UTC
+  - HyperBFT consensus (based on HotStuff)
+  - 24 active validators, NC = 3 (all Foundation!)
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Hyperliquid | 2.0 | **KILL-SWITCH ACTIVE** - capped at 2.0 |
+
+**Critical findings:**
+- Foundation controls 59% of stake (5 of 24 validators)
+- Nakamoto Coefficient = 3, but all 3 are Hyper Foundation validators
+- Bridge pause, withdrawal freeze, forced delisting capabilities
+- Closed-source binary until recently
+
 ## [0.6.7] - 2025-12-24
 
 ### Added
