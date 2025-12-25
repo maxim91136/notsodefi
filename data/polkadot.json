@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2025-12-24T20:52:24.379Z",
+  "lastUpdated": "2025-12-25T06:18:22.164Z",
   "source": "polkadot.subscan.io",
   "metrics": {
-    "blockNumber": 29213116,
+    "blockNumber": 29218739,
     "era": 0,
     "activeValidators": 600,
     "waitingValidators": 655,
     "nominationPools": 205,
-    "totalAccounts": 22946721,
+    "totalAccounts": 22997963,
     "activeNominators": null,
     "totalStaked": null
   },
