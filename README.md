@@ -25,7 +25,8 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 The framework distinguishes between different consensus mechanisms:
 
 - **PoW** (Proof of Work) - Bitcoin, Bitcoin Cash, Dogecoin, Kaspa, Litecoin, Monero, Zcash
-- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Polkadot, Cosmos, Hyperliquid
+- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid
+- **NPoS** (Nominated Proof of Stake) - Polkadot
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
 - **Federated** - XRP
 - **Hybrid** - Bittensor
@@ -50,7 +51,7 @@ Some criteria may be N/A depending on the consensus type.
 | Cardano | ADA | PoS | [Blockfrost](https://blockfrost.io) |
 | Avalanche | AVAX | PoS | [Avalanche API](https://api.avax.network) |
 | Tron | TRX | DPoS | [TronGrid](https://api.trongrid.io) |
-| Polkadot | DOT | PoS | [Subscan](https://polkadot.subscan.io) |
+| Polkadot | DOT | NPoS | [Subscan](https://polkadot.subscan.io) |
 | Cosmos Hub | ATOM | PoS | [Cosmos REST API](https://rest.cosmos.directory) |
 | Hyperliquid | HYPE | PoS | [Hyperliquid API](https://api.hyperliquid.xyz) |
 | Kaspa | KAS | PoW | [Kaspa REST API](https://api.kaspa.org) |

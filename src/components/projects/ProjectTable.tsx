@@ -11,6 +11,7 @@ interface ProjectTableProps {
 const CONSENSUS_LABELS: Record<ConsensusType, { label: string; color: string }> = {
   pow: { label: 'PoW', color: 'bg-orange-500/20 text-orange-400' },
   pos: { label: 'PoS', color: 'bg-blue-500/20 text-blue-400' },
+  npos: { label: 'NPoS', color: 'bg-emerald-500/20 text-emerald-400' },
   dpos: { label: 'DPoS', color: 'bg-purple-500/20 text-purple-400' },
   hybrid: { label: 'Hybrid', color: 'bg-cyan-500/20 text-cyan-400' },
   federated: { label: 'Federated', color: 'bg-gray-500/20 text-gray-400' },

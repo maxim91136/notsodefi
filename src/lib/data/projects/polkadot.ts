@@ -34,7 +34,7 @@ export const polkadot: Project = {
   id: 'polkadot',
   name: 'Polkadot',
   symbol: 'DOT',
-  consensusType: 'pos',
+  consensusType: 'npos',
   website: 'https://polkadot.com',
   description:
     'NPoS blockchain with very high Nakamoto coefficient (~149). 600 validators, on-chain governance. No sudo since 2020.',

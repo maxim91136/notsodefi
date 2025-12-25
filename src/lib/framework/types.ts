@@ -50,7 +50,7 @@ export interface CriterionScore {
 // ============================================================================
 
 /** Consensus mechanism type */
-export type ConsensusType = 'pow' | 'pos' | 'dpos' | 'hybrid' | 'federated';
+export type ConsensusType = 'pow' | 'pos' | 'npos' | 'dpos' | 'hybrid' | 'federated';
 
 export interface ProjectScores {
   /** Chain Score (0-10) - technical/economic decentralization */
