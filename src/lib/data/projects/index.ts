@@ -22,8 +22,9 @@ import { cosmos } from './cosmos';
 import { hyperliquid } from './hyperliquid';
 import { kaspa } from './kaspa';
 import { icp } from './icp';
+import { chainlink } from './chainlink';
 
-export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp];
+export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink];
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
@@ -48,4 +49,4 @@ export function getProjectsByScore(
   });
 }
 
-export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp };
+export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink };

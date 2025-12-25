@@ -173,6 +173,14 @@ export interface IcpMetrics {
   avgNakamotoCoefficient: number | null;
 }
 
+export interface LinkMetrics {
+  ethUsdOracles: number | null;
+  ethUsdMinAnswers: number | null;
+  ethUsdDecimals: number | null;
+  ethUsdLatestRound: number | null;
+  totalDataFeeds: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -262,6 +270,10 @@ export function getIcpData(): NetworkData<IcpMetrics> {
   return loadJsonFile<NetworkData<IcpMetrics>>('icp.json');
 }
 
+export function getLinkData(): NetworkData<LinkMetrics> {
+  return loadJsonFile<NetworkData<LinkMetrics>>('chainlink.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -302,6 +314,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getKasData();
     case 'icp':
       return getIcpData();
+    case 'chainlink':
+      return getLinkData();
     default:
       return null;
   }
@@ -334,6 +348,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const hype = getHypeData();
   const kas = getKasData();
   const icp = getIcpData();
+  const link = getLinkData();
 
   return [
     {
@@ -449,6 +464,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: icp.fetchStatus,
       lastUpdated: icp.lastUpdated,
       source: icp.source || 'IC Dashboard API',
+    },
+    {
+      chain: 'LINK',
+      status: link.fetchStatus,
+      lastUpdated: link.lastUpdated,
+      source: link.source || 'data.chain.link + Etherscan',
     },
   ];
 }

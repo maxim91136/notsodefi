@@ -2,6 +2,31 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.8.0] - 2025-12-25
+
+### Added
+- **Chainlink (LINK)** - 20th project with full data pipeline
+  - The oracle monopoly that powers DeFi
+  - ETH/USD feed: 31 node operators, minimum 10 required
+  - Undocumented multisig can manipulate ANY price feed
+  - Daily workflow at 9:00 UTC
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Chainlink | ~3.4 | DeFi's single point of failure |
+
+**Critical findings:**
+- 80% of LINK controlled by 125 wallets
+- Team still holds ~25% of supply
+- Only 1 client - Chainlink node software
+- Node operators "vetted" by Chainlink - permissioned network
+- Chris Blec: "1-3 unknown signers can manipulate any price feed"
+- Sergey Nazarov worth $600M-$1.2B from LINK holdings
+- market.link (transparency tool) was deprecated
+
+**Systemic risk:** DeFi depends on Chainlink. If 10-16 nodes collude (33-50%), they control price feeds that secure billions.
+
 ## [0.7.3] - 2025-12-25
 
 ### Added

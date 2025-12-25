@@ -28,7 +28,7 @@ The framework distinguishes between different consensus mechanisms:
 - **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid
 - **NPoS** (Nominated Proof of Stake) - Polkadot
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
-- **Federated** - XRP
+- **Federated** - XRP, Chainlink
 - **Hybrid** - Bittensor
 
 Some criteria may be N/A depending on the consensus type.
@@ -56,6 +56,7 @@ Some criteria may be N/A depending on the consensus type.
 | Hyperliquid | HYPE | PoS | [Hyperliquid API](https://api.hyperliquid.xyz) |
 | Kaspa | KAS | PoW | [Kaspa REST API](https://api.kaspa.org) |
 | Internet Computer | ICP | PoS | [IC Dashboard API](https://ic-api.internetcomputer.org) |
+| Chainlink | LINK | Federated | [data.chain.link](https://data.chain.link) |
 
 All data is fetched daily via GitHub Actions.
 

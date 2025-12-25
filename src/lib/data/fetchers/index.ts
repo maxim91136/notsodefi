@@ -64,3 +64,6 @@ export { KaspaFetcher, getKaspaFetcher } from './kaspa';
 
 // Internet Computer fetchers
 export { IcpFetcher, getIcpFetcher } from './icp';
+
+// Chainlink fetchers
+export { ChainlinkFetcher, getChainlinkFetcher } from './chainlink';
