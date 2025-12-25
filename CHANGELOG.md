@@ -2,6 +2,29 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.7.2] - 2025-12-25
+
+### Added
+- **Internet Computer (ICP)** - 19th project with full data pipeline
+  - IC Dashboard API fetcher (ic-api.internetcomputer.org)
+  - Daily workflow at 8:30 UTC
+  - Chain Key consensus on specialized node machines
+  - 701 total nodes, 105 node providers, 47 subnets
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Internet Computer | ~3.1 | Heavy insider allocation, DFINITY dominance |
+
+**Critical findings:**
+- 48-50% insider allocation (DFINITY, team, seed investors)
+- DFINITY Foundation controls ~40% NNS voting power
+- Only 1 client (IC replica) - zero client diversity
+- 100% specialized data center hardware (node machines)
+- Nakamoto coefficient ~4.6-5.0 (very low for "world computer")
+- Node providers must be approved by NNS (permissioned)
+- 95% price crash from ATH - slow rug in progress
+
 ## [0.7.1] - 2025-12-25
 
 ### Added

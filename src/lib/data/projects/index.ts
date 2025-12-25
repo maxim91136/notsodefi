@@ -21,8 +21,9 @@ import { polkadot } from './polkadot';
 import { cosmos } from './cosmos';
 import { hyperliquid } from './hyperliquid';
 import { kaspa } from './kaspa';
+import { icp } from './icp';
 
-export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa];
+export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp];
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
@@ -47,4 +48,4 @@ export function getProjectsByScore(
   });
 }
 
-export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa };
+export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp };

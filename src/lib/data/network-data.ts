@@ -8,7 +8,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-export interface BitcoinMetrics {
+export interface BtcMetrics {
   totalNodes: number | null;
   cloudPercentage: number | null;
   top5PoolConcentration: number | null;
@@ -16,7 +16,7 @@ export interface BitcoinMetrics {
   poolDiversity: number | null;
 }
 
-export interface SolanaMetrics {
+export interface SolMetrics {
   totalValidators: number | null;
   activeValidators: number | null;
   nakamotoCoefficient: number | null;
@@ -26,7 +26,7 @@ export interface SolanaMetrics {
   clientVersions: number | null;
 }
 
-export interface EthereumMetrics {
+export interface EthMetrics {
   connectedPeers: number | null;
   headSlot: number | null;
   finalizedEpoch: number | null;
@@ -165,6 +165,14 @@ export interface KasMetrics {
   blockReward: number | null;
 }
 
+export interface IcpMetrics {
+  totalNodes: number | null;
+  upNodes: number | null;
+  nodeProviders: number | null;
+  subnets: number | null;
+  avgNakamotoCoefficient: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -178,16 +186,16 @@ function loadJsonFile<T>(filename: string): T {
   return JSON.parse(content) as T;
 }
 
-export function getBitcoinData(): NetworkData<BitcoinMetrics> {
-  return loadJsonFile<NetworkData<BitcoinMetrics>>('bitcoin.json');
+export function getBitcoinData(): NetworkData<BtcMetrics> {
+  return loadJsonFile<NetworkData<BtcMetrics>>('bitcoin.json');
 }
 
-export function getSolanaData(): NetworkData<SolanaMetrics> {
-  return loadJsonFile<NetworkData<SolanaMetrics>>('solana.json');
+export function getSolanaData(): NetworkData<SolMetrics> {
+  return loadJsonFile<NetworkData<SolMetrics>>('solana.json');
 }
 
-export function getEthereumData(): NetworkData<EthereumMetrics> {
-  return loadJsonFile<NetworkData<EthereumMetrics>>('ethereum.json');
+export function getEthereumData(): NetworkData<EthMetrics> {
+  return loadJsonFile<NetworkData<EthMetrics>>('ethereum.json');
 }
 
 export function getXrpData(): NetworkData<XrpMetrics> {
@@ -250,6 +258,10 @@ export function getKasData(): NetworkData<KasMetrics> {
   return loadJsonFile<NetworkData<KasMetrics>>('kaspa.json');
 }
 
+export function getIcpData(): NetworkData<IcpMetrics> {
+  return loadJsonFile<NetworkData<IcpMetrics>>('icp.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -288,6 +300,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getHypeData();
     case 'kaspa':
       return getKasData();
+    case 'icp':
+      return getIcpData();
     default:
       return null;
   }
@@ -319,6 +333,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const atom = getAtomData();
   const hype = getHypeData();
   const kas = getKasData();
+  const icp = getIcpData();
 
   return [
     {
@@ -428,6 +443,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: kas.fetchStatus,
       lastUpdated: kas.lastUpdated,
       source: kas.source || 'Kaspa REST API',
+    },
+    {
+      chain: 'ICP',
+      status: icp.fetchStatus,
+      lastUpdated: icp.lastUpdated,
+      source: icp.source || 'IC Dashboard API',
     },
   ];
 }

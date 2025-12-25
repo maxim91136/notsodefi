@@ -61,3 +61,6 @@ export { HyperliquidFetcher, getHyperliquidFetcher } from './hyperliquid';
 
 // Kaspa fetchers
 export { KaspaFetcher, getKaspaFetcher } from './kaspa';
+
+// Internet Computer fetchers
+export { IcpFetcher, getIcpFetcher } from './icp';
