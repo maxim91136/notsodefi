@@ -133,8 +133,12 @@ export default function HomePage() {
         </Link>
       </section>
 
-      {/* Quote */}
-      <section className="text-center mt-16">
+      {/* Quotes */}
+      <section className="text-center mt-16 space-y-4">
+        <p className="text-white/40 italic font-mono text-sm">
+          &quot;If you don&apos;t believe me or don&apos;t get it, I don&apos;t have the time to try to convince you, sorry.&quot;
+          <span className="not-italic"> — Satoshi Nakamoto</span>
+        </p>
         <p className="text-white/40 italic font-mono text-sm">
           &quot;First they ignore you, then they laugh at you, then they fight you, then you win.&quot;
           <span className="not-italic"> — Mahatma Gandhi</span>

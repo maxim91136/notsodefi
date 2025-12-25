@@ -2,6 +2,11 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.7.3] - 2025-12-25
+
+### Added
+- **Satoshi Quote** on homepage: "If you don't believe me or don't get it, I don't have the time to try to convince you, sorry."
+
 ## [0.7.2] - 2025-12-25
 
 ### Added
