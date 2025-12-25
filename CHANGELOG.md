@@ -2,6 +2,17 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.6.9] - 2025-12-25
+
+### Added
+- **Kill-Switch Warning** ⚠️ - Projects with B9=0 now show warning icon
+- **Core Principles** on homepage: "Don't trust, verify", "No hype, just facts", "Decentralization ≠ Price"
+- **Uncapped Score** field for proper sorting of capped projects
+
+### Fixed
+- Kill-switch projects (2.0) now sorted by their would-be score
+  - Correct order: HYPE (3.5) > TRX (3.2) > XRP (3.1) > BNB (2.9)
+
 ## [0.6.8] - 2025-12-25
 
 ### Added
