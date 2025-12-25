@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2025-12-24T06:35:09.885Z",
+  "lastUpdated": "2025-12-25T06:34:39.083Z",
   "source": "taostats.io",
   "metrics": {
-    "blockNumber": 7166645,
-    "accounts": 409718,
+    "blockNumber": 7173846,
+    "accounts": 410236,
     "subnets": 129,
     "totalStaked": null,
-    "issued": 10526235.807572415,
-    "totalValidators": 1166,
-    "totalActiveKeys": 30519
+    "issued": 10529560.86245744,
+    "totalValidators": 1163,
+    "totalActiveKeys": 30270
   },
   "fetchStatus": "success"
 }
