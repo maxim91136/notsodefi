@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Project, ConsensusType, ProjectCategory } from '@/lib/framework';
 import { getScoreTextColor } from '@/lib/utils';
@@ -27,11 +28,143 @@ const CATEGORY_LABELS: Record<ProjectCategory, { label: string; color: string }>
   Infrastructure: { label: 'Infra', color: 'bg-slate-500/20 text-slate-400' },
 };
 
+// Get unique values that exist in projects
+function getAvailableFilters(projects: Project[]) {
+  const categories = new Set<ProjectCategory>();
+  const consensusTypes = new Set<ConsensusType>();
+
+  for (const p of projects) {
+    categories.add(p.category);
+    consensusTypes.add(p.consensusType);
+  }
+
+  return {
+    categories: Array.from(categories),
+    consensusTypes: Array.from(consensusTypes),
+  };
+}
+
 export function ProjectTable({ projects }: ProjectTableProps) {
   const router = useRouter();
+  const [selectedCategories, setSelectedCategories] = useState<Set<ProjectCategory>>(new Set());
+  const [selectedConsensus, setSelectedConsensus] = useState<Set<ConsensusType>>(new Set());
+
+  const { categories: availableCategories, consensusTypes: availableConsensus } = useMemo(
+    () => getAvailableFilters(projects),
+    [projects]
+  );
+
+  const filteredProjects = useMemo(() => {
+    return projects.filter((p) => {
+      const categoryMatch = selectedCategories.size === 0 || selectedCategories.has(p.category);
+      const consensusMatch = selectedConsensus.size === 0 || selectedConsensus.has(p.consensusType);
+      return categoryMatch && consensusMatch;
+    });
+  }, [projects, selectedCategories, selectedConsensus]);
+
+  const toggleCategory = (cat: ProjectCategory) => {
+    setSelectedCategories((prev) => {
+      const next = new Set(prev);
+      if (next.has(cat)) {
+        next.delete(cat);
+      } else {
+        next.add(cat);
+      }
+      return next;
+    });
+  };
+
+  const toggleConsensus = (cons: ConsensusType) => {
+    setSelectedConsensus((prev) => {
+      const next = new Set(prev);
+      if (next.has(cons)) {
+        next.delete(cons);
+      } else {
+        next.add(cons);
+      }
+      return next;
+    });
+  };
+
+  const clearFilters = () => {
+    setSelectedCategories(new Set());
+    setSelectedConsensus(new Set());
+  };
+
+  const hasFilters = selectedCategories.size > 0 || selectedConsensus.size > 0;
 
   return (
-    <div className="overflow-auto max-h-[70vh]">
+    <div>
+      {/* Filter Bar */}
+      <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/10">
+        <div className="flex flex-wrap items-center gap-4">
+          {/* Category Filters */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-white/40 uppercase tracking-wider">Category:</span>
+            <div className="flex flex-wrap gap-1">
+              {availableCategories.map((cat) => {
+                const { label, color } = CATEGORY_LABELS[cat];
+                const isSelected = selectedCategories.has(cat);
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => toggleCategory(cat)}
+                    className={`px-2 py-1 rounded text-xs font-medium transition-all ${
+                      isSelected
+                        ? `${color} ring-1 ring-white/30`
+                        : 'bg-white/5 text-white/40 hover:bg-white/10 hover:text-white/60'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Consensus Filters */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-white/40 uppercase tracking-wider">Consensus:</span>
+            <div className="flex flex-wrap gap-1">
+              {availableConsensus.map((cons) => {
+                const { label, color } = CONSENSUS_LABELS[cons];
+                const isSelected = selectedConsensus.has(cons);
+                return (
+                  <button
+                    key={cons}
+                    onClick={() => toggleConsensus(cons)}
+                    className={`px-2 py-1 rounded text-xs font-medium transition-all ${
+                      isSelected
+                        ? `${color} ring-1 ring-white/30`
+                        : 'bg-white/5 text-white/40 hover:bg-white/10 hover:text-white/60'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Clear & Count */}
+          <div className="flex items-center gap-2 ml-auto">
+            <span className="text-xs text-white/40">
+              {filteredProjects.length} / {projects.length}
+            </span>
+            {hasFilters && (
+              <button
+                onClick={clearFilters}
+                className="px-2 py-1 rounded text-xs font-medium bg-red-500/20 text-red-400 hover:bg-red-500/30 transition-colors"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Table */}
+      <div className="overflow-auto max-h-[65vh]">
       <table className="w-full">
         <thead className="sticky top-0 bg-black z-10">
           <tr className="border-b border-white/10">
@@ -63,7 +196,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
           </tr>
         </thead>
         <tbody>
-          {projects.map((project, index) => {
+          {filteredProjects.map((project, index) => {
             const consensus = CONSENSUS_LABELS[project.consensusType];
             const category = CATEGORY_LABELS[project.category];
             const isFirst = index === 0;
@@ -133,6 +266,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
           })}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

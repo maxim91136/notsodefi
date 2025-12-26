@@ -1,0 +1,65 @@
+{
+  "lastUpdated": "2025-12-26T17:14:37.794Z",
+  "source": "DefiLlama Stablecoins API",
+  "fetchStatus": "success",
+  "data": {
+    "totalSupplyUsd": 186863540033,
+    "topChains": [
+      {
+        "chain": "Ethereum",
+        "supplyUsd": 88162925068,
+        "percentage": 47.18
+      },
+      {
+        "chain": "Tron",
+        "supplyUsd": 79616742463,
+        "percentage": 42.61
+      },
+      {
+        "chain": "BSC",
+        "supplyUsd": 8983534873,
+        "percentage": 4.81
+      },
+      {
+        "chain": "Solana",
+        "supplyUsd": 2105313262,
+        "percentage": 1.13
+      },
+      {
+        "chain": "Plasma",
+        "supplyUsd": 1277734847,
+        "percentage": 0.68
+      },
+      {
+        "chain": "Arbitrum",
+        "supplyUsd": 1025201801,
+        "percentage": 0.55
+      },
+      {
+        "chain": "TON",
+        "supplyUsd": 933788186,
+        "percentage": 0.5
+      },
+      {
+        "chain": "Aptos",
+        "supplyUsd": 919352349,
+        "percentage": 0.49
+      },
+      {
+        "chain": "Polygon",
+        "supplyUsd": 898196466,
+        "percentage": 0.48
+      },
+      {
+        "chain": "Avalanche",
+        "supplyUsd": 737550779,
+        "percentage": 0.39
+      }
+    ]
+  },
+  "notes": [
+    "Decentralization score is static (2.0) - stablecoins are centralized by design",
+    "Supply data tracked for transparency",
+    "Tether Ltd can freeze any address at will"
+  ]
+}

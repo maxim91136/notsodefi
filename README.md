@@ -28,7 +28,7 @@ The framework distinguishes between different consensus mechanisms:
 - **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid, TON, Sui
 - **NPoS** (Nominated Proof of Stake) - Polkadot
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
-- **Federated** - XRP, Chainlink, Stellar
+- **Federated** - XRP, Chainlink, Stellar, Hedera, Tether
 - **Hybrid** - Bittensor
 
 Some criteria may be N/A depending on the consensus type.
@@ -42,6 +42,7 @@ Projects are classified by type:
 - **DEX** - Decentralized exchanges (Uniswap)
 - **Lending** - Lending protocols (Aave)
 - **Oracle** - Oracle networks (Chainlink)
+- **Stablecoin** - Stablecoins (Tether)
 - **Infrastructure** - Infrastructure providers
 
 ## Supported Chains
@@ -74,6 +75,7 @@ Projects are classified by type:
 | Sui | SUI | PoS | [SUI JSON-RPC](https://fullnode.mainnet.sui.io) |
 | Uniswap | UNI | PoS | [DefiLlama](https://defillama.com) |
 | Hedera | HBAR | Federated | [Hedera Mirror Node](https://mainnet-public.mirrornode.hedera.com) |
+| Tether | USDT | Federated | [DefiLlama Stablecoins](https://stablecoins.llama.fi) |
 
 All data is fetched daily via GitHub Actions.
 
