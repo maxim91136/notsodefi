@@ -2,6 +2,29 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.15.0-rc6] - 2025-12-27
+
+### Added
+- **Polygon (POL)** - 32nd project, first L2
+  - Score: **4.5** (No Kill-Switch)
+  - 104 validators (max 105 hardcoded)
+  - Nakamoto Coefficient: 4 (very centralized)
+  - Top 5 stake: ~40%, Top 10 stake: ~63%
+  - Daily workflow via Polygon Staking API
+
+### Fixed
+- Filter now preserves global rankings instead of re-numbering
+
+### Scoring - Polygon
+| Criterion | Value | Score | Notes |
+|-----------|-------|-------|-------|
+| A1 | 4 | 2.3/10 | Nakamoto Coefficient 4 - only 4 validators for 33% |
+| A2 | 40% | 6.0/10 | Top 5 validators control ~40% |
+| A3 | 1 | 3.0/10 | Single client (Heimdall/Bor) |
+| B5 | 4 | 4.0/10 | Polygon Labs very influential |
+| B9 | 6 | 5.3/10 | No kill-switch, but 105 max validators limiting |
+| C9 | 24% | 6.4/10 | Team 16% + Advisors 4% + Seed ~4% |
+
 ## [0.15.0-rc5] - 2025-12-26
 
 ### Added
