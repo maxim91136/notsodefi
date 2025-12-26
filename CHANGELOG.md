@@ -2,6 +2,26 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.15.0-rc5] - 2025-12-26
+
+### Added
+- **Aptos (APT)** - 31st project
+  - Score: **5.0** (No Kill-Switch)
+  - 136 validators, Nakamoto Coefficient 18
+  - Top 5 stake: 12%, Top 10 stake: 22%
+  - Move-based L1 from ex-Meta Diem team
+  - Daily workflow via Aptos REST API
+
+### Scoring - Aptos
+| Criterion | Value | Score | Notes |
+|-----------|-------|-------|-------|
+| A1 | 18 | 5.3/10 | Nakamoto Coefficient from API |
+| A2 | 12% | 9.0/10 | Top 5 validators control 12% |
+| A3 | 1 | 3.0/10 | Single client (aptos-core) |
+| B5 | 4 | 4.0/10 | Aptos Labs/Foundation very influential |
+| B9 | 7 | 6.3/10 | No kill-switch, coordinated validator set |
+| C9 | 49% | 3.4/10 | Team 19% + Foundation 16.5% + Investors 13.5% |
+
 ## [0.15.0-rc4] - 2025-12-26
 
 ### Added
