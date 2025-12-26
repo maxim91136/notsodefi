@@ -2,6 +2,38 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.9.0] - 2025-12-26
+
+### Added
+- **TON (Toncoin)** - 22nd project with full data pipeline
+  - TonAPI fetcher (validators, staking, blocks)
+  - Daily workflow at 10:00 UTC
+  - Telegram-origin PoS chain
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| TON | 5.10 | Whale-controlled chain |
+
+**Key metrics:**
+- Chain Score: 7.30 (Nakamoto Coefficient ~80)
+- Control Score: 3.10 (TON Foundation dominant)
+- Fairness Score: 4.80 (catastrophic distribution)
+
+**Critical findings:**
+- 85% of tokens mined by interconnected whales affiliated with TON Foundation
+- Top 10 holders own 61.22%, top 100 control 91.59%
+- 20% of supply frozen via governance vote (never-activated genesis wallets)
+- TON Foundation controls brand (ton.org), GitHub repos
+- Originally Telegram's project, abandoned after SEC lawsuit
+- Revived by "community" (same whales)
+
+**Validator side (the good):**
+- ~367 validators
+- Top 5 concentration only 2.43%
+- Nakamoto coefficient ~80
+- On-chain config changes require validator consensus
+
 ## [0.8.1] - 2025-12-26
 
 ### Added
