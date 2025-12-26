@@ -76,3 +76,6 @@ export { TonFetcher, getTonFetcher } from './ton';
 
 // Stellar fetchers
 export { StellarFetcher, getStellarFetcher } from './stellar';
+
+// SUI fetchers
+export { SuiFetcher, getSuiFetcher } from './sui';

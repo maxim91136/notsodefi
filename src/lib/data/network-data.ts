@@ -215,6 +215,18 @@ export interface XlmMetrics {
   sdfMandatePercent: number | null;
 }
 
+export interface SuiMetrics {
+  epoch: number | null;
+  protocolVersion: number | null;
+  totalValidators: number | null;
+  maxValidators: number | null;
+  totalStake: number | null;
+  minValidatorStake: number | null;
+  top5Concentration: number | null;
+  nakamotoCoefficient: number | null;
+  referenceGasPrice: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -320,6 +332,10 @@ export function getXlmData(): NetworkData<XlmMetrics> {
   return loadJsonFile<NetworkData<XlmMetrics>>('stellar.json');
 }
 
+export function getSuiData(): NetworkData<SuiMetrics> {
+  return loadJsonFile<NetworkData<SuiMetrics>>('sui.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -368,6 +384,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getTonData();
     case 'stellar':
       return getXlmData();
+    case 'sui':
+      return getSuiData();
     default:
       return null;
   }
@@ -404,6 +422,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const aave = getAaveData();
   const tonData = getTonData();
   const xlm = getXlmData();
+  const suiData = getSuiData();
 
   return [
     {
@@ -543,6 +562,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: xlm.fetchStatus,
       lastUpdated: xlm.lastUpdated,
       source: xlm.source || 'Stellar Horizon + Dashboard API',
+    },
+    {
+      chain: 'SUI',
+      status: suiData.fetchStatus,
+      lastUpdated: suiData.lastUpdated,
+      source: suiData.source || 'SUI JSON-RPC',
     },
   ];
 }

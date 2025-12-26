@@ -1,0 +1,36 @@
+name: "SUI: Fetch Network Data"
+
+on:
+  schedule:
+    # Run daily at 11:00 UTC
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch SUI data
+        run: npx tsx scripts/fetch-sui.ts
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/sui.json
+          git diff --staged --quiet || git commit -m "chore(data): SUI - update network metrics"
+          git push

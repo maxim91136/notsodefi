@@ -25,7 +25,7 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 The framework distinguishes between different consensus mechanisms:
 
 - **PoW** (Proof of Work) - Bitcoin, Bitcoin Cash, Dogecoin, Kaspa, Litecoin, Monero, Zcash
-- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid, TON
+- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid, TON, Sui
 - **NPoS** (Nominated Proof of Stake) - Polkadot
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
 - **Federated** - XRP, Chainlink, Stellar
@@ -60,6 +60,7 @@ Some criteria may be N/A depending on the consensus type.
 | Aave | AAVE | PoS | [DefiLlama](https://defillama.com) |
 | TON | TON | PoS | [TonAPI](https://tonapi.io) |
 | Stellar | XLM | Federated | [Stellar Horizon](https://horizon.stellar.org) |
+| Sui | SUI | PoS | [SUI JSON-RPC](https://fullnode.mainnet.sui.io) |
 
 All data is fetched daily via GitHub Actions.
 
