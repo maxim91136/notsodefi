@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2025-12-25T21:43:16.291Z",
+  "lastUpdated": "2025-12-26T08:47:22.852Z",
   "source": "ic-api.internetcomputer.org",
   "metrics": {
     "totalNodes": 701,
-    "upNodes": 699,
+    "upNodes": 698,
     "nodeProviders": 105,
     "subnets": 47,
     "avgNakamotoCoefficient": null
