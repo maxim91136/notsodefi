@@ -247,6 +247,63 @@ export interface HbarMetrics {
   totalSupply: number | null;
 }
 
+export interface UsdtMetrics {
+  totalSupply: number | null;
+  chainBreakdown: Record<string, number>;
+  dominantChain: string | null;
+  dominantChainPercent: number | null;
+}
+
+export interface UsdcMetrics {
+  totalSupply: number | null;
+  chainBreakdown: Record<string, number>;
+  dominantChain: string | null;
+  dominantChainPercent: number | null;
+}
+
+export interface DaiMetrics {
+  totalSupply: number | null;
+  savingsRate: number | null;
+  savingsDeposits: number | null;
+  collateralRatio: number | null;
+}
+
+export interface NearMetrics {
+  activeValidators: number | null;
+  totalStaked: number | null;
+  nakamotoCoefficient: number | null;
+  top5Concentration: number | null;
+  top10Concentration: number | null;
+  seatPrice: number | null;
+  blockHeight: number | null;
+}
+
+export interface AptMetrics {
+  blockHeight: number | null;
+  epoch: number | null;
+  activeValidators: number | null;
+  totalStaked: number | null;
+  nakamotoCoefficient: number | null;
+  top5Concentration: number | null;
+  top10Concentration: number | null;
+}
+
+export interface PolMetrics {
+  activeValidators: number | null;
+  totalStaked: number | null;
+  nakamotoCoefficient: number | null;
+  top5Concentration: number | null;
+  top10Concentration: number | null;
+}
+
+export interface InjMetrics {
+  activeValidators: number | null;
+  totalStaked: number | null;
+  nakamotoCoefficient: number | null;
+  top5Concentration: number | null;
+  top10Concentration: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -364,6 +421,34 @@ export function getHbarData(): NetworkData<HbarMetrics> {
   return loadJsonFile<NetworkData<HbarMetrics>>('hedera.json');
 }
 
+export function getUsdtData(): NetworkData<UsdtMetrics> {
+  return loadJsonFile<NetworkData<UsdtMetrics>>('tether.json');
+}
+
+export function getUsdcData(): NetworkData<UsdcMetrics> {
+  return loadJsonFile<NetworkData<UsdcMetrics>>('usdc.json');
+}
+
+export function getDaiData(): NetworkData<DaiMetrics> {
+  return loadJsonFile<NetworkData<DaiMetrics>>('dai.json');
+}
+
+export function getNearData(): NetworkData<NearMetrics> {
+  return loadJsonFile<NetworkData<NearMetrics>>('near.json');
+}
+
+export function getAptData(): NetworkData<AptMetrics> {
+  return loadJsonFile<NetworkData<AptMetrics>>('aptos.json');
+}
+
+export function getPolData(): NetworkData<PolMetrics> {
+  return loadJsonFile<NetworkData<PolMetrics>>('polygon.json');
+}
+
+export function getInjData(): NetworkData<InjMetrics> {
+  return loadJsonFile<NetworkData<InjMetrics>>('injective.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -418,6 +503,20 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getUniData();
     case 'hedera':
       return getHbarData();
+    case 'tether':
+      return getUsdtData();
+    case 'usdc':
+      return getUsdcData();
+    case 'dai':
+      return getDaiData();
+    case 'near':
+      return getNearData();
+    case 'aptos':
+      return getAptData();
+    case 'polygon':
+      return getPolData();
+    case 'injective':
+      return getInjData();
     default:
       return null;
   }
@@ -457,6 +556,10 @@ export function getAllApiStatuses(): ApiStatus[] {
   const suiData = getSuiData();
   const uniData = getUniData();
   const hbarData = getHbarData();
+  const nearData = getNearData();
+  const aptData = getAptData();
+  const polData = getPolData();
+  const injData = getInjData();
 
   return [
     {
@@ -614,6 +717,30 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: hbarData.fetchStatus,
       lastUpdated: hbarData.lastUpdated,
       source: hbarData.source || 'Hedera Mirror Node API',
+    },
+    {
+      chain: 'NEAR',
+      status: nearData.fetchStatus,
+      lastUpdated: nearData.lastUpdated,
+      source: nearData.source || 'NEAR RPC',
+    },
+    {
+      chain: 'APT',
+      status: aptData.fetchStatus,
+      lastUpdated: aptData.lastUpdated,
+      source: aptData.source || 'Aptos REST API',
+    },
+    {
+      chain: 'POL',
+      status: polData.fetchStatus,
+      lastUpdated: polData.lastUpdated,
+      source: polData.source || 'Polygon Staking API',
+    },
+    {
+      chain: 'INJ',
+      status: injData.fetchStatus,
+      lastUpdated: injData.lastUpdated,
+      source: injData.source || 'Injective LCD API',
     },
   ];
 }
