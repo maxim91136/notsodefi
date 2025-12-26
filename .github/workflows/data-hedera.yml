@@ -1,0 +1,36 @@
+name: "Hedera: Fetch Network Data"
+
+on:
+  schedule:
+    # Run daily at 13:00 UTC
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch Hedera data
+        run: npx tsx scripts/fetch-hedera.ts
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/hedera.json
+          git diff --staged --quiet || git commit -m "chore(data): HBAR - update network metrics"
+          git push

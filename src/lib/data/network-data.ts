@@ -239,6 +239,14 @@ export interface UniMetrics {
   revenue24h: number | null;
 }
 
+export interface HbarMetrics {
+  totalNodes: number | null;
+  totalStake: number | null;
+  top5Concentration: number | null;
+  releasedSupply: number | null;
+  totalSupply: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -352,6 +360,10 @@ export function getUniData(): NetworkData<UniMetrics> {
   return loadJsonFile<NetworkData<UniMetrics>>('uniswap.json');
 }
 
+export function getHbarData(): NetworkData<HbarMetrics> {
+  return loadJsonFile<NetworkData<HbarMetrics>>('hedera.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -404,6 +416,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getSuiData();
     case 'uniswap':
       return getUniData();
+    case 'hedera':
+      return getHbarData();
     default:
       return null;
   }
@@ -442,6 +456,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const xlm = getXlmData();
   const suiData = getSuiData();
   const uniData = getUniData();
+  const hbarData = getHbarData();
 
   return [
     {
@@ -593,6 +608,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: uniData.fetchStatus,
       lastUpdated: uniData.lastUpdated,
       source: uniData.source || 'DefiLlama API',
+    },
+    {
+      chain: 'HBAR',
+      status: hbarData.fetchStatus,
+      lastUpdated: hbarData.lastUpdated,
+      source: hbarData.source || 'Hedera Mirror Node API',
     },
   ];
 }

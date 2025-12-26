@@ -82,3 +82,6 @@ export { SuiFetcher, getSuiFetcher } from './sui';
 
 // Uniswap fetchers
 export { UniswapFetcher, getUniswapFetcher } from './uniswap';
+
+// Hedera fetchers
+export { HederaFetcher, getHederaFetcher } from './hedera';
