@@ -37,29 +37,29 @@
 - Test fetchers locally before creating workflows: `npx tsx scripts/fetch-[chain].ts`
 - Commit messages: imperative mood, max 50 chars, e.g., `feat: add Chainlink project`
 
-## Releases - WICHTIG!
+## Releases - CRITICAL!
 
-**IMMER `./scripts/release.sh` verwenden. NIEMALS manuell Tags erstellen!**
+**ALWAYS use `./scripts/release.sh`. NEVER create tags manually!**
 
-Ablauf für einen Release:
-1. Alle Änderungen committen und pushen
-2. CHANGELOG.md aktualisieren mit neuem Versions-Eintrag
-3. `./scripts/release.sh <version>` ausführen (z.B. `./scripts/release.sh 0.13.0`)
+Release workflow:
+1. Commit and push all changes
+2. Update CHANGELOG.md with new version entry
+3. Run `./scripts/release.sh <version>` (e.g., `./scripts/release.sh 0.13.0`)
 
-Das Script macht automatisch:
+The script automatically handles:
 - VERSION file update
-- Build check
-- Commit mit Changelog-Inhalt
-- Push zu origin/main
-- Git tag erstellen und pushen
-- GitHub Release erstellen
+- Build verification
+- Commit with changelog content
+- Push to origin/main
+- Git tag creation and push
+- GitHub Release creation
 
-**VERBOTEN:**
-- `git tag` manuell ausführen
-- `git push origin <tag>` manuell ausführen
-- `gh release create` manuell ausführen
+**FORBIDDEN:**
+- Running `git tag` manually
+- Running `git push origin <tag>` manually
+- Running `gh release create` manually
 
-Wenn der User "neuer RC" oder "Release" sagt → CHANGELOG.md updaten, dann `./scripts/release.sh` ausführen.
+When user says "neuer RC" or "Release" → update CHANGELOG.md, then run `./scripts/release.sh`.
 
 ## Data Integrity
 
