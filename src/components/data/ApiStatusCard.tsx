@@ -2,7 +2,7 @@
  * API Status Card Component
  *
  * Displays the status of all data fetching APIs.
- * Shows which chains have fresh data and any errors.
+ * Compact summary by default, expandable for details.
  */
 
 import { Card, CardContent, CardHeader } from '@/components/ui';
@@ -23,7 +23,9 @@ function formatTimeAgo(isoDate: string): string {
 export function ApiStatusCard() {
   const statuses = getAllApiStatuses();
 
-  const allSuccess = statuses.every((s) => s.status === 'success');
+  const successCount = statuses.filter((s) => s.status === 'success').length;
+  const issues = statuses.filter((s) => s.status !== 'success');
+  const allSuccess = issues.length === 0;
 
   return (
     <Card className={allSuccess ? 'border-green-500/30' : 'border-yellow-500/30'}>
@@ -37,30 +39,58 @@ export function ApiStatusCard() {
                 : 'bg-yellow-500/20 text-yellow-400'
             }`}
           >
-            {allSuccess ? 'All Systems OK' : 'Partial Data'}
+            {allSuccess ? `All ${successCount} OK ✓` : `${issues.length} Issues`}
           </span>
         </div>
       </CardHeader>
       <CardContent>
-        <div className="space-y-3">
-          {statuses.map((api) => (
-            <div
-              key={api.chain}
-              className="flex items-center justify-between py-2 border-b border-white/5 last:border-0"
-            >
-              <div className="flex items-center gap-3">
-                <StatusDot status={api.status} />
-                <div>
+        {/* Show issues prominently if any */}
+        {issues.length > 0 && (
+          <div className="space-y-2 mb-4">
+            {issues.map((api) => (
+              <div
+                key={api.chain}
+                className="flex items-center justify-between p-2 rounded bg-red-500/10 border border-red-500/20"
+              >
+                <div className="flex items-center gap-2">
+                  <StatusDot status={api.status} />
                   <span className="font-medium text-white">{api.chain}</span>
-                  <p className="text-xs text-white/40">{api.source}</p>
+                  <span className="text-xs text-white/40">{api.source}</span>
+                </div>
+                <span className="text-xs text-red-400">
+                  {formatTimeAgo(api.lastUpdated)}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Collapsible details */}
+        <details className="group">
+          <summary className="cursor-pointer text-sm text-white/50 hover:text-white/70 transition-colors list-none flex items-center gap-2">
+            <span className="text-xs">▶</span>
+            <span className="group-open:hidden">Show all {statuses.length} data sources</span>
+            <span className="hidden group-open:inline">Hide details</span>
+          </summary>
+          <div className="mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+            {statuses.map((api) => (
+              <div
+                key={api.chain}
+                className="flex items-center gap-2 p-2 rounded bg-white/5"
+              >
+                <StatusDot status={api.status} />
+                <div className="min-w-0 flex-1">
+                  <span className="font-medium text-white text-sm truncate block">
+                    {api.chain}
+                  </span>
+                  <span className="text-xs text-white/40">
+                    {formatTimeAgo(api.lastUpdated)}
+                  </span>
                 </div>
               </div>
-              <span className="text-xs text-white/50">
-                {formatTimeAgo(api.lastUpdated)}
-              </span>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </details>
       </CardContent>
     </Card>
   );
