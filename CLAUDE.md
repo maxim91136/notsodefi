@@ -30,36 +30,47 @@
 - Consensus types: `pow`, `pos`, `dpos`, `npos`, `federated`, `hybrid`
 - All scores must be verifiable - no estimates without sources
 
-## Workflow
+## New Project - CHECKLIST (follow in order!)
 
-- Read existing patterns before implementing.
-- For new chains: fetcher → project file → index exports → workflow → README
-- Test fetchers locally before creating workflows: `npx tsx scripts/fetch-[chain].ts`
-- Commit messages: imperative mood, max 50 chars, e.g., `feat: add Chainlink project`
+**STOP: Do NOT skip steps. Do NOT use manual estimates.**
 
-## Releases - CRITICAL!
-
-**ALWAYS use `./scripts/release.sh`. NEVER create tags manually!**
-
-Release workflow:
-1. Commit and push all changes
-2. Update CHANGELOG.md with new version entry
-3. Run `./scripts/release.sh <version>` (e.g., `./scripts/release.sh 0.13.0`)
-
-The script automatically handles:
-- VERSION file update
-- Build verification
-- Commit with changelog content
-- Push to origin/main
-- Git tag creation and push
-- GitHub Release creation
+1. [ ] Check if chain has public API (RPC, REST, etc.)
+2. [ ] Create fetcher: `src/lib/data/fetchers/[chain].ts`
+3. [ ] Create script: `scripts/fetch-[chain].ts`
+4. [ ] Test locally: `npx tsx scripts/fetch-[chain].ts`
+5. [ ] Create project file: `src/lib/data/projects/[chain].ts`
+   - Use API data for A1, A2 - NO manual estimates!
+6. [ ] Update index: `src/lib/data/projects/index.ts`
+7. [ ] Run build: `npm run build` - MUST pass before commit
+8. [ ] Create workflow: `.github/workflows/data-[chain].yml`
+9. [ ] Update README.md "Supported Chains" table
+10. [ ] Commit: `feat: add [Chain] as [N]th project`
+11. [ ] Trigger workflow: `gh workflow run "[CHAIN]: Fetch Network Data"`
+12. [ ] Verify workflow succeeds
 
 **FORBIDDEN:**
+- Creating project file before fetcher
+- Using estimated values when API is available
+- Committing before build passes
+
+## Releases - CHECKLIST (follow in order!)
+
+**STOP: Read this COMPLETELY before starting.**
+
+When user says "neuer RC" or "Release":
+
+1. [ ] Update README.md - add new project to "Supported Chains" table
+2. [ ] Update CHANGELOG.md - add version entry with scoring table
+3. [ ] Run build: `npm run build` - MUST pass
+4. [ ] Run: `./scripts/release.sh <version>`
+
+**FORBIDDEN:**
+- Running release.sh before README is updated
 - Running `git tag` manually
 - Running `git push origin <tag>` manually
 - Running `gh release create` manually
 
-When user says "neuer RC" or "Release" → update README.md (project count), update CHANGELOG.md, then run `./scripts/release.sh`.
+Commit messages: imperative mood, max 50 chars, e.g., `feat: add Chainlink project`
 
 ## Data Integrity
 
