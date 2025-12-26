@@ -38,7 +38,7 @@ Some criteria may be N/A depending on the consensus type.
 Projects are classified by type:
 
 - **L1** - Layer 1 blockchains (Bitcoin, Ethereum, Solana, etc.)
-- **L2** - Layer 2 scaling solutions
+- **L2** - Layer 2 scaling solutions (Polygon)
 - **DEX** - Decentralized exchanges (Uniswap)
 - **Lending** - Lending protocols (Aave)
 - **Oracle** - Oracle networks (Chainlink)
@@ -80,6 +80,7 @@ Projects are classified by type:
 | DAI | DAI | PoS | [DaiStats](https://daistats.com) |
 | NEAR Protocol | NEAR | PoS | [NEAR RPC](https://rpc.mainnet.near.org) |
 | Aptos | APT | PoS | [Aptos API](https://api.mainnet.aptoslabs.com) |
+| Polygon | POL | PoS | [Polygon Staking API](https://staking-api.polygon.technology) |
 
 All data is fetched daily via GitHub Actions.
 
