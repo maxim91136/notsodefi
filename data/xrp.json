@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2025-12-25T04:57:38.896Z",
+  "lastUpdated": "2025-12-26T04:56:18.762Z",
   "source": "s1.ripple.com",
   "metrics": {
     "validationQuorum": 28,
-    "validatedLedgerSeq": 101106995
+    "validatedLedgerSeq": 101129115
   },
   "fetchStatus": "success"
 }
