@@ -2,6 +2,39 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.11.0] - 2025-12-26
+
+### Added
+- **Sui (SUI)** - 24th project with full data pipeline
+  - SUI JSON-RPC fetcher (suix_getLatestSuiSystemState)
+  - Daily workflow at 11:00 UTC
+  - Move-based L1 by Mysten Labs (ex-Meta Diem team)
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Sui | 5.20 | Foundation-controlled PoS |
+
+**Key metrics:**
+- Chain Score: 6.20 (NC 19, 126 validators)
+- Control Score: 2.90 (Mysten Labs dominates)
+- Fairness Score: 7.90 (appears fair, but...)
+
+**Critical findings:**
+- 126 active validators (max 150)
+- Nakamoto coefficient 19 (decent for PoS)
+- Top 5 concentration only 11.56%
+- 30M SUI minimum stake (~$120M at current prices)
+- 52% of supply "unallocated" but controlled by Sui Foundation
+- Justin Bons claims 84% of staked supply controlled by insiders
+- No public sale - only private investors and foundation
+- Mysten Labs controls github.com/MystenLabs/sui
+
+**Token distribution controversy:**
+- Sui Foundation denies founder control of treasury
+- But 52% "unallocated" tokens are staked and earning yield
+- Foundation effectively controls governance through staking
+
 ## [0.10.0] - 2025-12-26
 
 ### Added
