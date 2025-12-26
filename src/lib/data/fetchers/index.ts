@@ -70,3 +70,6 @@ export { ChainlinkFetcher, getChainlinkFetcher } from './chainlink';
 
 // Aave fetchers
 export { AaveFetcher, getAaveFetcher } from './aave';
+
+// TON fetchers
+export { TonFetcher, getTonFetcher } from './ton';

@@ -1,0 +1,14 @@
+{
+  "lastUpdated": "2025-12-26T15:18:35.477Z",
+  "source": "TonAPI (tonapi.io)",
+  "fetchStatus": "success",
+  "metrics": {
+    "blockNumber": 55443634,
+    "totalValidators": 367,
+    "totalStake": 424851382,
+    "minStake": 300000,
+    "electAt": 1766739720,
+    "top5Concentration": 2.43,
+    "feesCollected": 3
+  }
+}

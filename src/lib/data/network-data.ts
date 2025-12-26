@@ -192,6 +192,16 @@ export interface AaveMetrics {
   revenue30d: number | null;
 }
 
+export interface TonMetrics {
+  blockNumber: number | null;
+  totalValidators: number | null;
+  totalStake: number | null;
+  minStake: number | null;
+  electAt: number | null;
+  top5Concentration: number | null;
+  feesCollected: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -289,6 +299,10 @@ export function getAaveData(): NetworkData<AaveMetrics> {
   return loadJsonFile<NetworkData<AaveMetrics>>('aave.json');
 }
 
+export function getTonData(): NetworkData<TonMetrics> {
+  return loadJsonFile<NetworkData<TonMetrics>>('ton.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -333,6 +347,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getLinkData();
     case 'aave':
       return getAaveData();
+    case 'ton':
+      return getTonData();
     default:
       return null;
   }
@@ -367,6 +383,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const icp = getIcpData();
   const link = getLinkData();
   const aave = getAaveData();
+  const tonData = getTonData();
 
   return [
     {
@@ -494,6 +511,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: aave.fetchStatus,
       lastUpdated: aave.lastUpdated,
       source: aave.source || 'DefiLlama API',
+    },
+    {
+      chain: 'TON',
+      status: tonData.fetchStatus,
+      lastUpdated: tonData.lastUpdated,
+      source: tonData.source || 'TonAPI (tonapi.io)',
     },
   ];
 }

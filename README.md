@@ -25,7 +25,7 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 The framework distinguishes between different consensus mechanisms:
 
 - **PoW** (Proof of Work) - Bitcoin, Bitcoin Cash, Dogecoin, Kaspa, Litecoin, Monero, Zcash
-- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid
+- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid, TON
 - **NPoS** (Nominated Proof of Stake) - Polkadot
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
 - **Federated** - XRP, Chainlink
@@ -58,6 +58,7 @@ Some criteria may be N/A depending on the consensus type.
 | Internet Computer | ICP | PoS | [IC Dashboard API](https://ic-api.internetcomputer.org) |
 | Chainlink | LINK | Federated | [data.chain.link](https://data.chain.link) |
 | Aave | AAVE | PoS | [DefiLlama](https://defillama.com) |
+| TON | TON | PoS | [TonAPI](https://tonapi.io) |
 
 All data is fetched daily via GitHub Actions.
 

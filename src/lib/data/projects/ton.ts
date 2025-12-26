@@ -1,0 +1,53 @@
+/**
+ * TON (Toncoin) - Decentralization Assessment
+ *
+ * Originally developed by Telegram (2018), abandoned after SEC lawsuit.
+ * Revived by community as TON Foundation.
+ * PoS consensus with ~375 validators.
+ * Nakamoto coefficient ~80 (validator side decent).
+ *
+ * CRITICAL: 85% of tokens mined by interconnected whales
+ * affiliated with TON Foundation during IPoW phase (2020-2022).
+ * Top 10 holders own 61%, top 100 control 92% of supply.
+ */
+
+import { Project } from '@/lib/framework';
+import { calculateProjectScores } from '@/lib/framework';
+
+// Raw assessment values (null = N/A, not applicable)
+const rawValues: Record<string, number | null> = {
+  // Chain Score (A1-A4)
+  A1: 80,   // Nakamoto coefficient ~80 (validator-side decent)
+  A2: 15,   // Top 5 validator concentration ~15% (estimated from NC)
+  A3: 1,    // Single implementation (ton-blockchain/ton)
+  A4: 50,   // Estimated cloud/datacenter percentage
+
+  // Control Score (B5-B9)
+  B5: 3,    // TON Foundation significant influence, but community growing
+  B6: 2,    // GitHub org (ton-blockchain) controlled by TON Foundation
+  B7: 2,    // TON Foundation owns ton.org, controls brand
+  B8: 2,    // 85% mined by connected whales, insiders control vast resources
+  B9: 7,    // Config changes require validator consensus, no single admin halt
+
+  // Fairness Score (C9-C10)
+  C9: 85,   // 85% mined by interconnected whales affiliated with TON Foundation
+  C10: 2,   // Top 10 holders own 61%, top 100 control 92% - massive concentration
+};
+
+export const ton: Project = {
+  id: 'ton',
+  name: 'TON',
+  symbol: 'TON',
+  consensusType: 'pos',
+  website: 'https://ton.org',
+  description:
+    'PoS chain with NC ~80. 85% of supply mined by whales affiliated with TON Foundation. Top 10 holders own 61%.',
+  scores: calculateProjectScores(rawValues),
+  lastUpdated: '2025-12-26',
+  sources: [
+    'https://tonscan.org',
+    'https://chainspect.app/chain/ton',
+    'https://tonvalidators.org',
+    'https://medium.com/@whiterabbit_hq/ton-blockchain-a-group-of-related-whales-mined-85-of-ton-supply-2e3300cc93bc',
+  ],
+};
