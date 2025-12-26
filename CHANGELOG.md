@@ -2,6 +2,41 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.15.0-rc1] - 2025-12-26
+
+### Added
+- **Stablecoin Category** - New project category for stablecoins
+  - Green "Stable" badge in project table
+  - Tether (USDT) as first stablecoin project
+
+- **Tether (USDT)** - 27th project
+  - Score: **2.0** (Kill-Switch Active)
+  - Control Score: 1.10 (near minimum)
+  - $186B supply tracked via DefiLlama Stablecoins API
+  - Daily workflow at 14:00 UTC
+
+- **Filter UI** - Interactive filters above leaderboard
+  - Category filters (L1, DEX, Lending, Oracle, Stable)
+  - Consensus filters (PoW, PoS, NPoS, DPoS, Hybrid, Federated)
+  - Project counter shows filtered/total
+  - Clear button to reset filters
+
+### Scoring - Tether
+| Criterion | Value | Score | Notes |
+|-----------|-------|-------|-------|
+| A1 | 1 | 0/10 | Nakamoto Coefficient = 1 |
+| A2 | 100% | 0/10 | Single entity concentration |
+| B5 | 1 | 0/10 | Total corporate control |
+| B9 | 0 | **KILL** | Can freeze ANY address |
+| C9 | 100% | 0/10 | 100% minted by Tether |
+
+**The Monster Category:**
+- $186B controlled by one company (Tether Ltd/iFinex)
+- 7th largest holder of US Treasuries globally
+- Same company as Bitfinex exchange
+- Fined $41M by CFTC for lying about reserves
+- Can and does freeze addresses on request
+
 ## [0.14.0] - 2025-12-26
 
 ### Added
