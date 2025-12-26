@@ -23,6 +23,7 @@ const CATEGORY_LABELS: Record<ProjectCategory, { label: string; color: string }>
   DEX: { label: 'DEX', color: 'bg-pink-500/20 text-pink-400' },
   Lending: { label: 'Lending', color: 'bg-amber-500/20 text-amber-400' },
   Oracle: { label: 'Oracle', color: 'bg-violet-500/20 text-violet-400' },
+  Stablecoin: { label: 'Stable', color: 'bg-green-500/20 text-green-400' },
   Infrastructure: { label: 'Infra', color: 'bg-slate-500/20 text-slate-400' },
 };
 

@@ -53,7 +53,7 @@ export interface CriterionScore {
 export type ConsensusType = 'pow' | 'pos' | 'npos' | 'dpos' | 'hybrid' | 'federated';
 
 /** Project category type */
-export type ProjectCategory = 'L1' | 'L2' | 'DEX' | 'Lending' | 'Oracle' | 'Infrastructure';
+export type ProjectCategory = 'L1' | 'L2' | 'DEX' | 'Lending' | 'Oracle' | 'Stablecoin' | 'Infrastructure';
 
 export interface ProjectScores {
   /** Chain Score (0-10) - technical/economic decentralization */
