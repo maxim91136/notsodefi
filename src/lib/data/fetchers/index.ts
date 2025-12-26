@@ -73,3 +73,6 @@ export { AaveFetcher, getAaveFetcher } from './aave';
 
 // TON fetchers
 export { TonFetcher, getTonFetcher } from './ton';
+
+// Stellar fetchers
+export { StellarFetcher, getStellarFetcher } from './stellar';

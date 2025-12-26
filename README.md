@@ -28,7 +28,7 @@ The framework distinguishes between different consensus mechanisms:
 - **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid, TON
 - **NPoS** (Nominated Proof of Stake) - Polkadot
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
-- **Federated** - XRP, Chainlink
+- **Federated** - XRP, Chainlink, Stellar
 - **Hybrid** - Bittensor
 
 Some criteria may be N/A depending on the consensus type.
@@ -59,6 +59,7 @@ Some criteria may be N/A depending on the consensus type.
 | Chainlink | LINK | Federated | [data.chain.link](https://data.chain.link) |
 | Aave | AAVE | PoS | [DefiLlama](https://defillama.com) |
 | TON | TON | PoS | [TonAPI](https://tonapi.io) |
+| Stellar | XLM | Federated | [Stellar Horizon](https://horizon.stellar.org) |
 
 All data is fetched daily via GitHub Actions.
 

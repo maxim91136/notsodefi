@@ -202,6 +202,19 @@ export interface TonMetrics {
   feesCollected: number | null;
 }
 
+export interface XlmMetrics {
+  ledgerSequence: number | null;
+  protocolVersion: number | null;
+  txSuccessCount: number | null;
+  txFailedCount: number | null;
+  operationCount: number | null;
+  baseFee: number | null;
+  totalSupply: number | null;
+  circulatingSupply: number | null;
+  sdfMandate: number | null;
+  sdfMandatePercent: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -303,6 +316,10 @@ export function getTonData(): NetworkData<TonMetrics> {
   return loadJsonFile<NetworkData<TonMetrics>>('ton.json');
 }
 
+export function getXlmData(): NetworkData<XlmMetrics> {
+  return loadJsonFile<NetworkData<XlmMetrics>>('stellar.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -349,6 +366,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getAaveData();
     case 'ton':
       return getTonData();
+    case 'stellar':
+      return getXlmData();
     default:
       return null;
   }
@@ -384,6 +403,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const link = getLinkData();
   const aave = getAaveData();
   const tonData = getTonData();
+  const xlm = getXlmData();
 
   return [
     {
@@ -517,6 +537,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: tonData.fetchStatus,
       lastUpdated: tonData.lastUpdated,
       source: tonData.source || 'TonAPI (tonapi.io)',
+    },
+    {
+      chain: 'XLM',
+      status: xlm.fetchStatus,
+      lastUpdated: xlm.lastUpdated,
+      source: xlm.source || 'Stellar Horizon + Dashboard API',
     },
   ];
 }
