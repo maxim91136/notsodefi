@@ -2,6 +2,26 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.15.0-rc4] - 2025-12-26
+
+### Added
+- **NEAR Protocol** - 30th project
+  - Score: **5.7** (No Kill-Switch)
+  - 384 validators, Nakamoto Coefficient 10
+  - Top 5 stake: 21%, Top 10 stake: 34%
+  - Nightshade sharding, stateless validation
+  - Daily workflow via NEAR RPC API
+
+### Scoring - NEAR
+| Criterion | Value | Score | Notes |
+|-----------|-------|-------|-------|
+| A1 | 10 | 4.0/10 | Nakamoto Coefficient from API |
+| A2 | 21% | 8.3/10 | Top 5 validators control 21% |
+| A3 | 1 | 3.0/10 | Single client (nearcore) |
+| B5 | 5 | 5.0/10 | NEAR Foundation influential |
+| B9 | 8 | 7.3/10 | No kill-switch |
+| C9 | 29% | 5.4/10 | Team 8.5% + VCs 14.4% + Foundation 6% |
+
 ## [0.15.0-rc3] - 2025-12-26
 
 ### Added
