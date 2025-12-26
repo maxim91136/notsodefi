@@ -79,3 +79,6 @@ export { StellarFetcher, getStellarFetcher } from './stellar';
 
 // SUI fetchers
 export { SuiFetcher, getSuiFetcher } from './sui';
+
+// Uniswap fetchers
+export { UniswapFetcher, getUniswapFetcher } from './uniswap';

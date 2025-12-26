@@ -227,6 +227,18 @@ export interface SuiMetrics {
   referenceGasPrice: number | null;
 }
 
+export interface UniMetrics {
+  tvl: number | null;
+  tvlChange24h: number | null;
+  chainTvls: Record<string, number>;
+  totalChains: number | null;
+  treasury: number | null;
+  treasuryOwnTokens: number | null;
+  volume24h: number | null;
+  fees24h: number | null;
+  revenue24h: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -336,6 +348,10 @@ export function getSuiData(): NetworkData<SuiMetrics> {
   return loadJsonFile<NetworkData<SuiMetrics>>('sui.json');
 }
 
+export function getUniData(): NetworkData<UniMetrics> {
+  return loadJsonFile<NetworkData<UniMetrics>>('uniswap.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -386,6 +402,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getXlmData();
     case 'sui':
       return getSuiData();
+    case 'uniswap':
+      return getUniData();
     default:
       return null;
   }
@@ -423,6 +441,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const tonData = getTonData();
   const xlm = getXlmData();
   const suiData = getSuiData();
+  const uniData = getUniData();
 
   return [
     {
@@ -568,6 +587,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: suiData.fetchStatus,
       lastUpdated: suiData.lastUpdated,
       source: suiData.source || 'SUI JSON-RPC',
+    },
+    {
+      chain: 'UNI',
+      status: uniData.fetchStatus,
+      lastUpdated: uniData.lastUpdated,
+      source: uniData.source || 'DefiLlama API',
     },
   ];
 }
