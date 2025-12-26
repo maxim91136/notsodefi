@@ -54,6 +54,13 @@ export function ProjectTable({ projects }: ProjectTableProps) {
     [projects]
   );
 
+  // Pre-compute global ranks (before any filtering)
+  const globalRanks = useMemo(() => {
+    const ranks = new Map<string, number>();
+    projects.forEach((p, idx) => ranks.set(p.id, idx + 1));
+    return ranks;
+  }, [projects]);
+
   const filteredProjects = useMemo(() => {
     return projects.filter((p) => {
       const categoryMatch = selectedCategories.size === 0 || selectedCategories.has(p.category);
@@ -196,10 +203,11 @@ export function ProjectTable({ projects }: ProjectTableProps) {
           </tr>
         </thead>
         <tbody>
-          {filteredProjects.map((project, index) => {
+          {filteredProjects.map((project) => {
             const consensus = CONSENSUS_LABELS[project.consensusType];
             const category = CATEGORY_LABELS[project.category];
-            const isFirst = index === 0;
+            const globalRank = globalRanks.get(project.id) || 0;
+            const isFirst = globalRank === 1;
             return (
             <tr
               key={project.id}
@@ -210,7 +218,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             >
               <td className="py-4 px-4 text-center">
                 <span className={`font-mono ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}>
-                  {index + 1}
+                  {globalRank}
                 </span>
               </td>
               <td className="py-4 px-4">
