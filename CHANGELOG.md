@@ -2,6 +2,39 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.10.0] - 2025-12-26
+
+### Added
+- **Stellar (XLM)** - 23rd project with full data pipeline
+  - Horizon + Dashboard API fetcher (ledgers, supply, SDF holdings)
+  - Daily workflow at 10:30 UTC
+  - Federated Byzantine Agreement (FBA) consensus
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Stellar | 3.70 | SDF-controlled federation |
+
+**Key metrics:**
+- Chain Score: 3.50 (NC ~4, 7 tier-1 orgs control consensus)
+- Control Score: 2.70 (SDF controls everything)
+- Fairness Score: 5.90 (100% premined, no governance)
+
+**Critical findings:**
+- Only 7 "tier-1" organizations control consensus
+- If 3 tier-1 orgs fail → network halts
+- SDF runs 3 validators directly
+- SDF holds 17.3B XLM (34.7% of total supply)
+- No on-chain governance - XLM has no voting rights
+- 100% premined, original 100B burned to 50B in 2019
+- Top 10 wallets hold 57.5% of supply
+
+**SDF control:**
+- Controls stellar.org brand
+- Controls stellar/stellar-core GitHub
+- Controls token distribution and grants
+- Upgrade decisions require SDF coordination
+
 ## [0.9.0] - 2025-12-26
 
 ### Added
