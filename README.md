@@ -33,6 +33,17 @@ The framework distinguishes between different consensus mechanisms:
 
 Some criteria may be N/A depending on the consensus type.
 
+## Project Categories
+
+Projects are classified by type:
+
+- **L1** - Layer 1 blockchains (Bitcoin, Ethereum, Solana, etc.)
+- **L2** - Layer 2 scaling solutions
+- **DEX** - Decentralized exchanges (Uniswap)
+- **Lending** - Lending protocols (Aave)
+- **Oracle** - Oracle networks (Chainlink)
+- **Infrastructure** - Infrastructure providers
+
 ## Supported Chains
 
 | Chain | Symbol | Consensus | Data Source |

@@ -2,6 +2,20 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.14.0] - 2025-12-26
+
+### Added
+- **Project Categories** - New column in project table
+  - L1 (Layer 1 blockchains)
+  - L2 (Layer 2 scaling solutions)
+  - DEX (Decentralized exchanges)
+  - Lending (Lending protocols)
+  - Oracle (Oracle networks)
+  - Infrastructure (Infrastructure providers)
+
+- Color-coded badges for each category
+- All 26 projects categorized (23 L1, 1 DEX, 1 Lending, 1 Oracle)
+
 ## [0.13.0] - 2025-12-26
 
 ### Added
