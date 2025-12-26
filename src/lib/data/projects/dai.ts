@@ -1,0 +1,60 @@
+/**
+ * DAI (MakerDAO) - Decentralization Assessment
+ *
+ * The "decentralized" stablecoin - overcollateralized, DAO-governed.
+ * Actually different from USDT/USDC in key ways.
+ *
+ * What makes it different:
+ * - Cannot freeze individual addresses (unlike USDT/USDC)
+ * - MKR governance, not corporate control
+ * - Overcollateralized (150%), not fiat-backed
+ * - Open source smart contracts
+ *
+ * The catch:
+ * - Significant USDC as collateral = indirect Circle dependency
+ * - Emergency Shutdown exists (but requires 50K MKR or vote)
+ * - MKR distribution still concentrated among early holders
+ * - Sky/USDS rebrand ongoing (2024-2025)
+ */
+
+import { Project } from '@/lib/framework';
+import { calculateProjectScores } from '@/lib/framework';
+
+// Raw assessment values (null = N/A, not applicable)
+const rawValues: Record<string, number | null> = {
+  // Chain Score (A1-A4) - Adapted for stablecoin
+  A1: 8,    // ~8-10 major MKR holders/delegates to reach 51% voting power
+  A2: 35,   // Top holders (a16z, delegates) control ~35% of voting power
+  A3: 1,    // Single smart contract implementation
+  A4: null, // N/A - Runs on Ethereum, no own node network
+
+  // Control Score (B5-B9)
+  B5: 6,    // DAO governance, but Maker Foundation/Sky has significant influence
+  B6: 6,    // Open source, community proposals, but core team leads development
+  B7: 5,    // makerdao.com, sky.money - foundation controlled, DAO governed
+  B8: 7,    // Treasury/reserves governed by MKR votes, not single entity
+  B9: 8,    // NO targeted freeze capability. Emergency Shutdown is protocol-wide, requires 50K MKR
+
+  // Fairness Score (C9-C10)
+  C9: 40,   // ~40% to Maker Foundation + early investors (a16z, Polychain, etc.)
+  C10: 7,   // MKR governance - anyone can buy and vote, proposal process exists
+};
+
+export const dai: Project = {
+  id: 'dai',
+  name: 'DAI',
+  symbol: 'DAI',
+  category: 'Stablecoin',
+  consensusType: 'pos',  // DAO governance via MKR staking/voting
+  website: 'https://makerdao.com',
+  description:
+    '$8.4B overcollateralized stablecoin. MKR governance, no individual address freezing. Emergency Shutdown exists but requires 50K MKR. ~35% USDC collateral = indirect Circle dependency.',
+  scores: calculateProjectScores(rawValues),
+  lastUpdated: '2025-12-26',
+  sources: [
+    'https://docs.makerdao.com/smart-contract-modules/shutdown',
+    'https://coinlaw.io/makerdao-statistics/',
+    'https://daistats.com/',
+    'https://makerburn.com/',
+  ],
+};
