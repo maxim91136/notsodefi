@@ -42,7 +42,7 @@ Projects are classified by type:
 - **DEX** - Decentralized exchanges (Uniswap)
 - **Lending** - Lending protocols (Aave)
 - **Oracle** - Oracle networks (Chainlink)
-- **Stablecoin** - Stablecoins (Tether)
+- **Stablecoin** - Stablecoins (Tether, USDC)
 - **Infrastructure** - Infrastructure providers
 
 ## Supported Chains
@@ -76,6 +76,7 @@ Projects are classified by type:
 | Uniswap | UNI | PoS | [DefiLlama](https://defillama.com) |
 | Hedera | HBAR | Federated | [Hedera Mirror Node](https://mainnet-public.mirrornode.hedera.com) |
 | Tether | USDT | Federated | [DefiLlama Stablecoins](https://stablecoins.llama.fi) |
+| USD Coin | USDC | Federated | [DefiLlama Stablecoins](https://stablecoins.llama.fi) |
 
 All data is fetched daily via GitHub Actions.
 

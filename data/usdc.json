@@ -1,0 +1,65 @@
+{
+  "lastUpdated": "2025-12-26T18:22:58.187Z",
+  "source": "DefiLlama Stablecoins API",
+  "fetchStatus": "success",
+  "data": {
+    "totalSupplyUsd": 76416164324,
+    "topChains": [
+      {
+        "chain": "Ethereum",
+        "supplyUsd": 48463314510,
+        "percentage": 63.42
+      },
+      {
+        "chain": "Solana",
+        "supplyUsd": 10787135128,
+        "percentage": 14.12
+      },
+      {
+        "chain": "Hyperliquid L1",
+        "supplyUsd": 4398952051,
+        "percentage": 5.76
+      },
+      {
+        "chain": "Base",
+        "supplyUsd": 4198243734,
+        "percentage": 5.49
+      },
+      {
+        "chain": "Arbitrum",
+        "supplyUsd": 2000218005,
+        "percentage": 2.62
+      },
+      {
+        "chain": "Polygon",
+        "supplyUsd": 1299513366,
+        "percentage": 1.7
+      },
+      {
+        "chain": "BSC",
+        "supplyUsd": 1280356907,
+        "percentage": 1.68
+      },
+      {
+        "chain": "Avalanche",
+        "supplyUsd": 587583589,
+        "percentage": 0.77
+      },
+      {
+        "chain": "Sui",
+        "supplyUsd": 335395707,
+        "percentage": 0.44
+      },
+      {
+        "chain": "Aptos",
+        "supplyUsd": 288196645,
+        "percentage": 0.38
+      }
+    ]
+  },
+  "notes": [
+    "Decentralization score is static (2.0) - stablecoins are centralized by design",
+    "Supply data tracked for transparency",
+    "Circle (NYSE: CRCL) can freeze any address at will"
+  ]
+}
