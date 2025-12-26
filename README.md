@@ -79,6 +79,7 @@ Projects are classified by type:
 | USD Coin | USDC | Federated | [DefiLlama Stablecoins](https://stablecoins.llama.fi) |
 | DAI | DAI | PoS | [DaiStats](https://daistats.com) |
 | NEAR Protocol | NEAR | PoS | [NEAR RPC](https://rpc.mainnet.near.org) |
+| Aptos | APT | PoS | [Aptos API](https://api.mainnet.aptoslabs.com) |
 
 All data is fetched daily via GitHub Actions.
 

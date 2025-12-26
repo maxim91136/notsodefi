@@ -1,0 +1,14 @@
+{
+  "lastUpdated": "2025-12-26T21:39:07.146Z",
+  "source": "api.mainnet.aptoslabs.com",
+  "metrics": {
+    "blockHeight": 544676623,
+    "epoch": 14123,
+    "activeValidators": 136,
+    "totalStaked": 850528395,
+    "nakamotoCoefficient": 18,
+    "top5Concentration": 12,
+    "top10Concentration": 22
+  },
+  "fetchStatus": "success"
+}

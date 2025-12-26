@@ -1,0 +1,62 @@
+/**
+ * Aptos - Decentralization Assessment
+ *
+ * Move-based L1, launched October 2022. Ex-Meta Diem team.
+ *
+ * Data from Aptos REST API (daily fetch):
+ * - 136 active validators
+ * - Nakamoto Coefficient: 18
+ * - Top 5 stake: 12%, Top 10 stake: 22%
+ * - 850M APT staked
+ *
+ * Token distribution (at launch):
+ * - 51% Community (but Foundation controls most)
+ * - 19% Core contributors
+ * - 16.5% Foundation
+ * - 13.5% Investors (a16z, Tiger Global, etc.)
+ * - Total insiders at launch: ~49%
+ *
+ * No kill-switch capability, but Aptos Foundation has significant influence.
+ */
+
+import { Project } from '@/lib/framework';
+import { calculateProjectScores } from '@/lib/framework';
+
+// Raw assessment values (null = N/A, not applicable)
+const rawValues: Record<string, number | null> = {
+  // Chain Score (A1-A4) - from Aptos API
+  A1: 18,   // Nakamoto Coefficient = 18 (API)
+  A2: 12,   // Top 5 validators control 12% (API)
+  A3: 1,    // Single client (aptos-core), Move/Rust
+  A4: 70,   // Estimated ~70% cloud infrastructure
+
+  // Control Score (B5-B9)
+  B5: 4,    // Aptos Labs/Foundation very influential
+  B6: 5,    // Open source but Labs-dominated development
+  B7: 3,    // aptos.dev, aptoslabs.com - Labs controls brand
+  B8: 4,    // Foundation treasury, limited transparency
+  B9: 7,    // No kill-switch, but coordinated validator set
+
+  // Fairness Score (C9-C10)
+  C9: 49,   // ~49% to insiders (team 19% + foundation 16.5% + investors 13.5%)
+  C10: 5,   // Limited governance, Foundation-driven decisions
+};
+
+export const aptos: Project = {
+  id: 'aptos',
+  name: 'Aptos',
+  symbol: 'APT',
+  category: 'L1',
+  consensusType: 'pos',
+  website: 'https://aptosfoundation.org',
+  description:
+    '136 validators, Nakamoto Coefficient 18. Top 5 stake 12%. Move-based L1 from ex-Meta team. ~49% insider allocation at launch.',
+  scores: calculateProjectScores(rawValues),
+  lastUpdated: '2025-12-26',
+  sources: [
+    'https://api.mainnet.aptoslabs.com/v1',
+    'https://aptosfoundation.org/currents/aptos-tokenomics-overview',
+    'https://tokenomist.ai/aptos',
+    'https://cryptorank.io/ico/aptos',
+  ],
+};
