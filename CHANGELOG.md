@@ -2,6 +2,26 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.15.0-rc7] - 2025-12-27
+
+### Added
+- **Injective (INJ)** - 33rd project
+  - Score: **4.7** (No Kill-Switch)
+  - 50 validators, Nakamoto Coefficient 5
+  - Top 5 stake: ~34%, Top 10 stake: ~51%
+  - Cosmos SDK DeFi chain
+  - Daily workflow via Injective LCD API
+
+### Scoring - Injective
+| Criterion | Value | Score | Notes |
+|-----------|-------|-------|-------|
+| A1 | 5 | 2.6/10 | Nakamoto Coefficient 5 |
+| A2 | 34% | 6.6/10 | Top 5 validators control ~34% |
+| A3 | 1 | 3.0/10 | Single client (Cosmos SDK) |
+| B5 | 4 | 4.0/10 | Injective Labs + VC influence (Binance, Jump) |
+| B9 | 7 | 6.3/10 | No kill-switch, Cosmos governance |
+| C9 | 42% | 3.9/10 | Team 20% + Private 20% + Advisors 2% |
+
 ## [0.15.0-rc6] - 2025-12-27
 
 ### Added
