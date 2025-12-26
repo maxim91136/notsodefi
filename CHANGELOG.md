@@ -2,6 +2,31 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.15.0-rc2] - 2025-12-26
+
+### Added
+- **USD Coin (USDC)** - 28th project
+  - Score: **2.0** (Kill-Switch Active)
+  - $76B stablecoin by Circle (NYSE: CRCL)
+  - Same kill-switch as Tether - can freeze any address
+  - Daily workflow at 14:30 UTC via DefiLlama
+
+### Scoring - USDC
+| Criterion | Value | Score | Notes |
+|-----------|-------|-------|-------|
+| A1 | 1 | 0/10 | Nakamoto Coefficient = 1 |
+| A2 | 100% | 0/10 | Single entity concentration |
+| B5 | 1 | 0/10 | Circle = total corporate control |
+| B9 | 0 | **KILL** | Can freeze ANY address |
+| C9 | 100% | 0/10 | 100% minted by Circle |
+
+**The "Good Cop":**
+- $76B controlled by Circle (publicly traded NYSE: CRCL)
+- US-regulated but same freeze capability as Tether
+- Frozen $109M across 372 addresses (AMLBot Dec 2025)
+- Depegged during SVB collapse (March 2023)
+- Centre Consortium dissolved - Circle now sole issuer
+
 ## [0.15.0-rc1] - 2025-12-26
 
 ### Added
