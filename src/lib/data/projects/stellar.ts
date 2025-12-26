@@ -37,6 +37,7 @@ export const stellar: Project = {
   id: 'stellar',
   name: 'Stellar',
   symbol: 'XLM',
+  category: 'L1',
   consensusType: 'federated',
   website: 'https://stellar.org',
   description:

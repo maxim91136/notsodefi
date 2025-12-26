@@ -33,6 +33,7 @@ export const cardano: Project = {
   id: 'cardano',
   name: 'Cardano',
   symbol: 'ADA',
+  category: 'L1',
   consensusType: 'pos',
   website: 'https://cardano.org',
   description:

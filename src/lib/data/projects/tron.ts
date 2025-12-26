@@ -33,6 +33,7 @@ export const tron: Project = {
   id: 'tron',
   name: 'Tron',
   symbol: 'TRX',
+  category: 'L1',
   consensusType: 'dpos',
   website: 'https://tron.network',
   description:

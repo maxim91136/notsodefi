@@ -33,6 +33,7 @@ export const litecoin: Project = {
   id: 'litecoin',
   name: 'Litecoin',
   symbol: 'LTC',
+  category: 'L1',
   consensusType: 'pow',
   website: 'https://litecoin.org',
   description:

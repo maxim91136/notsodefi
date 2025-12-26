@@ -34,6 +34,7 @@ export const kaspa: Project = {
   id: 'kaspa',
   name: 'Kaspa',
   symbol: 'KAS',
+  category: 'L1',
   consensusType: 'pow',
   website: 'https://kaspa.org',
   description:

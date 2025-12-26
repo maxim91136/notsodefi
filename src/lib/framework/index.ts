@@ -20,6 +20,7 @@ export type {
   ScoreMapping,
   Category,
   ConsensusType,
+  ProjectCategory,
 } from './types';
 
 export { SCORE_WEIGHTS, CATEGORIES } from './types';

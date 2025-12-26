@@ -38,6 +38,7 @@ export const hedera: Project = {
   id: 'hedera',
   name: 'Hedera',
   symbol: 'HBAR',
+  category: 'L1',
   consensusType: 'federated',  // Hashgraph with permissioned council
   website: 'https://hedera.com',
   description:

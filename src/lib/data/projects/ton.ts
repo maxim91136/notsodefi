@@ -38,6 +38,7 @@ export const ton: Project = {
   id: 'ton',
   name: 'TON',
   symbol: 'TON',
+  category: 'L1',
   consensusType: 'pos',
   website: 'https://ton.org',
   description:

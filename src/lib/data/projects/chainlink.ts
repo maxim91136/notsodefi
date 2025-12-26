@@ -35,6 +35,7 @@ export const chainlink: Project = {
   id: 'chainlink',
   name: 'Chainlink',
   symbol: 'LINK',
+  category: 'Oracle',
   consensusType: 'federated',  // Permissioned node operators, vetted by Chainlink
   website: 'https://chain.link',
   description:

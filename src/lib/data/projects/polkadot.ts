@@ -34,6 +34,7 @@ export const polkadot: Project = {
   id: 'polkadot',
   name: 'Polkadot',
   symbol: 'DOT',
+  category: 'L1',
   consensusType: 'npos',
   website: 'https://polkadot.com',
   description:

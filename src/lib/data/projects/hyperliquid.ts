@@ -35,6 +35,7 @@ export const hyperliquid: Project = {
   id: 'hyperliquid',
   name: 'Hyperliquid',
   symbol: 'HYPE',
+  category: 'L1',
   consensusType: 'pos',
   website: 'https://hyperliquid.xyz',
   description:

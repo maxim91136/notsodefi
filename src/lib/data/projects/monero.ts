@@ -33,6 +33,7 @@ export const monero: Project = {
   id: 'monero',
   name: 'Monero',
   symbol: 'XMR',
+  category: 'L1',
   consensusType: 'pow',
   website: 'https://getmonero.org',
   description:

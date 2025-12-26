@@ -32,6 +32,7 @@ export const ethereum: Project = {
   id: 'ethereum',
   name: 'Ethereum',
   symbol: 'ETH',
+  category: 'L1',
   consensusType: 'pos',
   website: 'https://ethereum.org',
   description:

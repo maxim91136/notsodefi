@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { Project, ConsensusType } from '@/lib/framework';
+import { Project, ConsensusType, ProjectCategory } from '@/lib/framework';
 import { getScoreTextColor } from '@/lib/utils';
 
 interface ProjectTableProps {
@@ -17,6 +17,15 @@ const CONSENSUS_LABELS: Record<ConsensusType, { label: string; color: string }> 
   federated: { label: 'Federated', color: 'bg-gray-500/20 text-gray-400' },
 };
 
+const CATEGORY_LABELS: Record<ProjectCategory, { label: string; color: string }> = {
+  L1: { label: 'L1', color: 'bg-sky-500/20 text-sky-400' },
+  L2: { label: 'L2', color: 'bg-indigo-500/20 text-indigo-400' },
+  DEX: { label: 'DEX', color: 'bg-pink-500/20 text-pink-400' },
+  Lending: { label: 'Lending', color: 'bg-amber-500/20 text-amber-400' },
+  Oracle: { label: 'Oracle', color: 'bg-violet-500/20 text-violet-400' },
+  Infrastructure: { label: 'Infra', color: 'bg-slate-500/20 text-slate-400' },
+};
+
 export function ProjectTable({ projects }: ProjectTableProps) {
   const router = useRouter();
 
@@ -30,6 +39,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             </th>
             <th className="text-left py-3 px-4 text-sm font-medium text-white/50">
               Project
+            </th>
+            <th className="text-center py-3 px-4 text-sm font-medium text-white/50">
+              Category
             </th>
             <th className="text-center py-3 px-4 text-sm font-medium text-white/50">
               Consensus
@@ -52,6 +64,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
         <tbody>
           {projects.map((project, index) => {
             const consensus = CONSENSUS_LABELS[project.consensusType];
+            const category = CATEGORY_LABELS[project.category];
             const isFirst = index === 0;
             return (
             <tr
@@ -76,6 +89,11 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                     <span className="text-red-500" title="Kill-Switch Active - Score capped at 2.0">⚠️</span>
                   )}
                 </div>
+              </td>
+              <td className="py-4 px-4 text-center">
+                <span className={`px-2 py-1 rounded text-xs font-medium ${category.color}`}>
+                  {category.label}
+                </span>
               </td>
               <td className="py-4 px-4 text-center">
                 <span className={`px-2 py-1 rounded text-xs font-medium ${consensus.color}`}>

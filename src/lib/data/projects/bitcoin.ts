@@ -32,6 +32,7 @@ export const bitcoin: Project = {
   id: 'bitcoin',
   name: 'Bitcoin',
   symbol: 'BTC',
+  category: 'L1',
   consensusType: 'pow',
   website: 'https://bitcoin.org',
   description:

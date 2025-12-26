@@ -33,6 +33,7 @@ export const xrp: Project = {
   id: 'xrp',
   name: 'XRP',
   symbol: 'XRP',
+  category: 'L1',
   consensusType: 'federated',
   website: 'https://xrpl.org',
   description:

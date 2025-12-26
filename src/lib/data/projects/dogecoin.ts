@@ -33,6 +33,7 @@ export const dogecoin: Project = {
   id: 'dogecoin',
   name: 'Dogecoin',
   symbol: 'DOGE',
+  category: 'L1',
   consensusType: 'pow',
   website: 'https://dogecoin.com',
   description:

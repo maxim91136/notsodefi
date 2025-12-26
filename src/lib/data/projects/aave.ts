@@ -34,6 +34,7 @@ export const aave: Project = {
   id: 'aave',
   name: 'Aave',
   symbol: 'AAVE',
+  category: 'Lending',
   consensusType: 'pos',  // Token-weighted governance (like PoS: stake = power)
   website: 'https://aave.com',
   description:

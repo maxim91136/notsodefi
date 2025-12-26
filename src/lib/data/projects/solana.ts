@@ -32,6 +32,7 @@ export const solana: Project = {
   id: 'solana',
   name: 'Solana',
   symbol: 'SOL',
+  category: 'L1',
   consensusType: 'pos',
   website: 'https://solana.com',
   description:

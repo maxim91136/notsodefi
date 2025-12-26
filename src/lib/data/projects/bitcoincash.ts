@@ -33,6 +33,7 @@ export const bitcoincash: Project = {
   id: 'bitcoincash',
   name: 'Bitcoin Cash',
   symbol: 'BCH',
+  category: 'L1',
   consensusType: 'pow',
   website: 'https://bitcoincash.org',
   description:

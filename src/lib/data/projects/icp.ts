@@ -34,6 +34,7 @@ export const icp: Project = {
   id: 'icp',
   name: 'Internet Computer',
   symbol: 'ICP',
+  category: 'L1',
   consensusType: 'pos',
   website: 'https://internetcomputer.org',
   description:

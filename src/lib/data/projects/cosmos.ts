@@ -34,6 +34,7 @@ export const cosmos: Project = {
   id: 'cosmos',
   name: 'Cosmos Hub',
   symbol: 'ATOM',
+  category: 'L1',
   consensusType: 'pos',
   website: 'https://cosmos.network',
   description:

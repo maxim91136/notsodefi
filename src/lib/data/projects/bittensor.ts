@@ -33,6 +33,7 @@ export const bittensor: Project = {
   id: 'bittensor',
   name: 'Bittensor',
   symbol: 'TAO',
+  category: 'L1',
   consensusType: 'hybrid',
   website: 'https://bittensor.com',
   description:

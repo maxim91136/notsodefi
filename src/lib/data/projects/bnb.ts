@@ -33,6 +33,7 @@ export const bnb: Project = {
   id: 'bnb',
   name: 'BNB Chain',
   symbol: 'BNB',
+  category: 'L1',
   consensusType: 'dpos',
   website: 'https://www.bnbchain.org',
   description:

@@ -33,6 +33,7 @@ export const avalanche: Project = {
   id: 'avalanche',
   name: 'Avalanche',
   symbol: 'AVAX',
+  category: 'L1',
   consensusType: 'pos',
   website: 'https://avax.network',
   description:

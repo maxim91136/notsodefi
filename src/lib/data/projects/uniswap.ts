@@ -39,6 +39,7 @@ export const uniswap: Project = {
   id: 'uniswap',
   name: 'Uniswap',
   symbol: 'UNI',
+  category: 'DEX',
   consensusType: 'pos',  // Token-weighted governance
   website: 'https://uniswap.org',
   description:

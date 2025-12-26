@@ -33,6 +33,7 @@ export const zcash: Project = {
   id: 'zcash',
   name: 'Zcash',
   symbol: 'ZEC',
+  category: 'L1',
   consensusType: 'pow',
   website: 'https://z.cash',
   description:

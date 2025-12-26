@@ -37,6 +37,7 @@ export const sui: Project = {
   id: 'sui',
   name: 'Sui',
   symbol: 'SUI',
+  category: 'L1',
   consensusType: 'pos',
   website: 'https://sui.io',
   description:
