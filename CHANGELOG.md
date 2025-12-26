@@ -2,6 +2,31 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.15.0-rc3] - 2025-12-26
+
+### Added
+- **DAI (MakerDAO)** - 29th project
+  - Score: **5.5** (No Kill-Switch!)
+  - $8.4B overcollateralized stablecoin
+  - MKR governance, cannot freeze individual addresses
+  - Emergency Shutdown exists but requires 50K MKR vote
+  - ~35% USDC collateral = indirect Circle dependency
+
+### Scoring - DAI
+| Criterion | Value | Score | Notes |
+|-----------|-------|-------|-------|
+| A1 | 8 | 3.7/10 | ~8-10 major MKR holders for 51% voting |
+| A2 | 35% | 7.7/10 | Top holders (a16z, delegates) |
+| B5 | 6 | 6.0/10 | DAO governance, Sky has influence |
+| B9 | 8 | 7.3/10 | NO freeze capability - only protocol-wide Emergency Shutdown |
+| C9 | 40% | 4.2/10 | Maker Foundation + early investors |
+
+**The "Good" Stablecoin:**
+- Cannot freeze YOUR address (unlike USDT/USDC)
+- 150% overcollateralized, not fiat-backed
+- Open source smart contracts
+- But: USDC as collateral creates indirect Circle dependency
+
 ## [0.15.0-rc2] - 2025-12-26
 
 ### Added
