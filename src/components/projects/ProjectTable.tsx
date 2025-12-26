@@ -21,9 +21,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
   const router = useRouter();
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-auto max-h-[70vh]">
       <table className="w-full">
-        <thead>
+        <thead className="sticky top-0 bg-black z-10">
           <tr className="border-b border-white/10">
             <th className="text-center py-3 px-4 text-sm font-medium text-white/50 w-12">
               #
