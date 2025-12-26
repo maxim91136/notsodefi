@@ -78,6 +78,7 @@ Projects are classified by type:
 | Tether | USDT | Federated | [DefiLlama Stablecoins](https://stablecoins.llama.fi) |
 | USD Coin | USDC | Federated | [DefiLlama Stablecoins](https://stablecoins.llama.fi) |
 | DAI | DAI | PoS | [DaiStats](https://daistats.com) |
+| NEAR Protocol | NEAR | PoS | [NEAR RPC](https://rpc.mainnet.near.org) |
 
 All data is fetched daily via GitHub Actions.
 
