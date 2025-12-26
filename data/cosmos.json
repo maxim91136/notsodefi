@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2025-12-25T06:21:34.699Z",
+  "lastUpdated": "2025-12-26T06:21:20.288Z",
   "source": "rest.cosmos.directory",
   "metrics": {
-    "blockHeight": 29014009,
+    "blockHeight": 29028975,
     "chainId": "cosmoshub-4",
     "activeValidators": 200,
-    "totalBonded": 285085298,
-    "totalUnbonded": 8174987,
+    "totalBonded": 285270127,
+    "totalUnbonded": 8135408,
     "top5Concentration": 36
   },
   "fetchStatus": "success"
