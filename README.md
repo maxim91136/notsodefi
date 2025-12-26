@@ -81,6 +81,7 @@ Projects are classified by type:
 | NEAR Protocol | NEAR | PoS | [NEAR RPC](https://rpc.mainnet.near.org) |
 | Aptos | APT | PoS | [Aptos API](https://api.mainnet.aptoslabs.com) |
 | Polygon | POL | PoS | [Polygon Staking API](https://staking-api.polygon.technology) |
+| Injective | INJ | PoS | [Injective LCD API](https://sentry.lcd.injective.network) |
 
 All data is fetched daily via GitHub Actions.
 

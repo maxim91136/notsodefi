@@ -1,0 +1,34 @@
+name: "INJ: Fetch Network Data"
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # Daily at 7:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Fetch Injective data
+        run: npx tsx scripts/fetch-injective.ts
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet data/injective.json || (
+            git add data/injective.json
+            git commit -m "chore(data): INJ - update network metrics"
+            git push
+          )
