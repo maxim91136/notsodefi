@@ -1,0 +1,36 @@
+name: "AAVE: Fetch Protocol Data"
+
+on:
+  schedule:
+    # Run daily at 9:30 UTC
+    - cron: '30 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch Aave data
+        run: npx tsx scripts/fetch-aave.ts
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/aave.json
+          git diff --staged --quiet || git commit -m "chore(data): AAVE - update protocol metrics"
+          git push

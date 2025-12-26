@@ -2,6 +2,35 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.8.1] - 2025-12-26
+
+### Added
+- **Aave (AAVE)** - 21st project with full data pipeline
+  - DefiLlama API fetcher (TVL, treasury, revenue)
+  - Daily workflow at 9:30 UTC
+  - DeFi lending protocol with PoS-style governance
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Aave | 4.50 | Governance theater exposed |
+
+**Critical findings:**
+- Top 3 voters control 58% of voting power
+- Founder bought $10M tokens to swing governance vote
+- Aave Labs controls GitHub, domain, frontend
+- Guardian (5/9 multisig) can pause but is community-elected
+- 23% founders allocation (2020 - reasonable for era)
+- Treasury: $73M + $67M in own tokens (managed by Karpatkey)
+- TVL: $33B across 19 chains
+- Revenue 2025: $140M (exceeds prior 3 years combined)
+
+**Governance crisis (Dec 2025):**
+- "Stealth privatization" - $10M/year revenue diverted to Labs
+- "Poison pill" proposal to seize all Aave IP
+- Holiday vote timed to minimize participation
+- AAVE -18% in one week
+
 ## [0.8.0] - 2025-12-25
 
 ### Added

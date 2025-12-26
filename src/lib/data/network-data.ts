@@ -181,6 +181,17 @@ export interface LinkMetrics {
   totalDataFeeds: number | null;
 }
 
+export interface AaveMetrics {
+  tvl: number | null;
+  tvlChange24h: number | null;
+  chainTvls: Record<string, number>;
+  totalChains: number | null;
+  treasury: number | null;
+  treasuryOwnTokens: number | null;
+  revenue24h: number | null;
+  revenue30d: number | null;
+}
+
 export interface NetworkData<T> {
   lastUpdated: string;
   source?: string;
@@ -274,6 +285,10 @@ export function getLinkData(): NetworkData<LinkMetrics> {
   return loadJsonFile<NetworkData<LinkMetrics>>('chainlink.json');
 }
 
+export function getAaveData(): NetworkData<AaveMetrics> {
+  return loadJsonFile<NetworkData<AaveMetrics>>('aave.json');
+}
+
 export function getNetworkDataByProject(projectId: string): NetworkData<unknown> | null {
   switch (projectId) {
     case 'bitcoin':
@@ -316,6 +331,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getIcpData();
     case 'chainlink':
       return getLinkData();
+    case 'aave':
+      return getAaveData();
     default:
       return null;
   }
@@ -349,6 +366,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const kas = getKasData();
   const icp = getIcpData();
   const link = getLinkData();
+  const aave = getAaveData();
 
   return [
     {
@@ -470,6 +488,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: link.fetchStatus,
       lastUpdated: link.lastUpdated,
       source: link.source || 'data.chain.link + Etherscan',
+    },
+    {
+      chain: 'AAVE',
+      status: aave.fetchStatus,
+      lastUpdated: aave.lastUpdated,
+      source: aave.source || 'DefiLlama API',
     },
   ];
 }

@@ -67,3 +67,6 @@ export { IcpFetcher, getIcpFetcher } from './icp';
 
 // Chainlink fetchers
 export { ChainlinkFetcher, getChainlinkFetcher } from './chainlink';
+
+// Aave fetchers
+export { AaveFetcher, getAaveFetcher } from './aave';
