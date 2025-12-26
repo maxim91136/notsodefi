@@ -2,6 +2,12 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.15.0-rc8] - 2025-12-27
+
+### Fixed
+- Updated README consensus types list (added all 33 projects)
+- Added NEAR, APT, POL, INJ to Data Pipeline Status
+
 ## [0.15.0-rc7] - 2025-12-27
 
 ### Added
