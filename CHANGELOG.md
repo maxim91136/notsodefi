@@ -2,6 +2,44 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.13.0] - 2025-12-26
+
+### Added
+- **Uniswap (UNI)** - 25th project with full data pipeline
+  - DefiLlama API fetcher (TVL, volume, fees, treasury)
+  - Daily workflow at 12:00 UTC
+  - #1 DEX with immutable contracts
+
+- **Hedera (HBAR)** - 26th project with full data pipeline
+  - Hedera Mirror Node API fetcher (nodes, stake, supply)
+  - Daily workflow at 13:00 UTC
+  - Corporate blockchain run by Governing Council
+
+### Scoring
+| Project | Score | Notes |
+|---------|-------|-------|
+| Uniswap | 4.60 | B9=10 - IMMUTABLE CONTRACTS! |
+| Hedera | 2.00 | **KILL-SWITCH ACTIVE** |
+
+**Uniswap - The Good:**
+- B9 = 10/10 - Core contracts are IMMUTABLE
+- No admin keys, no kill switch, no pause function
+- This is unique among major DeFi protocols
+
+**Uniswap - The Bad:**
+- Governance Gini 0.938 (extreme inequality)
+- Top 1% controls 47.5% voting power
+- 40% insider allocation (21.3% team + 18% investors)
+- UNIfication (Dec 2024) shifted control from Foundation to Labs
+
+**Hedera - Corporate Blockchain Theater:**
+- Only 10 active nodes (Google, IBM, etc.)
+- 100% permissioned - no one else can run nodes
+- Top 5 concentration: 51.56%
+- Council can halt network at will (B9=0)
+- 45% insider allocation (founders, Swirlds, employees, SAFT)
+- "Decentralization roadmap" Phase 3 = marketing vapor
+
 ## [0.11.0] - 2025-12-26
 
 ### Added

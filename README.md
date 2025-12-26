@@ -61,6 +61,8 @@ Some criteria may be N/A depending on the consensus type.
 | TON | TON | PoS | [TonAPI](https://tonapi.io) |
 | Stellar | XLM | Federated | [Stellar Horizon](https://horizon.stellar.org) |
 | Sui | SUI | PoS | [SUI JSON-RPC](https://fullnode.mainnet.sui.io) |
+| Uniswap | UNI | PoS | [DefiLlama](https://defillama.com) |
+| Hedera | HBAR | Federated | [Hedera Mirror Node](https://mainnet-public.mirrornode.hedera.com) |
 
 All data is fetched daily via GitHub Actions.
 
