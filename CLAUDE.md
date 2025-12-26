@@ -59,7 +59,7 @@ The script automatically handles:
 - Running `git push origin <tag>` manually
 - Running `gh release create` manually
 
-When user says "neuer RC" or "Release" → update CHANGELOG.md, then run `./scripts/release.sh`.
+When user says "neuer RC" or "Release" → update README.md (project count), update CHANGELOG.md, then run `./scripts/release.sh`.
 
 ## Data Integrity
 
