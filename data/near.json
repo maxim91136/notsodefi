@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2025-12-26T21:18:13.209Z",
+  "lastUpdated": "2025-12-26T21:27:04.797Z",
   "source": "rpc.mainnet.near.org",
   "metrics": {
-    "blockHeight": 178479492,
+    "blockHeight": 178480367,
     "chainId": "mainnet",
     "activeValidators": 384,
     "totalStaked": 585633947,
