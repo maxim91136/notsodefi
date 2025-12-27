@@ -27,7 +27,7 @@ const rawValues: Record<string, number | null> = {
 
   // Fairness Score (C9-C10)
   C9: 23,   // Original: 23% founders, 77% investors. Team reserve: 3M of 16M (18.75%)
-  C10: 2,   // Top 1% controls 70-80% of votes. Plutocratic governance theater.
+  C10: 75,  // Top 1% controls 70-80% of votes. Plutocratic governance theater.
 };
 
 export const aave: Project = {
@@ -40,7 +40,7 @@ export const aave: Project = {
   description:
     'DeFi lending giant where governance is theater. Top 3 voters = 58% power. Founder bought $10M to swing votes. Labs controls code, domain, frontend. Treasury managed externally.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-12-26',
+  lastUpdated: '2025-12-27',
   sources: [
     'https://cointelegraph.com/news/aave-founder-stani-kulechov-10m-aave-purchase-governance-vote',
     'https://www.ainvest.com/news/aave-governance-crisis-ticking-time-bomb-token-2512/',
