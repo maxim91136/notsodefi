@@ -2,7 +2,7 @@
 
 All notable changes to the NotSoDeFi Framework.
 
-## [0.18.0-rc4] - 2025-12-27
+## [0.18.0-rc5] - 2025-12-27
 
 ### Added
 - **R2 Historical Storage** - Daily metric snapshots
@@ -10,6 +10,14 @@ All notable changes to the NotSoDeFi Framework.
   - `/api/history?project=xxx&date=YYYY-MM-DD` endpoint
   - Structure: `/{project}/{YYYY-MM-DD}.json`
   - Auto-deploy workflow for worker updates
+
+### Changed
+- **README** - Added API endpoints and workers documentation
+
+## [0.18.0-rc4] - 2025-12-27
+
+### Added
+- **R2 Historical Storage** - Daily metric snapshots (incomplete release)
 
 ## [0.18.0-rc3] - 2025-12-27
 
