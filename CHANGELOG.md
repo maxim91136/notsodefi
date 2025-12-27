@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.18.0-rc2] - 2025-12-27
+
+### Changed
+- **README** - Updated architecture documentation
+  - Data flow: GitHub Actions → KV → `/api/metrics`
+  - Project structure with `hooks/` and `functions/`
+  - Tech stack: Cloudflare Pages + KV + Functions
+
 ## [0.18.0-rc1] - 2025-12-27
 
 ### Added
