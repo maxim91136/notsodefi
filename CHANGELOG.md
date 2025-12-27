@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.18.0-rc3] - 2025-12-27
+
+### Changed
+- **Workflow Schedules** - Optimized for overnight execution
+  - 5-minute intervals between all 32 workflows
+  - Start: 01:00 UTC (02:00 CET / 03:00 CEST)
+  - End: 03:35 UTC (04:35 CET / 05:35 CEST)
+
 ## [0.18.0-rc2] - 2025-12-27
 
 ### Changed
