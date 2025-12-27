@@ -2,7 +2,7 @@ name: "NEAR: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '20 3 * * *'
+    - cron: '20 2 * * *'
   workflow_dispatch:
 
 

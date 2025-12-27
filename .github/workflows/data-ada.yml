@@ -2,7 +2,7 @@ name: "ADA: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '25 2 * * *'
+    - cron: '25 1 * * *'
   workflow_dispatch:
 
 

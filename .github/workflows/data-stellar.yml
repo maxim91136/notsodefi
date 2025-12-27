@@ -3,7 +3,7 @@ name: "XLM: Fetch Network Data"
 on:
   schedule:
     # Run daily at 10:30 UTC
-    - cron: '20 4 * * *'
+    - cron: '20 3 * * *'
 
 
 jobs:

@@ -3,7 +3,7 @@ name: "Tether: Fetch Supply Data"
 on:
   schedule:
     # Run daily at 14:00 UTC
-    - cron: '30 4 * * *'
+    - cron: '30 3 * * *'
 
 
 jobs:

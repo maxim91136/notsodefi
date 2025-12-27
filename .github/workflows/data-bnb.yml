@@ -2,7 +2,7 @@ name: "BNB: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '20 2 * * *'
+    - cron: '20 1 * * *'
   workflow_dispatch:
 
 

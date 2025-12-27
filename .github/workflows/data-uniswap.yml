@@ -3,7 +3,7 @@ name: "Uniswap: Fetch Protocol Data"
 on:
   schedule:
     # Run daily at 12:00 UTC
-    - cron: '15 4 * * *'
+    - cron: '15 3 * * *'
 
 
 jobs:

@@ -2,7 +2,7 @@ name: "XRP: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '15 2 * * *'
+    - cron: '15 1 * * *'
   workflow_dispatch:
 
 

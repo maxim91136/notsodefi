@@ -2,7 +2,7 @@ name: "TRX: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '45 2 * * *'
+    - cron: '45 1 * * *'
   workflow_dispatch:
 
 
