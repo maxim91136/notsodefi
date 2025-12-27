@@ -187,16 +187,28 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             <th className="text-center py-3 px-4 text-sm font-medium text-white/50">
               Consensus
             </th>
-            <th className="text-center py-3 px-4 text-sm font-medium text-white/50">
+            <th
+              className="text-center py-3 px-4 text-sm font-medium text-white/50 cursor-help"
+              title="Weighted Score: Chain 40% + Control 40% + Fairness 20%"
+            >
               Total
             </th>
-            <th className="text-center py-3 px-4 text-sm font-medium text-blue-400/70">
+            <th
+              className="text-center py-3 px-4 text-sm font-medium text-blue-400/70 cursor-help"
+              title="Technical Decentralization (40%): Nakamoto Coefficient, Stake Concentration, Client Diversity, Infrastructure"
+            >
               Chain
             </th>
-            <th className="text-center py-3 px-4 text-sm font-medium text-purple-400/70">
+            <th
+              className="text-center py-3 px-4 text-sm font-medium text-purple-400/70 cursor-help"
+              title="Governance Decentralization (40%): Org Influence, Code Control, Brand, Treasury, Kill-Switch"
+            >
               Control
             </th>
-            <th className="text-center py-3 px-4 text-sm font-medium text-green-400/70">
+            <th
+              className="text-center py-3 px-4 text-sm font-medium text-green-400/70 cursor-help"
+              title="Token Distribution Fairness (20%): Insider Allocation, Governance Accessibility"
+            >
               Fairness
             </th>
             <th className="w-8"></th>
@@ -244,23 +256,33 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               </td>
               <td className="py-4 px-4 text-center">
                 <span
-                  className={`font-bold ${getScoreTextColor(project.scores.totalScore)}`}
+                  className={`font-bold cursor-help ${getScoreTextColor(project.scores.totalScore)}`}
+                  title={`${project.scores.chainScore.toFixed(1)}×40% + ${project.scores.controlScore.toFixed(1)}×40% + ${project.scores.fairnessScore.toFixed(1)}×20%${project.scores.killSwitchActive ? ' (capped at 2.0)' : ''}`}
                 >
                   {project.scores.totalScore.toFixed(1)}
                 </span>
               </td>
               <td className="py-4 px-4 text-center">
-                <span className="text-white/70">
+                <span
+                  className="text-white/70 cursor-help"
+                  title="Validators, Stake Distribution, Client Diversity, Infrastructure"
+                >
                   {project.scores.chainScore.toFixed(1)}
                 </span>
               </td>
               <td className="py-4 px-4 text-center">
-                <span className="text-white/70">
+                <span
+                  className="text-white/70 cursor-help"
+                  title="Org Influence, Code Control, Brand, Treasury, Kill-Switch"
+                >
                   {project.scores.controlScore.toFixed(1)}
                 </span>
               </td>
               <td className="py-4 px-4 text-center">
-                <span className="text-white/70">
+                <span
+                  className="text-white/70 cursor-help"
+                  title="Insider Allocation, Governance Access"
+                >
                   {project.scores.fairnessScore.toFixed(1)}
                 </span>
               </td>
