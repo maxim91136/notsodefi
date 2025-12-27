@@ -2,6 +2,25 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.17.0-rc1] - 2025-12-27
+
+### Added
+- **Mobile Hamburger Menu** - Navigation for mobile devices
+  - Hamburger icon appears on <640px screens
+  - Dropdown with Projects, Calculator, GitHub links
+  - Menu closes automatically on navigation
+
+- **Mobile Card Layout** - Cards instead of table on mobile
+  - Full project info in compact card format
+  - Shows rank, name, score, category, consensus, subscores
+  - Replaces horizontal table scrolling
+
+### Changed
+- **Dynamic Project Counter** - Header now shows filtered count
+  - Default: "33 projects"
+  - With filters: "X of 33 projects"
+  - Updates live as filters change
+
 ## [0.16.0-rc2] - 2025-12-27
 
 ### Added
