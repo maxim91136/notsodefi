@@ -76,7 +76,8 @@ export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
   if (error) return <ErrorState error={error} />;
   if (!data) return null;
 
-  const m = data.metrics as Record<string, unknown>;
+  // Handle both 'metrics' and 'data' keys (stablecoins use 'data')
+  const m = (data.metrics || (data as unknown as { data: Record<string, unknown> }).data || {}) as Record<string, unknown>;
 
   return (
     <Card className={colors.border}>
@@ -206,6 +207,17 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
           <MetricRow label="Active SRs" value={num(m.activeWitnesses)} />
           <MetricRow label="Latest Block" value={num(m.latestBlock)} />
           <MetricRow label="Connected Peers" value={num(m.connectedPeers)} />
+        </>
+      );
+
+    case 'tether':
+    case 'usdc':
+      return (
+        <>
+          <MetricRow label="Total Supply" value={num(m.totalSupplyUsd) ? `$${(m.totalSupplyUsd as number / 1e9).toFixed(1)}B` : null} />
+          {Array.isArray(m.topChains) && m.topChains.slice(0, 3).map((chain: { chain: string; percentage: number }) => (
+            <MetricRow key={chain.chain} label={chain.chain} value={`${chain.percentage.toFixed(1)}%`} />
+          ))}
         </>
       );
 
