@@ -2,6 +2,12 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.21.0-rc2] - 2025-12-27
+
+### Fixed
+- **Data Workflows** - Added `workflow_dispatch` to all 10 missing workflows
+  - All 33 workflows now manually triggerable
+
 ## [0.21.0-rc1] - 2025-12-27
 
 ### Changed
