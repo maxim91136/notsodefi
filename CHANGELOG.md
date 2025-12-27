@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.18.0-rc4] - 2025-12-27
+
+### Added
+- **R2 Historical Storage** - Daily metric snapshots
+  - Cloudflare Worker `notsodefi-archive` with cron trigger (04:00 UTC)
+  - `/api/history?project=xxx&date=YYYY-MM-DD` endpoint
+  - Structure: `/{project}/{YYYY-MM-DD}.json`
+  - Auto-deploy workflow for worker updates
+
 ## [0.18.0-rc3] - 2025-12-27
 
 ### Changed

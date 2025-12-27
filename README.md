@@ -83,7 +83,12 @@ Projects are classified by type:
 | Polygon | POL | PoS | [Polygon Staking API](https://staking-api.polygon.technology) |
 | Injective | INJ | PoS | [Injective LCD API](https://sentry.lcd.injective.network) |
 
-Data is fetched daily via GitHub Actions and stored in Cloudflare KV. The site reads live data from `/api/metrics`.
+Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily at 04:00 UTC.
+
+**API Endpoints:**
+- `/api/metrics?project=xxx` - Current metrics from KV
+- `/api/all-metrics` - All project metrics
+- `/api/history?project=xxx&date=YYYY-MM-DD` - Historical snapshot from R2
 
 ## Development
 
@@ -121,9 +126,16 @@ src/
     └── utils/             # Helper functions
 
 functions/
-└── api/                    # Cloudflare Functions (KV API)
+└── api/                    # Cloudflare Functions
     ├── metrics.js         # GET /api/metrics?project=xxx
-    └── all-metrics.js     # GET /api/all-metrics
+    ├── all-metrics.js     # GET /api/all-metrics
+    ├── history.js         # GET /api/history (R2)
+    └── archive.js         # Manual archive trigger
+
+workers/
+└── archive-cron/          # Scheduled Worker (04:00 UTC)
+    ├── index.js           # KV → R2 archiver
+    └── wrangler.toml      # Cron trigger config
 ```
 
 ## Tech Stack
@@ -131,7 +143,7 @@ functions/
 - Next.js 15 (Static Export)
 - TypeScript
 - Tailwind CSS
-- Cloudflare Pages + KV + Functions
+- Cloudflare Pages + KV + R2 + Functions + Workers
 
 ## License
 
