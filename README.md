@@ -1,6 +1,6 @@
 # NotSoDeFi
 
-**Measuring Real Decentralization** • 33 Projects
+**Measuring Real Decentralization** • 34 Projects
 
 A framework for objectively measuring blockchain and protocol decentralization. Because "decentralized" doesn't mean what most projects claim it means.
 
@@ -25,7 +25,7 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 The framework distinguishes between different consensus mechanisms:
 
 - **PoW** (Proof of Work) - Bitcoin, Bitcoin Cash, Dogecoin, Kaspa, Litecoin, Monero, Zcash
-- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid, TON, Sui, ICP, Aave, Uniswap, DAI, NEAR, Aptos, Polygon, Injective
+- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid, TON, Sui, ICP, Aave, Uniswap, DAI, NEAR, Aptos, Polygon, Injective, Filecoin
 - **NPoS** (Nominated Proof of Stake) - Polkadot
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
 - **Federated** - XRP, Chainlink, Stellar, Hedera, Tether, USDC
@@ -43,7 +43,7 @@ Projects are classified by type:
 - **Lending** - Lending protocols (Aave)
 - **Oracle** - Oracle networks (Chainlink)
 - **Stablecoin** - Stablecoins (Tether, USDC, DAI)
-- **Infrastructure** - Infrastructure providers
+- **Infrastructure** - Infrastructure providers (Filecoin)
 
 ## Supported Chains
 
@@ -82,6 +82,7 @@ Projects are classified by type:
 | Aptos | APT | PoS | [Aptos API](https://api.mainnet.aptoslabs.com) |
 | Polygon | POL | PoS | [Polygon Staking API](https://staking-api.polygon.technology) |
 | Injective | INJ | PoS | [Injective LCD API](https://sentry.lcd.injective.network) |
+| Filecoin | FIL | PoS | [Filfox](https://filfox.info) |
 
 Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily.
 

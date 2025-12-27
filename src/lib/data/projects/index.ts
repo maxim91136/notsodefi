@@ -36,8 +36,9 @@ import { near } from './near';
 import { aptos } from './aptos';
 import { polygon } from './polygon';
 import { injective } from './injective';
+import { filecoin } from './filecoin';
 
-export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink, aave, ton, stellar, sui, uniswap, hedera, tether, usdc, dai, near, aptos, polygon, injective];
+export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink, aave, ton, stellar, sui, uniswap, hedera, tether, usdc, dai, near, aptos, polygon, injective, filecoin];
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
@@ -62,4 +63,4 @@ export function getProjectsByScore(
   });
 }
 
-export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink, aave, ton, stellar, sui, uniswap, hedera, tether, usdc, dai, near, aptos, polygon, injective };
+export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink, aave, ton, stellar, sui, uniswap, hedera, tether, usdc, dai, near, aptos, polygon, injective, filecoin };

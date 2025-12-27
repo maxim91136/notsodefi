@@ -1,0 +1,64 @@
+/**
+ * Filecoin - Decentralization Assessment
+ *
+ * Decentralized storage network. Protocol Labs project, ICO 2017 ($257M raised).
+ * Uses Proof-of-Replication and Proof-of-Spacetime instead of traditional PoS.
+ *
+ * Data from Filfox API (daily fetch):
+ * - 1054 active miners
+ * - Nakamoto Coefficient: 92 (excellent!)
+ * - Top 5 power: ~3%, Top 10 power: ~5.6%
+ * - 20,366 PiB total storage power
+ *
+ * Token distribution (2B max supply):
+ * - 70% Mining rewards (miners earn over time)
+ * - 15% Protocol Labs (inc. 4.5% team) - 6-year vesting
+ * - 5% Filecoin Foundation - 6-year vesting
+ * - 10% Fundraising (ICO + ecosystem)
+ * - Total insiders: ~30%
+ *
+ * Control: Protocol Labs dominates development. Filecoin Foundation exists but limited.
+ * No kill-switch - miners operate independently.
+ */
+
+import { Project } from '@/lib/framework';
+import { calculateProjectScores } from '@/lib/framework';
+
+// Raw assessment values (null = N/A, not applicable)
+const rawValues: Record<string, number | null> = {
+  // Chain Score (A1-A4) - from Filfox API
+  A1: 92,   // Nakamoto Coefficient = 92 (API) - exceptional decentralization
+  A2: 3,    // Top 5 miners only ~3% (API) - very distributed
+  A3: 2,    // Lotus is dominant, but Venus exists
+  A4: 60,   // Storage providers are distributed globally, some datacenter concentration
+
+  // Control Score (B5-B9)
+  B5: 4,    // Protocol Labs dominates, Foundation exists but less influential
+  B6: 6,    // Open source (filecoin-project), but Labs-driven development
+  B7: 4,    // filecoin.io - Protocol Labs controls brand
+  B8: 5,    // Foundation treasury, some transparency
+  B9: 10,   // No kill-switch - miners operate independently, no admin keys
+
+  // Fairness Score (C9-C10)
+  C9: 30,   // ~30% to insiders (15% Labs + 5% Foundation + 10% ICO)
+  C10: 4,   // Limited governance, FIPs exist but Labs-dominated
+};
+
+export const filecoin: Project = {
+  id: 'filecoin',
+  name: 'Filecoin',
+  symbol: 'FIL',
+  category: 'Infrastructure',
+  consensusType: 'pos', // Uses Proof-of-Spacetime, closest to PoS
+  website: 'https://filecoin.io',
+  description:
+    '1054 active miners, Nakamoto Coefficient 92. Top 5 power only 3%. Decentralized storage network. 30% insider allocation.',
+  scores: calculateProjectScores(rawValues),
+  lastUpdated: '2025-12-27',
+  sources: [
+    'https://filfox.info/api/v1/overview',
+    'https://spec.filecoin.io/systems/filecoin_token/token_allocation/',
+    'https://tokenomist.ai/filecoin',
+    'https://chainbroker.io/projects/filecoin/',
+  ],
+};
