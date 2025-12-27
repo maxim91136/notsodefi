@@ -2,29 +2,20 @@
 
 All notable changes to the NotSoDeFi Framework.
 
-## [0.21.0-rc3] - 2025-12-27
-
-### Fixed
-- **Fetch Scripts** - Added missing `data/` directory creation to 11 scripts
-  - Scripts now create output directory if missing (GitHub Actions fix)
-
-## [0.21.0-rc2] - 2025-12-27
-
-### Fixed
-- **Data Workflows** - Added `workflow_dispatch` to all 10 missing workflows
-  - All 33 workflows now manually triggerable
-
-## [0.21.0-rc1] - 2025-12-27
-
-### Changed
-- **Fetch Scripts** - All 34 scripts now include `totalScore` in output
-  - Enables sparkline trend charts using R2 historical data
-  - Scores archived daily alongside network metrics
-
-## [0.20.0-rc2] - 2025-12-27
+## [0.21.0] - 2025-12-27
 
 ### Added
-- **README Features Section** - Documented Compare Mode, Trend Charts, Live Data, Filter & Search
+- **Sparkline Charts** - 7-day score trend visualization in project table
+- **Comparison Mode** - Compare up to 3 projects side-by-side
+- **R2 Historical Storage** - Daily metric snapshots with `totalScore`
+
+### Changed
+- **Fetch Scripts** - All 34 scripts include `totalScore` for trend tracking
+- **Data Workflows** - All 33 workflows now have `workflow_dispatch`
+- **Archive Worker** - Runs daily at 6:00 UTC
+
+### Fixed
+- **Fetch Scripts** - Added missing `data/` directory creation
 
 ## [0.20.0-rc1] - 2025-12-27
 
