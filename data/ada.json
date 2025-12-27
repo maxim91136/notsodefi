@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2025-12-26T06:55:21.258Z",
+  "lastUpdated": "2025-12-27T06:54:10.920Z",
   "source": "blockfrost.io",
   "metrics": {
     "epoch": 603,
-    "blockCount": 1712,
-    "txCount": 12020,
+    "blockCount": 5999,
+    "txCount": 44853,
     "totalSupply": 38334220572.88748,
-    "circulatingSupply": 36982245044.935165,
-    "liveStake": 21353058188.987545,
+    "circulatingSupply": 36982233595.84054,
+    "liveStake": 21349760891.39123,
     "activeStake": 21475204604.420372,
     "totalPools": 2944
   },
