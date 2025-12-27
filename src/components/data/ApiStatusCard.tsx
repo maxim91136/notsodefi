@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * API Status Card Component
  *
@@ -6,7 +8,7 @@
  */
 
 import { Card, CardContent, CardHeader } from '@/components/ui';
-import { getAllApiStatuses } from '@/lib/data/network-data';
+import { useAllMetrics } from '@/hooks/useMetrics';
 
 function formatTimeAgo(isoDate: string): string {
   const date = new Date(isoDate);
@@ -20,8 +22,103 @@ function formatTimeAgo(isoDate: string): string {
   return `${Math.floor(diffHours / 24)}d ago`;
 }
 
+// Map KV keys to display names
+const kvKeyToDisplayName: Record<string, string> = {
+  bitcoin: 'BTC',
+  solana: 'SOL',
+  ethereum: 'ETH',
+  xrp: 'XRP',
+  bnb: 'BNB',
+  zcash: 'ZEC',
+  tao: 'TAO',
+  ada: 'ADA',
+  avax: 'AVAX',
+  trx: 'TRX',
+  litecoin: 'LTC',
+  monero: 'XMR',
+  dogecoin: 'DOGE',
+  bitcoincash: 'BCH',
+  polkadot: 'DOT',
+  cosmos: 'ATOM',
+  hyperliquid: 'HYPE',
+  kaspa: 'KAS',
+  icp: 'ICP',
+  chainlink: 'LINK',
+  aave: 'AAVE',
+  ton: 'TON',
+  stellar: 'XLM',
+  sui: 'SUI',
+  uniswap: 'UNI',
+  hedera: 'HBAR',
+  tether: 'USDT',
+  usdc: 'USDC',
+  near: 'NEAR',
+  aptos: 'APT',
+  polygon: 'POL',
+  injective: 'INJ',
+};
+
+interface ApiStatus {
+  chain: string;
+  source: string;
+  status: 'success' | 'partial' | 'failed';
+  lastUpdated: string;
+}
+
+function LoadingState() {
+  return (
+    <Card className="border-white/10">
+      <CardHeader>
+        <div className="flex justify-between items-center">
+          <h3 className="font-semibold text-white">Data Pipeline Status</h3>
+          <span className="px-2 py-1 rounded text-xs font-medium bg-white/10 text-white/50">
+            Loading...
+          </span>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-wrap gap-2">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div key={i} className="h-6 w-12 bg-white/5 rounded animate-pulse" />
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function ErrorState({ error }: { error: string }) {
+  return (
+    <Card className="border-red-500/30">
+      <CardHeader>
+        <div className="flex justify-between items-center">
+          <h3 className="font-semibold text-white">Data Pipeline Status</h3>
+          <span className="px-2 py-1 rounded text-xs font-medium bg-red-500/20 text-red-400">
+            Error
+          </span>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-white/60">{error}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
 export function ApiStatusCard() {
-  const statuses = getAllApiStatuses();
+  const { data, loading, error } = useAllMetrics();
+
+  if (loading) return <LoadingState />;
+  if (error) return <ErrorState error={error} />;
+  if (!data) return null;
+
+  // Convert metrics to status array
+  const statuses: ApiStatus[] = Object.entries(data.metrics).map(([key, value]) => ({
+    chain: kvKeyToDisplayName[key] || key.toUpperCase(),
+    source: value.source || 'API',
+    status: value.fetchStatus,
+    lastUpdated: value.lastUpdated,
+  }));
 
   const successCount = statuses.filter((s) => s.status === 'success').length;
   const issues = statuses.filter((s) => s.status !== 'success');
@@ -39,7 +136,7 @@ export function ApiStatusCard() {
                 : 'bg-yellow-500/20 text-yellow-400'
             }`}
           >
-            {allSuccess ? `All ${successCount} OK ✓` : `${issues.length} Issues`}
+            {allSuccess ? `All ${successCount} OK` : `${issues.length} Issues`}
           </span>
         </div>
       </CardHeader>

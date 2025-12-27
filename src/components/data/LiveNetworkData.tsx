@@ -1,40 +1,28 @@
+'use client';
+
 /**
  * Live Network Data Component
  *
- * Displays real-time network metrics fetched from APIs.
+ * Displays real-time network metrics fetched from KV API.
  * Shows last updated timestamp and data source.
  */
 
 import { Card, CardContent, CardHeader } from '@/components/ui';
-import {
-  getBitcoinData,
-  getSolanaData,
-  getEthereumData,
-  getXrpData,
-  getBnbData,
-  getZecData,
-  getTaoData,
-  getAdaData,
-  getAvaxData,
-  getTrxData,
-} from '@/lib/data/network-data';
+import { useMetrics } from '@/hooks/useMetrics';
 
 interface MetricRowProps {
   label: string;
-  value: string | number | null;
+  value: string | number | null | undefined;
   unit?: string;
 }
 
-function MetricRow({ label, value, unit }: MetricRowProps) {
+function MetricRow({ label, value }: MetricRowProps) {
   return (
     <div className="flex justify-between items-center py-2 border-b border-white/5 last:border-0">
       <span className="text-sm text-white/60">{label}</span>
       <span className="font-mono text-white">
-        {value !== null ? (
-          <>
-            {typeof value === 'number' ? value.toLocaleString() : value}
-            {unit && <span className="text-white/40 ml-1">{unit}</span>}
-          </>
+        {value !== null && value !== undefined ? (
+          typeof value === 'number' ? value.toLocaleString() : value
         ) : (
           <span className="text-white/30">N/A</span>
         )}
@@ -59,303 +47,239 @@ interface LiveNetworkDataProps {
   projectId: string;
 }
 
+// Map project IDs to KV keys
+const projectToKvKey: Record<string, string> = {
+  bitcoin: 'bitcoin',
+  solana: 'solana',
+  ethereum: 'ethereum',
+  xrp: 'xrp',
+  bnb: 'bnb',
+  zcash: 'zcash',
+  bittensor: 'tao',
+  cardano: 'ada',
+  avalanche: 'avax',
+  tron: 'trx',
+  litecoin: 'litecoin',
+  monero: 'monero',
+  dogecoin: 'dogecoin',
+  'bitcoin-cash': 'bitcoincash',
+  polkadot: 'polkadot',
+  cosmos: 'cosmos',
+  hyperliquid: 'hyperliquid',
+  kaspa: 'kaspa',
+  icp: 'icp',
+  chainlink: 'chainlink',
+  aave: 'aave',
+  ton: 'ton',
+  stellar: 'stellar',
+  sui: 'sui',
+  uniswap: 'uniswap',
+  hedera: 'hedera',
+  tether: 'tether',
+  usdc: 'usdc',
+  near: 'near',
+  aptos: 'aptos',
+  polygon: 'polygon',
+  injective: 'injective',
+};
+
+// Project colors for styling
+const projectColors: Record<string, { border: string; text: string }> = {
+  bitcoin: { border: 'border-orange-500/30', text: 'text-orange-400' },
+  solana: { border: 'border-purple-500/30', text: 'text-purple-400' },
+  ethereum: { border: 'border-blue-500/30', text: 'text-blue-400' },
+  xrp: { border: 'border-gray-500/30', text: 'text-gray-400' },
+  bnb: { border: 'border-yellow-500/30', text: 'text-yellow-400' },
+  zcash: { border: 'border-amber-500/30', text: 'text-amber-400' },
+  bittensor: { border: 'border-cyan-500/30', text: 'text-cyan-400' },
+  cardano: { border: 'border-sky-500/30', text: 'text-sky-400' },
+  avalanche: { border: 'border-red-500/30', text: 'text-red-400' },
+  tron: { border: 'border-rose-500/30', text: 'text-rose-400' },
+};
+
+function LoadingState() {
+  return (
+    <Card className="border-white/10 animate-pulse">
+      <CardHeader>
+        <div className="h-6 bg-white/10 rounded w-1/3" />
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-3">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="h-4 bg-white/5 rounded" />
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function ErrorState({ error }: { error: string }) {
+  return (
+    <Card className="border-red-500/30">
+      <CardHeader>
+        <h3 className="font-semibold text-red-400">Network Data Error</h3>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-white/60">{error}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
 export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
-  if (projectId === 'bitcoin') {
-    const data = getBitcoinData();
-    return (
-      <Card className="border-orange-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-orange-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">
-                Source: bitnodes.io + blockchain.info
-              </p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Total Nodes" value={data.metrics.totalNodes} />
-          <MetricRow
-            label="Top 5 Pool Concentration"
-            value={data.metrics.top5PoolConcentration}
-            unit="%"
-          />
-          <MetricRow
-            label="Largest Pool"
-            value={data.metrics.largestPoolPercentage}
-            unit="%"
-          />
-          <MetricRow
-            label="Pool Diversity"
-            value={data.metrics.poolDiversity}
-            unit="pools"
-          />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+  const kvKey = projectToKvKey[projectId] || projectId;
+  const { data, loading, error } = useMetrics(kvKey);
+  const colors = projectColors[projectId] || { border: 'border-white/10', text: 'text-white' };
 
-  if (projectId === 'solana') {
-    const data = getSolanaData();
-    return (
-      <Card className="border-purple-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-purple-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">Source: Solana RPC</p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Total Validators" value={data.metrics.totalValidators} />
-          <MetricRow label="Active Validators" value={data.metrics.activeValidators} />
-          <MetricRow label="Nakamoto Coefficient" value={data.metrics.nakamotoCoefficient} />
-          <MetricRow
-            label="Top 5 Concentration"
-            value={data.metrics.top5Concentration}
-            unit="%"
-          />
-          <MetricRow
-            label="Largest Validator"
-            value={data.metrics.largestValidatorPercentage}
-            unit="%"
-          />
-          <MetricRow label="Total Nodes" value={data.metrics.totalNodes} />
-          <MetricRow label="Client Versions" value={data.metrics.clientVersions} />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+  if (loading) return <LoadingState />;
+  if (error) return <ErrorState error={error} />;
+  if (!data) return null;
 
-  if (projectId === 'ethereum') {
-    const data = getEthereumData();
-    return (
-      <Card className="border-blue-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-blue-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'Beacon API'}</p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Connected Peers" value={data.metrics.connectedPeers} />
-          <MetricRow label="Head Slot" value={data.metrics.headSlot} />
-          <MetricRow label="Finalized Epoch" value={data.metrics.finalizedEpoch} />
-          <MetricRow label="Sync Distance" value={data.metrics.syncDistance} />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+  const m = data.metrics as Record<string, unknown>;
 
-  if (projectId === 'xrp') {
-    const data = getXrpData();
-    return (
-      <Card className="border-gray-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-gray-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'XRPL (s1.ripple.com)'}</p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
+  return (
+    <Card className={colors.border}>
+      <CardHeader>
+        <div className="flex justify-between items-start">
+          <div>
+            <h3 className={`font-semibold ${colors.text}`}>Live Network Data</h3>
+            <p className="text-xs text-white/40 mt-1">
+              Source: {data.source || 'API'}
+            </p>
           </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Validation Quorum" value={data.metrics.validationQuorum} />
-          <MetricRow label="Validated Ledger" value={data.metrics.validatedLedgerSeq} />
-          <MetricRow label="Connected Peers" value={data.metrics.connectedPeers} />
-          <MetricRow label="Server State" value={data.metrics.serverState} />
-          <MetricRow label="Build Version" value={data.metrics.buildVersion} />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+          <StatusBadge status={data.fetchStatus} />
+        </div>
+      </CardHeader>
+      <CardContent>
+        <MetricsDisplay projectId={projectId} metrics={m} />
+        <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
+          Updated {formatTimeAgo(data.lastUpdated)}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
-  if (projectId === 'bnb') {
-    const data = getBnbData();
-    return (
-      <Card className="border-yellow-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-yellow-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'BNB Chain RPC'}</p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Block Number" value={data.metrics.blockNumber} />
-          <MetricRow label="Peer Count" value={data.metrics.peerCount} />
-          <MetricRow label="Validators" value={data.metrics.validatorCount} />
-          <MetricRow label="Gas Price" value={data.metrics.gasPrice} unit="Gwei" />
-          <MetricRow label="Chain ID" value={data.metrics.chainId} />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Record<string, unknown> }) {
+  const m = metrics;
+  const num = (v: unknown) => (typeof v === 'number' ? v : null);
+  const str = (v: unknown) => (typeof v === 'string' ? v : null);
 
-  if (projectId === 'zcash') {
-    const data = getZecData();
-    return (
-      <Card className="border-amber-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-amber-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'Blockchair'}</p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Block Height" value={data.metrics.blocks} />
-          <MetricRow label="Network Nodes" value={data.metrics.nodes} />
-          <MetricRow label="Difficulty" value={data.metrics.difficulty} />
-          <MetricRow label="Hashrate (24h)" value={data.metrics.hashrate24h ? Math.round(data.metrics.hashrate24h / 1e9) : null} unit="GH/s" />
-          <MetricRow label="Mempool TXs" value={data.metrics.mempoolTxs} />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+  switch (projectId) {
+    case 'bitcoin':
+      return (
+        <>
+          <MetricRow label="Total Nodes" value={num(m.totalNodes)} />
+          <MetricRow label="Top 5 Pool Concentration" value={num(m.top5PoolConcentration) ? `${m.top5PoolConcentration}%` : null} />
+          <MetricRow label="Largest Pool" value={num(m.largestPoolPercentage) ? `${m.largestPoolPercentage}%` : null} />
+          <MetricRow label="Pool Diversity" value={num(m.poolDiversity) ? `${m.poolDiversity} pools` : null} />
+        </>
+      );
 
-  if (projectId === 'bittensor') {
-    const data = getTaoData();
-    return (
-      <Card className="border-cyan-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-cyan-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'Taostats'}</p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Block Number" value={data.metrics.blockNumber} />
-          <MetricRow label="Accounts" value={data.metrics.accounts} />
-          <MetricRow label="Subnets" value={data.metrics.subnets} />
-          <MetricRow label="Total Staked" value={data.metrics.totalStaked ? Math.round(data.metrics.totalStaked) : null} unit="TAO" />
-          <MetricRow label="Total Issued" value={data.metrics.issued ? Math.round(data.metrics.issued) : null} unit="TAO" />
-          <MetricRow label="Validators (all subnets)" value={data.metrics.totalValidators} />
-          <MetricRow label="Active Keys" value={data.metrics.totalActiveKeys} />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+    case 'solana':
+      return (
+        <>
+          <MetricRow label="Total Validators" value={num(m.totalValidators)} />
+          <MetricRow label="Active Validators" value={num(m.activeValidators)} />
+          <MetricRow label="Nakamoto Coefficient" value={num(m.nakamotoCoefficient)} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+          <MetricRow label="Total Nodes" value={num(m.totalNodes)} />
+        </>
+      );
 
-  if (projectId === 'cardano') {
-    const data = getAdaData();
-    return (
-      <Card className="border-sky-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-sky-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'Blockfrost'}</p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Epoch" value={data.metrics.epoch} />
-          <MetricRow label="Blocks (epoch)" value={data.metrics.blockCount} />
-          <MetricRow label="TXs (epoch)" value={data.metrics.txCount} />
-          <MetricRow label="Live Stake" value={data.metrics.liveStake ? Math.round(data.metrics.liveStake / 1e6) : null} unit="M ADA" />
-          <MetricRow label="Active Stake" value={data.metrics.activeStake ? Math.round(data.metrics.activeStake / 1e6) : null} unit="M ADA" />
-          <MetricRow label="Total Pools" value={data.metrics.totalPools} />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+    case 'ethereum':
+      return (
+        <>
+          <MetricRow label="Connected Peers" value={num(m.connectedPeers)} />
+          <MetricRow label="Head Slot" value={num(m.headSlot)} />
+          <MetricRow label="Finalized Epoch" value={num(m.finalizedEpoch)} />
+          <MetricRow label="Sync Distance" value={num(m.syncDistance)} />
+        </>
+      );
 
-  if (projectId === 'avalanche') {
-    const data = getAvaxData();
-    return (
-      <Card className="border-red-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-red-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'api.avax.network'}</p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Total Validators" value={data.metrics.totalValidators} />
-          <MetricRow label="Active Validators" value={data.metrics.activeValidators} />
-          <MetricRow label="Total Staked" value={data.metrics.totalStaked ? Math.round(data.metrics.totalStaked / 1e6) : null} unit="M AVAX" />
-          <MetricRow label="P-Chain Height" value={data.metrics.pChainHeight} />
-          <MetricRow label="Network" value={data.metrics.networkName} />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+    case 'xrp':
+      return (
+        <>
+          <MetricRow label="Validation Quorum" value={num(m.validationQuorum)} />
+          <MetricRow label="Validated Ledger" value={num(m.validatedLedgerSeq)} />
+          <MetricRow label="Connected Peers" value={num(m.connectedPeers)} />
+          <MetricRow label="Server State" value={str(m.serverState)} />
+        </>
+      );
 
-  if (projectId === 'tron') {
-    const data = getTrxData();
-    return (
-      <Card className="border-rose-500/30">
-        <CardHeader>
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold text-rose-400">Live Network Data</h3>
-              <p className="text-xs text-white/40 mt-1">Source: {data.source || 'api.trongrid.io'}</p>
-            </div>
-            <StatusBadge status={data.fetchStatus} />
-          </div>
-        </CardHeader>
-        <CardContent>
-          <MetricRow label="Total Witnesses" value={data.metrics.totalWitnesses} />
-          <MetricRow label="Active SRs" value={data.metrics.activeWitnesses} />
-          <MetricRow label="Total Votes" value={data.metrics.totalVotes ? Math.round(data.metrics.totalVotes / 1e9) : null} unit="B" />
-          <MetricRow label="Latest Block" value={data.metrics.latestBlock} />
-          <MetricRow label="Connected Peers" value={data.metrics.connectedPeers} />
-          <div className="mt-4 pt-3 border-t border-white/10 text-xs text-white/40">
-            Updated {formatTimeAgo(data.lastUpdated)}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+    case 'bnb':
+      return (
+        <>
+          <MetricRow label="Block Number" value={num(m.blockNumber)} />
+          <MetricRow label="Peer Count" value={num(m.peerCount)} />
+          <MetricRow label="Validators" value={num(m.validatorCount)} />
+          <MetricRow label="Gas Price" value={num(m.gasPrice) ? `${m.gasPrice} Gwei` : null} />
+        </>
+      );
 
-  return null;
+    case 'zcash':
+      return (
+        <>
+          <MetricRow label="Block Height" value={num(m.blocks)} />
+          <MetricRow label="Network Nodes" value={num(m.nodes)} />
+          <MetricRow label="Difficulty" value={num(m.difficulty)} />
+          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
+        </>
+      );
+
+    case 'bittensor':
+      return (
+        <>
+          <MetricRow label="Block Number" value={num(m.blockNumber)} />
+          <MetricRow label="Accounts" value={num(m.accounts)} />
+          <MetricRow label="Subnets" value={num(m.subnets)} />
+          <MetricRow label="Total Staked" value={num(m.totalStaked) ? `${Math.round(m.totalStaked as number)} TAO` : null} />
+          <MetricRow label="Validators" value={num(m.totalValidators)} />
+        </>
+      );
+
+    case 'cardano':
+      return (
+        <>
+          <MetricRow label="Epoch" value={num(m.epoch)} />
+          <MetricRow label="Blocks (epoch)" value={num(m.blockCount)} />
+          <MetricRow label="TXs (epoch)" value={num(m.txCount)} />
+          <MetricRow label="Total Pools" value={num(m.totalPools)} />
+        </>
+      );
+
+    case 'avalanche':
+      return (
+        <>
+          <MetricRow label="Total Validators" value={num(m.totalValidators)} />
+          <MetricRow label="Active Validators" value={num(m.activeValidators)} />
+          <MetricRow label="P-Chain Height" value={num(m.pChainHeight)} />
+          <MetricRow label="Network" value={str(m.networkName)} />
+        </>
+      );
+
+    case 'tron':
+      return (
+        <>
+          <MetricRow label="Total Witnesses" value={num(m.totalWitnesses)} />
+          <MetricRow label="Active SRs" value={num(m.activeWitnesses)} />
+          <MetricRow label="Latest Block" value={num(m.latestBlock)} />
+          <MetricRow label="Connected Peers" value={num(m.connectedPeers)} />
+        </>
+      );
+
+    default:
+      // Generic display for other projects
+      const keys = Object.keys(m).slice(0, 5);
+      return (
+        <>
+          {keys.map((key) => (
+            <MetricRow key={key} label={key} value={m[key] as string | number | null} />
+          ))}
+        </>
+      );
+  }
 }
 
 function StatusBadge({ status }: { status: 'success' | 'partial' | 'failed' }) {
