@@ -46,6 +46,7 @@ function getAvailableFilters(projects: Project[]) {
 
 export function ProjectTable({ projects }: ProjectTableProps) {
   const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<Set<ProjectCategory>>(new Set());
   const [selectedConsensus, setSelectedConsensus] = useState<Set<ConsensusType>>(new Set());
 
@@ -62,12 +63,16 @@ export function ProjectTable({ projects }: ProjectTableProps) {
   }, [projects]);
 
   const filteredProjects = useMemo(() => {
+    const query = searchQuery.toLowerCase().trim();
     return projects.filter((p) => {
+      const searchMatch = !query ||
+        p.name.toLowerCase().includes(query) ||
+        (p.symbol && p.symbol.toLowerCase().includes(query));
       const categoryMatch = selectedCategories.size === 0 || selectedCategories.has(p.category);
       const consensusMatch = selectedConsensus.size === 0 || selectedConsensus.has(p.consensusType);
-      return categoryMatch && consensusMatch;
+      return searchMatch && categoryMatch && consensusMatch;
     });
-  }, [projects, selectedCategories, selectedConsensus]);
+  }, [projects, searchQuery, selectedCategories, selectedConsensus]);
 
   const toggleCategory = (cat: ProjectCategory) => {
     setSelectedCategories((prev) => {
@@ -94,17 +99,29 @@ export function ProjectTable({ projects }: ProjectTableProps) {
   };
 
   const clearFilters = () => {
+    setSearchQuery('');
     setSelectedCategories(new Set());
     setSelectedConsensus(new Set());
   };
 
-  const hasFilters = selectedCategories.size > 0 || selectedConsensus.size > 0;
+  const hasFilters = searchQuery.length > 0 || selectedCategories.size > 0 || selectedConsensus.size > 0;
 
   return (
     <div>
       {/* Filter Bar */}
       <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/10">
         <div className="flex flex-wrap items-center gap-4">
+          {/* Search */}
+          <div className="flex items-center gap-2">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-32 sm:w-40 px-2 py-1 text-sm bg-white/5 border border-white/10 rounded text-white placeholder-white/30 focus:outline-none focus:border-white/30"
+            />
+          </div>
+
           {/* Category Filters */}
           <div className="flex items-center gap-2">
             <span className="text-xs text-white/40 uppercase tracking-wider">Category:</span>
