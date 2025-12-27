@@ -2,6 +2,23 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.23.0-rc1] - 2025-12-27
+
+### Performance
+- **Remove recharts** - Replaced with lightweight SVG sparklines (~150-200KB bundle size saved)
+- **Batch Sparkline API** - New `/api/sparklines` endpoint reduces 280 API calls to 1
+- **Request Caching** - 5-minute in-memory cache for metrics with request deduplication
+- **Request Deduplication** - Prevents duplicate API calls when multiple components request same data
+
+### Added
+- **Centralized Project Config** - New `src/lib/config/projects.ts` as single source of truth
+- **ErrorBoundary Component** - Graceful error handling for React components
+- **formatTimeAgo Utility** - Centralized relative time formatting
+
+### Improved
+- **Accessibility** - ARIA labels for status indicators and compare checkboxes
+- **Code Quality** - Removed duplicate KV key mappings from components
+
 ## [0.22.0-rc1] - 2025-12-27
 
 ### Fixed
