@@ -6,6 +6,13 @@ A framework for objectively measuring blockchain and protocol decentralization. 
 
 Live: [notsodefi.com](https://notsodefi.com)
 
+## Features
+
+- **Compare Mode** - Select up to 3 projects for side-by-side comparison
+- **Trend Charts** - 7-day sparklines showing score history
+- **Live Data** - Daily API fetches with historical R2 archive
+- **Filter & Search** - By category, consensus type, or name
+
 ## The Framework
 
 Three scores, eleven criteria. Projects with admin kill-switches (B9=0) are capped at 2.0:
