@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.24.0-rc2] - 2025-12-27
+
+### Fixed
+- **Stablecoin Pages** - Fixed client-side crash on USDT/USDC pages (different data structure)
+- **Aave Fairness Score** - Corrected C10 from 2 to 75 (4.5 → 3.8)
+
+### Added
+- **Stablecoin Display** - Show Total Supply and Top Chains for USDT/USDC
+
 ## [0.24.0-rc1] - 2025-12-27
 
 ### Added
