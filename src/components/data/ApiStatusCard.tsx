@@ -65,11 +65,25 @@ export function ApiStatusCard() {
           </div>
         )}
 
+        {/* Compact overview - always visible */}
+        <div className="flex flex-wrap gap-2 mb-3">
+          {statuses.map((api) => (
+            <div
+              key={api.chain}
+              className="flex items-center gap-1.5 px-2 py-1 rounded bg-white/5 text-xs"
+              title={`${api.source} - ${formatTimeAgo(api.lastUpdated)}`}
+            >
+              <StatusDot status={api.status} />
+              <span className="text-white/70">{api.chain}</span>
+            </div>
+          ))}
+        </div>
+
         {/* Collapsible details */}
         <details className="group">
           <summary className="cursor-pointer text-sm text-white/50 hover:text-white/70 transition-colors list-none flex items-center gap-2">
-            <span className="text-xs">▶</span>
-            <span className="group-open:hidden">Show all {statuses.length} data sources</span>
+            <span className="text-xs group-open:rotate-90 transition-transform">▶</span>
+            <span className="group-open:hidden">Show details</span>
             <span className="hidden group-open:inline">Hide details</span>
           </summary>
           <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-2">
