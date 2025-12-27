@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.16.0-rc1] - 2025-12-27
+
+### Changed
+- **Data Pipeline Status UX overhaul**
+  - Compact badge overview always visible (chain + status dot)
+  - Hover tooltips show source + last update time
+  - Collapsible details section for full info
+  - Issues shown prominently in red when present
+
 ## [0.15.0-rc8] - 2025-12-27
 
 ### Fixed
