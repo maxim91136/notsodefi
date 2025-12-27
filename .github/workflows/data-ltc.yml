@@ -5,8 +5,6 @@ on:
     - cron: '35 5 * * *'  # Daily at 5:35 UTC
   workflow_dispatch:
 
-permissions:
-  contents: write
 
 jobs:
   fetch:
@@ -23,12 +21,22 @@ jobs:
       - name: Fetch LTC data
         run: npx tsx scripts/fetch-ltc.ts
 
-      - name: Commit changes
+      - name: Push to Cloudflare KV
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_KV_ID: ${{ secrets.CF_KV_ID }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet data/litecoin.json || (
-            git add data/litecoin.json
-            git commit -m "chore(data): LTC - update network metrics"
-            git push
-          )
+          HTTP_STATUS=$(curl -s -o /tmp/kv_response.json -w "%{http_code}" -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/storage/kv/namespaces/${CF_KV_ID}/values/metrics:litecoin" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data-binary @data/litecoin.json)
+
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "✅ Metrics pushed to KV"
+          else
+            echo "❌ KV push failed (HTTP $HTTP_STATUS)"
+            cat /tmp/kv_response.json
+            exit 1
+          fi
