@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2025-12-26T05:44:21.031Z",
+  "lastUpdated": "2025-12-27T05:44:12.713Z",
   "source": "blockchair.com",
   "metrics": {
-    "blocks": 3182402,
-    "difficulty": 135670732.1003177,
-    "hashrate24h": 13047847330,
-    "mempoolTxs": 8,
-    "nodes": 1718
+    "blocks": 3183540,
+    "difficulty": 97301728.37380531,
+    "hashrate24h": 13319984840,
+    "mempoolTxs": 9,
+    "nodes": 1717
   },
   "fetchStatus": "success"
 }
