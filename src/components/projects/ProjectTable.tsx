@@ -315,6 +315,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                     onChange={() => toggleCompare(project.id)}
                     disabled={!isComparing && compareIds.size >= 3}
                     onClick={(e) => e.stopPropagation()}
+                    aria-label={`Compare ${project.name}`}
                     className="w-4 h-4 rounded border-white/30 bg-white/5 text-blue-500 focus:ring-0 cursor-pointer disabled:opacity-30"
                   />
                   <span
@@ -367,7 +368,14 @@ export function ProjectTable({ projects }: ProjectTableProps) {
         <thead className="sticky top-0 bg-black z-10">
           <tr className="border-b border-white/10">
             <th className="w-8 py-3 px-2">
-              <span className="text-white/30 text-xs" title="Compare up to 3">⚖</span>
+              <span
+                className="text-white/30 text-xs"
+                title="Compare up to 3 projects"
+                aria-label="Compare column - select up to 3 projects"
+                role="columnheader"
+              >
+                ⚖<span className="sr-only"> Compare</span>
+              </span>
             </th>
             <th
               className="text-center py-3 px-2 sm:px-4 text-sm font-medium text-white/50 w-10 sm:w-12 cursor-pointer hover:text-white/70"
@@ -441,6 +449,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   checked={compareIds.has(project.id)}
                   onChange={() => toggleCompare(project.id)}
                   disabled={!compareIds.has(project.id) && compareIds.size >= 3}
+                  aria-label={`Compare ${project.name}`}
                   className="w-4 h-4 rounded border-white/30 bg-white/5 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
                 />
               </td>

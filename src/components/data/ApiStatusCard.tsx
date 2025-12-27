@@ -9,54 +9,8 @@
 
 import { Card, CardContent, CardHeader } from '@/components/ui';
 import { useAllMetrics } from '@/hooks/useMetrics';
-
-function formatTimeAgo(isoDate: string): string {
-  const date = new Date(isoDate);
-  const now = new Date();
-  const diffMs = now.getTime() - date.getTime();
-  const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-  const diffMins = Math.floor(diffMs / (1000 * 60));
-
-  if (diffMins < 60) return `${diffMins}m ago`;
-  if (diffHours < 24) return `${diffHours}h ago`;
-  return `${Math.floor(diffHours / 24)}d ago`;
-}
-
-// Map KV keys to display names
-const kvKeyToDisplayName: Record<string, string> = {
-  bitcoin: 'BTC',
-  solana: 'SOL',
-  ethereum: 'ETH',
-  xrp: 'XRP',
-  bnb: 'BNB',
-  zcash: 'ZEC',
-  tao: 'TAO',
-  ada: 'ADA',
-  avax: 'AVAX',
-  trx: 'TRX',
-  litecoin: 'LTC',
-  monero: 'XMR',
-  dogecoin: 'DOGE',
-  bitcoincash: 'BCH',
-  polkadot: 'DOT',
-  cosmos: 'ATOM',
-  hyperliquid: 'HYPE',
-  kaspa: 'KAS',
-  icp: 'ICP',
-  chainlink: 'LINK',
-  aave: 'AAVE',
-  ton: 'TON',
-  stellar: 'XLM',
-  sui: 'SUI',
-  uniswap: 'UNI',
-  hedera: 'HBAR',
-  tether: 'USDT',
-  usdc: 'USDC',
-  near: 'NEAR',
-  aptos: 'APT',
-  polygon: 'POL',
-  injective: 'INJ',
-};
+import { getSymbol } from '@/lib/config/projects';
+import { formatTimeAgo } from '@/lib/utils/formatting';
 
 interface ApiStatus {
   chain: string;
@@ -112,9 +66,9 @@ export function ApiStatusCard() {
   if (error) return <ErrorState error={error} />;
   if (!data) return null;
 
-  // Convert metrics to status array
+  // Convert metrics to status array using centralized config
   const statuses: ApiStatus[] = Object.entries(data.metrics).map(([key, value]) => ({
-    chain: kvKeyToDisplayName[key] || key.toUpperCase(),
+    chain: getSymbol(key),
     source: value.source || 'API',
     status: value.fetchStatus,
     lastUpdated: value.lastUpdated,
@@ -213,7 +167,18 @@ function StatusDot({ status }: { status: 'success' | 'partial' | 'failed' }) {
     failed: 'bg-red-500',
   };
 
+  const labels = {
+    success: 'OK',
+    partial: 'Partial',
+    failed: 'Error',
+  };
+
   return (
-    <span className={`w-2 h-2 rounded-full ${colors[status]}`} />
+    <span
+      className={`w-2 h-2 rounded-full ${colors[status]}`}
+      role="status"
+      aria-label={labels[status]}
+      title={labels[status]}
+    />
   );
 }

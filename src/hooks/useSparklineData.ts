@@ -1,85 +1,138 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface SparklineData {
   [projectId: string]: number[];
+}
+
+interface SparklineApiResponse {
+  dates: string[];
+  projects: SparklineData;
+  count: number;
+}
+
+interface CacheEntry {
+  data: SparklineData;
+  timestamp: number;
 }
 
 interface UseSparklineDataResult {
   data: SparklineData;
   loading: boolean;
   daysAvailable: number;
+  refetch: () => void;
 }
 
-// Fetches last 7 days of totalScore for sparklines
+// Cache configuration
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+// Global cache for sparkline data
+let sparklineCache: CacheEntry | null = null;
+let sparklineInflight: Promise<SparklineApiResponse> | null = null;
+
+/**
+ * Fetch sparkline data with caching and request deduplication
+ * Uses new batch endpoint: /api/sparklines
+ */
+async function fetchSparklineDataWithCache(): Promise<SparklineApiResponse> {
+  // Check cache first
+  if (sparklineCache && Date.now() - sparklineCache.timestamp < CACHE_TTL) {
+    return {
+      dates: [],
+      projects: sparklineCache.data,
+      count: Object.keys(sparklineCache.data).length
+    };
+  }
+
+  // Check for in-flight request (deduplication)
+  if (sparklineInflight) {
+    return sparklineInflight;
+  }
+
+  // Create new request
+  const request = (async () => {
+    try {
+      const response = await fetch('/api/sparklines');
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      const data: SparklineApiResponse = await response.json();
+
+      // Update cache
+      sparklineCache = { data: data.projects, timestamp: Date.now() };
+
+      return data;
+    } finally {
+      // Clear in-flight reference
+      sparklineInflight = null;
+    }
+  })();
+
+  // Track in-flight request
+  sparklineInflight = request;
+
+  return request;
+}
+
+/**
+ * Hook to fetch sparkline data for all projects
+ * Uses batch endpoint to reduce API calls from 280 to 1
+ */
 export function useSparklineData(projectIds: string[]): UseSparklineDataResult {
-  const [data, setData] = useState<SparklineData>({});
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<SparklineData>(() => {
+    // Initialize with cached data if available
+    return sparklineCache?.data || {};
+  });
+  const [loading, setLoading] = useState(!sparklineCache);
   const [daysAvailable, setDaysAvailable] = useState(0);
 
-  useEffect(() => {
+  const fetchData = useCallback(async () => {
     if (projectIds.length === 0) {
       setLoading(false);
       return;
     }
 
-    const fetchHistory = async () => {
-      setLoading(true);
-      const result: SparklineData = {};
+    setLoading(true);
+
+    try {
+      const result = await fetchSparklineDataWithCache();
+
+      // Filter to requested projects
+      const filteredData: SparklineData = {};
       let maxDays = 0;
 
-      // Get last 7 dates
-      const dates: string[] = [];
-      for (let i = 6; i >= 0; i--) {
-        const d = new Date();
-        d.setDate(d.getDate() - i);
-        dates.push(d.toISOString().split('T')[0]);
-      }
-
-      // Fetch history for each project (in parallel, batched)
-      const fetchProject = async (projectId: string): Promise<[string, number[]]> => {
-        const scores: number[] = [];
-
-        for (const date of dates) {
-          try {
-            const res = await fetch(`/api/history?project=${projectId}&date=${date}`);
-            if (res.ok) {
-              const json = await res.json();
-              // Use totalScore from archived data
-              if (typeof json.totalScore === 'number') {
-                scores.push(json.totalScore);
-              }
-            }
-          } catch {
-            // Skip failed fetches
-          }
-        }
-
-        return [projectId, scores];
-      };
-
-      // Fetch all projects in parallel (limit concurrency)
-      const batchSize = 10;
-      for (let i = 0; i < projectIds.length; i += batchSize) {
-        const batch = projectIds.slice(i, i + batchSize);
-        const results = await Promise.all(batch.map(fetchProject));
-
-        for (const [projectId, scores] of results) {
-          if (scores.length >= 2) {
-            result[projectId] = scores;
-            maxDays = Math.max(maxDays, scores.length);
-          }
+      for (const projectId of projectIds) {
+        if (result.projects[projectId]) {
+          filteredData[projectId] = result.projects[projectId];
+          maxDays = Math.max(maxDays, result.projects[projectId].length);
         }
       }
 
-      setData(result);
+      setData(filteredData);
       setDaysAvailable(maxDays);
+    } catch {
+      // Keep existing data on error
+    } finally {
       setLoading(false);
-    };
-
-    fetchHistory();
+    }
   }, [projectIds.join(',')]);
 
-  return { data, loading, daysAvailable };
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  const refetch = useCallback(() => {
+    sparklineCache = null;
+    fetchData();
+  }, [fetchData]);
+
+  return { data, loading, daysAvailable, refetch };
+}
+
+/**
+ * Invalidate sparkline cache
+ */
+export function invalidateSparklineCache(): void {
+  sparklineCache = null;
 }

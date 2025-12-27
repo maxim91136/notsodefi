@@ -9,6 +9,8 @@
 
 import { Card, CardContent, CardHeader } from '@/components/ui';
 import { useMetrics } from '@/hooks/useMetrics';
+import { getKvKey, getProjectColors } from '@/lib/config/projects';
+import { formatTimeAgo } from '@/lib/utils/formatting';
 
 interface MetricRowProps {
   label: string;
@@ -31,71 +33,9 @@ function MetricRow({ label, value }: MetricRowProps) {
   );
 }
 
-function formatTimeAgo(isoDate: string): string {
-  const date = new Date(isoDate);
-  const now = new Date();
-  const diffMs = now.getTime() - date.getTime();
-  const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-  const diffMins = Math.floor(diffMs / (1000 * 60));
-
-  if (diffMins < 60) return `${diffMins}m ago`;
-  if (diffHours < 24) return `${diffHours}h ago`;
-  return `${Math.floor(diffHours / 24)}d ago`;
-}
-
 interface LiveNetworkDataProps {
   projectId: string;
 }
-
-// Map project IDs to KV keys
-const projectToKvKey: Record<string, string> = {
-  bitcoin: 'bitcoin',
-  solana: 'solana',
-  ethereum: 'ethereum',
-  xrp: 'xrp',
-  bnb: 'bnb',
-  zcash: 'zcash',
-  bittensor: 'tao',
-  cardano: 'ada',
-  avalanche: 'avax',
-  tron: 'trx',
-  litecoin: 'litecoin',
-  monero: 'monero',
-  dogecoin: 'dogecoin',
-  'bitcoin-cash': 'bitcoincash',
-  polkadot: 'polkadot',
-  cosmos: 'cosmos',
-  hyperliquid: 'hyperliquid',
-  kaspa: 'kaspa',
-  icp: 'icp',
-  chainlink: 'chainlink',
-  aave: 'aave',
-  ton: 'ton',
-  stellar: 'stellar',
-  sui: 'sui',
-  uniswap: 'uniswap',
-  hedera: 'hedera',
-  tether: 'tether',
-  usdc: 'usdc',
-  near: 'near',
-  aptos: 'aptos',
-  polygon: 'polygon',
-  injective: 'injective',
-};
-
-// Project colors for styling
-const projectColors: Record<string, { border: string; text: string }> = {
-  bitcoin: { border: 'border-orange-500/30', text: 'text-orange-400' },
-  solana: { border: 'border-purple-500/30', text: 'text-purple-400' },
-  ethereum: { border: 'border-blue-500/30', text: 'text-blue-400' },
-  xrp: { border: 'border-gray-500/30', text: 'text-gray-400' },
-  bnb: { border: 'border-yellow-500/30', text: 'text-yellow-400' },
-  zcash: { border: 'border-amber-500/30', text: 'text-amber-400' },
-  bittensor: { border: 'border-cyan-500/30', text: 'text-cyan-400' },
-  cardano: { border: 'border-sky-500/30', text: 'text-sky-400' },
-  avalanche: { border: 'border-red-500/30', text: 'text-red-400' },
-  tron: { border: 'border-rose-500/30', text: 'text-rose-400' },
-};
 
 function LoadingState() {
   return (
@@ -128,9 +68,9 @@ function ErrorState({ error }: { error: string }) {
 }
 
 export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
-  const kvKey = projectToKvKey[projectId] || projectId;
+  const kvKey = getKvKey(projectId);
   const { data, loading, error } = useMetrics(kvKey);
-  const colors = projectColors[projectId] || { border: 'border-white/10', text: 'text-white' };
+  const colors = getProjectColors(projectId);
 
   if (loading) return <LoadingState />;
   if (error) return <ErrorState error={error} />;
