@@ -83,7 +83,7 @@ Projects are classified by type:
 | Polygon | POL | PoS | [Polygon Staking API](https://staking-api.polygon.technology) |
 | Injective | INJ | PoS | [Injective LCD API](https://sentry.lcd.injective.network) |
 
-Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily at 04:00 UTC.
+Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily.
 
 **API Endpoints:**
 - `/api/metrics?project=xxx` - Current metrics from KV
@@ -133,7 +133,7 @@ functions/
     └── archive.js         # Manual archive trigger
 
 workers/
-└── archive-cron/          # Scheduled Worker (04:00 UTC)
+└── archive-cron/          # Scheduled Worker
     ├── index.js           # KV → R2 archiver
     └── wrangler.toml      # Cron trigger config
 ```

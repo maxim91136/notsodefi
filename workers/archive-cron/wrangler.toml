@@ -3,7 +3,7 @@ main = "index.js"
 compatibility_date = "2024-01-01"
 
 [triggers]
-crons = ["0 4 * * *"]  # Daily at 04:00 UTC (after all workflows finish)
+crons = ["35 5 * * *"]
 
 [[kv_namespaces]]
 binding = "METRICS_KV"
