@@ -36,7 +36,11 @@ async function main() {
       nullCount === 0 ? 'success' : nullCount < totalFields ? 'partial' : 'failed',
   };
 
-  const outPath = path.join(process.cwd(), 'data', 'trx.json');
+  const dataDir = path.join(process.cwd(), 'data');
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+  const outPath = path.join(dataDir, 'trx.json');
   fs.writeFileSync(outPath, JSON.stringify(data, null, 2));
   console.log(`\nSaved to ${outPath}`);
 }

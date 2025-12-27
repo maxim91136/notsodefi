@@ -2,6 +2,12 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.21.0-rc3] - 2025-12-27
+
+### Fixed
+- **Fetch Scripts** - Added missing `data/` directory creation to 11 scripts
+  - Scripts now create output directory if missing (GitHub Actions fix)
+
 ## [0.21.0-rc2] - 2025-12-27
 
 ### Fixed

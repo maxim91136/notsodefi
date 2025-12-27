@@ -69,7 +69,11 @@ async function main() {
   };
 
   // Save to file
-  const outputPath = path.join(process.cwd(), 'data', 'aave.json');
+  const dataDir = path.join(process.cwd(), 'data');
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+  const outputPath = path.join(dataDir, 'aave.json');
   fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
   console.log(`\nSaved to ${outputPath}`);
   console.log(`Status: ${fetchStatus}`);
