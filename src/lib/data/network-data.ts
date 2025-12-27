@@ -556,6 +556,8 @@ export function getAllApiStatuses(): ApiStatus[] {
   const suiData = getSuiData();
   const uniData = getUniData();
   const hbarData = getHbarData();
+  const usdtData = getUsdtData();
+  const usdcData = getUsdcData();
   const nearData = getNearData();
   const aptData = getAptData();
   const polData = getPolData();
@@ -717,6 +719,18 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: hbarData.fetchStatus,
       lastUpdated: hbarData.lastUpdated,
       source: hbarData.source || 'Hedera Mirror Node API',
+    },
+    {
+      chain: 'USDT',
+      status: usdtData.fetchStatus,
+      lastUpdated: usdtData.lastUpdated,
+      source: usdtData.source || 'DefiLlama Stablecoins',
+    },
+    {
+      chain: 'USDC',
+      status: usdcData.fetchStatus,
+      lastUpdated: usdcData.lastUpdated,
+      source: usdcData.source || 'DefiLlama Stablecoins',
     },
     {
       chain: 'NEAR',
