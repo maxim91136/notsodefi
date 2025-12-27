@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.19.0-rc1] - 2025-12-27
+
+### Added
+- **Filecoin (FIL)** - 34th project (Infrastructure)
+  - Nakamoto Coefficient: 92, Top 5: 3%
+  - Data: [Filfox API](https://filfox.info)
+  - Score: 6.60 (#5 ranking)
+
 ## [0.18.0-rc6] - 2025-12-27
 
 ### Added
