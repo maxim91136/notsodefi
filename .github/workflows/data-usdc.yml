@@ -1,6 +1,7 @@
 name: "USDC: Fetch Supply Data"
 
 on:
+  workflow_dispatch:
   schedule:
     # Run daily at 14:30 UTC
     - cron: '35 3 * * *'

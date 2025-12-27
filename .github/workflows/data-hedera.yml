@@ -1,6 +1,7 @@
 name: "Hedera: Fetch Network Data"
 
 on:
+  workflow_dispatch:
   schedule:
     # Run daily at 13:00 UTC
     - cron: '25 3 * * *'

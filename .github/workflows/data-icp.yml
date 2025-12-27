@@ -1,6 +1,7 @@
 name: "ICP: Fetch Network Data"
 
 on:
+  workflow_dispatch:
   schedule:
     # Run daily at 8:30 UTC
     - cron: '5 2 * * *'

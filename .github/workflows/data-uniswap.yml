@@ -1,6 +1,7 @@
 name: "Uniswap: Fetch Protocol Data"
 
 on:
+  workflow_dispatch:
   schedule:
     # Run daily at 12:00 UTC
     - cron: '15 3 * * *'

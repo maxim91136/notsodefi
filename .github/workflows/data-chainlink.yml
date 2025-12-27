@@ -1,6 +1,7 @@
 name: "LINK: Fetch Network Data"
 
 on:
+  workflow_dispatch:
   schedule:
     # Run daily at 9:00 UTC
     - cron: '5 3 * * *'

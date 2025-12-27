@@ -1,6 +1,7 @@
 name: "TON: Fetch Network Data"
 
 on:
+  workflow_dispatch:
   schedule:
     # Run daily at 10:00 UTC
     - cron: '10 2 * * *'

@@ -1,6 +1,7 @@
 name: "AAVE: Fetch Protocol Data"
 
 on:
+  workflow_dispatch:
   schedule:
     # Run daily at 9:30 UTC
     - cron: '10 3 * * *'
