@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2025-12-26T16:00:08.254Z",
+  "lastUpdated": "2025-12-27T11:17:06.867Z",
   "source": "SUI JSON-RPC (fullnode.mainnet.sui.io)",
   "fetchStatus": "success",
   "metrics": {
-    "epoch": 988,
+    "epoch": 989,
     "protocolVersion": 104,
     "totalValidators": 126,
     "maxValidators": 150,
-    "totalStake": 7455379355,
+    "totalStake": 7455240361,
     "minValidatorStake": 30000000,
-    "top5Concentration": 11.56,
+    "top5Concentration": 11.57,
     "nakamotoCoefficient": 19,
-    "referenceGasPrice": 509
+    "referenceGasPrice": 510
   }
 }
