@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2025-12-26T23:11:25.460Z",
+  "lastUpdated": "2025-12-27T07:14:41.182Z",
   "source": "staking-api.polygon.technology",
   "metrics": {
     "activeValidators": 104,
-    "totalStaked": 3474507759,
+    "totalStaked": 3473675320,
     "nakamotoCoefficient": 4,
     "top5Concentration": 39.7,
     "top10Concentration": 62.5
