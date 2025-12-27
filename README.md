@@ -83,7 +83,7 @@ Projects are classified by type:
 | Polygon | POL | PoS | [Polygon Staking API](https://staking-api.polygon.technology) |
 | Injective | INJ | PoS | [Injective LCD API](https://sentry.lcd.injective.network) |
 
-All data is fetched daily via GitHub Actions.
+Data is fetched daily via GitHub Actions and stored in Cloudflare KV. The site reads live data from `/api/metrics`.
 
 ## Development
 
@@ -107,9 +107,11 @@ npm run build
 src/
 ├── app/                    # Next.js pages
 ├── components/             # React components
+│   ├── data/              # Data display (LiveNetworkData, ApiStatusCard)
 │   ├── layout/            # Header, Footer
 │   ├── scores/            # Score display components
 │   └── ui/                # Base UI components
+├── hooks/                  # React hooks (useMetrics)
 └── lib/
     ├── framework/         # Scoring logic & criteria
     ├── data/
@@ -117,6 +119,11 @@ src/
     │   ├── sources/       # API source mappings
     │   └── fetchers/      # API fetcher classes
     └── utils/             # Helper functions
+
+functions/
+└── api/                    # Cloudflare Functions (KV API)
+    ├── metrics.js         # GET /api/metrics?project=xxx
+    └── all-metrics.js     # GET /api/all-metrics
 ```
 
 ## Tech Stack
@@ -124,7 +131,7 @@ src/
 - Next.js 15 (Static Export)
 - TypeScript
 - Tailwind CSS
-- Cloudflare Pages
+- Cloudflare Pages + KV + Functions
 
 ## License
 
