@@ -3,7 +3,7 @@ name: "SUI: Fetch Network Data"
 on:
   schedule:
     # Run daily at 11:00 UTC
-    - cron: '0 7 * * *'
+    - cron: '15 3 * * *'
 
 
 jobs:

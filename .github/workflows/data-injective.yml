@@ -2,7 +2,7 @@ name: "INJ: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '10 8 * * *'
+    - cron: '30 3 * * *'
   workflow_dispatch:
 
 

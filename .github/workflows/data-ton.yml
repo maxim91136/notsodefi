@@ -3,7 +3,7 @@ name: "TON: Fetch Network Data"
 on:
   schedule:
     # Run daily at 10:00 UTC
-    - cron: '40 6 * * *'
+    - cron: '10 3 * * *'
 
 
 jobs:

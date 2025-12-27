@@ -2,7 +2,7 @@ name: "DOGE: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '20 4 * * *'
+    - cron: '50 3 * * *'
   workflow_dispatch:
 
 

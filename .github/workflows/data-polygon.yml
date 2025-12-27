@@ -2,7 +2,7 @@ name: "POL: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '35 3 * * *'
   workflow_dispatch:
 
 

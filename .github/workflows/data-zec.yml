@@ -2,7 +2,7 @@ name: "ZEC: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '50 3 * * *'
+    - cron: '55 3 * * *'
   workflow_dispatch:
 
 

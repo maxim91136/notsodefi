@@ -2,7 +2,7 @@ name: "AVAX: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '30 5 * * *'
+    - cron: '30 2 * * *'
   workflow_dispatch:
 
 

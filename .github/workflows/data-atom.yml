@@ -2,7 +2,7 @@ name: "ATOM: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '40 2 * * *'
   workflow_dispatch:
 
 

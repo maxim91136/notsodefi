@@ -2,7 +2,7 @@ name: "ETH: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '20 3 * * *'
+    - cron: '5 2 * * *'
   workflow_dispatch:
 
 

@@ -2,7 +2,7 @@ name: "DOT: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '40 4 * * *'
+    - cron: '35 2 * * *'
   workflow_dispatch:
 
 
