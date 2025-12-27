@@ -156,21 +156,34 @@ export function ProjectTable({ projects }: ProjectTableProps) {
     <div>
       {/* Filter Bar */}
       <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/10">
-        <div className="flex flex-wrap items-center gap-4">
-          {/* Search */}
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
+          {/* Search + Count row on mobile */}
+          <div className="flex items-center justify-between sm:justify-start gap-2">
             <input
               type="text"
               placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-32 sm:w-40 px-2 py-1 text-sm bg-white/5 border border-white/10 rounded text-white placeholder-white/30 focus:outline-none focus:border-white/30"
+              className="flex-1 sm:flex-none w-full sm:w-40 px-3 py-2 sm:py-1 text-sm bg-white/5 border border-white/10 rounded text-white placeholder-white/30 focus:outline-none focus:border-white/30"
             />
+            <div className="flex items-center gap-2 sm:hidden">
+              <span className="text-xs text-white/40">
+                {filteredAndSortedProjects.length}/{projects.length}
+              </span>
+              {hasFilters && (
+                <button
+                  onClick={clearFilters}
+                  className="px-2 py-1 rounded text-xs font-medium bg-red-500/20 text-red-400"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Category Filters */}
           <div className="flex items-center gap-2">
-            <span className="text-xs text-white/40 uppercase tracking-wider">Category:</span>
+            <span className="text-xs text-white/40 uppercase tracking-wider hidden sm:inline">Category:</span>
             <div className="flex flex-wrap gap-1">
               {availableCategories.map((cat) => {
                 const { label, color } = CATEGORY_LABELS[cat];
@@ -179,7 +192,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   <button
                     key={cat}
                     onClick={() => toggleCategory(cat)}
-                    className={`px-2 py-1 rounded text-xs font-medium transition-all ${
+                    className={`px-2.5 py-1.5 sm:px-2 sm:py-1 rounded text-xs font-medium transition-all ${
                       isSelected
                         ? `${color} ring-1 ring-white/30`
                         : 'bg-white/5 text-white/40 hover:bg-white/10 hover:text-white/60'
@@ -194,7 +207,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
 
           {/* Consensus Filters */}
           <div className="flex items-center gap-2">
-            <span className="text-xs text-white/40 uppercase tracking-wider">Consensus:</span>
+            <span className="text-xs text-white/40 uppercase tracking-wider hidden sm:inline">Consensus:</span>
             <div className="flex flex-wrap gap-1">
               {availableConsensus.map((cons) => {
                 const { label, color } = CONSENSUS_LABELS[cons];
@@ -203,7 +216,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   <button
                     key={cons}
                     onClick={() => toggleConsensus(cons)}
-                    className={`px-2 py-1 rounded text-xs font-medium transition-all ${
+                    className={`px-2.5 py-1.5 sm:px-2 sm:py-1 rounded text-xs font-medium transition-all ${
                       isSelected
                         ? `${color} ring-1 ring-white/30`
                         : 'bg-white/5 text-white/40 hover:bg-white/10 hover:text-white/60'
@@ -216,8 +229,8 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             </div>
           </div>
 
-          {/* Clear & Count */}
-          <div className="flex items-center gap-2 ml-auto">
+          {/* Clear & Count - Desktop only */}
+          <div className="hidden sm:flex items-center gap-2 ml-auto">
             <span className="text-xs text-white/40">
               {filteredAndSortedProjects.length} / {projects.length}
             </span>
@@ -239,52 +252,52 @@ export function ProjectTable({ projects }: ProjectTableProps) {
         <thead className="sticky top-0 bg-black z-10">
           <tr className="border-b border-white/10">
             <th
-              className="text-center py-3 px-4 text-sm font-medium text-white/50 w-12 cursor-pointer hover:text-white/70"
+              className="text-center py-3 px-2 sm:px-4 text-sm font-medium text-white/50 w-10 sm:w-12 cursor-pointer hover:text-white/70"
               onClick={() => toggleSort('rank')}
             >
               #<SortIcon field="rank" />
             </th>
             <th
-              className="text-left py-3 px-4 text-sm font-medium text-white/50 cursor-pointer hover:text-white/70"
+              className="text-left py-3 px-2 sm:px-4 text-sm font-medium text-white/50 cursor-pointer hover:text-white/70"
               onClick={() => toggleSort('name')}
             >
               Project<SortIcon field="name" />
             </th>
-            <th className="text-center py-3 px-4 text-sm font-medium text-white/50">
+            <th className="text-center py-3 px-2 sm:px-4 text-sm font-medium text-white/50">
               Category
             </th>
-            <th className="text-center py-3 px-4 text-sm font-medium text-white/50">
+            <th className="hidden md:table-cell text-center py-3 px-4 text-sm font-medium text-white/50">
               Consensus
             </th>
             <th
-              className="text-center py-3 px-4 text-sm font-medium text-white/50 cursor-pointer hover:text-white/70"
+              className="text-center py-3 px-2 sm:px-4 text-sm font-medium text-white/50 cursor-pointer hover:text-white/70"
               onClick={() => toggleSort('total')}
               title="Weighted Score: Chain 40% + Control 40% + Fairness 20%"
             >
               Total<SortIcon field="total" />
             </th>
             <th
-              className="text-center py-3 px-4 text-sm font-medium text-blue-400/70 cursor-pointer hover:text-blue-300"
+              className="hidden lg:table-cell text-center py-3 px-4 text-sm font-medium text-blue-400/70 cursor-pointer hover:text-blue-300"
               onClick={() => toggleSort('chain')}
               title="Technical Decentralization (40%): Nakamoto Coefficient, Stake Concentration, Client Diversity, Infrastructure"
             >
               Chain<SortIcon field="chain" />
             </th>
             <th
-              className="text-center py-3 px-4 text-sm font-medium text-purple-400/70 cursor-pointer hover:text-purple-300"
+              className="hidden lg:table-cell text-center py-3 px-4 text-sm font-medium text-purple-400/70 cursor-pointer hover:text-purple-300"
               onClick={() => toggleSort('control')}
               title="Governance Decentralization (40%): Org Influence, Code Control, Brand, Treasury, Kill-Switch"
             >
               Control<SortIcon field="control" />
             </th>
             <th
-              className="text-center py-3 px-4 text-sm font-medium text-green-400/70 cursor-pointer hover:text-green-300"
+              className="hidden lg:table-cell text-center py-3 px-4 text-sm font-medium text-green-400/70 cursor-pointer hover:text-green-300"
               onClick={() => toggleSort('fairness')}
               title="Token Distribution Fairness (20%): Insider Allocation, Governance Accessibility"
             >
               Fairness<SortIcon field="fairness" />
             </th>
-            <th className="w-8"></th>
+            <th className="w-6 sm:w-8"></th>
           </tr>
         </thead>
         <tbody>
@@ -301,41 +314,41 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                 isFirst ? 'bg-yellow-500/5 shadow-[inset_0_0_20px_rgba(234,179,8,0.1)]' : ''
               }`}
             >
-              <td className="py-4 px-4 text-center">
+              <td className="py-3 sm:py-4 px-2 sm:px-4 text-center">
                 <span className={`font-mono ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}>
                   {globalRank}
                 </span>
               </td>
-              <td className="py-4 px-4">
-                <div className="flex items-center gap-2">
-                  <span className="font-medium text-white">{project.name}</span>
+              <td className="py-3 sm:py-4 px-2 sm:px-4">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <span className="font-medium text-white text-sm sm:text-base">{project.name}</span>
                   {project.symbol && (
-                    <span className="text-sm text-white/40">{project.symbol}</span>
+                    <span className="text-xs sm:text-sm text-white/40 hidden sm:inline">{project.symbol}</span>
                   )}
                   {project.scores.killSwitchActive && (
-                    <span className="text-red-500" title="Kill-Switch Active - Score capped at 2.0">⚠️</span>
+                    <span className="text-red-500 text-xs" title="Kill-Switch Active - Score capped at 2.0">⚠️</span>
                   )}
                 </div>
               </td>
-              <td className="py-4 px-4 text-center">
-                <span className={`px-2 py-1 rounded text-xs font-medium ${category.color}`}>
+              <td className="py-3 sm:py-4 px-2 sm:px-4 text-center">
+                <span className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs font-medium ${category.color}`}>
                   {category.label}
                 </span>
               </td>
-              <td className="py-4 px-4 text-center">
+              <td className="hidden md:table-cell py-4 px-4 text-center">
                 <span className={`px-2 py-1 rounded text-xs font-medium ${consensus.color}`}>
                   {consensus.label}
                 </span>
               </td>
-              <td className="py-4 px-4 text-center">
+              <td className="py-3 sm:py-4 px-2 sm:px-4 text-center">
                 <span
-                  className={`font-bold cursor-help ${getScoreTextColor(project.scores.totalScore)}`}
+                  className={`font-bold cursor-help text-sm sm:text-base ${getScoreTextColor(project.scores.totalScore)}`}
                   title={`${project.scores.chainScore.toFixed(1)}×40% + ${project.scores.controlScore.toFixed(1)}×40% + ${project.scores.fairnessScore.toFixed(1)}×20%${project.scores.killSwitchActive ? ' (capped at 2.0)' : ''}`}
                 >
                   {project.scores.totalScore.toFixed(1)}
                 </span>
               </td>
-              <td className="py-4 px-4 text-center">
+              <td className="hidden lg:table-cell py-4 px-4 text-center">
                 <span
                   className="text-white/70 cursor-help"
                   title="Validators, Stake Distribution, Client Diversity, Infrastructure"
@@ -343,7 +356,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   {project.scores.chainScore.toFixed(1)}
                 </span>
               </td>
-              <td className="py-4 px-4 text-center">
+              <td className="hidden lg:table-cell py-4 px-4 text-center">
                 <span
                   className="text-white/70 cursor-help"
                   title="Org Influence, Code Control, Brand, Treasury, Kill-Switch"
@@ -351,7 +364,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   {project.scores.controlScore.toFixed(1)}
                 </span>
               </td>
-              <td className="py-4 px-4 text-center">
+              <td className="hidden lg:table-cell py-4 px-4 text-center">
                 <span
                   className="text-white/70 cursor-help"
                   title="Insider Allocation, Governance Access"
@@ -359,7 +372,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   {project.scores.fairnessScore.toFixed(1)}
                 </span>
               </td>
-              <td className="py-4 px-2 text-center">
+              <td className="py-3 sm:py-4 px-1 sm:px-2 text-center">
                 <span className="text-white/30 group-hover:text-white/60 transition-colors">
                   →
                 </span>
