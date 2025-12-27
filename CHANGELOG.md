@@ -2,6 +2,11 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.22.0-rc1] - 2025-12-27
+
+### Fixed
+- **Table Row Click** - Entire row now clickable for navigation (not just individual cells)
+
 ## [0.21.0] - 2025-12-27
 
 ### Added
