@@ -2,7 +2,7 @@ name: "ZEC: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '30 5 * * *'  # Daily at 5:30 UTC (30 min after BNB)
+    - cron: '50 3 * * *'
   workflow_dispatch:
 
 

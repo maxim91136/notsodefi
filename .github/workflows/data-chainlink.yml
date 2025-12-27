@@ -3,8 +3,7 @@ name: "LINK: Fetch Network Data"
 on:
   schedule:
     # Run daily at 9:00 UTC
-    - cron: '0 9 * * *'
-  workflow_dispatch:
+    - cron: '20 6 * * *'
 
 
 jobs:

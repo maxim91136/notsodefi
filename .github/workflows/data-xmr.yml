@@ -2,7 +2,7 @@ name: "XMR: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '40 5 * * *'  # Daily at 5:40 UTC
+    - cron: '10 4 * * *'
   workflow_dispatch:
 
 

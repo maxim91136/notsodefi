@@ -2,7 +2,7 @@ name: "TAO: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Daily at 6:00 UTC (30 min after ZEC)
+    - cron: '50 4 * * *'
   workflow_dispatch:
 
 

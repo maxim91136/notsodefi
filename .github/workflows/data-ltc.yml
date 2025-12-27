@@ -2,7 +2,7 @@ name: "LTC: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '35 5 * * *'  # Daily at 5:35 UTC
+    - cron: '0 4 * * *'
   workflow_dispatch:
 
 

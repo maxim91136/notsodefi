@@ -2,7 +2,7 @@ name: "KAS: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Daily at 8:00 UTC
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 

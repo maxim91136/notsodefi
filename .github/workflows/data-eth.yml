@@ -2,7 +2,7 @@ name: "ETH: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '0 4 * * *'  # Daily at 4:00 UTC (1h after BTC, 30min after SOL)
+    - cron: '20 3 * * *'
   workflow_dispatch:
 
 

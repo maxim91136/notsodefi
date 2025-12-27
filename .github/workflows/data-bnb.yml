@@ -2,7 +2,7 @@ name: "BNB: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # Daily at 5:00 UTC (30 min after XRP)
+    - cron: '40 3 * * *'
   workflow_dispatch:
 
 

@@ -3,8 +3,7 @@ name: "XLM: Fetch Network Data"
 on:
   schedule:
     # Run daily at 10:30 UTC
-    - cron: '30 10 * * *'
-  workflow_dispatch:
+    - cron: '50 6 * * *'
 
 
 jobs:

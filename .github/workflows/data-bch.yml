@@ -2,7 +2,7 @@ name: "BCH: Fetch Network Data"
 
 on:
   schedule:
-    - cron: '50 5 * * *'  # Daily at 5:50 UTC
+    - cron: '30 4 * * *'
   workflow_dispatch:
 
 

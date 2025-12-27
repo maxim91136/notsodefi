@@ -3,8 +3,7 @@ name: "ICP: Fetch Network Data"
 on:
   schedule:
     # Run daily at 8:30 UTC
-    - cron: '30 8 * * *'
-  workflow_dispatch:
+    - cron: '10 6 * * *'
 
 
 jobs:
