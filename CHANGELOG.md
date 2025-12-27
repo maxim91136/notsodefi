@@ -2,6 +2,11 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.20.0-rc2] - 2025-12-27
+
+### Added
+- **README Features Section** - Documented Compare Mode, Trend Charts, Live Data, Filter & Search
+
 ## [0.20.0-rc1] - 2025-12-27
 
 ### Added
