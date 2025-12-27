@@ -2,6 +2,29 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.18.0-rc1] - 2025-12-27
+
+### Added
+- **Cloudflare KV Integration** - Live data without git commits
+  - Data workflows push to KV instead of committing
+  - `/api/metrics?project=xxx` API endpoint
+  - `/api/all-metrics` API for pipeline status
+  - Client-side fetching with `useMetrics` hook
+
+### Changed
+- **LiveNetworkData** - Now fetches from KV API
+- **ApiStatusCard** - Now fetches from KV API
+- **32 Workflows** - All updated to push to KV
+
+### Removed
+- `data/*.json` files from repository
+- Git commits for data updates
+
+### Infrastructure
+- KV Namespace: `notsodefi-data`
+- Functions: `/functions/api/metrics.js`, `/functions/api/all-metrics.js`
+- Hooks: `src/hooks/useMetrics.ts`
+
 ## [0.17.0-rc1] - 2025-12-27
 
 ### Added
