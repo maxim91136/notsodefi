@@ -7,6 +7,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { AvalancheFetcher } from '../src/lib/data/fetchers/avalanche';
+import { avalanche } from '../src/lib/data/projects/avalanche';
 
 async function main() {
   console.log('Fetching Avalanche network data...\n');
@@ -29,6 +30,7 @@ async function main() {
   const data = {
     lastUpdated: new Date().toISOString(),
     source: 'api.avax.network',
+    totalScore: avalanche.scores.totalScore,
     metrics,
     fetchStatus:
       nullCount === 0 ? 'success' : nullCount < totalFields ? 'partial' : 'failed',

@@ -7,6 +7,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { TronFetcher } from '../src/lib/data/fetchers/tron';
+import { tron } from '../src/lib/data/projects/tron';
 
 async function main() {
   console.log('Fetching Tron network data...\n');
@@ -29,6 +30,7 @@ async function main() {
   const data = {
     lastUpdated: new Date().toISOString(),
     source: 'api.trongrid.io',
+    totalScore: tron.scores.totalScore,
     metrics,
     fetchStatus:
       nullCount === 0 ? 'success' : nullCount < totalFields ? 'partial' : 'failed',

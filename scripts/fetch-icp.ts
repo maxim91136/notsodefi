@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { icp } from '../src/lib/data/projects/icp';
 
 import { getIcpFetcher } from '../src/lib/data/fetchers/icp';
 
 interface IcpData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     totalNodes: number | null;
     upNodes: number | null;
@@ -35,6 +37,7 @@ async function main() {
   const data: IcpData = {
     lastUpdated: new Date().toISOString(),
     source: 'ic-api.internetcomputer.org',
+    totalScore: icp.scores.totalScore,
     metrics: {
       totalNodes: null,
       upNodes: null,

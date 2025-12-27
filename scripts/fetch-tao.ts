@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { bittensor } from '../src/lib/data/projects/bittensor';
 
 import { getBittensorFetcher } from '../src/lib/data/fetchers/bittensor';
 
 interface TaoData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blockNumber: number | null;
     accounts: number | null;
@@ -44,6 +46,7 @@ async function main() {
   const data: TaoData = {
     lastUpdated: new Date().toISOString(),
     source: 'taostats.io',
+    totalScore: bittensor.scores.totalScore,
     metrics: {
       blockNumber: null,
       accounts: null,

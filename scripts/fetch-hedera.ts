@@ -9,10 +9,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { getHederaFetcher, HederaMetrics } from '../src/lib/data/fetchers/hedera';
+import { hedera } from '../src/lib/data/projects/hedera';
 
 interface HederaData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   fetchStatus: 'success' | 'partial' | 'failed';
   metrics: HederaMetrics;
 }
@@ -49,6 +51,7 @@ async function main() {
   const data: HederaData = {
     lastUpdated: new Date().toISOString(),
     source: 'Hedera Mirror Node API (mainnet-public.mirrornode.hedera.com)',
+    totalScore: hedera.scores.totalScore,
     fetchStatus,
     metrics,
   };

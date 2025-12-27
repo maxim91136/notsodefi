@@ -9,10 +9,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { getSuiFetcher, SuiMetrics } from '../src/lib/data/fetchers/sui';
+import { sui } from '../src/lib/data/projects/sui';
 
 interface SuiData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   fetchStatus: 'success' | 'partial' | 'failed';
   metrics: SuiMetrics;
 }
@@ -57,6 +59,7 @@ async function main() {
   const data: SuiData = {
     lastUpdated: new Date().toISOString(),
     source: 'SUI JSON-RPC (fullnode.mainnet.sui.io)',
+    totalScore: sui.scores.totalScore,
     fetchStatus,
     metrics,
   };

@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { kaspa } from '../src/lib/data/projects/kaspa';
 
 import { getKaspaFetcher } from '../src/lib/data/fetchers/kaspa';
 
 interface KasData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     networkName: string | null;
     blockCount: number | null;
@@ -37,6 +39,7 @@ async function main() {
   const data: KasData = {
     lastUpdated: new Date().toISOString(),
     source: 'api.kaspa.org',
+    totalScore: kaspa.scores.totalScore,
     metrics: {
       networkName: null,
       blockCount: null,

@@ -9,10 +9,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { getChainlinkFetcher, ChainlinkMetrics } from '../src/lib/data/fetchers/chainlink';
+import { chainlink } from '../src/lib/data/projects/chainlink';
 
 interface ChainlinkData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   fetchStatus: 'success' | 'partial' | 'failed';
   metrics: ChainlinkMetrics;
 }
@@ -49,6 +51,7 @@ async function main() {
   const data: ChainlinkData = {
     lastUpdated: new Date().toISOString(),
     source: 'data.chain.link + Etherscan',
+    totalScore: chainlink.scores.totalScore,
     fetchStatus,
     metrics,
   };

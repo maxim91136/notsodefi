@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { cosmos } from '../src/lib/data/projects/cosmos';
 
 import { getCosmosFetcher } from '../src/lib/data/fetchers/cosmos';
 
 interface AtomData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blockHeight: number | null;
     chainId: string | null;
@@ -36,6 +38,7 @@ async function main() {
   const data: AtomData = {
     lastUpdated: new Date().toISOString(),
     source: 'rest.cosmos.directory',
+    totalScore: cosmos.scores.totalScore,
     metrics: {
       blockHeight: null,
       chainId: null,

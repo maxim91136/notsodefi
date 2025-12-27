@@ -46,10 +46,9 @@ export function useSparklineData(projectIds: string[]): UseSparklineDataResult {
             const res = await fetch(`/api/history?project=${projectId}&date=${date}`);
             if (res.ok) {
               const json = await res.json();
-              // Use totalScore if available, otherwise use a key metric
-              const score = json.totalScore ?? json.metrics?.nakamotoCoefficient ?? null;
-              if (score !== null) {
-                scores.push(score);
+              // Use totalScore from archived data
+              if (typeof json.totalScore === 'number') {
+                scores.push(json.totalScore);
               }
             }
           } catch {

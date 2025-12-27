@@ -13,10 +13,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { getFilecoinFetcher } from '../src/lib/data/fetchers/filecoin';
+import { filecoin } from '../src/lib/data/projects/filecoin';
 
 interface FilecoinData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     activeMiners: number | null;
     totalPowerPiB: number | null;
@@ -35,6 +37,7 @@ async function main() {
   const data: FilecoinData = {
     lastUpdated: new Date().toISOString(),
     source: 'filfox.info',
+    totalScore: filecoin.scores.totalScore,
     metrics: {
       activeMiners: null,
       totalPowerPiB: null,

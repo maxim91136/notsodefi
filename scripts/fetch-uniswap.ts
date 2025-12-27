@@ -9,10 +9,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { getUniswapFetcher, UniswapMetrics } from '../src/lib/data/fetchers/uniswap';
+import { uniswap } from '../src/lib/data/projects/uniswap';
 
 interface UniswapData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   fetchStatus: 'success' | 'partial' | 'failed';
   metrics: UniswapMetrics;
 }
@@ -62,6 +64,7 @@ async function main() {
   const data: UniswapData = {
     lastUpdated: new Date().toISOString(),
     source: 'DefiLlama API',
+    totalScore: uniswap.scores.totalScore,
     fetchStatus,
     metrics,
   };

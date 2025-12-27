@@ -10,11 +10,13 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { solana as solanaProject } from '../src/lib/data/projects/solana';
 
 import { getSolanaRpcFetcher } from '../src/lib/data/fetchers/solana-rpc';
 
 interface SolanaData {
   lastUpdated: string;
+  totalScore: number;
   metrics: {
     // Validator metrics
     totalValidators: number | null;
@@ -37,6 +39,7 @@ async function main() {
 
   const data: SolanaData = {
     lastUpdated: new Date().toISOString(),
+    totalScore: solanaProject.scores.totalScore,
     metrics: {
       totalValidators: null,
       activeValidators: null,

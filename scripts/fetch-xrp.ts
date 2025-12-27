@@ -10,12 +10,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { xrp } from '../src/lib/data/projects/xrp';
 
 import { getXrplFetcher } from '../src/lib/data/fetchers/xrpl';
 
 interface XrpData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     connectedPeers: number | null;
     validationQuorum: number | null;
@@ -34,6 +36,7 @@ async function main() {
   const data: XrpData = {
     lastUpdated: new Date().toISOString(),
     source: 's1.ripple.com',
+    totalScore: xrp.scores.totalScore,
     metrics: {
       connectedPeers: null,
       validationQuorum: null,

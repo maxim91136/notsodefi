@@ -12,10 +12,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import { getEthereumBeaconFetcher } from '../src/lib/data/fetchers/ethereum-beacon';
+import { ethereum } from '../src/lib/data/projects/ethereum';
 
 interface EthereumData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     // Network metrics
     connectedPeers: number | null;
@@ -36,6 +38,7 @@ async function main() {
   const data: EthereumData = {
     lastUpdated: new Date().toISOString(),
     source: 'ethereum-beacon-api.publicnode.com',
+    totalScore: ethereum.scores.totalScore,
     metrics: {
       connectedPeers: null,
       headSlot: null,

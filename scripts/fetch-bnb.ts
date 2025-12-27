@@ -10,12 +10,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { bnb as bnbProject } from '../src/lib/data/projects/bnb';
 
 import { getBnbChainFetcher } from '../src/lib/data/fetchers/bnb-chain';
 
 interface BnbData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blockNumber: number | null;
     peerCount: number | null;
@@ -34,6 +36,7 @@ async function main() {
   const data: BnbData = {
     lastUpdated: new Date().toISOString(),
     source: 'bsc-dataseed.binance.org',
+    totalScore: bnbProject.scores.totalScore,
     metrics: {
       blockNumber: null,
       peerCount: null,

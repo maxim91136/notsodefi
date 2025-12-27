@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { near } from '../src/lib/data/projects/near';
 
 import { getNearFetcher } from '../src/lib/data/fetchers/near';
 
 interface NearData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blockHeight: number | null;
     chainId: string | null;
@@ -37,6 +39,7 @@ async function main() {
   const data: NearData = {
     lastUpdated: new Date().toISOString(),
     source: 'rpc.mainnet.near.org',
+    totalScore: near.scores.totalScore,
     metrics: {
       blockHeight: null,
       chainId: null,

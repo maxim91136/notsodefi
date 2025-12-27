@@ -10,12 +10,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { litecoin } from '../src/lib/data/projects/litecoin';
 
 import { getLitecoinFetcher } from '../src/lib/data/fetchers/litecoin';
 
 interface LitecoinData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blocks: number | null;
     difficulty: number | null;
@@ -34,6 +36,7 @@ async function main() {
   const data: LitecoinData = {
     lastUpdated: new Date().toISOString(),
     source: 'blockchair.com',
+    totalScore: litecoin.scores.totalScore,
     metrics: {
       blocks: null,
       difficulty: null,

@@ -9,10 +9,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { getTonFetcher, TonMetrics } from '../src/lib/data/fetchers/ton';
+import { ton } from '../src/lib/data/projects/ton';
 
 interface TonData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   fetchStatus: 'success' | 'partial' | 'failed';
   metrics: TonMetrics;
 }
@@ -54,6 +56,7 @@ async function main() {
   const data: TonData = {
     lastUpdated: new Date().toISOString(),
     source: 'TonAPI (tonapi.io)',
+    totalScore: ton.scores.totalScore,
     fetchStatus,
     metrics,
   };

@@ -9,10 +9,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { getStellarFetcher, StellarMetrics } from '../src/lib/data/fetchers/stellar';
+import { stellar } from '../src/lib/data/projects/stellar';
 
 interface StellarData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   fetchStatus: 'success' | 'partial' | 'failed';
   metrics: StellarMetrics;
 }
@@ -56,6 +58,7 @@ async function main() {
   const data: StellarData = {
     lastUpdated: new Date().toISOString(),
     source: 'Stellar Horizon + Dashboard API',
+    totalScore: stellar.scores.totalScore,
     fetchStatus,
     metrics,
   };

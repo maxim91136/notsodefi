@@ -2,6 +2,13 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.21.0-rc1] - 2025-12-27
+
+### Changed
+- **Fetch Scripts** - All 34 scripts now include `totalScore` in output
+  - Enables sparkline trend charts using R2 historical data
+  - Scores archived daily alongside network metrics
+
 ## [0.20.0-rc2] - 2025-12-27
 
 ### Added

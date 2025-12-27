@@ -9,10 +9,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { getAaveFetcher, AaveMetrics } from '../src/lib/data/fetchers/aave';
+import { aave } from '../src/lib/data/projects/aave';
 
 interface AaveData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   fetchStatus: 'success' | 'partial' | 'failed';
   metrics: AaveMetrics;
 }
@@ -61,6 +63,7 @@ async function main() {
   const data: AaveData = {
     lastUpdated: new Date().toISOString(),
     source: 'DefiLlama API',
+    totalScore: aave.scores.totalScore,
     fetchStatus,
     metrics,
   };

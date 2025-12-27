@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { polkadot } from '../src/lib/data/projects/polkadot';
 
 import { getPolkadotFetcher } from '../src/lib/data/fetchers/polkadot';
 
 interface DotData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blockNumber: number | null;
     era: number | null;
@@ -38,6 +40,7 @@ async function main() {
   const data: DotData = {
     lastUpdated: new Date().toISOString(),
     source: 'polkadot.subscan.io',
+    totalScore: polkadot.scores.totalScore,
     metrics: {
       blockNumber: null,
       era: null,

@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { hyperliquid } from '../src/lib/data/projects/hyperliquid';
 
 import { getHyperliquidFetcher } from '../src/lib/data/fetchers/hyperliquid';
 
 interface HypeData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     totalValidators: number | null;
     activeValidators: number | null;
@@ -37,6 +39,7 @@ async function main() {
   const data: HypeData = {
     lastUpdated: new Date().toISOString(),
     source: 'api.hyperliquid.xyz',
+    totalScore: hyperliquid.scores.totalScore,
     metrics: {
       totalValidators: null,
       activeValidators: null,

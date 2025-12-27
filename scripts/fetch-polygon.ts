@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { polygon } from '../src/lib/data/projects/polygon';
 
 import { getPolygonFetcher } from '../src/lib/data/fetchers/polygon';
 
 interface PolygonData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     activeValidators: number | null;
     totalStaked: number | null;
@@ -35,6 +37,7 @@ async function main() {
   const data: PolygonData = {
     lastUpdated: new Date().toISOString(),
     source: 'staking-api.polygon.technology',
+    totalScore: polygon.scores.totalScore,
     metrics: {
       activeValidators: null,
       totalStaked: null,

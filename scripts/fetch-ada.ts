@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { cardano } from '../src/lib/data/projects/cardano';
 
 import { getCardanoFetcher } from '../src/lib/data/fetchers/cardano';
 
 interface AdaData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     epoch: number | null;
     blockCount: number | null;
@@ -45,6 +47,7 @@ async function main() {
   const data: AdaData = {
     lastUpdated: new Date().toISOString(),
     source: 'blockfrost.io',
+    totalScore: cardano.scores.totalScore,
     metrics: {
       epoch: null,
       blockCount: null,

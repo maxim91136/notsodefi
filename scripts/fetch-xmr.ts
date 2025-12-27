@@ -10,12 +10,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { monero } from '../src/lib/data/projects/monero';
 
 import { getMoneroFetcher } from '../src/lib/data/fetchers/monero';
 
 interface MoneroData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blocks: number | null;
     difficulty: number | null;
@@ -33,6 +35,7 @@ async function main() {
   const data: MoneroData = {
     lastUpdated: new Date().toISOString(),
     source: 'blockchair.com',
+    totalScore: monero.scores.totalScore,
     metrics: {
       blocks: null,
       difficulty: null,

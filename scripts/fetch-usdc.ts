@@ -10,10 +10,12 @@
 import { getUsdcFetcher } from '../src/lib/data/fetchers';
 import * as fs from 'fs';
 import * as path from 'path';
+import { usdc } from '../src/lib/data/projects/usdc';
 
 interface UsdcData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   fetchStatus: 'success' | 'failed';
   data: {
     totalSupplyUsd: number;
@@ -51,6 +53,7 @@ async function main() {
   const data: UsdcData = {
     lastUpdated: new Date().toISOString(),
     source: 'DefiLlama Stablecoins API',
+    totalScore: usdc.scores.totalScore,
     fetchStatus: 'success',
     data: {
       totalSupplyUsd: Math.round(supplyData.totalSupply),

@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { aptos } from '../src/lib/data/projects/aptos';
 
 import { getAptosFetcher } from '../src/lib/data/fetchers/aptos';
 
 interface AptosData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blockHeight: number | null;
     epoch: number | null;
@@ -37,6 +39,7 @@ async function main() {
   const data: AptosData = {
     lastUpdated: new Date().toISOString(),
     source: 'api.mainnet.aptoslabs.com',
+    totalScore: aptos.scores.totalScore,
     metrics: {
       blockHeight: null,
       epoch: null,

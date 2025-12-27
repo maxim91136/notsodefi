@@ -10,12 +10,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { bitcoincash } from '../src/lib/data/projects/bitcoincash';
 
 import { getBitcoinCashFetcher } from '../src/lib/data/fetchers/bitcoincash';
 
 interface BitcoinCashData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blocks: number | null;
     difficulty: number | null;
@@ -34,6 +36,7 @@ async function main() {
   const data: BitcoinCashData = {
     lastUpdated: new Date().toISOString(),
     source: 'blockchair.com',
+    totalScore: bitcoincash.scores.totalScore,
     metrics: {
       blocks: null,
       difficulty: null,

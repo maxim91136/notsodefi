@@ -10,12 +10,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { dogecoin } from '../src/lib/data/projects/dogecoin';
 
 import { getDogecoinFetcher } from '../src/lib/data/fetchers/dogecoin';
 
 interface DogecoinData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blocks: number | null;
     difficulty: number | null;
@@ -34,6 +36,7 @@ async function main() {
   const data: DogecoinData = {
     lastUpdated: new Date().toISOString(),
     source: 'blockchair.com',
+    totalScore: dogecoin.scores.totalScore,
     metrics: {
       blocks: null,
       difficulty: null,

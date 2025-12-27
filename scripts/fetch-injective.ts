@@ -11,12 +11,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { injective } from '../src/lib/data/projects/injective';
 
 import { getInjectiveFetcher } from '../src/lib/data/fetchers/injective';
 
 interface InjectiveData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     activeValidators: number | null;
     totalStaked: number | null;
@@ -35,6 +37,7 @@ async function main() {
   const data: InjectiveData = {
     lastUpdated: new Date().toISOString(),
     source: 'sentry.lcd.injective.network',
+    totalScore: injective.scores.totalScore,
     metrics: {
       activeValidators: null,
       totalStaked: null,

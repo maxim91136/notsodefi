@@ -13,9 +13,11 @@ import * as path from 'path';
 
 import { getBitnodesFetcher } from '../src/lib/data/fetchers/bitnodes';
 import { getBlockchainFetcher } from '../src/lib/data/fetchers/blockchain';
+import { bitcoin } from '../src/lib/data/projects/bitcoin';
 
 interface BitcoinData {
   lastUpdated: string;
+  totalScore: number;
   metrics: {
     // Node metrics (Bitnodes)
     totalNodes: number | null;
@@ -36,6 +38,7 @@ async function main() {
 
   const data: BitcoinData = {
     lastUpdated: new Date().toISOString(),
+    totalScore: bitcoin.scores.totalScore,
     metrics: {
       totalNodes: null,
       cloudPercentage: null,

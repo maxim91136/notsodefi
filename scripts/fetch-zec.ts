@@ -10,12 +10,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { zcash } from '../src/lib/data/projects/zcash';
 
 import { getZcashFetcher } from '../src/lib/data/fetchers/zcash';
 
 interface ZecData {
   lastUpdated: string;
   source: string;
+  totalScore: number;
   metrics: {
     blocks: number | null;
     difficulty: number | null;
@@ -34,6 +36,7 @@ async function main() {
   const data: ZecData = {
     lastUpdated: new Date().toISOString(),
     source: 'blockchair.com',
+    totalScore: zcash.scores.totalScore,
     metrics: {
       blocks: null,
       difficulty: null,
