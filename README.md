@@ -1,6 +1,6 @@
 # NotSoDeFi
 
-**Measuring Real Decentralization**
+**Measuring Real Decentralization** • 33 Projects
 
 A framework for objectively measuring blockchain and protocol decentralization. Because "decentralized" doesn't mean what most projects claim it means.
 
