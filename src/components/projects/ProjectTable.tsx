@@ -44,9 +44,14 @@ function getAvailableFilters(projects: Project[]) {
   };
 }
 
+type SortField = 'rank' | 'name' | 'total' | 'chain' | 'control' | 'fairness';
+type SortDir = 'asc' | 'desc';
+
 export function ProjectTable({ projects }: ProjectTableProps) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortField, setSortField] = useState<SortField>('rank');
+  const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [selectedCategories, setSelectedCategories] = useState<Set<ProjectCategory>>(new Set());
   const [selectedConsensus, setSelectedConsensus] = useState<Set<ConsensusType>>(new Set());
 
@@ -62,9 +67,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
     return ranks;
   }, [projects]);
 
-  const filteredProjects = useMemo(() => {
+  const filteredAndSortedProjects = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
-    return projects.filter((p) => {
+    const filtered = projects.filter((p) => {
       const searchMatch = !query ||
         p.name.toLowerCase().includes(query) ||
         (p.symbol && p.symbol.toLowerCase().includes(query));
@@ -72,7 +77,32 @@ export function ProjectTable({ projects }: ProjectTableProps) {
       const consensusMatch = selectedConsensus.size === 0 || selectedConsensus.has(p.consensusType);
       return searchMatch && categoryMatch && consensusMatch;
     });
-  }, [projects, searchQuery, selectedCategories, selectedConsensus]);
+
+    return [...filtered].sort((a, b) => {
+      let cmp = 0;
+      switch (sortField) {
+        case 'rank':
+          cmp = (globalRanks.get(a.id) || 0) - (globalRanks.get(b.id) || 0);
+          break;
+        case 'name':
+          cmp = a.name.localeCompare(b.name);
+          break;
+        case 'total':
+          cmp = b.scores.totalScore - a.scores.totalScore;
+          break;
+        case 'chain':
+          cmp = b.scores.chainScore - a.scores.chainScore;
+          break;
+        case 'control':
+          cmp = b.scores.controlScore - a.scores.controlScore;
+          break;
+        case 'fairness':
+          cmp = b.scores.fairnessScore - a.scores.fairnessScore;
+          break;
+      }
+      return sortDir === 'asc' ? cmp : -cmp;
+    });
+  }, [projects, searchQuery, selectedCategories, selectedConsensus, sortField, sortDir, globalRanks]);
 
   const toggleCategory = (cat: ProjectCategory) => {
     setSelectedCategories((prev) => {
@@ -102,9 +132,25 @@ export function ProjectTable({ projects }: ProjectTableProps) {
     setSearchQuery('');
     setSelectedCategories(new Set());
     setSelectedConsensus(new Set());
+    setSortField('rank');
+    setSortDir('asc');
   };
 
-  const hasFilters = searchQuery.length > 0 || selectedCategories.size > 0 || selectedConsensus.size > 0;
+  const toggleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortField(field);
+      setSortDir(field === 'name' ? 'asc' : 'desc');
+    }
+  };
+
+  const SortIcon = ({ field }: { field: SortField }) => {
+    if (sortField !== field) return <span className="text-white/20 ml-1">↕</span>;
+    return <span className="ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>;
+  };
+
+  const hasFilters = searchQuery.length > 0 || selectedCategories.size > 0 || selectedConsensus.size > 0 || sortField !== 'rank';
 
   return (
     <div>
@@ -173,7 +219,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
           {/* Clear & Count */}
           <div className="flex items-center gap-2 ml-auto">
             <span className="text-xs text-white/40">
-              {filteredProjects.length} / {projects.length}
+              {filteredAndSortedProjects.length} / {projects.length}
             </span>
             {hasFilters && (
               <button
@@ -192,11 +238,17 @@ export function ProjectTable({ projects }: ProjectTableProps) {
       <table className="w-full">
         <thead className="sticky top-0 bg-black z-10">
           <tr className="border-b border-white/10">
-            <th className="text-center py-3 px-4 text-sm font-medium text-white/50 w-12">
-              #
+            <th
+              className="text-center py-3 px-4 text-sm font-medium text-white/50 w-12 cursor-pointer hover:text-white/70"
+              onClick={() => toggleSort('rank')}
+            >
+              #<SortIcon field="rank" />
             </th>
-            <th className="text-left py-3 px-4 text-sm font-medium text-white/50">
-              Project
+            <th
+              className="text-left py-3 px-4 text-sm font-medium text-white/50 cursor-pointer hover:text-white/70"
+              onClick={() => toggleSort('name')}
+            >
+              Project<SortIcon field="name" />
             </th>
             <th className="text-center py-3 px-4 text-sm font-medium text-white/50">
               Category
@@ -205,34 +257,38 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               Consensus
             </th>
             <th
-              className="text-center py-3 px-4 text-sm font-medium text-white/50 cursor-help"
+              className="text-center py-3 px-4 text-sm font-medium text-white/50 cursor-pointer hover:text-white/70"
+              onClick={() => toggleSort('total')}
               title="Weighted Score: Chain 40% + Control 40% + Fairness 20%"
             >
-              Total
+              Total<SortIcon field="total" />
             </th>
             <th
-              className="text-center py-3 px-4 text-sm font-medium text-blue-400/70 cursor-help"
+              className="text-center py-3 px-4 text-sm font-medium text-blue-400/70 cursor-pointer hover:text-blue-300"
+              onClick={() => toggleSort('chain')}
               title="Technical Decentralization (40%): Nakamoto Coefficient, Stake Concentration, Client Diversity, Infrastructure"
             >
-              Chain
+              Chain<SortIcon field="chain" />
             </th>
             <th
-              className="text-center py-3 px-4 text-sm font-medium text-purple-400/70 cursor-help"
+              className="text-center py-3 px-4 text-sm font-medium text-purple-400/70 cursor-pointer hover:text-purple-300"
+              onClick={() => toggleSort('control')}
               title="Governance Decentralization (40%): Org Influence, Code Control, Brand, Treasury, Kill-Switch"
             >
-              Control
+              Control<SortIcon field="control" />
             </th>
             <th
-              className="text-center py-3 px-4 text-sm font-medium text-green-400/70 cursor-help"
+              className="text-center py-3 px-4 text-sm font-medium text-green-400/70 cursor-pointer hover:text-green-300"
+              onClick={() => toggleSort('fairness')}
               title="Token Distribution Fairness (20%): Insider Allocation, Governance Accessibility"
             >
-              Fairness
+              Fairness<SortIcon field="fairness" />
             </th>
             <th className="w-8"></th>
           </tr>
         </thead>
         <tbody>
-          {filteredProjects.map((project) => {
+          {filteredAndSortedProjects.map((project) => {
             const consensus = CONSENSUS_LABELS[project.consensusType];
             const category = CATEGORY_LABELS[project.category];
             const globalRank = globalRanks.get(project.id) || 0;
