@@ -72,21 +72,20 @@ export function ApiStatusCard() {
             <span className="group-open:hidden">Show all {statuses.length} data sources</span>
             <span className="hidden group-open:inline">Hide details</span>
           </summary>
-          <div className="mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+          <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-2">
             {statuses.map((api) => (
               <div
                 key={api.chain}
-                className="flex items-center gap-2 p-2 rounded bg-white/5"
+                className="flex items-center justify-between p-2 rounded bg-white/5"
               >
-                <StatusDot status={api.status} />
-                <div className="min-w-0 flex-1">
-                  <span className="font-medium text-white text-sm truncate block">
-                    {api.chain}
-                  </span>
-                  <span className="text-xs text-white/40">
-                    {formatTimeAgo(api.lastUpdated)}
-                  </span>
+                <div className="flex items-center gap-2">
+                  <StatusDot status={api.status} />
+                  <span className="font-medium text-white text-sm">{api.chain}</span>
+                  <span className="text-xs text-white/40 truncate">{api.source}</span>
                 </div>
+                <span className="text-xs text-white/40">
+                  {formatTimeAgo(api.lastUpdated)}
+                </span>
               </div>
             ))}
           </div>
