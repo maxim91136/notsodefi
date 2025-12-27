@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.23.0-rc2] - 2025-12-27
+
+### Added
+- **Custom Favicon** - NSD red/white GameStop-style icon
+- **Apple Touch Icon** - iOS home screen icon
+
+### Removed
+- **Next.js Boilerplate** - Removed default Vercel/Next.js SVGs from public/
+
 ## [0.23.0-rc1] - 2025-12-27
 
 ### Performance
