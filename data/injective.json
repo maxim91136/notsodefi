@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2025-12-26T23:29:39.453Z",
+  "lastUpdated": "2025-12-27T07:10:44.169Z",
   "source": "sentry.lcd.injective.network",
   "metrics": {
     "activeValidators": 50,
-    "totalStaked": 56760877,
+    "totalStaked": 56767690,
     "nakamotoCoefficient": 5,
     "top5Concentration": 34.3,
     "top10Concentration": 51
