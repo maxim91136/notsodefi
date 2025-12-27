@@ -154,8 +154,18 @@ export function ProjectTable({ projects }: ProjectTableProps) {
 
   return (
     <div>
+      {/* Header */}
+      <div className="flex items-center justify-between p-4 border-b border-white/10">
+        <h2 className="font-semibold text-white">Leaderboard</h2>
+        <span className="text-sm text-white/50">
+          {filteredAndSortedProjects.length === projects.length
+            ? `${projects.length} projects`
+            : `${filteredAndSortedProjects.length} of ${projects.length} projects`}
+        </span>
+      </div>
+
       {/* Filter Bar */}
-      <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/10">
+      <div className="m-4 p-3 bg-white/5 rounded-lg border border-white/10">
         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
           {/* Search + Count row on mobile */}
           <div className="flex items-center justify-between sm:justify-start gap-2">
@@ -246,8 +256,67 @@ export function ProjectTable({ projects }: ProjectTableProps) {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="overflow-auto max-h-[65vh]">
+      {/* Mobile Card View */}
+      <div className="sm:hidden px-4 pb-4 space-y-2 max-h-[65vh] overflow-auto">
+        {filteredAndSortedProjects.map((project) => {
+          const consensus = CONSENSUS_LABELS[project.consensusType];
+          const category = CATEGORY_LABELS[project.category];
+          const globalRank = globalRanks.get(project.id) || 0;
+          const isFirst = globalRank === 1;
+          return (
+            <div
+              key={project.id}
+              onClick={() => router.push(`/projects/${project.id}`)}
+              className={`p-3 rounded-lg border cursor-pointer transition-colors ${
+                isFirst
+                  ? 'bg-yellow-500/5 border-yellow-500/30'
+                  : 'bg-white/5 border-white/10 hover:bg-white/10'
+              }`}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className={`font-mono text-sm ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}>
+                    #{globalRank}
+                  </span>
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-medium text-white">{project.name}</span>
+                      {project.scores.killSwitchActive && (
+                        <span className="text-red-500 text-xs">⚠️</span>
+                      )}
+                    </div>
+                    {project.symbol && (
+                      <span className="text-xs text-white/40">{project.symbol}</span>
+                    )}
+                  </div>
+                </div>
+                <span className={`text-lg font-bold ${getScoreTextColor(project.scores.totalScore)}`}>
+                  {project.scores.totalScore.toFixed(1)}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 mt-2">
+                <span className={`px-2 py-0.5 rounded text-xs font-medium ${category.color}`}>
+                  {category.label}
+                </span>
+                <span className={`px-2 py-0.5 rounded text-xs font-medium ${consensus.color}`}>
+                  {consensus.label}
+                </span>
+              </div>
+              <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/10 text-xs text-white/50">
+                <div className="flex gap-3">
+                  <span>Chain: <span className="text-blue-400">{project.scores.chainScore.toFixed(1)}</span></span>
+                  <span>Control: <span className="text-purple-400">{project.scores.controlScore.toFixed(1)}</span></span>
+                  <span>Fair: <span className="text-green-400">{project.scores.fairnessScore.toFixed(1)}</span></span>
+                </div>
+                <span className="text-white/30">→</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Desktop Table View */}
+      <div className="hidden sm:block overflow-auto max-h-[65vh]">
       <table className="w-full">
         <thead className="sticky top-0 bg-black z-10">
           <tr className="border-b border-white/10">
