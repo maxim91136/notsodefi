@@ -2,6 +2,22 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.20.0-rc1] - 2025-12-27
+
+### Added
+- **Sparkline Charts** - 7-day trend visualization in project table
+  - Uses recharts library
+  - Shows "—" until data is collected (collecting x/7 days)
+  - Hidden on mobile (md: breakpoint)
+- **Comparison Mode** - Compare up to 3 projects side-by-side
+  - Checkbox selection in table and mobile cards
+  - Fixed comparison panel at bottom
+  - Shows Total, Chain, Control, Fairness scores
+
+### Changed
+- **"Leaderboard" → "All Projects"** - Clearer terminology
+- **Table Navigation** - Checkbox column separated from row click
+
 ## [0.19.0-rc1] - 2025-12-27
 
 ### Added

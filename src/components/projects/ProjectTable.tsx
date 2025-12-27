@@ -4,6 +4,8 @@ import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Project, ConsensusType, ProjectCategory } from '@/lib/framework';
 import { getScoreTextColor } from '@/lib/utils';
+import { Sparkline } from '@/components/ui';
+import { useSparklineData } from '@/hooks';
 
 interface ProjectTableProps {
   projects: Project[];
@@ -54,6 +56,11 @@ export function ProjectTable({ projects }: ProjectTableProps) {
   const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [selectedCategories, setSelectedCategories] = useState<Set<ProjectCategory>>(new Set());
   const [selectedConsensus, setSelectedConsensus] = useState<Set<ConsensusType>>(new Set());
+  const [compareIds, setCompareIds] = useState<Set<string>>(new Set());
+
+  // Sparkline data (7-day history)
+  const projectIds = useMemo(() => projects.map(p => p.id), [projects]);
+  const { data: sparklineData, daysAvailable } = useSparklineData(projectIds);
 
   const { categories: availableCategories, consensusTypes: availableConsensus } = useMemo(
     () => getAvailableFilters(projects),
@@ -145,6 +152,23 @@ export function ProjectTable({ projects }: ProjectTableProps) {
     }
   };
 
+  const toggleCompare = (id: string) => {
+    setCompareIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else if (next.size < 3) {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
+  const compareProjects = useMemo(
+    () => projects.filter((p) => compareIds.has(p.id)),
+    [projects, compareIds]
+  );
+
   const SortIcon = ({ field }: { field: SortField }) => {
     if (sortField !== field) return <span className="text-white/20 ml-1">↕</span>;
     return <span className="ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>;
@@ -156,7 +180,14 @@ export function ProjectTable({ projects }: ProjectTableProps) {
     <div>
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-white/10">
-        <h2 className="font-semibold text-white">Leaderboard</h2>
+        <div className="flex items-center gap-3">
+          <h2 className="font-semibold text-white">All Projects</h2>
+          {daysAvailable < 7 && (
+            <span className="text-xs text-white/30 hidden sm:inline">
+              📊 Collecting trend data ({daysAvailable}/7 days)
+            </span>
+          )}
+        </div>
         <span className="text-sm text-white/50">
           {filteredAndSortedProjects.length === projects.length
             ? `${projects.length} projects`
@@ -263,22 +294,35 @@ export function ProjectTable({ projects }: ProjectTableProps) {
           const category = CATEGORY_LABELS[project.category];
           const globalRank = globalRanks.get(project.id) || 0;
           const isFirst = globalRank === 1;
+          const isComparing = compareIds.has(project.id);
           return (
             <div
               key={project.id}
-              onClick={() => router.push(`/projects/${project.id}`)}
               className={`p-3 rounded-lg border cursor-pointer transition-colors ${
                 isFirst
                   ? 'bg-yellow-500/5 border-yellow-500/30'
+                  : isComparing
+                  ? 'bg-blue-500/10 border-blue-500/30'
                   : 'bg-white/5 border-white/10 hover:bg-white/10'
               }`}
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <span className={`font-mono text-sm ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}>
+                  <input
+                    type="checkbox"
+                    checked={isComparing}
+                    onChange={() => toggleCompare(project.id)}
+                    disabled={!isComparing && compareIds.size >= 3}
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-4 h-4 rounded border-white/30 bg-white/5 text-blue-500 focus:ring-0 cursor-pointer disabled:opacity-30"
+                  />
+                  <span
+                    className={`font-mono text-sm ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}
+                    onClick={() => router.push(`/projects/${project.id}`)}
+                  >
                     #{globalRank}
                   </span>
-                  <div>
+                  <div onClick={() => router.push(`/projects/${project.id}`)}>
                     <div className="flex items-center gap-1.5">
                       <span className="font-medium text-white">{project.name}</span>
                       {project.scores.killSwitchActive && (
@@ -290,7 +334,10 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                     )}
                   </div>
                 </div>
-                <span className={`text-lg font-bold ${getScoreTextColor(project.scores.totalScore)}`}>
+                <span
+                  className={`text-lg font-bold ${getScoreTextColor(project.scores.totalScore)}`}
+                  onClick={() => router.push(`/projects/${project.id}`)}
+                >
                   {project.scores.totalScore.toFixed(1)}
                 </span>
               </div>
@@ -320,6 +367,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
       <table className="w-full">
         <thead className="sticky top-0 bg-black z-10">
           <tr className="border-b border-white/10">
+            <th className="w-8 py-3 px-2">
+              <span className="text-white/30 text-xs" title="Compare up to 3">⚖</span>
+            </th>
             <th
               className="text-center py-3 px-2 sm:px-4 text-sm font-medium text-white/50 w-10 sm:w-12 cursor-pointer hover:text-white/70"
               onClick={() => toggleSort('rank')}
@@ -344,6 +394,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               title="Weighted Score: Chain 40% + Control 40% + Fairness 20%"
             >
               Total<SortIcon field="total" />
+            </th>
+            <th className="hidden md:table-cell text-center py-3 px-4 text-sm font-medium text-white/30" title="7-day trend">
+              Trend
             </th>
             <th
               className="hidden lg:table-cell text-center py-3 px-4 text-sm font-medium text-blue-400/70 cursor-pointer hover:text-blue-300"
@@ -378,17 +431,25 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             return (
             <tr
               key={project.id}
-              onClick={() => router.push(`/projects/${project.id}`)}
               className={`border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer group ${
                 isFirst ? 'bg-yellow-500/5 shadow-[inset_0_0_20px_rgba(234,179,8,0.1)]' : ''
-              }`}
+              } ${compareIds.has(project.id) ? 'bg-blue-500/10' : ''}`}
             >
-              <td className="py-3 sm:py-4 px-2 sm:px-4 text-center">
+              <td className="py-3 sm:py-4 px-2 text-center" onClick={(e) => e.stopPropagation()}>
+                <input
+                  type="checkbox"
+                  checked={compareIds.has(project.id)}
+                  onChange={() => toggleCompare(project.id)}
+                  disabled={!compareIds.has(project.id) && compareIds.size >= 3}
+                  className="w-4 h-4 rounded border-white/30 bg-white/5 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+                />
+              </td>
+              <td className="py-3 sm:py-4 px-2 sm:px-4 text-center" onClick={() => router.push(`/projects/${project.id}`)}>
                 <span className={`font-mono ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}>
                   {globalRank}
                 </span>
               </td>
-              <td className="py-3 sm:py-4 px-2 sm:px-4">
+              <td className="py-3 sm:py-4 px-2 sm:px-4" onClick={() => router.push(`/projects/${project.id}`)}>
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <span className="font-medium text-white text-sm sm:text-base">{project.name}</span>
                   {project.symbol && (
@@ -416,6 +477,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                 >
                   {project.scores.totalScore.toFixed(1)}
                 </span>
+              </td>
+              <td className="hidden md:table-cell py-4 px-4 text-center">
+                <Sparkline data={sparklineData[project.id] || []} />
               </td>
               <td className="hidden lg:table-cell py-4 px-4 text-center">
                 <span
@@ -452,6 +516,49 @@ export function ProjectTable({ projects }: ProjectTableProps) {
         </tbody>
       </table>
       </div>
+
+      {/* Comparison Panel */}
+      {compareProjects.length > 0 && (
+        <div className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur border-t border-white/10 p-4 z-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-sm text-white/50">Compare ({compareProjects.length}/3)</span>
+              <button
+                onClick={() => setCompareIds(new Set())}
+                className="text-xs text-red-400 hover:text-red-300"
+              >
+                Clear all
+              </button>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {compareProjects.map((p) => (
+                <div key={p.id} className="bg-white/5 rounded-lg p-3 border border-white/10">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-medium text-white">{p.name}</span>
+                    <span className={`font-bold ${getScoreTextColor(p.scores.totalScore)}`}>
+                      {p.scores.totalScore.toFixed(1)}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-xs">
+                    <div className="text-center">
+                      <div className="text-blue-400">{p.scores.chainScore.toFixed(1)}</div>
+                      <div className="text-white/30">Chain</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-purple-400">{p.scores.controlScore.toFixed(1)}</div>
+                      <div className="text-white/30">Control</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-green-400">{p.scores.fairnessScore.toFixed(1)}</div>
+                      <div className="text-white/30">Fairness</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
