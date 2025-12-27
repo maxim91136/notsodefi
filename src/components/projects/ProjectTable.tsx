@@ -298,6 +298,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
           return (
             <div
               key={project.id}
+              onClick={() => router.push(`/projects/${project.id}`)}
               className={`p-3 rounded-lg border cursor-pointer transition-colors ${
                 isFirst
                   ? 'bg-yellow-500/5 border-yellow-500/30'
@@ -318,11 +319,10 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   />
                   <span
                     className={`font-mono text-sm ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}
-                    onClick={() => router.push(`/projects/${project.id}`)}
                   >
                     #{globalRank}
                   </span>
-                  <div onClick={() => router.push(`/projects/${project.id}`)}>
+                  <div>
                     <div className="flex items-center gap-1.5">
                       <span className="font-medium text-white">{project.name}</span>
                       {project.scores.killSwitchActive && (
@@ -336,7 +336,6 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                 </div>
                 <span
                   className={`text-lg font-bold ${getScoreTextColor(project.scores.totalScore)}`}
-                  onClick={() => router.push(`/projects/${project.id}`)}
                 >
                   {project.scores.totalScore.toFixed(1)}
                 </span>
@@ -431,6 +430,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             return (
             <tr
               key={project.id}
+              onClick={() => router.push(`/projects/${project.id}`)}
               className={`border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer group ${
                 isFirst ? 'bg-yellow-500/5 shadow-[inset_0_0_20px_rgba(234,179,8,0.1)]' : ''
               } ${compareIds.has(project.id) ? 'bg-blue-500/10' : ''}`}
@@ -444,12 +444,12 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   className="w-4 h-4 rounded border-white/30 bg-white/5 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
                 />
               </td>
-              <td className="py-3 sm:py-4 px-2 sm:px-4 text-center" onClick={() => router.push(`/projects/${project.id}`)}>
+              <td className="py-3 sm:py-4 px-2 sm:px-4 text-center">
                 <span className={`font-mono ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}>
                   {globalRank}
                 </span>
               </td>
-              <td className="py-3 sm:py-4 px-2 sm:px-4" onClick={() => router.push(`/projects/${project.id}`)}>
+              <td className="py-3 sm:py-4 px-2 sm:px-4">
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <span className="font-medium text-white text-sm sm:text-base">{project.name}</span>
                   {project.symbol && (
