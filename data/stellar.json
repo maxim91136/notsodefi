@@ -1,17 +1,17 @@
 {
-  "lastUpdated": "2025-12-26T15:43:21.597Z",
+  "lastUpdated": "2025-12-27T10:43:49.515Z",
   "source": "Stellar Horizon + Dashboard API",
   "fetchStatus": "success",
   "metrics": {
-    "ledgerSequence": 60479103,
+    "ledgerSequence": 60491034,
     "protocolVersion": 24,
-    "txSuccessCount": 219,
-    "txFailedCount": 43,
-    "operationCount": 313,
+    "txSuccessCount": 174,
+    "txFailedCount": 84,
+    "operationCount": 327,
     "baseFee": 100,
     "totalSupply": 50001786884,
-    "circulatingSupply": 32385020991,
-    "sdfMandate": 17348568140,
+    "circulatingSupply": 32385062629,
+    "sdfMandate": 17348518140,
     "sdfMandatePercent": 34.7
   }
 }
