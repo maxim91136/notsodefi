@@ -2,6 +2,17 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.24.0-rc1] - 2025-12-27
+
+### Added
+- **Arbitrum (ARB)** - 35th project (L2)
+  - Largest L2 by TVL ($16.78B)
+  - Centralized sequencer (Arbitrum Foundation)
+  - Security Council 9/12 multisig
+  - 44% insider allocation (27% team + 17.5% investors)
+  - Score: ~3.8 (L2 with centralization concerns)
+  - Data: [Arbitrum RPC](https://arb1.arbitrum.io/rpc)
+
 ## [0.23.0-rc2] - 2025-12-27
 
 ### Added

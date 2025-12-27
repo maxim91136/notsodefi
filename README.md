@@ -1,6 +1,6 @@
 # NotSoDeFi
 
-**Measuring Real Decentralization** • 34 Projects
+**Measuring Real Decentralization** • 35 Projects
 
 A framework for objectively measuring blockchain and protocol decentralization. Because "decentralized" doesn't mean what most projects claim it means.
 
@@ -90,6 +90,7 @@ Projects are classified by type:
 | Polygon | POL | PoS | [Polygon Staking API](https://staking-api.polygon.technology) |
 | Injective | INJ | PoS | [Injective LCD API](https://sentry.lcd.injective.network) |
 | Filecoin | FIL | PoS | [Filfox](https://filfox.info) |
+| Arbitrum | ARB | PoS | [Arbitrum RPC](https://arb1.arbitrum.io/rpc) |
 
 Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily.
 
