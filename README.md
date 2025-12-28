@@ -1,10 +1,25 @@
 # NotSoDeFi.com
 
-**Measuring Real Decentralization** • 37 Projects
+**Measuring Real Decentralization** • 37 Projects • Open Source
 
-A framework for objectively measuring blockchain and protocol decentralization. Because "decentralized" doesn't mean what most projects claim it means.
+> *"Don't trust, verify."*
 
-Live: [notsodefi.com](https://notsodefi.com)
+## Why This Exists
+
+The crypto industry has a decentralization problem: everyone claims it, few deliver it. Marketing departments label centralized systems "decentralized" while VCs, foundations, and insiders retain control. Users deserve to know the truth.
+
+NotSoDeFi.com provides **objective, data-driven measurements** of actual decentralization – not promises, not whitepapers, not marketing. We track validator concentration, token distribution, governance power, corporate control, and protocol immutability across 37 projects.
+
+**The goal:** Cut through the noise. Help users understand what they're actually trusting when they use a "decentralized" protocol.
+
+Live: **[notsodefi.com](https://notsodefi.com)**
+
+## Philosophy
+
+- **Transparency over hype** – Every score is backed by verifiable data sources
+- **Bitcoin as the benchmark** – The only project to score 10/10 in protocol immutability
+- **Centralization is a risk vector** – Admin keys, kill switches, and foundation control matter
+- **Progress is possible** – We track how projects evolve over time
 
 ## Features
 
@@ -156,6 +171,15 @@ workers/
 - Tailwind CSS
 - Cloudflare Pages + KV + R2 + Functions + Workers
 
+## Contributing
+
+This is a community project. Contributions welcome:
+
+- **Add a project** – Fork, create project file in `src/lib/data/projects/`, submit PR
+- **Improve scoring** – Open an issue to discuss methodology changes
+- **Fix bugs** – PRs welcome
+- **Spread the word** – Share with anyone who cares about real decentralization
+
 ## License
 
-MIT
+MIT – Free to use, modify, and distribute.
