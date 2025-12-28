@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.33.0-rc1] - 2025-12-28
+
+### Improved
+- **README** - Cleaned up duplicate information
+  - Consensus Types: now just lists type definitions (PoW, PoS, etc.)
+  - Project Categories: now just lists category definitions (L1, L2, DEX, etc.)
+  - Removed redundant coin listings from both sections
+
 ## [0.32.0-rc1] - 2025-12-28
 
 ### Changed
