@@ -259,7 +259,7 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
         </>
       );
 
-    case 'bitcoin-cash':
+    case 'bitcoincash':
       return (
         <>
           <MetricRow label="Block Height" value={num(m.blocks)} />
