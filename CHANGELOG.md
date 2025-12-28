@@ -2,6 +2,27 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.26.0-rc1] - 2025-12-28
+
+### Added
+- **B10 Protocol Immutability** - 12th criterion measuring fundamental rule changes
+  - Consensus mechanism changes (PoW→PoS)
+  - Monetary policy changes
+  - Contentious forks
+  - Bitcoin scores 10 (immutable since 2009)
+  - Ethereum scores 4-6 (DAO Fork + The Merge)
+  - Stablecoins get null (not protocols)
+
+### Improved
+- **Code Hardening** - Fixed 6 lint errors
+  - Moved SortIcon component outside render function
+  - Removed unused imports across 5 files
+  - Fixed anonymous default export in archive worker
+
+### Changed
+- **Framework** - Now 12 criteria (was 11)
+  - Control Score: B5-B10 (was B5-B9)
+
 ## [0.25.0-rc1] - 2025-12-28
 
 ### Added
