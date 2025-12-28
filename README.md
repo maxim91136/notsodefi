@@ -1,6 +1,6 @@
 # NotSoDeFi
 
-**Measuring Real Decentralization** • 35 Projects
+**Measuring Real Decentralization** • 36 Projects
 
 A framework for objectively measuring blockchain and protocol decentralization. Because "decentralized" doesn't mean what most projects claim it means.
 
@@ -15,12 +15,12 @@ Live: [notsodefi.com](https://notsodefi.com)
 
 ## The Framework
 
-Three scores, eleven criteria. Projects with admin kill-switches (B9=0) are capped at 2.0:
+Three scores, twelve criteria. Projects with admin kill-switches (B9=0) are capped at 2.0:
 
 | Score | Weight | What it measures |
 |-------|--------|------------------|
 | **Chain Score** | 40% | Technical/economic decentralization (Nakamoto Coefficient, validator concentration, client diversity, node geography) |
-| **Control Score** | 40% | Power structures (corporate capture, repo ownership, brand control, treasury keys) |
+| **Control Score** | 40% | Power structures (corporate capture, repo ownership, brand control, treasury keys, protocol immutability) |
 | **Fairness Score** | 20% | Launch/distribution fairness (premine, token distribution, governance power) |
 
 ```
@@ -91,6 +91,7 @@ Projects are classified by type:
 | Injective | INJ | PoS | [Injective LCD API](https://sentry.lcd.injective.network) |
 | Filecoin | FIL | PoS | [Filfox](https://filfox.info) |
 | Arbitrum | ARB | PoS | [Arbitrum RPC](https://arb1.arbitrum.io/rpc) |
+| Lido | LDO | PoS | [DefiLlama](https://defillama.com) |
 
 Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily.
 

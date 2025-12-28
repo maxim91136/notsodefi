@@ -17,12 +17,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Only java-tron client
   A4: 80,   // High datacenter concentration
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 1,    // Justin Sun / Tron Foundation controls
   B6: 1,    // Tron Foundation controls development
   B7: 1,    // Justin Sun owns brand
   B8: 1,    // Foundation controls treasury
   B9: 0,    // KILL-SWITCH: Justin Sun can effectively control/halt chain
+  B10: 5,   // Centralized control, upgrades at Justin Sun's discretion
 
   // Fairness Score (C9-C10)
   C9: 40,   // Private sale + foundation allocation

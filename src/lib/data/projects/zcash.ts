@@ -17,12 +17,13 @@ const rawValues: Record<string, number | null> = {
   A3: 2,    // zcashd and zebrad clients
   A4: 40,   // Moderate cloud/datacenter percentage
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 5,    // ECC has significant but not total control
   B6: 5,    // Development split between ECC and Zcash Foundation
   B7: 6,    // Trademark shared between ECC and Foundation
   B8: 4,    // Dev fund (20% block reward) controlled by orgs
   B9: 10,   // No halt capability - PoW chain like Bitcoin
+  B10: 3,   // Sapling/Orchard upgrades, dev fund changes, but PoW consensus stable
 
   // Fairness Score (C9-C10)
   C9: 10,   // 10% founders reward (2016-2020), now 20% dev fund

@@ -1,5 +1,5 @@
 /**
- * Control Score Criteria (B5-B9)
+ * Control Score Criteria (B5-B10)
  *
  * Measures power and control structures around the protocol.
  */
@@ -83,6 +83,23 @@ export const controlCriteria: Criterion[] = [
     ],
     sources: [
       'https://arxiv.org/html/2407.10302v1',
+    ],
+  },
+  {
+    id: 'B10',
+    name: 'Protocol Immutability',
+    description:
+      'Has the protocol made fundamental rule changes (consensus mechanism, monetary policy, contentious forks)? Immutable rules are a core property of decentralization.',
+    category: 'control',
+    mappings: [
+      { min: 0, max: 1, score: 10, label: 'No fundamental changes - immutable rules (Bitcoin)' },
+      { min: 1, max: 2, score: [7, 8], label: 'Minor changes, no consensus/monetary changes' },
+      { min: 2, max: 4, score: [4, 6], label: '1-2 major changes (fork or consensus change)' },
+      { min: 4, max: Infinity, score: [1, 3], label: 'Multiple major changes, "move fast" culture' },
+    ],
+    sources: [
+      'https://ethereum.org/en/history/',
+      'https://en.bitcoin.it/wiki/Consensus_versions',
     ],
   },
 ];

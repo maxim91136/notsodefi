@@ -16,12 +16,13 @@ const rawValues: Record<string, number | null> = {
   A3: 3,    // 3+ clients (Geth, Nethermind, Besu, Erigon)
   A4: 60,   // ~60% nodes in cloud infrastructure
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 4,    // EF has significant soft power: treasury, roadmap influence, grants
   B6: 8,    // Multiple client teams, diverse maintainers
   B7: 6,    // EF controls ethereum.org but many frontends exist
   B8: null, // N/A - No protocol-level treasury multisig
   B9: 10,   // No halt capability - decentralized PoS validators
+  B10: 4,   // DAO Fork (2016) + The Merge PoW→PoS (2022) + frequent EIPs
 
   // Fairness Score (C9-C10)
   C9: 20,   // ~20% premine (9.9% founders + 9.9% foundation)

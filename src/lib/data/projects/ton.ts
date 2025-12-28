@@ -22,12 +22,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single implementation (ton-blockchain/ton)
   A4: 50,   // Estimated cloud/datacenter percentage
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 3,    // TON Foundation significant influence, but community growing
   B6: 2,    // GitHub org (ton-blockchain) controlled by TON Foundation
   B7: 2,    // TON Foundation owns ton.org, controls brand
   B8: 2,    // 85% mined by connected whales, insiders control vast resources
   B9: 7,    // Config changes require validator consensus, no single admin halt
+  B10: 4,   // Revived from Telegram, some changes from original design
 
   // Fairness Score (C9-C10)
   C9: 85,   // 85% mined by interconnected whales affiliated with TON Foundation

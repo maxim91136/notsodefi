@@ -17,12 +17,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Dogecoin Core dominant, no significant alternative clients
   A4: 50,   // Estimated cloud/datacenter percentage
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 9,    // Founders stepped back, Dogecoin Foundation has limited power
   B6: 7,    // Community-driven development, Foundation supports but doesn't control
   B7: 8,    // Brand is community-owned, Foundation doesn't control it
   B8: null, // N/A - No protocol treasury
   B9: 10,   // No halt capability - truly unstoppable PoW chain
+  B10: 1,   // Litecoin fork, minimal protocol changes since launch
 
   // Fairness Score (C9-C10)
   C9: 0,    // 0% premine - fair launch

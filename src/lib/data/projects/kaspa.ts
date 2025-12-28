@@ -18,12 +18,13 @@ const rawValues: Record<string, number | null> = {
   A3: 4,    // Kaspad primary client, rusty-kaspa alternative
   A4: 50,   // Estimated node distribution
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 8,    // DAGlabs renounced ownership, community-run
   B6: 7,    // Open source, multiple contributors
   B7: 8,    // No company owns brand
   B8: 7,    // Multi-sig treasury with elected treasurers
   B9: 10,   // PoW - no kill-switch possible
+  B10: 2,   // Young chain (2021) but minimal changes to GHOSTDAG PoW consensus
 
   // Fairness Score (C9-C10)
   C9: 100,  // 0% premine - TRUE FAIR LAUNCH

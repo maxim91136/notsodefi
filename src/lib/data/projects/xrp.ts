@@ -17,12 +17,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Essentially one client (rippled)
   A4: 70,   // High percentage of validators in datacenters
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 2,    // Ripple Labs has significant control
   B6: 3,    // rippled development controlled by Ripple
   B7: 2,    // Ripple owns XRP trademark and brand
   B8: 1,    // Ripple controls escrow (55B XRP), releases up to 1B/month
   B9: 0,    // KILL-SWITCH: Ripple's default UNL controls consensus, can exclude validators
+  B10: 3,   // Some amendments but consensus mechanism unchanged since 2012
 
   // Fairness Score (C9-C10)
   C9: 100,  // 100% premine - all 100B XRP created at genesis

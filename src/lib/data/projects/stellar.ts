@@ -21,12 +21,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single implementation (stellar-core)
   A4: 50,   // Estimated cloud/datacenter percentage
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 2,    // SDF controls development, grants, ecosystem
   B6: 2,    // SDF owns stellar/stellar-core GitHub
   B7: 2,    // SDF owns stellar.org, all branding
   B8: 2,    // SDF holds 17.3B XLM (34.7% of total supply)
   B9: 5,    // No explicit kill switch, but SDF runs 3 of 7 tier-1 validators
+  B10: 3,   // Some protocol upgrades but FBA consensus unchanged since 2015
 
   // Fairness Score (C9-C10)
   C9: 35,   // SDF holds 35% of supply; 100% premined

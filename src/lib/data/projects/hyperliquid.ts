@@ -19,12 +19,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single closed-source binary until recently
   A4: 25,   // Only 24 validators, mostly datacenter
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 2,    // Hyperliquid Labs controls everything
   B6: 2,    // Closed source, single company development
   B7: 2,    // Single company owns brand
   B8: 2,    // 38.888% future emissions controlled by foundation
   B9: 0,    // KILL-SWITCH: Bridge pause, withdrawal freeze, forced delisting
+  B10: 6,   // Brand new (2024), moving fast, centralized control over upgrades
 
   // Fairness Score (C9-C10)
   C9: 40,   // 23.8% team + 38.9% future emissions = ~63% not freely distributed

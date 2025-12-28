@@ -18,12 +18,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Only 1 client (IC replica) - no diversity
   A4: 85,   // 100% specialized data center hardware (node machines)
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 2,    // DFINITY Foundation dominates roadmap, marketing, hiring
   B6: 2,    // DFINITY controls all core repositories
   B7: 3,    // DFINITY owns brand, domains, main interfaces
   B8: 5,    // NNS treasury but DFINITY+IC Association = 40% voting power
   B9: 4,    // NNS can do anything but requires proposals/voting (not single entity)
+  B10: 5,   // DFINITY-controlled development, frequent NNS upgrades
 
   // Fairness Score (C9-C10)
   C9: 50,   // ~48-50% insider allocation (DFINITY, team, seed, strategic)

@@ -17,12 +17,13 @@ const rawValues: Record<string, number | null> = {
   A3: 2,    // Monero daemon dominant, but monerod alternatives exist
   A4: 50,   // Estimated - Monero node tracking limited due to privacy
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 10,   // No corporate owner - pure grassroots project
   B6: 8,    // Diverse maintainers, community-driven development
   B7: 9,    // No central entity controls brand, community-owned
   B8: null, // N/A - No protocol treasury
   B9: 10,   // No halt capability - truly unstoppable PoW chain
+  B10: 2,   // Privacy/ASIC-resistance upgrades but no consensus mechanism change
 
   // Fairness Score (C9-C10)
   C9: 0,    // 0% premine - fair launch

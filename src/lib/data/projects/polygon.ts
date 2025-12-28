@@ -33,12 +33,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single client (Heimdall/Bor)
   A4: 75,   // Estimated ~75% cloud infrastructure
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 4,    // Polygon Labs very influential, Foundation controls ecosystem
   B6: 6,    // Open source, but Labs-dominated development
   B7: 3,    // polygon.technology - Labs controls brand entirely
   B8: 5,    // Foundation treasury, some transparency
   B9: 6,    // No kill-switch, but 105 max validators is very limiting
+  B10: 5,   // Multiple pivots (Matic→Polygon, MATIC→POL, PoS→zkEVM focus)
 
   // Fairness Score (C9-C10)
   C9: 24,   // ~24% to insiders (16% team + 4% advisors + ~4% seed/early)

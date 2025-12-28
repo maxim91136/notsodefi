@@ -31,12 +31,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single client (injective-chain), Cosmos SDK
   A4: 70,   // Estimated ~70% cloud infrastructure
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 4,    // Injective Labs very influential, VC-backed
   B6: 6,    // Open source, but Labs-dominated
   B7: 4,    // injective.com - Labs controls brand
   B8: 5,    // Foundation treasury, some transparency
   B9: 7,    // No kill-switch, standard Cosmos governance
+  B10: 4,   // Cosmos SDK upgrades, IBC integrations, Labs-driven development
 
   // Fairness Score (C9-C10)
   C9: 42,   // ~42% to insiders (20% team + 20% private + 2% advisors)

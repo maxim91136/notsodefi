@@ -21,12 +21,13 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single implementation (Mysten Labs)
   A4: 50,   // Estimated cloud/datacenter percentage
 
-  // Control Score (B5-B9)
+  // Control Score (B5-B10)
   B5: 2,    // Mysten Labs dominates development, Sui Foundation controls treasury
   B6: 2,    // Mysten Labs owns github.com/MystenLabs/sui
   B7: 2,    // Mysten Labs/Foundation controls sui.io
   B8: 3,    // 52% "unallocated" controlled by Foundation, staked for network
   B9: 6,    // No clear kill switch, but Foundation has significant influence
+  B10: 6,   // Brand new (2023), Mysten Labs controlled, rapid iteration
 
   // Fairness Score (C9-C10)
   C9: 20,   // ~20% direct founders/team (Mysten 1.6% + Early Contributors 6% + unlocks)
