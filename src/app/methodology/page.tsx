@@ -21,10 +21,10 @@ export default function MethodologyPage() {
         </p>
       </div>
 
-      {/* TL;DR */}
+      {/* Summary */}
       <Card className="mb-8">
         <CardHeader>
-          <h3 className="text-lg font-semibold">TL;DR</h3>
+          <h3 className="text-lg font-semibold">Summary</h3>
         </CardHeader>
         <CardContent className="space-y-2 text-white/80">
           <p><strong>Formula:</strong> TotalScore = 0.4 * Chain + 0.4 * Control + 0.2 * Fairness</p>
