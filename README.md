@@ -50,7 +50,7 @@ Projects are classified by type:
 - **Lending** - Lending protocols (Aave)
 - **Oracle** - Oracle networks (Chainlink)
 - **Stablecoin** - Stablecoins (Tether, USDC, DAI)
-- **Infrastructure** - Infrastructure providers (Filecoin)
+- **Infrastructure** - Infrastructure providers (Filecoin, Lido)
 
 ## Supported Chains
 
