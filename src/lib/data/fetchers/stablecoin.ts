@@ -98,3 +98,7 @@ export function getTetherFetcher(): StablecoinFetcher {
 export function getUsdcFetcher(): StablecoinFetcher {
   return new StablecoinFetcher(STABLECOIN_IDS.USDC, 'USD Coin');
 }
+
+export function getDaiFetcher(): StablecoinFetcher {
+  return new StablecoinFetcher(STABLECOIN_IDS.DAI, 'DAI');
+}
