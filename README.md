@@ -44,28 +44,24 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 
 ## Consensus Types
 
-The framework distinguishes between different consensus mechanisms:
-
-- **PoW** (Proof of Work) - Bitcoin, Bitcoin Cash, Dogecoin, Ethereum Classic, Kaspa, Litecoin, Monero, Zcash
-- **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid, TON, Sui, ICP, Aave, Uniswap, DAI, NEAR, Aptos, Polygon, Injective, Filecoin
-- **NPoS** (Nominated Proof of Stake) - Polkadot
-- **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
-- **Federated** - XRP, Chainlink, Stellar, Hedera, Tether, USDC
-- **Hybrid** - Bittensor
+- **PoW** - Proof of Work
+- **PoS** - Proof of Stake
+- **NPoS** - Nominated Proof of Stake
+- **DPoS** - Delegated Proof of Stake
+- **Federated** - Federated consensus
+- **Hybrid** - Mixed mechanisms
 
 Some criteria may be N/A depending on the consensus type.
 
 ## Project Categories
 
-Projects are classified by type:
-
-- **L1** - Layer 1 blockchains (Bitcoin, Ethereum, Solana, etc.)
-- **L2** - Layer 2 scaling solutions (Polygon)
-- **DEX** - Decentralized exchanges (Uniswap)
-- **Lending** - Lending protocols (Aave)
-- **Oracle** - Oracle networks (Chainlink)
-- **Stablecoin** - Stablecoins (Tether, USDC, DAI)
-- **Infrastructure** - Infrastructure providers (Filecoin, Lido)
+- **L1** - Layer 1 blockchains
+- **L2** - Layer 2 scaling solutions
+- **DEX** - Decentralized exchanges
+- **Lending** - Lending protocols
+- **Oracle** - Oracle networks
+- **Stablecoin** - Stablecoins
+- **Infrastructure** - Infrastructure providers
 
 ## Supported Chains
 
