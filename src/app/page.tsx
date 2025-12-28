@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader } from '@/components/ui';
 import { getAllCriteria, CATEGORIES } from '@/lib/framework';
@@ -12,11 +13,14 @@ export default function HomePage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Hero */}
       <section className="text-center mb-20">
-        <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-          <span className="text-white">NotSo</span>
-          <span className="text-red-500">DeFi</span>
-          <span className="text-white">.com</span>
-        </h1>
+        <Image
+          src="/logo.jpg"
+          alt="NotSoDeFi.com"
+          width={500}
+          height={400}
+          className="mx-auto mb-6 rounded-xl"
+          priority
+        />
         <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
           Measuring real decentralization. Because &quot;decentralized&quot; doesn&apos;t
           mean what most projects claim it means.
