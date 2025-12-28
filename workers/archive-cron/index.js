@@ -22,9 +22,9 @@ async function archive(env) {
   return { date: today, count: archived.length, keys: archived };
 }
 
-export default {
+const archiveWorker = {
   // Cron trigger
-  async scheduled(event, env, ctx) {
+  async scheduled(_event, env, _ctx) {
     const result = await archive(env);
     console.log(`Archived ${result.count} projects for ${result.date}`);
   },
@@ -37,3 +37,5 @@ export default {
     });
   }
 };
+
+export default archiveWorker;

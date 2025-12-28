@@ -3,7 +3,6 @@
 import { Card, CardContent } from '@/components/ui';
 import { ScoreRing } from '@/components/ui';
 import { CATEGORIES, Category } from '@/lib/framework';
-import { getScoreBorderColor } from '@/lib/utils';
 
 interface ScoreCardProps {
   category: Category;

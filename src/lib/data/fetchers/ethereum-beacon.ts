@@ -11,18 +11,6 @@
 import { BaseFetcher, FetcherConfig, FetchResult } from './base';
 import type { RawDataPoint } from '../sources';
 
-interface ValidatorResponse {
-  data: {
-    index: string;
-    balance: string;
-    status: string;
-    validator: {
-      pubkey: string;
-      effective_balance: string;
-    };
-  }[];
-}
-
 interface FinalityCheckpoints {
   data: {
     finalized: { epoch: string };

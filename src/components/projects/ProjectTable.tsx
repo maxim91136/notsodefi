@@ -49,6 +49,11 @@ function getAvailableFilters(projects: Project[]) {
 type SortField = 'rank' | 'name' | 'total' | 'chain' | 'control' | 'fairness';
 type SortDir = 'asc' | 'desc';
 
+function SortIcon({ field, sortField, sortDir }: { field: SortField; sortField: SortField; sortDir: SortDir }) {
+  if (sortField !== field) return <span className="text-white/20 ml-1">↕</span>;
+  return <span className="ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>;
+}
+
 export function ProjectTable({ projects }: ProjectTableProps) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
@@ -168,11 +173,6 @@ export function ProjectTable({ projects }: ProjectTableProps) {
     () => projects.filter((p) => compareIds.has(p.id)),
     [projects, compareIds]
   );
-
-  const SortIcon = ({ field }: { field: SortField }) => {
-    if (sortField !== field) return <span className="text-white/20 ml-1">↕</span>;
-    return <span className="ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>;
-  };
 
   const hasFilters = searchQuery.length > 0 || selectedCategories.size > 0 || selectedConsensus.size > 0 || sortField !== 'rank';
 
@@ -381,13 +381,13 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               className="text-center py-3 px-2 sm:px-4 text-sm font-medium text-white/50 w-10 sm:w-12 cursor-pointer hover:text-white/70"
               onClick={() => toggleSort('rank')}
             >
-              #<SortIcon field="rank" />
+              #<SortIcon field="rank" sortField={sortField} sortDir={sortDir} />
             </th>
             <th
               className="text-left py-3 px-2 sm:px-4 text-sm font-medium text-white/50 cursor-pointer hover:text-white/70"
               onClick={() => toggleSort('name')}
             >
-              Project<SortIcon field="name" />
+              Project<SortIcon field="name" sortField={sortField} sortDir={sortDir} />
             </th>
             <th className="text-center py-3 px-2 sm:px-4 text-sm font-medium text-white/50">
               Category
@@ -400,7 +400,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               onClick={() => toggleSort('total')}
               title="Weighted Score: Chain 40% + Control 40% + Fairness 20%"
             >
-              Total<SortIcon field="total" />
+              Total<SortIcon field="total" sortField={sortField} sortDir={sortDir} />
             </th>
             <th className="hidden md:table-cell text-center py-3 px-4 text-sm font-medium text-white/30" title="7-day trend">
               Trend
@@ -410,21 +410,21 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               onClick={() => toggleSort('chain')}
               title="Technical Decentralization (40%): Nakamoto Coefficient, Stake Concentration, Client Diversity, Infrastructure"
             >
-              Chain<SortIcon field="chain" />
+              Chain<SortIcon field="chain" sortField={sortField} sortDir={sortDir} />
             </th>
             <th
               className="hidden lg:table-cell text-center py-3 px-4 text-sm font-medium text-purple-400/70 cursor-pointer hover:text-purple-300"
               onClick={() => toggleSort('control')}
               title="Governance Decentralization (40%): Org Influence, Code Control, Brand, Treasury, Kill-Switch"
             >
-              Control<SortIcon field="control" />
+              Control<SortIcon field="control" sortField={sortField} sortDir={sortDir} />
             </th>
             <th
               className="hidden lg:table-cell text-center py-3 px-4 text-sm font-medium text-green-400/70 cursor-pointer hover:text-green-300"
               onClick={() => toggleSort('fairness')}
               title="Token Distribution Fairness (20%): Insider Allocation, Governance Accessibility"
             >
-              Fairness<SortIcon field="fairness" />
+              Fairness<SortIcon field="fairness" sortField={sortField} sortDir={sortDir} />
             </th>
             <th className="w-6 sm:w-8"></th>
           </tr>

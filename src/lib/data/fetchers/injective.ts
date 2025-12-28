@@ -23,13 +23,6 @@ interface ValidatorsResponse {
   };
 }
 
-interface StakingPoolResponse {
-  pool: {
-    bonded_tokens: string;
-    not_bonded_tokens: string;
-  };
-}
-
 export interface InjectiveMetrics {
   activeValidators: number | null;
   totalStaked: number | null; // in INJ

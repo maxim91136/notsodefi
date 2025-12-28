@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from '@/components/ui';
+import { Card, CardContent } from '@/components/ui';
 import { ProjectTable } from '@/components/projects';
 import { ApiStatusCard } from '@/components/data';
 import { getProjectsByScore } from '@/lib/data';

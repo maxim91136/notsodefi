@@ -27,20 +27,6 @@ interface LedgersResponse {
   };
 }
 
-interface FeeStatsResponse {
-  last_ledger: string;
-  last_ledger_base_fee: string;
-  ledger_capacity_usage: string;
-  fee_charged: {
-    min: string;
-    max: string;
-    mode: string;
-    p50: string;
-    p90: string;
-    p99: string;
-  };
-}
-
 interface LumensResponse {
   updatedAt: string;
   totalSupply: string;
