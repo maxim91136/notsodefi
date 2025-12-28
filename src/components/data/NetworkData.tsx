@@ -44,7 +44,7 @@ function MetricRow({ label, value }: MetricRowProps) {
   );
 }
 
-interface LiveNetworkDataProps {
+interface NetworkDataProps {
   projectId: string;
 }
 
@@ -78,7 +78,7 @@ function ErrorState({ error }: { error: string }) {
   );
 }
 
-export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
+export function NetworkData({ projectId }: NetworkDataProps) {
   const kvKey = getKvKey(projectId);
   const { data, loading, error } = useMetrics(kvKey);
   const colors = getProjectColors(projectId);
@@ -166,7 +166,6 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
           <MetricRow label="Block Number" value={num(m.blockNumber)} />
           <MetricRow label="Peer Count" value={num(m.peerCount)} />
           <MetricRow label="Validators" value={num(m.validatorCount)} />
-          <MetricRow label="Gas Price" value={num(m.gasPrice) ? `${m.gasPrice} Gwei` : null} />
         </>
       );
 
@@ -176,7 +175,6 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
           <MetricRow label="Block Height" value={num(m.blocks)} />
           <MetricRow label="Network Nodes" value={num(m.nodes)} />
           <MetricRow label="Difficulty" value={num(m.difficulty)} />
-          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
         </>
       );
 
@@ -238,8 +236,6 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
           <MetricRow label="Block Height" value={num(m.blocks)} />
           <MetricRow label="Total Transactions" value={num(m.transactions)} />
           <MetricRow label="Avg Block Time" value={num(m.avgBlockTime) ? `${(m.avgBlockTime as number / 1000).toFixed(1)}s` : null} />
-          <MetricRow label="Price" value={num(m.price) ? `$${(m.price as number).toFixed(2)}` : null} />
-          <MetricRow label="Market Cap" value={num(m.marketCap) ? `$${(m.marketCap as number / 1e9).toFixed(2)}B` : null} />
         </>
       );
 
@@ -250,7 +246,6 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
           <MetricRow label="Hashrate (24h)" value={num(m.hashrate24h) ? formatHashrate(m.hashrate24h as number) : null} />
           <MetricRow label="Difficulty" value={num(m.difficulty) ? (m.difficulty as number).toExponential(2) : null} />
           <MetricRow label="Network Nodes" value={num(m.nodes)} />
-          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
         </>
       );
 
@@ -261,7 +256,6 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
           <MetricRow label="Hashrate (24h)" value={num(m.hashrate24h) ? formatHashrate(m.hashrate24h as number) : null} />
           <MetricRow label="Difficulty" value={num(m.difficulty) ? (m.difficulty as number).toExponential(2) : null} />
           <MetricRow label="Network Nodes" value={num(m.nodes)} />
-          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
         </>
       );
 
@@ -272,7 +266,6 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
           <MetricRow label="Hashrate (24h)" value={num(m.hashrate24h) ? formatHashrate(m.hashrate24h as number) : null} />
           <MetricRow label="Difficulty" value={num(m.difficulty) ? (m.difficulty as number).toExponential(2) : null} />
           <MetricRow label="Network Nodes" value={num(m.nodes)} />
-          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
         </>
       );
 
@@ -282,7 +275,6 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
           <MetricRow label="Block Height" value={num(m.blocks)} />
           <MetricRow label="Hashrate (24h)" value={num(m.hashrate24h) ? formatHashrate(m.hashrate24h as number) : null} />
           <MetricRow label="Difficulty" value={num(m.difficulty) ? (m.difficulty as number).toExponential(2) : null} />
-          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
         </>
       );
 
@@ -480,7 +472,6 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
       return (
         <>
           <MetricRow label="Block Number" value={num(m.blockNumber)} />
-          <MetricRow label="Gas Price" value={num(m.gasPrice) ? `${m.gasPrice} Gwei` : null} />
           <MetricRow label="Chain ID" value={num(m.chainId)} />
           <MetricRow label="Sequencer" value={str(m.sequencer)} />
         </>

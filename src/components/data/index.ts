@@ -1,2 +1,2 @@
-export { LiveNetworkData } from './LiveNetworkData';
+export { NetworkData } from './NetworkData';
 export { ApiStatusCard } from './ApiStatusCard';

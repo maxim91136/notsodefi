@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, Badge } from '@/components/ui';
 import { ScoreSummary, CriterionRow } from '@/components/scores';
-import { LiveNetworkData } from '@/components/data';
+import { NetworkData } from '@/components/data';
 import { getProjectById, projects } from '@/lib/data';
 import { getCriteriaByCategory } from '@/lib/framework';
 import { formatDate } from '@/lib/utils';
@@ -77,7 +77,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Network Data */}
       <div className="mb-4">
-        <LiveNetworkData projectId={project.id} />
+        <NetworkData projectId={project.id} />
       </div>
 
       {/* Notes */}
