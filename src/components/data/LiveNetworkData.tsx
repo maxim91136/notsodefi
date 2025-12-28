@@ -1,9 +1,9 @@
 'use client';
 
 /**
- * Live Network Data Component
+ * Network Data Component
  *
- * Displays real-time network metrics fetched from KV API.
+ * Displays network metrics fetched daily from KV API.
  * Shows last updated timestamp and data source.
  */
 
@@ -95,7 +95,7 @@ export function LiveNetworkData({ projectId }: LiveNetworkDataProps) {
       <CardHeader>
         <div className="flex justify-between items-start">
           <div>
-            <h3 className={`font-semibold ${colors.text}`}>Live Network Data</h3>
+            <h3 className={`font-semibold ${colors.text}`}>Network Data</h3>
             <p className="text-xs text-white/40 mt-1">
               Source: {data.source || 'API'}
             </p>

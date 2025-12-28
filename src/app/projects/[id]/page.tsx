@@ -75,7 +75,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </CardContent>
       </Card>
 
-      {/* Live Network Data */}
+      {/* Network Data */}
       <div className="mb-4">
         <LiveNetworkData projectId={project.id} />
       </div>
