@@ -2,6 +2,24 @@
 
 All notable changes to the NotSoDeFi Framework.
 
+## [0.25.0-rc1] - 2025-12-28
+
+### Added
+- **Lido (LDO)** - 36th project (Liquid Staking)
+  - Controls ~25% of all staked ETH
+  - ~30 permissioned node operators
+  - 64% founder allocation, plutocratic governance
+  - Upgradeable contracts, dual governance with stETH veto
+  - Score: ~3.5 (significant centralization risk)
+  - Data: DefiLlama + Lido API (TVL, APR, fees, treasury)
+
+- **DAI Data Pipeline** - Complete data fetcher for MakerDAO stablecoin
+  - DefiLlama Stablecoins API integration
+  - Supply tracking across chains
+
+### Improved
+- **Data Pipeline Coverage** - Now 36/36 projects have live data pipelines
+
 ## [0.24.0-rc2] - 2025-12-27
 
 ### Fixed
