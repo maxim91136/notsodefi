@@ -2,6 +2,17 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.34.0-rc1] - 2025-12-28
+
+### Added
+- **Methodology Page** - New page explaining the scoring framework
+  - Why 40/40/20 weighting (Chain/Control/Fairness)
+  - Why kill-switch cap at 1.0
+  - Why these 12 criteria
+  - Bitcoin as benchmark
+  - What we don't measure
+  - Limitations
+
 ## [0.33.0-rc1] - 2025-12-28
 
 ### Improved
