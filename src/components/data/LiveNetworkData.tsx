@@ -12,6 +12,17 @@ import { useMetrics } from '@/hooks/useMetrics';
 import { getKvKey, getProjectColors } from '@/lib/config/projects';
 import { formatTimeAgo } from '@/lib/utils/formatting';
 
+// Format large hashrates to human-readable format
+function formatHashrate(hashrate: number): string {
+  if (hashrate >= 1e18) return `${(hashrate / 1e18).toFixed(2)} EH/s`;
+  if (hashrate >= 1e15) return `${(hashrate / 1e15).toFixed(2)} PH/s`;
+  if (hashrate >= 1e12) return `${(hashrate / 1e12).toFixed(2)} TH/s`;
+  if (hashrate >= 1e9) return `${(hashrate / 1e9).toFixed(2)} GH/s`;
+  if (hashrate >= 1e6) return `${(hashrate / 1e6).toFixed(2)} MH/s`;
+  if (hashrate >= 1e3) return `${(hashrate / 1e3).toFixed(2)} KH/s`;
+  return `${hashrate.toFixed(0)} H/s`;
+}
+
 interface MetricRowProps {
   label: string;
   value: string | number | null | undefined;
@@ -229,6 +240,260 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
           <MetricRow label="Avg Block Time" value={num(m.avgBlockTime) ? `${(m.avgBlockTime as number / 1000).toFixed(1)}s` : null} />
           <MetricRow label="Price" value={num(m.price) ? `$${(m.price as number).toFixed(2)}` : null} />
           <MetricRow label="Market Cap" value={num(m.marketCap) ? `$${(m.marketCap as number / 1e9).toFixed(2)}B` : null} />
+        </>
+      );
+
+    case 'dogecoin':
+      return (
+        <>
+          <MetricRow label="Block Height" value={num(m.blocks)} />
+          <MetricRow label="Hashrate (24h)" value={num(m.hashrate24h) ? formatHashrate(m.hashrate24h as number) : null} />
+          <MetricRow label="Difficulty" value={num(m.difficulty) ? (m.difficulty as number).toExponential(2) : null} />
+          <MetricRow label="Network Nodes" value={num(m.nodes)} />
+          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
+        </>
+      );
+
+    case 'litecoin':
+      return (
+        <>
+          <MetricRow label="Block Height" value={num(m.blocks)} />
+          <MetricRow label="Hashrate (24h)" value={num(m.hashrate24h) ? formatHashrate(m.hashrate24h as number) : null} />
+          <MetricRow label="Difficulty" value={num(m.difficulty) ? (m.difficulty as number).toExponential(2) : null} />
+          <MetricRow label="Network Nodes" value={num(m.nodes)} />
+          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
+        </>
+      );
+
+    case 'bitcoin-cash':
+      return (
+        <>
+          <MetricRow label="Block Height" value={num(m.blocks)} />
+          <MetricRow label="Hashrate (24h)" value={num(m.hashrate24h) ? formatHashrate(m.hashrate24h as number) : null} />
+          <MetricRow label="Difficulty" value={num(m.difficulty) ? (m.difficulty as number).toExponential(2) : null} />
+          <MetricRow label="Network Nodes" value={num(m.nodes)} />
+          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
+        </>
+      );
+
+    case 'monero':
+      return (
+        <>
+          <MetricRow label="Block Height" value={num(m.blocks)} />
+          <MetricRow label="Hashrate (24h)" value={num(m.hashrate24h) ? formatHashrate(m.hashrate24h as number) : null} />
+          <MetricRow label="Difficulty" value={num(m.difficulty) ? (m.difficulty as number).toExponential(2) : null} />
+          <MetricRow label="Mempool TXs" value={num(m.mempoolTxs)} />
+        </>
+      );
+
+    case 'polkadot':
+      return (
+        <>
+          <MetricRow label="Block Number" value={num(m.blockNumber)} />
+          <MetricRow label="Era" value={num(m.era)} />
+          <MetricRow label="Active Validators" value={num(m.activeValidators)} />
+          <MetricRow label="Waiting Validators" value={num(m.waitingValidators)} />
+          <MetricRow label="Total Staked" value={num(m.totalStaked) ? `${(m.totalStaked as number).toLocaleString()} DOT` : null} />
+        </>
+      );
+
+    case 'cosmos':
+      return (
+        <>
+          <MetricRow label="Block Height" value={num(m.blockHeight)} />
+          <MetricRow label="Active Validators" value={num(m.activeValidators)} />
+          <MetricRow label="Total Bonded" value={num(m.totalBonded) ? `${(m.totalBonded as number).toLocaleString()} ATOM` : null} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+          <MetricRow label="Chain ID" value={str(m.chainId)} />
+        </>
+      );
+
+    case 'stellar':
+      return (
+        <>
+          <MetricRow label="Ledger Sequence" value={num(m.ledgerSequence)} />
+          <MetricRow label="Protocol Version" value={num(m.protocolVersion)} />
+          <MetricRow label="Circulating Supply" value={num(m.circulatingSupply) ? `${(m.circulatingSupply as number / 1e9).toFixed(1)}B XLM` : null} />
+          <MetricRow label="SDF Mandate" value={num(m.sdfMandatePercent) ? `${m.sdfMandatePercent}%` : null} />
+        </>
+      );
+
+    case 'chainlink':
+      return (
+        <>
+          <MetricRow label="ETH/USD Oracles" value={num(m.ethUsdOracles)} />
+          <MetricRow label="Min Answers Required" value={num(m.ethUsdMinAnswers)} />
+          <MetricRow label="Total Data Feeds" value={num(m.totalDataFeeds) ? `~${(m.totalDataFeeds as number).toLocaleString()}` : null} />
+          <MetricRow label="Latest Round" value={num(m.ethUsdLatestRound)} />
+        </>
+      );
+
+    case 'hedera':
+      return (
+        <>
+          <MetricRow label="Council Nodes" value={num(m.totalNodes)} />
+          <MetricRow label="Total Staked" value={num(m.totalStake) ? `${(m.totalStake as number).toLocaleString()} HBAR` : null} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+          <MetricRow label="Released Supply" value={num(m.releasedSupply) ? `${(m.releasedSupply as number / 1e9).toFixed(1)}B HBAR` : null} />
+        </>
+      );
+
+    case 'filecoin':
+      return (
+        <>
+          <MetricRow label="Active Miners" value={num(m.activeMiners)} />
+          <MetricRow label="Total Power" value={num(m.totalPowerPiB) ? `${(m.totalPowerPiB as number).toLocaleString()} PiB` : null} />
+          <MetricRow label="Nakamoto Coefficient" value={num(m.nakamotoCoefficient)} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+        </>
+      );
+
+    case 'kaspa':
+      return (
+        <>
+          <MetricRow label="Block Count" value={num(m.blockCount)} />
+          <MetricRow label="Hashrate" value={num(m.hashrate) ? `${(m.hashrate as number).toLocaleString()} PH/s` : null} />
+          <MetricRow label="Circulating Supply" value={num(m.circulatingSupply) ? `${(m.circulatingSupply as number / 1e9).toFixed(2)}B KAS` : null} />
+          <MetricRow label="Block Reward" value={num(m.blockReward) ? `${(m.blockReward as number).toFixed(2)} KAS` : null} />
+        </>
+      );
+
+    case 'hyperliquid':
+      return (
+        <>
+          <MetricRow label="Active Validators" value={num(m.activeValidators)} />
+          <MetricRow label="Nakamoto Coefficient" value={num(m.nakamotoCoefficient)} />
+          <MetricRow label="Foundation Stake" value={num(m.foundationPercent) ? `${m.foundationPercent}%` : null} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+          <MetricRow label="Total Staked" value={num(m.totalStake) ? `${(m.totalStake as number).toLocaleString()} HYPE` : null} />
+        </>
+      );
+
+    case 'near':
+      return (
+        <>
+          <MetricRow label="Block Height" value={num(m.blockHeight)} />
+          <MetricRow label="Active Validators" value={num(m.activeValidators)} />
+          <MetricRow label="Nakamoto Coefficient" value={num(m.nakamotoCoefficient)} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+          <MetricRow label="Total Staked" value={num(m.totalStaked) ? `${(m.totalStaked as number).toLocaleString()} NEAR` : null} />
+        </>
+      );
+
+    case 'sui':
+      return (
+        <>
+          <MetricRow label="Epoch" value={num(m.epoch)} />
+          <MetricRow label="Total Validators" value={num(m.totalValidators)} />
+          <MetricRow label="Nakamoto Coefficient" value={num(m.nakamotoCoefficient)} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+          <MetricRow label="Total Staked" value={num(m.totalStake) ? `${(m.totalStake as number / 1e9).toFixed(2)}B SUI` : null} />
+        </>
+      );
+
+    case 'aptos':
+      return (
+        <>
+          <MetricRow label="Block Height" value={num(m.blockHeight)} />
+          <MetricRow label="Epoch" value={num(m.epoch)} />
+          <MetricRow label="Active Validators" value={num(m.activeValidators)} />
+          <MetricRow label="Nakamoto Coefficient" value={num(m.nakamotoCoefficient)} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+        </>
+      );
+
+    case 'icp':
+      return (
+        <>
+          <MetricRow label="Total Nodes" value={num(m.totalNodes)} />
+          <MetricRow label="Up Nodes" value={num(m.upNodes)} />
+          <MetricRow label="Node Providers" value={num(m.nodeProviders)} />
+          <MetricRow label="Subnets" value={num(m.subnets)} />
+          <MetricRow label="Avg Nakamoto Coef." value={num(m.avgNakamotoCoefficient) ? (m.avgNakamotoCoefficient as number).toFixed(1) : null} />
+        </>
+      );
+
+    case 'aave':
+      return (
+        <>
+          <MetricRow label="Total Value Locked" value={num(m.tvl) ? `$${(m.tvl as number / 1e9).toFixed(2)}B` : null} />
+          <MetricRow label="TVL Change (24h)" value={num(m.tvlChange24h) ? `${(m.tvlChange24h as number).toFixed(1)}%` : null} />
+          <MetricRow label="Treasury" value={num(m.treasury) ? `$${(m.treasury as number / 1e6).toFixed(1)}M` : null} />
+          <MetricRow label="Revenue (24h)" value={num(m.revenue24h) ? `$${(m.revenue24h as number / 1e3).toFixed(0)}K` : null} />
+          <MetricRow label="Chains Deployed" value={num(m.totalChains)} />
+        </>
+      );
+
+    case 'uniswap':
+      return (
+        <>
+          <MetricRow label="Total Value Locked" value={num(m.tvl) ? `$${(m.tvl as number / 1e9).toFixed(2)}B` : null} />
+          <MetricRow label="Volume (24h)" value={num(m.volume24h) ? `$${(m.volume24h as number / 1e9).toFixed(2)}B` : null} />
+          <MetricRow label="Fees (24h)" value={num(m.fees24h) ? `$${(m.fees24h as number / 1e6).toFixed(2)}M` : null} />
+          <MetricRow label="Treasury" value={num(m.treasury) ? `$${(m.treasury as number / 1e6).toFixed(1)}M` : null} />
+          <MetricRow label="Chains Deployed" value={num(m.totalChains)} />
+        </>
+      );
+
+    case 'injective':
+      return (
+        <>
+          <MetricRow label="Active Validators" value={num(m.activeValidators)} />
+          <MetricRow label="Nakamoto Coefficient" value={num(m.nakamotoCoefficient)} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+          <MetricRow label="Total Staked" value={num(m.totalStaked) ? `${(m.totalStaked as number).toLocaleString()} INJ` : null} />
+        </>
+      );
+
+    case 'ton':
+      return (
+        <>
+          <MetricRow label="Block Number" value={num(m.blockNumber)} />
+          <MetricRow label="Total Validators" value={num(m.totalValidators)} />
+          <MetricRow label="Total Staked" value={num(m.totalStake) ? `${(m.totalStake as number).toLocaleString()} TON` : null} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+          <MetricRow label="Min Stake" value={num(m.minStake) ? `${(m.minStake as number).toLocaleString()} TON` : null} />
+        </>
+      );
+
+    case 'polygon':
+      return (
+        <>
+          <MetricRow label="Active Validators" value={num(m.activeValidators)} />
+          <MetricRow label="Nakamoto Coefficient" value={num(m.nakamotoCoefficient)} />
+          <MetricRow label="Top 5 Concentration" value={num(m.top5Concentration) ? `${m.top5Concentration}%` : null} />
+          <MetricRow label="Total Staked" value={num(m.totalStaked) ? `${(m.totalStaked as number / 1e9).toFixed(2)}B POL` : null} />
+        </>
+      );
+
+    case 'dai':
+      return (
+        <>
+          <MetricRow label="Total Supply" value={num(m.totalSupplyUsd) ? `$${(m.totalSupplyUsd as number / 1e9).toFixed(1)}B` : null} />
+          {Array.isArray(m.topChains) && m.topChains.slice(0, 3).map((chain: { chain: string; percentage: number }) => (
+            <MetricRow key={chain.chain} label={chain.chain} value={`${chain.percentage.toFixed(1)}%`} />
+          ))}
+        </>
+      );
+
+    case 'arbitrum':
+      return (
+        <>
+          <MetricRow label="Block Number" value={num(m.blockNumber)} />
+          <MetricRow label="Gas Price" value={num(m.gasPrice) ? `${m.gasPrice} Gwei` : null} />
+          <MetricRow label="Chain ID" value={num(m.chainId)} />
+          <MetricRow label="Sequencer" value={str(m.sequencer)} />
+        </>
+      );
+
+    case 'lido':
+      return (
+        <>
+          <MetricRow label="Total Value Locked" value={num(m.tvl) ? `$${(m.tvl as number / 1e9).toFixed(2)}B` : null} />
+          <MetricRow label="APR (7d avg)" value={num(m.apr7d) ? `${(m.apr7d as number).toFixed(2)}%` : null} />
+          <MetricRow label="Fees (24h)" value={num(m.fees24h) ? `$${(m.fees24h as number / 1e6).toFixed(2)}M` : null} />
+          <MetricRow label="Revenue (24h)" value={num(m.revenue24h) ? `$${(m.revenue24h as number / 1e3).toFixed(0)}K` : null} />
+          <MetricRow label="Treasury" value={num(m.treasury) ? `$${(m.treasury as number / 1e6).toFixed(1)}M` : null} />
         </>
       );
 
