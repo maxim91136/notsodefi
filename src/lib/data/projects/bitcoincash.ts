@@ -17,17 +17,17 @@ const rawValues: Record<string, number | null> = {
   A3: 2,    // BCHN dominant, but Bitcoin Unlimited and others exist
   A4: 50,   // Estimated cloud/datacenter percentage
 
-  // Control Score (B5-B10)
-  B5: 7,    // No corporate owner now, Roger Ver era ended, community-driven
-  B6: 7,    // BCHN is main client, diverse contributors
-  B7: 7,    // No clear brand owner after BCH/BSV/eCash splits
-  B8: null, // N/A - No protocol treasury
-  B9: 10,   // No halt capability - truly unstoppable PoW chain
-  B10: 3,   // BCH/BSV/eCash splits, block size changes, but PoW unchanged
+  // Control Score (B1-B6)
+  B1: 7,    // No corporate owner now, Roger Ver era ended, community-driven
+  B2: 7,    // BCHN is main client, diverse contributors
+  B3: 7,    // No clear brand owner after BCH/BSV/eCash splits
+  B4: null, // N/A - No protocol treasury
+  B5: 10,   // No halt capability - truly unstoppable PoW chain
+  B6: 3,   // BCH/BSV/eCash splits, block size changes, but PoW unchanged
 
-  // Fairness Score (C9-C10)
-  C9: 0,    // 0% premine - inherited Bitcoin's fair launch
-  C10: null, // N/A - No on-chain governance
+  // Fairness Score (C1-C2)
+  C1: 0,    // 0% premine - inherited Bitcoin's fair launch
+  C2: null, // N/A - No on-chain governance
 };
 
 export const bitcoincash: Project = {

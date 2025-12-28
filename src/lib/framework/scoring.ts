@@ -87,12 +87,12 @@ export function calculateTotalScore(
 // ============================================================================
 
 /**
- * Kill-Switch Veto: If B9 (Admin Halt Capability) score is below threshold,
+ * Kill-Switch Veto: If B5 (Admin Halt Capability) score is below threshold,
  * the total score is capped. This penalizes chains where a single entity
  * can halt, freeze, or censor the chain unilaterally.
  */
-const KILL_SWITCH_THRESHOLD = 1; // B9 score of 0 = single entity can halt
-const KILL_SWITCH_CAP = 2.0;
+const KILL_SWITCH_THRESHOLD = 1; // B5 score of 0 = single entity can halt
+const KILL_SWITCH_CAP = 1.0; // Harsh penalty: kill-switch = fundamentally centralized
 
 /**
  * Calculate all scores for a project from raw criterion values.
@@ -139,10 +139,10 @@ export function calculateProjectScores(
   const uncappedScore = calculateTotalScore(chainScore, controlScore, fairnessScore);
   let totalScore = uncappedScore;
 
-  // Kill-Switch Veto: If B9 score < threshold, cap total score
+  // Kill-Switch Veto: If B5 score < threshold, cap total score
   // Chains where single entity can halt/freeze can't score high regardless of other metrics
-  const b9Score = scores['B9'];
-  const killSwitchActive = b9Score !== undefined && b9Score < KILL_SWITCH_THRESHOLD;
+  const b5Score = scores['B5'];
+  const killSwitchActive = b5Score !== undefined && b5Score < KILL_SWITCH_THRESHOLD;
   if (killSwitchActive) {
     totalScore = Math.min(totalScore, KILL_SWITCH_CAP);
   }

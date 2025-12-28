@@ -17,17 +17,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Only cardano-node (Haskell), no alternative implementations
   A4: 50,   // Moderate cloud concentration
 
-  // Control Score (B5-B10)
-  B5: 2,    // IOG dominates development, Foundation/Emurgo have less influence
-  B6: 3,    // IOG primarily controls core development
-  B7: 5,    // Cardano Foundation holds trademark
-  B8: 5,    // Treasury controlled by governance (Catalyst)
-  B9: 10,   // No halt capability - decentralized stake pools
-  B10: 4,   // Multiple eras (Byron→Shelley→Alonzo→Vasil), planned hard forks
+  // Control Score (B1-B6)
+  B1: 2,    // IOG dominates development, Foundation/Emurgo have less influence
+  B2: 3,    // IOG primarily controls core development
+  B3: 5,    // Cardano Foundation holds trademark
+  B4: 5,    // Treasury controlled by governance (Catalyst)
+  B5: 10,   // No halt capability - decentralized stake pools
+  B6: 4,   // Multiple eras (Byron→Shelley→Alonzo→Vasil), planned hard forks
 
-  // Fairness Score (C9-C10)
-  C9: 25,   // ~25% to insiders (IOG 17.9%, Foundation 5.4%, Emurgo 2.5%)
-  C10: 7,   // Project Catalyst - on-chain voting for treasury
+  // Fairness Score (C1-C2)
+  C1: 25,   // ~25% to insiders (IOG 17.9%, Foundation 5.4%, Emurgo 2.5%)
+  C2: 7,   // Project Catalyst - on-chain voting for treasury
 };
 
 export const cardano: Project = {

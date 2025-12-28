@@ -30,17 +30,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single client (aptos-core), Move/Rust
   A4: 70,   // Estimated ~70% cloud infrastructure
 
-  // Control Score (B5-B10)
-  B5: 4,    // Aptos Labs/Foundation very influential
-  B6: 5,    // Open source but Labs-dominated development
-  B7: 3,    // aptos.dev, aptoslabs.com - Labs controls brand
-  B8: 4,    // Foundation treasury, limited transparency
-  B9: 7,    // No kill-switch, but coordinated validator set
-  B10: 6,   // Brand new (2022), ex-Meta team, rapid development cycle
+  // Control Score (B1-B6)
+  B1: 4,    // Aptos Labs/Foundation very influential
+  B2: 5,    // Open source but Labs-dominated development
+  B3: 3,    // aptos.dev, aptoslabs.com - Labs controls brand
+  B4: 4,    // Foundation treasury, limited transparency
+  B5: 7,    // No kill-switch, but coordinated validator set
+  B6: 6,   // Brand new (2022), ex-Meta team, rapid development cycle
 
-  // Fairness Score (C9-C10)
-  C9: 49,   // ~49% to insiders (team 19% + foundation 16.5% + investors 13.5%)
-  C10: 5,   // Limited governance, Foundation-driven decisions
+  // Fairness Score (C1-C2)
+  C1: 49,   // ~49% to insiders (team 19% + foundation 16.5% + investors 13.5%)
+  C2: 5,   // Limited governance, Foundation-driven decisions
 };
 
 export const aptos: Project = {

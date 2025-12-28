@@ -22,17 +22,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single implementation (Hedera/Swirlds)
   A4: 100,  // 100% permissioned - only Council members can run nodes
 
-  // Control Score (B5-B10)
-  B5: 1,    // Swirlds/Hedera LLC controls all development
-  B6: 1,    // Swirlds owns github.com/hashgraph, all code
-  B7: 1,    // Hedera LLC owns hedera.com, all branding
-  B8: 1,    // Council controls entire treasury, no community governance
-  B9: 0,    // Council can halt network at will - explicit kill switch
-  B10: 5,   // Council can push updates at will, "decentralization roadmap" pending
+  // Control Score (B1-B6)
+  B1: 1,    // Swirlds/Hedera LLC controls all development
+  B2: 1,    // Swirlds owns github.com/hashgraph, all code
+  B3: 1,    // Hedera LLC owns hedera.com, all branding
+  B4: 1,    // Council controls entire treasury, no community governance
+  B5: 0,    // Council can halt network at will - explicit kill switch
+  B6: 5,   // Council can push updates at will, "decentralization roadmap" pending
 
-  // Fairness Score (C9-C10)
-  C9: 45,   // 13.8% founders + 8% Swirlds + 4.4% employees + ~22% SAFT = ~45%
-  C10: 1,   // No on-chain governance. Council decides everything. Zero community power.
+  // Fairness Score (C1-C2)
+  C1: 45,   // 13.8% founders + 8% Swirlds + 4.4% employees + ~22% SAFT = ~45%
+  C2: 1,   // No on-chain governance. Council decides everything. Zero community power.
 };
 
 export const hedera: Project = {

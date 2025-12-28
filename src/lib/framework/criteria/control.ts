@@ -1,5 +1,5 @@
 /**
- * Control Score Criteria (B5-B10)
+ * Control Score Criteria (B1-B6)
  *
  * Measures power and control structures around the protocol.
  */
@@ -8,7 +8,7 @@ import { Criterion } from '../types';
 
 export const controlCriteria: Criterion[] = [
   {
-    id: 'B5',
+    id: 'B1',
     name: 'Corporate/Foundation Capture',
     description:
       'Is there a dominant company/foundation controlling roadmap, marketing, and hiring? Can the project survive without them?',
@@ -25,7 +25,7 @@ export const controlCriteria: Criterion[] = [
     ],
   },
   {
-    id: 'B6',
+    id: 'B2',
     name: 'Repo/Protocol Ownership',
     description:
       'Distribution of merge rights in core repositories (clients, specs). More distributed is better.',
@@ -38,7 +38,7 @@ export const controlCriteria: Criterion[] = [
     sources: ['https://oakresearch.io/en/reports/sectors/layer-1-report-year-2024'],
   },
   {
-    id: 'B7',
+    id: 'B3',
     name: 'Brand & Frontend Control',
     description:
       'Who owns brand, domains, main frontends, official wallets/apps? Decentralized ownership is better.',
@@ -54,7 +54,7 @@ export const controlCriteria: Criterion[] = [
     ],
   },
   {
-    id: 'B8',
+    id: 'B4',
     name: 'Treasury & Upgrade Keys',
     description:
       'Composition of treasury/upgrade multisigs and admin keys. More independent signers is better.',
@@ -70,7 +70,7 @@ export const controlCriteria: Criterion[] = [
     ],
   },
   {
-    id: 'B9',
+    id: 'B5',
     name: 'Admin Halt Capability',
     description:
       'Can a single entity or small group unilaterally halt, freeze, or censor the chain? This is a critical centralization risk.',
@@ -86,7 +86,7 @@ export const controlCriteria: Criterion[] = [
     ],
   },
   {
-    id: 'B10',
+    id: 'B6',
     name: 'Protocol Immutability',
     description:
       'Has the protocol made fundamental rule changes (consensus mechanism, monetary policy, contentious forks)? Immutable rules are a core property of decentralization.',

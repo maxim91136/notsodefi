@@ -20,7 +20,7 @@ export interface ScoreMapping {
 }
 
 export interface Criterion {
-  /** Unique identifier (A1, B5, C9, etc.) */
+  /** Unique identifier (A1, B1, C1, etc.) */
   id: string;
   /** Display name */
   name: string;
@@ -68,7 +68,7 @@ export interface ProjectScores {
   uncappedScore: number;
   /** Individual criterion scores */
   criterionScores: CriterionScore[];
-  /** Kill-Switch Veto: true if B9 < threshold, capping totalScore */
+  /** Kill-Switch Veto: true if B5 < threshold, capping totalScore */
   killSwitchActive?: boolean;
 }
 

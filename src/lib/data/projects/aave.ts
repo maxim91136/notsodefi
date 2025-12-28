@@ -18,17 +18,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Only one protocol implementation, no alternative clients
   A4: 50,   // Multi-chain (ETH, Polygon, Arbitrum, etc.) but same governance
 
-  // Control Score (B5-B10)
-  B5: 2,    // Aave Labs dominates: roadmap, development, all major decisions
-  B6: 2,    // Aave Labs owns github.com/aave, DAO has github.com/aave-dao (limited)
-  B7: 2,    // Aave Labs owns aave.com, controls frontend, brand assets
-  B8: 6,    // DAO controls ~$280M treasury, managed by Karpatkey via governance
-  B9: 5,    // Guardian (5/9 community-elected multisig) can pause, not drain
-  B10: 5,   // v1→v2→v3 upgrades, governance-controlled parameter changes
+  // Control Score (B1-B6)
+  B1: 2,    // Aave Labs dominates: roadmap, development, all major decisions
+  B2: 2,    // Aave Labs owns github.com/aave, DAO has github.com/aave-dao (limited)
+  B3: 2,    // Aave Labs owns aave.com, controls frontend, brand assets
+  B4: 6,    // DAO controls ~$280M treasury, managed by Karpatkey via governance
+  B5: 5,    // Guardian (5/9 community-elected multisig) can pause, not drain
+  B6: 5,   // v1→v2→v3 upgrades, governance-controlled parameter changes
 
-  // Fairness Score (C9-C10)
-  C9: 23,   // Original: 23% founders, 77% investors. Team reserve: 3M of 16M (18.75%)
-  C10: 75,  // Top 1% controls 70-80% of votes. Plutocratic governance theater.
+  // Fairness Score (C1-C2)
+  C1: 23,   // Original: 23% founders, 77% investors. Team reserve: 3M of 16M (18.75%)
+  C2: 75,  // Top 1% controls 70-80% of votes. Plutocratic governance theater.
 };
 
 export const aave: Project = {

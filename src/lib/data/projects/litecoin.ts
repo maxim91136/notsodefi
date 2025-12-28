@@ -17,17 +17,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Litecoin Core dominant (Bitcoin Core fork), no significant alternative
   A4: 45,   // Estimated cloud/datacenter percentage similar to Bitcoin
 
-  // Control Score (B5-B10)
-  B5: 9,    // Charlie Lee stepped back, no corporate owner, very decentralized
-  B6: 7,    // Community-driven development, Litecoin Foundation supports but doesn't control
-  B7: 7,    // Litecoin Foundation holds trademark but limited authority
-  B8: null, // N/A - No protocol treasury or upgrade keys
-  B9: 10,   // No halt capability - truly unstoppable PoW chain
-  B10: 1,   // Bitcoin fork, minimal changes since launch (MimbleWimble optional)
+  // Control Score (B1-B6)
+  B1: 9,    // Charlie Lee stepped back, no corporate owner, very decentralized
+  B2: 7,    // Community-driven development, Litecoin Foundation supports but doesn't control
+  B3: 7,    // Litecoin Foundation holds trademark but limited authority
+  B4: null, // N/A - No protocol treasury or upgrade keys
+  B5: 10,   // No halt capability - truly unstoppable PoW chain
+  B6: 1,   // Bitcoin fork, minimal changes since launch (MimbleWimble optional)
 
-  // Fairness Score (C9-C10)
-  C9: 0,    // 0% premine - fair launch like Bitcoin
-  C10: null, // N/A - No on-chain governance
+  // Fairness Score (C1-C2)
+  C1: 0,    // 0% premine - fair launch like Bitcoin
+  C2: null, // N/A - No on-chain governance
 };
 
 export const litecoin: Project = {

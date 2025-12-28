@@ -1,5 +1,5 @@
 /**
- * Fairness Score Criteria (C9-C10)
+ * Fairness Score Criteria (C1-C2)
  *
  * Measures launch, distribution, and governance fairness.
  */
@@ -8,7 +8,7 @@ import { Criterion } from '../types';
 
 export const fairnessCriteria: Criterion[] = [
   {
-    id: 'C9',
+    id: 'C1',
     name: 'Launch Fairness / Premine',
     description:
       'Team/VC/Foundation premine and launch model (fair launch vs. sale/IDO). Less premine is better.',
@@ -25,7 +25,7 @@ export const fairnessCriteria: Criterion[] = [
     ],
   },
   {
-    id: 'C10',
+    id: 'C2',
     name: 'Token Distribution & Governance Power',
     description:
       'Share of insiders (team/VC/exchanges) in supply and governance votes. Less insider control is better.',

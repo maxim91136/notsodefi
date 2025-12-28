@@ -23,17 +23,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single protocol implementation (Uniswap Labs)
   A4: 50,   // Multi-chain deployment but same governance
 
-  // Control Score (B5-B10)
-  B5: 2,    // Uniswap Labs dominates roadmap and development
-  B6: 2,    // Labs owns github.com/Uniswap, controls all repositories
-  B7: 2,    // Labs owns uniswap.org, controls frontend and brand
-  B8: 6,    // DAO treasury exists, Labs manages implementation
-  B9: 10,   // IMMUTABLE CONTRACTS - no admin keys, no kill switch, no pause function!
-  B10: 3,   // v1→v2→v3→v4 are NEW deployments, not upgrades. Core contracts immutable.
+  // Control Score (B1-B6)
+  B1: 2,    // Uniswap Labs dominates roadmap and development
+  B2: 2,    // Labs owns github.com/Uniswap, controls all repositories
+  B3: 2,    // Labs owns uniswap.org, controls frontend and brand
+  B4: 6,    // DAO treasury exists, Labs manages implementation
+  B5: 10,   // IMMUTABLE CONTRACTS - no admin keys, no kill switch, no pause function!
+  B6: 3,   // v1→v2→v3→v4 are NEW deployments, not upgrades. Core contracts immutable.
 
-  // Fairness Score (C9-C10)
-  C9: 40,   // 60% community (mostly airdrop), but 21.3% team + 18% investors = 40% insiders
-  C10: 2,   // Gini 0.938, top 1% = 47.5% voting power. Plutocratic governance.
+  // Fairness Score (C1-C2)
+  C1: 40,   // 60% community (mostly airdrop), but 21.3% team + 18% investors = 40% insiders
+  C2: 2,   // Gini 0.938, top 1% = 47.5% voting power. Plutocratic governance.
 };
 
 export const uniswap: Project = {

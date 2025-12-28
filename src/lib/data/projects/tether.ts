@@ -25,17 +25,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single "implementation" - Tether's minting system
   A4: null, // N/A - No node network, runs on other chains
 
-  // Control Score (B5-B10)
-  B5: 1,    // Tether Ltd (iFinex Inc) = total corporate control
-  B6: 1,    // Tether owns all code, closed source minting
-  B7: 1,    // Tether owns tether.to, all branding
-  B8: 1,    // $118B reserves controlled by one company
-  B9: 0,    // KILL-SWITCH: Can freeze ANY address instantly
-  B10: null, // N/A - Not a protocol, corporate product
+  // Control Score (B1-B6)
+  B1: 1,    // Tether Ltd (iFinex Inc) = total corporate control
+  B2: 1,    // Tether owns all code, closed source minting
+  B3: 1,    // Tether owns tether.to, all branding
+  B4: 1,    // $118B reserves controlled by one company
+  B5: 0,    // KILL-SWITCH: Can freeze ANY address instantly
+  B6: null, // N/A - Not a protocol, corporate product
 
-  // Fairness Score (C9-C10)
-  C9: 100,  // 100% minted by Tether - no distribution mechanism
-  C10: 1,   // Zero governance - Tether decides everything
+  // Fairness Score (C1-C2)
+  C1: 100,  // 100% minted by Tether - no distribution mechanism
+  C2: 1,   // Zero governance - Tether decides everything
 };
 
 export const tether: Project = {

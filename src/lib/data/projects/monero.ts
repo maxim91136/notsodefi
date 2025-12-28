@@ -17,17 +17,17 @@ const rawValues: Record<string, number | null> = {
   A3: 2,    // Monero daemon dominant, but monerod alternatives exist
   A4: 50,   // Estimated - Monero node tracking limited due to privacy
 
-  // Control Score (B5-B10)
-  B5: 10,   // No corporate owner - pure grassroots project
-  B6: 8,    // Diverse maintainers, community-driven development
-  B7: 9,    // No central entity controls brand, community-owned
-  B8: null, // N/A - No protocol treasury
-  B9: 10,   // No halt capability - truly unstoppable PoW chain
-  B10: 2,   // Privacy/ASIC-resistance upgrades but no consensus mechanism change
+  // Control Score (B1-B6)
+  B1: 10,   // No corporate owner - pure grassroots project
+  B2: 8,    // Diverse maintainers, community-driven development
+  B3: 9,    // No central entity controls brand, community-owned
+  B4: null, // N/A - No protocol treasury
+  B5: 10,   // No halt capability - truly unstoppable PoW chain
+  B6: 2,   // Privacy/ASIC-resistance upgrades but no consensus mechanism change
 
-  // Fairness Score (C9-C10)
-  C9: 0,    // 0% premine - fair launch
-  C10: null, // N/A - No on-chain governance
+  // Fairness Score (C1-C2)
+  C1: 0,    // 0% premine - fair launch
+  C2: null, // N/A - No on-chain governance
 };
 
 export const monero: Project = {

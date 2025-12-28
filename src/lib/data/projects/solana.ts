@@ -16,17 +16,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // 1 dominant client (Solana Labs client)
   A4: 75,   // ~75% nodes in cloud (AWS, etc.)
 
-  // Control Score (B5-B10)
-  B5: 3,    // Solana Labs/Foundation heavily dominant
-  B6: 2,    // Almost entirely Solana Labs controlled
-  B7: 2,    // Solana Labs controls brand, main frontend
-  B8: 4,    // Foundation multisig, limited signers
-  B9: 3,    // Has had coordinated halts, validators can be pressured
-  B10: 6,   // Frequent upgrades, outages with restarts, "move fast" culture
+  // Control Score (B1-B6)
+  B1: 3,    // Solana Labs/Foundation heavily dominant
+  B2: 2,    // Almost entirely Solana Labs controlled
+  B3: 2,    // Solana Labs controls brand, main frontend
+  B4: 4,    // Foundation multisig, limited signers
+  B5: 3,    // Has had coordinated halts, validators can be pressured
+  B6: 6,   // Frequent upgrades, outages with restarts, "move fast" culture
 
-  // Fairness Score (C9-C10)
-  C9: 48,   // ~48% to team/VCs/foundation
-  C10: 45,  // Significant insider control
+  // Fairness Score (C1-C2)
+  C1: 48,   // ~48% to team/VCs/foundation
+  C2: 45,  // Significant insider control
 };
 
 export const solana: Project = {

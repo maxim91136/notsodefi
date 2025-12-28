@@ -35,17 +35,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single client (Nitro)
   A4: null, // N/A for L2 (inherits from Ethereum)
 
-  // Control Score (B5-B10)
-  B5: 3,    // Offchain Labs dominates development and operations
-  B6: 4,    // github.com/OffchainLabs - Labs controls, but open source
-  B7: 3,    // arbitrum.io - Foundation/Labs controls brand
-  B8: 5,    // Security Council 9/12 multisig, DAO treasury
-  B9: 5,    // Security Council can upgrade, but users can exit via L1
-  B10: 5,   // L2 with upgrades (Nitro, BoLD), Security Council can change rules
+  // Control Score (B1-B6)
+  B1: 3,    // Offchain Labs dominates development and operations
+  B2: 4,    // github.com/OffchainLabs - Labs controls, but open source
+  B3: 3,    // arbitrum.io - Foundation/Labs controls brand
+  B4: 5,    // Security Council 9/12 multisig, DAO treasury
+  B5: 5,    // Security Council can upgrade, but users can exit via L1
+  B6: 5,   // L2 with upgrades (Nitro, BoLD), Security Council can change rules
 
-  // Fairness Score (C9-C10)
-  C9: 44,   // ~44% to insiders (27% team + 17.5% investors)
-  C10: 5,   // DAO governance, but early token concentration
+  // Fairness Score (C1-C2)
+  C1: 44,   // ~44% to insiders (27% team + 17.5% investors)
+  C2: 5,   // DAO governance, but early token concentration
 };
 
 export const arbitrum: Project = {

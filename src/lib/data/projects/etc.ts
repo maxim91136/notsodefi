@@ -17,17 +17,17 @@ const rawValues: Record<string, number | null> = {
   A3: 2,    // Core-Geth dominant (~90%), Besu exists but low usage
   A4: 40,   // Moderate datacenter percentage, mining pools distributed globally
 
-  // Control Score (B5-B10)
-  B5: 7,    // ETC Cooperative/Labs exist but limited control, community-driven
-  B6: 6,    // Core-Geth team dominant, Besu maintained by ChainSafe/ETC Coop
-  B7: 8,    // No trademark monopoly, community-owned brand
-  B8: 8,    // No protocol-level treasury, foundations are separate entities
-  B9: 10,   // No admin controls - pure PoW chain like Bitcoin
-  B10: 9,   // THE immutable chain - refused DAO fork, "Code is Law" ethos
+  // Control Score (B1-B6)
+  B1: 7,    // ETC Cooperative/Labs exist but limited control, community-driven
+  B2: 6,    // Core-Geth team dominant, Besu maintained by ChainSafe/ETC Coop
+  B3: 8,    // No trademark monopoly, community-owned brand
+  B4: 8,    // No protocol-level treasury, foundations are separate entities
+  B5: 10,   // No admin controls - pure PoW chain like Bitcoin
+  B6: 9,   // THE immutable chain - refused DAO fork, "Code is Law" ethos
 
-  // Fairness Score (C9-C10)
-  C9: 15,   // Same as ETH - 72M presale in 2014 (~15% of current supply)
-  C10: 7,   // ECIP governance process, rough consensus, no on-chain voting
+  // Fairness Score (C1-C2)
+  C1: 15,   // Same as ETH - 72M presale in 2014 (~15% of current supply)
+  C2: 7,   // ECIP governance process, rough consensus, no on-chain voting
 };
 
 export const etc: Project = {

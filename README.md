@@ -30,7 +30,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 
 ## The Framework
 
-Three scores, twelve criteria. Projects with admin kill-switches (B9=0) are capped at 2.0:
+Three scores, twelve criteria. Projects with admin kill-switches (B5=0) are capped at 1.0:
 
 | Score | Weight | What it measures |
 |-------|--------|------------------|

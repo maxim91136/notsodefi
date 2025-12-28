@@ -32,17 +32,17 @@ const rawValues: Record<string, number | null> = {
   A3: 2,    // Lotus is dominant, but Venus exists
   A4: 60,   // Storage providers are distributed globally, some datacenter concentration
 
-  // Control Score (B5-B10)
-  B5: 4,    // Protocol Labs dominates, Foundation exists but less influential
-  B6: 6,    // Open source (filecoin-project), but Labs-driven development
-  B7: 4,    // filecoin.io - Protocol Labs controls brand
-  B8: 5,    // Foundation treasury, some transparency
-  B9: 10,   // No kill-switch - miners operate independently, no admin keys
-  B10: 4,   // FIPs and network upgrades, Protocol Labs driven development
+  // Control Score (B1-B6)
+  B1: 4,    // Protocol Labs dominates, Foundation exists but less influential
+  B2: 6,    // Open source (filecoin-project), but Labs-driven development
+  B3: 4,    // filecoin.io - Protocol Labs controls brand
+  B4: 5,    // Foundation treasury, some transparency
+  B5: 10,   // No kill-switch - miners operate independently, no admin keys
+  B6: 4,   // FIPs and network upgrades, Protocol Labs driven development
 
-  // Fairness Score (C9-C10)
-  C9: 30,   // ~30% to insiders (15% Labs + 5% Foundation + 10% ICO)
-  C10: 4,   // Limited governance, FIPs exist but Labs-dominated
+  // Fairness Score (C1-C2)
+  C1: 30,   // ~30% to insiders (15% Labs + 5% Foundation + 10% ICO)
+  C2: 4,   // Limited governance, FIPs exist but Labs-dominated
 };
 
 export const filecoin: Project = {

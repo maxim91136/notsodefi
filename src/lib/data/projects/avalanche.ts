@@ -17,17 +17,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Primarily avalanchego client
   A4: 70,   // High cloud/datacenter usage
 
-  // Control Score (B5-B10)
-  B5: 3,    // Ava Labs dominant, Foundation exists
-  B6: 2,    // Ava Labs controls core development
-  B7: 2,    // Ava Labs owns brand and main frontends
-  B8: 3,    // Foundation treasury, limited governance
-  B9: 8,    // No single-entity halt - decentralized validators
-  B10: 5,   // New chain (2020), regular upgrades, "move fast" culture
+  // Control Score (B1-B6)
+  B1: 3,    // Ava Labs dominant, Foundation exists
+  B2: 2,    // Ava Labs controls core development
+  B3: 2,    // Ava Labs owns brand and main frontends
+  B4: 3,    // Foundation treasury, limited governance
+  B5: 8,    // No single-entity halt - decentralized validators
+  B6: 5,   // New chain (2020), regular upgrades, "move fast" culture
 
-  // Fairness Score (C9-C10)
-  C9: 42,   // ~42% to team/investors (10% team, 9.26% foundation, etc.)
-  C10: 3,   // Limited governance, Ava Labs influence
+  // Fairness Score (C1-C2)
+  C1: 42,   // ~42% to team/investors (10% team, 9.26% foundation, etc.)
+  C2: 3,   // Limited governance, Ava Labs influence
 };
 
 export const avalanche: Project = {

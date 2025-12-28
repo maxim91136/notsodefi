@@ -27,17 +27,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single protocol implementation (Lido Finance)
   A4: 30,   // Multi-chain (ETH, Polygon, Solana) but 95%+ is Ethereum
 
-  // Control Score (B5-B10)
-  B5: 3,    // Lido DAO + Labs. More decentralized than pure team control, but still small group
-  B6: 2,    // github.com/lidofinance - Lido team controls all repositories
-  B7: 2,    // lido.fi owned by Lido team, controls frontend and brand
-  B8: 7,    // Large DAO treasury, but spending controlled by plutocratic governance
-  B9: 4,    // Smart contracts ARE upgradeable. Node operators permissioned. Not trustless.
-  B10: 5,   // Upgradeable contracts, CSM additions, Dual Governance changes
+  // Control Score (B1-B6)
+  B1: 3,    // Lido DAO + Labs. More decentralized than pure team control, but still small group
+  B2: 2,    // github.com/lidofinance - Lido team controls all repositories
+  B3: 2,    // lido.fi owned by Lido team, controls frontend and brand
+  B4: 7,    // Large DAO treasury, but spending controlled by plutocratic governance
+  B5: 4,    // Smart contracts ARE upgradeable. Node operators permissioned. Not trustless.
+  B6: 5,   // Upgradeable contracts, CSM additions, Dual Governance changes
 
-  // Fairness Score (C9-C10)
-  C9: 64,   // 64% to founders/team (vested over 1yr), ~18% investors, ~18% community
-  C10: 5,   // Extremely concentrated. Top delegates dominate. stETH veto helps slightly.
+  // Fairness Score (C1-C2)
+  C1: 64,   // 64% to founders/team (vested over 1yr), ~18% investors, ~18% community
+  C2: 5,   // Extremely concentrated. Top delegates dominate. stETH veto helps slightly.
 };
 
 export const lido: Project = {

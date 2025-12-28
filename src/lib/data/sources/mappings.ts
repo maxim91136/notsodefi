@@ -74,10 +74,10 @@ export const criterionMappings: CriterionDataMapping[] = [
   },
 
   // ============================================================================
-  // Control Score (B5-B8)
+  // Control Score (B1-B6)
   // ============================================================================
   {
-    criterionId: 'B5', // Corporate/Foundation Capture
+    criterionId: 'B1', // Corporate/Foundation Capture
     primary: {
       provider: 'github',
       endpoint: '/repos/{org}/{repo}/contributors',
@@ -96,7 +96,7 @@ export const criterionMappings: CriterionDataMapping[] = [
     chainSpecific: true,
   },
   {
-    criterionId: 'B6', // Repo/Protocol Ownership
+    criterionId: 'B2', // Repo/Protocol Ownership
     primary: {
       provider: 'github',
       endpoint: '/repos/{org}/{repo}/stats/contributors',
@@ -109,14 +109,14 @@ export const criterionMappings: CriterionDataMapping[] = [
     chainSpecific: true,
   },
   {
-    criterionId: 'B7', // Brand & Frontend Control
+    criterionId: 'B3', // Brand & Frontend Control
     primary: {
       provider: 'manual', // Truly manual - no API for brand ownership
     },
     updateFrequency: 'static',
   },
   {
-    criterionId: 'B8', // Treasury & Upgrade Keys
+    criterionId: 'B4', // Treasury & Upgrade Keys
     primary: {
       provider: 'manual', // On-chain analysis needed
     },
@@ -125,17 +125,17 @@ export const criterionMappings: CriterionDataMapping[] = [
   },
 
   // ============================================================================
-  // Fairness Score (C9-C10)
+  // Fairness Score (C1-C2)
   // ============================================================================
   {
-    criterionId: 'C9', // Launch Fairness / Premine
+    criterionId: 'C1', // Launch Fairness / Premine
     primary: {
       provider: 'manual', // Historical data, never changes
     },
     updateFrequency: 'static',
   },
   {
-    criterionId: 'C10', // Token Distribution & Governance Power
+    criterionId: 'C2', // Token Distribution & Governance Power
     primary: {
       provider: 'snapshot',
       endpoint: '/graphql',
@@ -174,7 +174,7 @@ export const projectSources: ProjectDataSources[] = [
         endpoint: '/pools',
       },
       // Bitcoin has no on-chain governance
-      C10: {
+      C2: {
         provider: 'manual',
       },
     },
@@ -233,7 +233,7 @@ export const projectSources: ProjectDataSources[] = [
         extractor: 'datacenter_concentration',
       },
       // Solana governance via Realms (no Snapshot)
-      C10: {
+      C2: {
         provider: 'manual', // Realms API would need custom integration
       },
     },

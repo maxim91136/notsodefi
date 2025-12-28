@@ -31,17 +31,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single client (injective-chain), Cosmos SDK
   A4: 70,   // Estimated ~70% cloud infrastructure
 
-  // Control Score (B5-B10)
-  B5: 4,    // Injective Labs very influential, VC-backed
-  B6: 6,    // Open source, but Labs-dominated
-  B7: 4,    // injective.com - Labs controls brand
-  B8: 5,    // Foundation treasury, some transparency
-  B9: 7,    // No kill-switch, standard Cosmos governance
-  B10: 4,   // Cosmos SDK upgrades, IBC integrations, Labs-driven development
+  // Control Score (B1-B6)
+  B1: 4,    // Injective Labs very influential, VC-backed
+  B2: 6,    // Open source, but Labs-dominated
+  B3: 4,    // injective.com - Labs controls brand
+  B4: 5,    // Foundation treasury, some transparency
+  B5: 7,    // No kill-switch, standard Cosmos governance
+  B6: 4,   // Cosmos SDK upgrades, IBC integrations, Labs-driven development
 
-  // Fairness Score (C9-C10)
-  C9: 42,   // ~42% to insiders (20% team + 20% private + 2% advisors)
-  C10: 6,   // Cosmos-style governance, token-weighted
+  // Fairness Score (C1-C2)
+  C1: 42,   // ~42% to insiders (20% team + 20% private + 2% advisors)
+  C2: 6,   // Cosmos-style governance, token-weighted
 };
 
 export const injective: Project = {

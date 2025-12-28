@@ -18,17 +18,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Only 1 client (IC replica) - no diversity
   A4: 85,   // 100% specialized data center hardware (node machines)
 
-  // Control Score (B5-B10)
-  B5: 2,    // DFINITY Foundation dominates roadmap, marketing, hiring
-  B6: 2,    // DFINITY controls all core repositories
-  B7: 3,    // DFINITY owns brand, domains, main interfaces
-  B8: 5,    // NNS treasury but DFINITY+IC Association = 40% voting power
-  B9: 4,    // NNS can do anything but requires proposals/voting (not single entity)
-  B10: 5,   // DFINITY-controlled development, frequent NNS upgrades
+  // Control Score (B1-B6)
+  B1: 2,    // DFINITY Foundation dominates roadmap, marketing, hiring
+  B2: 2,    // DFINITY controls all core repositories
+  B3: 3,    // DFINITY owns brand, domains, main interfaces
+  B4: 5,    // NNS treasury but DFINITY+IC Association = 40% voting power
+  B5: 4,    // NNS can do anything but requires proposals/voting (not single entity)
+  B6: 5,   // DFINITY-controlled development, frequent NNS upgrades
 
-  // Fairness Score (C9-C10)
-  C9: 50,   // ~48-50% insider allocation (DFINITY, team, seed, strategic)
-  C10: 3,   // NNS governance but insiders dominate voting
+  // Fairness Score (C1-C2)
+  C1: 50,   // ~48-50% insider allocation (DFINITY, team, seed, strategic)
+  C2: 3,   // NNS governance but insiders dominate voting
 };
 
 export const icp: Project = {

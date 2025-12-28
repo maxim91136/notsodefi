@@ -26,17 +26,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single client (nearcore), Rust implementation
   A4: 65,   // Estimated ~65% cloud infrastructure
 
-  // Control Score (B5-B10)
-  B5: 5,    // NEAR Foundation influential but not dominant
-  B6: 6,    // Open source, community proposals exist
-  B7: 4,    // near.org, brand controlled by Foundation
-  B8: 5,    // Foundation treasury, multisig governance
-  B9: 8,    // No kill-switch, decentralized validator set
-  B10: 5,   // New chain (2020), Nightshade sharding upgrades, Phase 2 changes
+  // Control Score (B1-B6)
+  B1: 5,    // NEAR Foundation influential but not dominant
+  B2: 6,    // Open source, community proposals exist
+  B3: 4,    // near.org, brand controlled by Foundation
+  B4: 5,    // Foundation treasury, multisig governance
+  B5: 8,    // No kill-switch, decentralized validator set
+  B6: 5,   // New chain (2020), Nightshade sharding upgrades, Phase 2 changes
 
-  // Fairness Score (C9-C10)
-  C9: 29,   // ~29% to team (8.5%) + VCs (14.4%) + foundation (6%)
-  C10: 6,   // Limited on-chain governance, community input exists
+  // Fairness Score (C1-C2)
+  C1: 29,   // ~29% to team (8.5%) + VCs (14.4%) + foundation (6%)
+  C2: 6,   // Limited on-chain governance, community input exists
 };
 
 export const near: Project = {

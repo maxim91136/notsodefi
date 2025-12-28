@@ -17,17 +17,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Dogecoin Core dominant, no significant alternative clients
   A4: 50,   // Estimated cloud/datacenter percentage
 
-  // Control Score (B5-B10)
-  B5: 9,    // Founders stepped back, Dogecoin Foundation has limited power
-  B6: 7,    // Community-driven development, Foundation supports but doesn't control
-  B7: 8,    // Brand is community-owned, Foundation doesn't control it
-  B8: null, // N/A - No protocol treasury
-  B9: 10,   // No halt capability - truly unstoppable PoW chain
-  B10: 1,   // Litecoin fork, minimal protocol changes since launch
+  // Control Score (B1-B6)
+  B1: 9,    // Founders stepped back, Dogecoin Foundation has limited power
+  B2: 7,    // Community-driven development, Foundation supports but doesn't control
+  B3: 8,    // Brand is community-owned, Foundation doesn't control it
+  B4: null, // N/A - No protocol treasury
+  B5: 10,   // No halt capability - truly unstoppable PoW chain
+  B6: 1,   // Litecoin fork, minimal protocol changes since launch
 
-  // Fairness Score (C9-C10)
-  C9: 0,    // 0% premine - fair launch
-  C10: null, // N/A - No on-chain governance
+  // Fairness Score (C1-C2)
+  C1: 0,    // 0% premine - fair launch
+  C2: null, // N/A - No on-chain governance
 };
 
 export const dogecoin: Project = {

@@ -18,17 +18,17 @@ const rawValues: Record<string, number | null> = {
   A3: 2,    // Gaia dominant, limited client diversity
   A4: 60,   // Estimated cloud/datacenter percentage
 
-  // Control Score (B5-B10)
-  B5: 5,    // ICF + Tendermint influence, but distributed governance
-  B6: 5,    // Multiple contributors, but core team influence
-  B7: 4,    // Interchain Foundation owns brand
-  B8: 5,    // ICF treasury, governance participation
-  B9: 10,   // No halt capability - fully decentralized BFT
-  B10: 4,   // IBC upgrades, Tendermint→CometBFT transition, frequent SDK updates
+  // Control Score (B1-B6)
+  B1: 5,    // ICF + Tendermint influence, but distributed governance
+  B2: 5,    // Multiple contributors, but core team influence
+  B3: 4,    // Interchain Foundation owns brand
+  B4: 5,    // ICF treasury, governance participation
+  B5: 10,   // No halt capability - fully decentralized BFT
+  B6: 4,   // IBC upgrades, Tendermint→CometBFT transition, frequent SDK updates
 
-  // Fairness Score (C9-C10)
-  C9: 20,   // 20% to founders/foundation, 80% ICO investors
-  C10: 5,   // On-chain governance but whale concentration
+  // Fairness Score (C1-C2)
+  C1: 20,   // 20% to founders/foundation, 80% ICO investors
+  C2: 5,   // On-chain governance but whale concentration
 };
 
 export const cosmos: Project = {

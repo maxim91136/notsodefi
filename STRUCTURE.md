@@ -41,7 +41,7 @@ src/
 │   │       ├── index.ts          # All criteria exports
 │   │       ├── chain.ts          # A1-A4: Chain Score
 │   │       ├── control.ts        # B5-B8: Control Score
-│   │       └── fairness.ts       # C9-C10: Fairness Score
+│   │       └── fairness.ts       # C1-C2: Fairness Score
 │   ├── data/                     # Static data
 │   │   ├── projects/             # Individual project files
 │   │   │   ├── bitcoin.ts

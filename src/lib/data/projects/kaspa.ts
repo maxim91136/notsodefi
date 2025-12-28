@@ -18,17 +18,17 @@ const rawValues: Record<string, number | null> = {
   A3: 4,    // Kaspad primary client, rusty-kaspa alternative
   A4: 50,   // Estimated node distribution
 
-  // Control Score (B5-B10)
-  B5: 8,    // DAGlabs renounced ownership, community-run
-  B6: 7,    // Open source, multiple contributors
-  B7: 8,    // No company owns brand
-  B8: 7,    // Multi-sig treasury with elected treasurers
-  B9: 10,   // PoW - no kill-switch possible
-  B10: 2,   // Young chain (2021) but minimal changes to GHOSTDAG PoW consensus
+  // Control Score (B1-B6)
+  B1: 8,    // DAGlabs renounced ownership, community-run
+  B2: 7,    // Open source, multiple contributors
+  B3: 8,    // No company owns brand
+  B4: 7,    // Multi-sig treasury with elected treasurers
+  B5: 10,   // PoW - no kill-switch possible
+  B6: 2,   // Young chain (2021) but minimal changes to GHOSTDAG PoW consensus
 
-  // Fairness Score (C9-C10)
-  C9: 100,  // 0% premine - TRUE FAIR LAUNCH
-  C10: 8,   // 100% mining distribution, similar to Bitcoin
+  // Fairness Score (C1-C2)
+  C1: 100,  // 0% premine - TRUE FAIR LAUNCH
+  C2: 8,   // 100% mining distribution, similar to Bitcoin
 };
 
 export const kaspa: Project = {

@@ -28,17 +28,17 @@ const rawValues: Record<string, number | null> = {
   A3: 1,    // Single smart contract implementation
   A4: null, // N/A - Runs on Ethereum, no own node network
 
-  // Control Score (B5-B10)
-  B5: 6,    // DAO governance, but Maker Foundation/Sky has significant influence
-  B6: 6,    // Open source, community proposals, but core team leads development
-  B7: 5,    // makerdao.com, sky.money - foundation controlled, DAO governed
-  B8: 7,    // Treasury/reserves governed by MKR votes, not single entity
-  B9: 8,    // NO targeted freeze capability. Emergency Shutdown is protocol-wide, requires 50K MKR
-  B10: 4,   // SCD→MCD migration, PSM changes, Sky/USDS rebrand ongoing
+  // Control Score (B1-B6)
+  B1: 6,    // DAO governance, but Maker Foundation/Sky has significant influence
+  B2: 6,    // Open source, community proposals, but core team leads development
+  B3: 5,    // makerdao.com, sky.money - foundation controlled, DAO governed
+  B4: 7,    // Treasury/reserves governed by MKR votes, not single entity
+  B5: 8,    // NO targeted freeze capability. Emergency Shutdown is protocol-wide, requires 50K MKR
+  B6: 4,   // SCD→MCD migration, PSM changes, Sky/USDS rebrand ongoing
 
-  // Fairness Score (C9-C10)
-  C9: 40,   // ~40% to Maker Foundation + early investors (a16z, Polychain, etc.)
-  C10: 7,   // MKR governance - anyone can buy and vote, proposal process exists
+  // Fairness Score (C1-C2)
+  C1: 40,   // ~40% to Maker Foundation + early investors (a16z, Polychain, etc.)
+  C2: 7,   // MKR governance - anyone can buy and vote, proposal process exists
 };
 
 export const dai: Project = {

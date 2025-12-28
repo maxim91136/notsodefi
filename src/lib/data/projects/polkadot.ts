@@ -18,17 +18,17 @@ const rawValues: Record<string, number | null> = {
   A3: 4,    // Parity dominant, but Gossamer (Go), Kagome (C++), Smoldot exist
   A4: 55,   // Estimated cloud/datacenter percentage
 
-  // Control Score (B5-B10)
-  B5: 4,    // Web3 Foundation + Parity significant, but governance on-chain
-  B6: 3,    // Parity dominates core development repos
-  B7: 4,    // Web3 Foundation owns brand, but community-driven
-  B8: 7,    // On-chain treasury governed by DOT holders via OpenGov
-  B9: 10,   // No sudo since July 2020 - fully decentralized, no kill switch
-  B10: 4,   // "Forkless upgrades" via governance - frequent runtime changes
+  // Control Score (B1-B6)
+  B1: 4,    // Web3 Foundation + Parity significant, but governance on-chain
+  B2: 3,    // Parity dominates core development repos
+  B3: 4,    // Web3 Foundation owns brand, but community-driven
+  B4: 7,    // On-chain treasury governed by DOT holders via OpenGov
+  B5: 10,   // No sudo since July 2020 - fully decentralized, no kill switch
+  B6: 4,   // "Forkless upgrades" via governance - frequent runtime changes
 
-  // Fairness Score (C9-C10)
-  C9: 30,   // 30% to founders, 58% to ICO/investors
-  C10: 5,   // OpenGov but whales have more voting power, W3F voting bloc
+  // Fairness Score (C1-C2)
+  C1: 30,   // 30% to founders, 58% to ICO/investors
+  C2: 5,   // OpenGov but whales have more voting power, W3F voting bloc
 };
 
 export const polkadot: Project = {
