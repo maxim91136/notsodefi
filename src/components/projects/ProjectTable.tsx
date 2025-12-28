@@ -321,7 +321,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   <span
                     className={`font-mono text-sm ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}
                   >
-                    #{globalRank}
+                    {isFirst ? '♔' : `#${globalRank}`}
                   </span>
                   <div>
                     <div className="flex items-center gap-1.5">
@@ -455,7 +455,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               </td>
               <td className="py-3 sm:py-4 px-2 sm:px-4 text-center">
                 <span className={`font-mono ${isFirst ? 'text-yellow-400 font-bold' : 'text-white/40'}`}>
-                  {globalRank}
+                  {isFirst ? '♔' : globalRank}
                 </span>
               </td>
               <td className="py-3 sm:py-4 px-2 sm:px-4">
