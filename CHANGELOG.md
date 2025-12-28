@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.28.0-rc1] - 2025-12-28
+
+### Added
+- **Ethereum Classic (ETC)** - 37th project
+  - "Code is Law" - the original Ethereum chain
+  - PoW (Etchash) consensus
+  - Blockscout API integration for live data
+  - B10 Protocol Immutability: 9 (refused DAO fork)
+
 ## [0.27.0-rc1] - 2025-12-28
 
 ### Changed
