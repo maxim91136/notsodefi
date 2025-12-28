@@ -2,6 +2,13 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.29.0-rc1] - 2025-12-28
+
+### Added
+- **Hero Logo** - New Mjölnir logo with runic circle
+  - Replaces text-based hero title
+  - Nordic theme: "smashing DeFi illusions"
+
 ## [0.28.0-rc1] - 2025-12-28
 
 ### Added
