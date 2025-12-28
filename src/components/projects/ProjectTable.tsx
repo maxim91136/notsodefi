@@ -465,7 +465,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                     <span className="text-xs sm:text-sm text-white/40 hidden sm:inline">{project.symbol}</span>
                   )}
                   {project.scores.killSwitchActive && (
-                    <span className="text-red-500 text-xs" title="Kill-Switch Active - Score capped at 2.0">⚠️</span>
+                    <span className="text-red-500 text-xs" title="Kill-Switch Active - Score capped at 1.0">⚠️</span>
                   )}
                 </div>
               </td>
@@ -482,7 +482,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               <td className="py-3 sm:py-4 px-2 sm:px-4 text-center">
                 <span
                   className={`font-bold cursor-help text-sm sm:text-base ${getScoreTextColor(project.scores.totalScore)}`}
-                  title={`${project.scores.chainScore.toFixed(1)}×40% + ${project.scores.controlScore.toFixed(1)}×40% + ${project.scores.fairnessScore.toFixed(1)}×20%${project.scores.killSwitchActive ? ' (capped at 2.0)' : ''}`}
+                  title={`${project.scores.chainScore.toFixed(1)}×40% + ${project.scores.controlScore.toFixed(1)}×40% + ${project.scores.fairnessScore.toFixed(1)}×20%${project.scores.killSwitchActive ? ' (capped at 1.0)' : ''}`}
                 >
                   {project.scores.totalScore.toFixed(1)}
                 </span>

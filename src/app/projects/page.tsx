@@ -18,7 +18,7 @@ export default function ProjectsPage() {
         <p className="text-white/60 max-w-2xl">
           Decentralization scores for major blockchain projects. Scores are calculated
           using 12 criteria across 3 categories: Chain (technical), Control (governance),
-          and Fairness (launch/distribution). Projects with admin kill-switches are capped at 2.0.
+          and Fairness (launch/distribution). Projects with admin kill-switches are capped at 1.0.
           Click any project to see the detailed breakdown. This is an educational tool, not financial advice.
         </p>
       </div>

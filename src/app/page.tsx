@@ -60,7 +60,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-center mb-4">The Framework</h2>
         <p className="text-center text-white/60 mb-12 max-w-2xl mx-auto">
           Three scores, twelve criteria. A systematic approach to measuring what
-          &quot;decentralization&quot; actually means. Projects with admin kill-switches are capped at 2.0.
+          &quot;decentralization&quot; actually means. Projects with admin kill-switches are capped at 1.0.
         </p>
 
         {/* Formula */}
