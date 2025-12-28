@@ -718,7 +718,7 @@ export function getAllApiStatuses(): ApiStatus[] {
       chain: 'HBAR',
       status: hbarData.fetchStatus,
       lastUpdated: hbarData.lastUpdated,
-      source: hbarData.source || 'Hedera Mirror Node API',
+      source: hbarData.source || 'Mirror Node',
     },
     {
       chain: 'USDT',
