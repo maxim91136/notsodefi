@@ -76,9 +76,28 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </Card>
 
       {/* Live Network Data */}
-      <div className="mb-8">
+      <div className="mb-4">
         <LiveNetworkData projectId={project.id} />
       </div>
+
+      {/* Notes */}
+      {project.notes && project.notes.length > 0 && (
+        <Card className="mb-8 border-yellow-500/20">
+          <CardHeader>
+            <h2 className="font-semibold text-yellow-400">Notes</h2>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2">
+              {project.notes.map((note, i) => (
+                <li key={i} className="text-sm text-white/70 flex gap-2">
+                  <span className="text-yellow-500">*</span>
+                  {note}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Detailed Breakdown */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -137,25 +156,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </CardContent>
         </Card>
       </div>
-
-      {/* Notes */}
-      {project.notes && project.notes.length > 0 && (
-        <Card className="mt-8 border-yellow-500/20">
-          <CardHeader>
-            <h2 className="font-semibold text-yellow-400">Notes</h2>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              {project.notes.map((note, i) => (
-                <li key={i} className="text-sm text-white/70 flex gap-2">
-                  <span className="text-yellow-500">*</span>
-                  {note}
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      )}
 
       {/* Sources */}
       {project.sources && project.sources.length > 0 && (
