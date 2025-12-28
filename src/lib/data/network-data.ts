@@ -59,10 +59,11 @@ export interface ZecMetrics {
 
 export interface EtcMetrics {
   blocks: number | null;
-  difficulty: number | null;
-  hashrate24h: number | null;
-  mempoolTxs: number | null;
-  nodes: number | null;
+  transactions: number | null;
+  addresses: number | null;
+  avgBlockTime: number | null;
+  price: number | null;
+  marketCap: number | null;
 }
 
 export interface TaoMetrics {

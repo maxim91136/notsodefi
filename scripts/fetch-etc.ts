@@ -2,7 +2,7 @@
 /**
  * Fetch Ethereum Classic Network Data
  *
- * Uses Blockchair API to fetch ETC network metrics.
+ * Uses Blockscout API to fetch ETC network metrics.
  * Saves results to data/etc.json
  *
  * Usage: npx tsx scripts/fetch-etc.ts
@@ -19,10 +19,11 @@ interface ETCData {
   totalScore: number;
   metrics: {
     blocks: number | null;
-    difficulty: number | null;
-    hashrate24h: number | null;
-    mempoolTxs: number | null;
-    nodes: number | null;
+    transactions: number | null;
+    addresses: number | null;
+    avgBlockTime: number | null;
+    price: number | null;
+    marketCap: number | null;
   };
   fetchStatus: 'success' | 'partial' | 'failed';
 }
@@ -34,14 +35,15 @@ async function main() {
 
   const data: ETCData = {
     lastUpdated: new Date().toISOString(),
-    source: 'blockchair.com',
+    source: 'etc.blockscout.com',
     totalScore: etc.scores.totalScore,
     metrics: {
       blocks: null,
-      difficulty: null,
-      hashrate24h: null,
-      mempoolTxs: null,
-      nodes: null,
+      transactions: null,
+      addresses: null,
+      avgBlockTime: null,
+      price: null,
+      marketCap: null,
     },
     fetchStatus: 'failed',
   };
@@ -49,7 +51,7 @@ async function main() {
   let successCount = 0;
 
   // Fetch all network stats
-  console.log('Fetching network stats (Blockchair API)...');
+  console.log('Fetching network stats (Blockscout API)...');
   try {
     const stats = await fetcher.getNetworkStats();
     if (stats) {
@@ -58,24 +60,29 @@ async function main() {
         console.log(`   Blocks: ${stats.blocks.toLocaleString()}`);
         successCount++;
       }
-      if (stats.difficulty !== null) {
-        data.metrics.difficulty = stats.difficulty;
-        console.log(`   Difficulty: ${stats.difficulty.toLocaleString()}`);
+      if (stats.transactions !== null) {
+        data.metrics.transactions = stats.transactions;
+        console.log(`   Transactions: ${stats.transactions.toLocaleString()}`);
         successCount++;
       }
-      if (stats.hashrate24h !== null) {
-        data.metrics.hashrate24h = stats.hashrate24h;
-        console.log(`   Hashrate (24h): ${(stats.hashrate24h / 1e12).toFixed(2)} TH/s`);
+      if (stats.addresses !== null) {
+        data.metrics.addresses = stats.addresses;
+        console.log(`   Addresses: ${stats.addresses.toLocaleString()}`);
         successCount++;
       }
-      if (stats.mempoolTxs !== null) {
-        data.metrics.mempoolTxs = stats.mempoolTxs;
-        console.log(`   Mempool TXs: ${stats.mempoolTxs}`);
+      if (stats.avgBlockTime !== null) {
+        data.metrics.avgBlockTime = stats.avgBlockTime;
+        console.log(`   Avg Block Time: ${(stats.avgBlockTime / 1000).toFixed(1)}s`);
         successCount++;
       }
-      if (stats.nodes !== null) {
-        data.metrics.nodes = stats.nodes;
-        console.log(`   Nodes: ${stats.nodes}`);
+      if (stats.price !== null) {
+        data.metrics.price = stats.price;
+        console.log(`   Price: $${stats.price.toFixed(2)}`);
+        successCount++;
+      }
+      if (stats.marketCap !== null) {
+        data.metrics.marketCap = stats.marketCap;
+        console.log(`   Market Cap: $${(stats.marketCap / 1e9).toFixed(2)}B`);
         successCount++;
       }
     }
