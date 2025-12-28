@@ -221,6 +221,17 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
         </>
       );
 
+    case 'etc':
+      return (
+        <>
+          <MetricRow label="Block Height" value={num(m.blocks)} />
+          <MetricRow label="Total Transactions" value={num(m.transactions)} />
+          <MetricRow label="Avg Block Time" value={num(m.avgBlockTime) ? `${(m.avgBlockTime as number / 1000).toFixed(1)}s` : null} />
+          <MetricRow label="Price" value={num(m.price) ? `$${(m.price as number).toFixed(2)}` : null} />
+          <MetricRow label="Market Cap" value={num(m.marketCap) ? `$${(m.marketCap as number / 1e9).toFixed(2)}B` : null} />
+        </>
+      );
+
     default:
       // Generic display for other projects
       const keys = Object.keys(m).slice(0, 5);
