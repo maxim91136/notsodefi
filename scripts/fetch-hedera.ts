@@ -50,7 +50,7 @@ async function main() {
 
   const data: HederaData = {
     lastUpdated: new Date().toISOString(),
-    source: 'Hedera Mirror Node API (mainnet-public.mirrornode.hedera.com)',
+    source: 'mainnet-public.mirrornode.hedera.com',
     totalScore: hedera.scores.totalScore,
     fetchStatus,
     metrics,
