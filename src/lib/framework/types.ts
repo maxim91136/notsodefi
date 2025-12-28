@@ -1,5 +1,5 @@
 /**
- * NotSoDeFi Framework v0.1 - Core Types
+ * NotSoDeFi.com Framework v0.1 - Core Types
  *
  * Defines the data structures for the decentralization scoring framework.
  */

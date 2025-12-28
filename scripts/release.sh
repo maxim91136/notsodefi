@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# NotSoDeFi Release Script
+# NotSoDeFi.com Release Script
 # Usage: ./scripts/release.sh <version>
 # Example: ./scripts/release.sh 0.3.0-rc3
 #
@@ -27,7 +27,7 @@ DATE=$(date +%Y-%m-%d)
 
 echo ""
 echo -e "${BLUE}╔════════════════════════════════════════╗${NC}"
-echo -e "${BLUE}║${NC}    NotSoDeFi Release v${VERSION}    ${BLUE}║${NC}"
+echo -e "${BLUE}║${NC}  NotSoDeFi.com Release v${VERSION}  ${BLUE}║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════╝${NC}"
 echo ""
 

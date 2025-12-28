@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   if (!project) return { title: 'Project Not Found' };
 
   return {
-    title: `${project.name} - NotSoDeFi`,
+    title: `${project.name} - NotSoDeFi.com`,
     description: `Decentralization analysis for ${project.name}. Total Score: ${project.scores.totalScore}/10`,
   };
 }

@@ -1,5 +1,5 @@
 /**
- * NotSoDeFi Framework v0.1
+ * NotSoDeFi.com Framework v0.1
  *
  * A framework for measuring blockchain and protocol decentralization.
  *

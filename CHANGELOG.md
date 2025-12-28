@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the NotSoDeFi Framework.
+All notable changes to the NotSoDeFi.com Framework.
 
 ## [0.26.0-rc1] - 2025-12-28
 

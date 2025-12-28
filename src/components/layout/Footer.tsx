@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-black/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="text-center text-xs text-white/40">
-          <span className="text-white/60 font-medium">NotSoDeFi</span>
+          <span className="text-white/60 font-medium">NotSoDeFi.com</span>
           <span className="mx-1.5">·</span>
           <span className="font-mono text-white/50">v{version}</span>
           <span className="mx-1.5">·</span>

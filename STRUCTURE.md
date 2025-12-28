@@ -1,4 +1,4 @@
-# NotSoDeFi - Project Structure
+# NotSoDeFi.com - Project Structure
 
 ```
 src/

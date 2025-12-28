@@ -1,4 +1,4 @@
-# NotSoDeFi
+# NotSoDeFi.com
 
 **Measuring Real Decentralization** • 36 Projects
 

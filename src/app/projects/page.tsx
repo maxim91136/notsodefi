@@ -4,7 +4,7 @@ import { ApiStatusCard } from '@/components/data';
 import { getProjectsByScore } from '@/lib/data';
 
 export const metadata = {
-  title: 'Projects - NotSoDeFi',
+  title: 'Projects - NotSoDeFi.com',
   description: 'Compare decentralization scores across blockchain projects.',
 };
 

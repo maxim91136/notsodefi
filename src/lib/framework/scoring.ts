@@ -1,5 +1,5 @@
 /**
- * NotSoDeFi Framework v0.1 - Scoring Logic
+ * NotSoDeFi.com Framework v0.1 - Scoring Logic
  *
  * Core functions for calculating decentralization scores.
  */

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'NotSoDeFi - Measuring Real Decentralization',
+  title: 'NotSoDeFi.com - Measuring Real Decentralization',
   description:
     'A framework for objectively measuring blockchain and protocol decentralization. Chain Score, Control Score, Fairness Score.',
   keywords: ['decentralization', 'blockchain', 'crypto', 'DeFi', 'analysis'],
