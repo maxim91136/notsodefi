@@ -25,7 +25,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 
 - **Compare Mode** - Select up to 3 projects for side-by-side comparison
 - **Trend Charts** - 7-day sparklines showing score history
-- **Live Data** - Daily API fetches with historical R2 archive
+- **Network Data** - Daily API fetches with historical R2 archive
 - **Filter & Search** - By category, consensus type, or name
 
 ## The Framework
@@ -138,7 +138,7 @@ npm run build
 src/
 ├── app/                    # Next.js pages
 ├── components/             # React components
-│   ├── data/              # Data display (LiveNetworkData, ApiStatusCard)
+│   ├── data/              # Data display (NetworkData, ApiStatusCard)
 │   ├── layout/            # Header, Footer
 │   ├── scores/            # Score display components
 │   └── ui/                # Base UI components

@@ -2,6 +2,27 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.31.0-rc1] - 2025-12-28
+
+### Changed
+- **Honest Naming** - Renamed "Live Network Data" to "Network Data"
+  - Data is fetched daily, not live - no false promises
+  - Component renamed: LiveNetworkData → NetworkData
+  - Status badge: "Live" → "OK"
+
+### Removed
+- **Irrelevant Metrics** - Removed data not related to decentralization scores
+  - Mempool TXs (stale with daily fetch, irrelevant to scores)
+  - Price / Market Cap (not decentralization metrics)
+  - Gas Price (market data, not decentralization)
+
+### Added
+- **Formatted Metrics** - All 37 projects now have properly formatted displays
+  - Hashrate formatting (H/s → EH/s)
+  - Percentage symbols for concentrations
+  - Token symbols for staking amounts
+  - USD formatting for TVL/treasury values
+
 ## [0.30.0-rc1] - 2025-12-28
 
 ### Improved
