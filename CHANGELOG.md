@@ -2,6 +2,23 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.35.0-rc1] - 2025-12-29
+
+### Added
+- **Data Sources & Objectivity** - New section on Methodology page
+  - Control Score (B1-B6): Expert Assessment (documented judgment)
+  - Fairness Score (C1-C2): Mixed (historical, verifiable)
+  - Chain Score (A1-A4): API Integration Planned
+  - Clear distinction between API-verified vs expert assessment
+- **Bitcoin Assessment Documentation** - Comprehensive source documentation
+  - Each criterion value now has detailed JSDoc comments
+  - Sources, dates, reasoning, and caveats documented
+  - Template for other project assessments
+
+### Changed
+- **Homepage** - "No hype, just facts" → "No hype, just numbers"
+  - More honest framing - we provide numbers, not verdicts
+
 ## [0.34.0-rc2] - 2025-12-28
 
 ### Added
