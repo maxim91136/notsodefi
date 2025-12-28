@@ -95,6 +95,8 @@ export interface Project {
   lastUpdated: string;
   /** Data sources */
   sources?: string[];
+  /** Additional notes/caveats */
+  notes?: string[];
 }
 
 // ============================================================================

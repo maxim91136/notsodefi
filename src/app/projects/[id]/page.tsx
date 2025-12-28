@@ -138,6 +138,25 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </Card>
       </div>
 
+      {/* Notes */}
+      {project.notes && project.notes.length > 0 && (
+        <Card className="mt-8 border-yellow-500/20">
+          <CardHeader>
+            <h2 className="font-semibold text-yellow-400">Notes</h2>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2">
+              {project.notes.map((note, i) => (
+                <li key={i} className="text-sm text-white/70 flex gap-2">
+                  <span className="text-yellow-500">*</span>
+                  {note}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Sources */}
       {project.sources && project.sources.length > 0 && (
         <Card className="mt-12">

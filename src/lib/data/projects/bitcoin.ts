@@ -45,4 +45,7 @@ export const bitcoin: Project = {
     'https://bitnodes.io',
     'https://nakaflow.io',
   ],
+  notes: [
+    'Node count shows only publicly reachable nodes. Actual total estimated 2-5x higher (non-listening, Tor, NAT, private nodes).',
+  ],
 };
