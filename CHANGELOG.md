@@ -2,7 +2,7 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
-## [0.34.0-rc1] - 2025-12-28
+## [0.34.0-rc2] - 2025-12-28
 
 ### Added
 - **Methodology Page** - New page explaining the scoring framework
@@ -12,6 +12,7 @@ All notable changes to the NotSoDeFi.com Framework.
   - Bitcoin as benchmark
   - What we don't measure
   - Limitations
+- **README** - Link to methodology page
 
 ## [0.33.0-rc1] - 2025-12-28
 
