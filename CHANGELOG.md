@@ -2,6 +2,18 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.27.0-rc1] - 2025-12-28
+
+### Changed
+- **Rebrand** - NotSoDeFi → NotSoDeFi.com
+  - Updated all page titles, metadata, and UI logos
+  - Header and Hero now show NotSo**DeFi**.com
+
+### Fixed
+- **Trends** - Fixed KV key mismatches breaking sparklines for 4 projects
+  - ada → cardano, avax → avalanche, tao → bittensor, trx → tron
+- **HBAR** - Shortened source URL for mobile display
+
 ## [0.26.0-rc1] - 2025-12-28
 
 ### Added
