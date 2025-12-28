@@ -49,6 +49,7 @@ export const PROJECTS: ProjectConfig[] = [
   { id: 'usdc', kvKey: 'usdc', symbol: 'USDC' },
   { id: 'dai', kvKey: 'dai', symbol: 'DAI' },
   { id: 'arbitrum', kvKey: 'arbitrum', symbol: 'ARB' },
+  { id: 'lido', kvKey: 'lido', symbol: 'LDO' },
 ];
 
 /**
@@ -94,6 +95,7 @@ export const PROJECT_COLORS: Record<string, { border: string; text: string }> = 
   xrp: { border: 'border-gray-500/30', text: 'text-gray-400' },
   zcash: { border: 'border-amber-500/30', text: 'text-amber-400' },
   arbitrum: { border: 'border-blue-400/30', text: 'text-blue-300' },
+  lido: { border: 'border-cyan-400/30', text: 'text-cyan-300' },
 };
 
 export function getProjectColors(projectId: string) {

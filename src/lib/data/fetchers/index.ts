@@ -89,3 +89,6 @@ export { HederaFetcher, getHederaFetcher } from './hedera';
 // Stablecoin fetchers
 export { StablecoinFetcher, getTetherFetcher, getUsdcFetcher, STABLECOIN_IDS } from './stablecoin';
 export type { StablecoinData, StablecoinFetchResult } from './stablecoin';
+
+// Lido fetchers
+export { LidoFetcher, getLidoFetcher } from './lido';
