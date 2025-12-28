@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.30.0-rc1] - 2025-12-28
+
+### Improved
+- **README** - Mission statement and philosophy
+  - "Why This Exists" – the decentralization problem
+  - Philosophy section (transparency, Bitcoin benchmark)
+  - Contributing guidelines
+
 ## [0.29.0-rc1] - 2025-12-28
 
 ### Added
