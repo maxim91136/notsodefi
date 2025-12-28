@@ -290,7 +290,7 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
       return (
         <>
           <MetricRow label="Block Number" value={num(m.blockNumber)} />
-          <MetricRow label="Era" value={num(m.era)} />
+          <MetricRow label="Era" value={num(m.era) && m.era !== 0 ? num(m.era) : null} />
           <MetricRow label="Active Validators" value={num(m.activeValidators)} />
           <MetricRow label="Waiting Validators" value={num(m.waitingValidators)} />
           <MetricRow label="Total Staked" value={num(m.totalStaked) ? `${(m.totalStaked as number).toLocaleString()} DOT` : null} />
