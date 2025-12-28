@@ -2,6 +2,21 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.32.0-rc1] - 2025-12-28
+
+### Changed
+- **Criteria IDs** - Renumbered for consistency
+  - B5-B10 → B1-B6 (Control Score)
+  - C9-C10 → C1-C2 (Fairness Score)
+- **Kill-Switch Penalty** - Harsher cap for projects with admin halt capability
+  - B5=0 now caps total score at 1.0 (was 2.0)
+  - Rationale: Kill-switch = fundamentally not decentralized
+
+### Removed
+- **Block Height / Block Number** - Removed from all Network Data displays
+  - Not relevant to decentralization
+  - Stale with daily fetch
+
 ## [0.31.0-rc1] - 2025-12-28
 
 ### Changed
