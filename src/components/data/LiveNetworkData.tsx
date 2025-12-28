@@ -518,7 +518,7 @@ function StatusBadge({ status }: { status: 'success' | 'partial' | 'failed' }) {
   };
 
   const labels = {
-    success: 'Live',
+    success: 'OK',
     partial: 'Partial',
     failed: 'Error',
   };
