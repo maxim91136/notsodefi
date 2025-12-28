@@ -15,6 +15,7 @@ export default function HomePage() {
         <h1 className="text-5xl sm:text-6xl font-bold mb-6">
           <span className="text-white">NotSo</span>
           <span className="text-red-500">DeFi</span>
+          <span className="text-white">.com</span>
         </h1>
         <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
           Measuring real decentralization. Because &quot;decentralized&quot; doesn&apos;t
