@@ -1,6 +1,6 @@
 # NotSoDeFi.com
 
-**Measuring Real Decentralization** • 36 Projects
+**Measuring Real Decentralization** • 37 Projects
 
 A framework for objectively measuring blockchain and protocol decentralization. Because "decentralized" doesn't mean what most projects claim it means.
 
@@ -31,7 +31,7 @@ TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness
 
 The framework distinguishes between different consensus mechanisms:
 
-- **PoW** (Proof of Work) - Bitcoin, Bitcoin Cash, Dogecoin, Kaspa, Litecoin, Monero, Zcash
+- **PoW** (Proof of Work) - Bitcoin, Bitcoin Cash, Dogecoin, Ethereum Classic, Kaspa, Litecoin, Monero, Zcash
 - **PoS** (Proof of Stake) - Ethereum, Solana, Cardano, Avalanche, Cosmos, Hyperliquid, TON, Sui, ICP, Aave, Uniswap, DAI, NEAR, Aptos, Polygon, Injective, Filecoin
 - **NPoS** (Nominated Proof of Stake) - Polkadot
 - **DPoS** (Delegated Proof of Stake) - BNB Chain, Tron
@@ -92,6 +92,7 @@ Projects are classified by type:
 | Filecoin | FIL | PoS | [Filfox](https://filfox.info) |
 | Arbitrum | ARB | PoS | [Arbitrum RPC](https://arb1.arbitrum.io/rpc) |
 | Lido | LDO | PoS | [DefiLlama](https://defillama.com) |
+| Ethereum Classic | ETC | PoW | [Blockscout](https://etc.blockscout.com) |
 
 Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily.
 

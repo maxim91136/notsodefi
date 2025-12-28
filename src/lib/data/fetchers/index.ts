@@ -92,3 +92,6 @@ export type { StablecoinData, StablecoinFetchResult } from './stablecoin';
 
 // Lido fetchers
 export { LidoFetcher, getLidoFetcher } from './lido';
+
+// Ethereum Classic fetchers
+export { ETCFetcher, getETCFetcher } from './etc';

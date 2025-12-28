@@ -57,6 +57,14 @@ export interface ZecMetrics {
   nodes: number | null;
 }
 
+export interface EtcMetrics {
+  blocks: number | null;
+  difficulty: number | null;
+  hashrate24h: number | null;
+  mempoolTxs: number | null;
+  nodes: number | null;
+}
+
 export interface TaoMetrics {
   blockNumber: number | null;
   accounts: number | null;
@@ -341,6 +349,10 @@ export function getZecData(): NetworkData<ZecMetrics> {
   return loadJsonFile<NetworkData<ZecMetrics>>('zec.json');
 }
 
+export function getEtcData(): NetworkData<EtcMetrics> {
+  return loadJsonFile<NetworkData<EtcMetrics>>('etc.json');
+}
+
 export function getTaoData(): NetworkData<TaoMetrics> {
   return loadJsonFile<NetworkData<TaoMetrics>>('tao.json');
 }
@@ -517,6 +529,8 @@ export function getNetworkDataByProject(projectId: string): NetworkData<unknown>
       return getPolData();
     case 'injective':
       return getInjData();
+    case 'etc':
+      return getEtcData();
     default:
       return null;
   }
@@ -562,6 +576,7 @@ export function getAllApiStatuses(): ApiStatus[] {
   const aptData = getAptData();
   const polData = getPolData();
   const injData = getInjData();
+  const etcData = getEtcData();
 
   return [
     {
@@ -755,6 +770,12 @@ export function getAllApiStatuses(): ApiStatus[] {
       status: injData.fetchStatus,
       lastUpdated: injData.lastUpdated,
       source: injData.source || 'Injective LCD API',
+    },
+    {
+      chain: 'ETC',
+      status: etcData.fetchStatus,
+      lastUpdated: etcData.lastUpdated,
+      source: etcData.source || 'Blockchair',
     },
   ];
 }
