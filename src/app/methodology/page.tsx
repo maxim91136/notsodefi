@@ -171,6 +171,86 @@ export default function MethodologyPage() {
         </div>
       </section>
 
+      {/* Data Sources & Objectivity */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">Data Sources &amp; Objectivity</h2>
+        <div className="space-y-4 text-white/80">
+          <p>
+            We measure what&apos;s measurable and document transparently where judgment is required.
+            Each criterion falls into one of two categories:
+          </p>
+
+          <div className="space-y-6 mt-6">
+            {/* Control Score - Expert Assessment */}
+            <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/20">
+              <h3 className="text-lg font-semibold text-yellow-400 mb-3">Control Score (B1-B6) - Expert Assessment</h3>
+              <p className="text-sm text-white/60 mb-3">
+                Requires human judgment. No API can determine if a foundation can halt a chain.
+                Each assessment is documented with sources and reasoning.
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li><strong>B1</strong> - Corporate/Foundation capture - Who controls roadmap, hiring, marketing?</li>
+                <li><strong>B2</strong> - Repo ownership - GitHub contributor analysis, merge rights distribution</li>
+                <li><strong>B3</strong> - Brand &amp; frontend control - Domain ownership, official apps, alternatives</li>
+                <li><strong>B4</strong> - Treasury/upgrade keys - Multisig composition, signer independence</li>
+                <li><strong>B5</strong> - Admin halt capability - Can anyone pause/freeze the chain?</li>
+                <li><strong>B6</strong> - Protocol change history - Fundamental rule changes since launch</li>
+              </ul>
+            </div>
+
+            {/* Fairness Score */}
+            <div className="p-4 rounded-lg bg-purple-500/10 border border-purple-500/20">
+              <h3 className="text-lg font-semibold text-purple-400 mb-3">Fairness Score (C1-C2) - Mixed</h3>
+              <p className="text-sm text-white/60 mb-3">
+                Historical data that doesn&apos;t change. Verifiable from tokenomics sources.
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li><strong>C1</strong> - Premine % - Historical, verifiable (Messari, docs, blockchain explorers)</li>
+                <li><strong>C2</strong> - Governance power - Snapshot voting data, token distribution analysis</li>
+              </ul>
+            </div>
+
+            {/* Chain Score - Under Development */}
+            <div className="p-4 rounded-lg bg-blue-500/10 border border-blue-500/20">
+              <h3 className="text-lg font-semibold text-blue-400 mb-3">Chain Score (A1-A4) - API Integration Planned</h3>
+              <p className="text-sm text-white/60 mb-3">
+                Currently manual assessment. API automation in development.
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li><strong>A1</strong> - Nakamoto Coefficient - Target: nakaflow.io API</li>
+                <li><strong>A2</strong> - Validator concentration - Target: chain-specific APIs</li>
+                <li><strong>A3</strong> - Client diversity - Target: node explorer APIs</li>
+                <li><strong>A4</strong> - Hosting distribution - Target: bitnodes, datacenter analysis</li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="mt-6">
+            For expert assessments, each value includes:
+          </p>
+          <ul className="list-disc list-inside space-y-1 ml-2">
+            <li>Source links with dates</li>
+            <li>Reasoning for the specific score</li>
+            <li>Known limitations or caveats</li>
+            <li>Full documentation in the{' '}
+              <a
+                href="https://github.com/maxim91136/notsodefi/tree/main/src/lib/data/projects"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                project source files
+              </a>
+            </li>
+          </ul>
+
+          <p className="text-white/60 italic mt-4">
+            No API can tell you if a foundation can halt a chain or if a team controls the brand.
+            These require judgment - but that judgment is documented, sourced, and open to challenge.
+          </p>
+        </div>
+      </section>
+
       {/* Limitations */}
       <section>
         <h2 className="text-2xl font-bold mb-4">Limitations</h2>
