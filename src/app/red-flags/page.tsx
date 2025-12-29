@@ -81,7 +81,7 @@ export default function RedFlagsPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="mb-8">
-        <Link href="/" className="text-blue-400 hover:text-blue-300 text-sm">
+        <Link href="/projects" className="text-blue-400 hover:text-blue-300 text-sm">
           &larr; Back to Rankings
         </Link>
       </div>
