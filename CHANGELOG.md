@@ -2,6 +2,35 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.36.0-rc1] - 2025-12-29
+
+### Changed
+- **B2 Score Methodology Overhaul** - Systematic review of all 37 projects
+  - Based on actual GitHub contributor concentration data
+  - Bitcoin B2: 7 → 4 (5-person maintainer oligarchy, 40% top 3 commits)
+  - Monero B2: 8 → 3 (67% top 3 commits, anonymous closed workgroup)
+  - Ethereum B2: 8 → 5 (56% top 3 in geth, multi-client mitigates)
+  - All projects now consistently scored against same methodology
+- **Project Descriptions** - Standardized to objective facts only
+  - Removed all changeable metrics (percentages, validator counts, TVL)
+  - Removed subjective language ("theater", "monopoly", "whales")
+  - Descriptions now state: consensus type, structure, kill-switch status
+  - Let the scores speak for themselves
+
+### Added
+- **Problems Page** - New /problems page documenting known blockchain issues
+  - Development Centralization
+  - Mining Pool Centralization
+  - Hardware Centralization
+  - Long-Term Security Funding
+  - Quantum Vulnerability
+  - Reorg/Double-Spend Attacks
+  - Funding Dependency
+
+### Fixed
+- Hyperliquid B2: 2 → 1 (closed source = no public code review)
+- Tron B2: 1 → 2 (open source, Foundation controlled)
+
 ## [0.35.0-rc1] - 2025-12-29
 
 ### Added
