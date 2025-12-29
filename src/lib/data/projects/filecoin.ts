@@ -34,7 +34,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 4,    // Protocol Labs dominates, Foundation exists but less influential
-  B2: 6,    // Open source (filecoin-project), but Labs-driven development
+  B2: 3,    // Open source but Protocol Labs dominates all core development
   B3: 4,    // filecoin.io - Protocol Labs controls brand
   B4: 5,    // Foundation treasury, some transparency
   B5: 10,   // No kill-switch - miners operate independently, no admin keys

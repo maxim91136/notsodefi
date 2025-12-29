@@ -19,7 +19,20 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 7,    // No corporate owner now, Roger Ver era ended, community-driven
-  B2: 7,    // BCHN is main client, diverse contributors
+  /**
+   * B2: Repo/Protocol Ownership = 4
+   *
+   * Bitcoin fork with concentrated development.
+   * Source: https://github.com/bitcoin-cash-node/bitcoin-cash-node
+   *
+   * - BCHN is dominant client
+   * - Small maintainer team with merge rights
+   * - Bitcoin Core fork structure inherited
+   * - Community-driven but few gatekeepers
+   *
+   * Similar patterns to Bitcoin despite different philosophy.
+   */
+  B2: 4,
   B3: 7,    // No clear brand owner after BCH/BSV/eCash splits
   B4: null, // N/A - No protocol treasury
   B5: 10,   // No halt capability - truly unstoppable PoW chain

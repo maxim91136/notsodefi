@@ -33,7 +33,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 4,    // Injective Labs very influential, VC-backed
-  B2: 6,    // Open source, but Labs-dominated
+  B2: 3,    // Open source but Injective Labs controls all core development
   B3: 4,    // injective.com - Labs controls brand
   B4: 5,    // Foundation treasury, some transparency
   B5: 7,    // No kill-switch, standard Cosmos governance

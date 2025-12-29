@@ -18,7 +18,28 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 4,    // EF has significant soft power: treasury, roadmap influence, grants
-  B2: 8,    // Multiple client teams, diverse maintainers
+  /**
+   * B2: Repo/Protocol Ownership = 5
+   *
+   * Multiple client teams exist, but concentration remains high.
+   * Source: https://github.com/ethereum/go-ethereum/graphs/contributors
+   *
+   * geth (dominant client ~60% of nodes):
+   * - Top 3 contributors = 56% of commits (Bitcoin: 40%)
+   * - Top 5 contributors = 68% of commits (Bitcoin: 52%)
+   *
+   * Mitigating factors:
+   * - Multiple independent clients (Prysm, Lighthouse, Nethermind, Besu)
+   * - Different organizations maintain different clients
+   *
+   * Centralizing factors:
+   * - EF funds most client teams (indirect influence)
+   * - geth still dominates node share
+   * - Core devs have significant merge control
+   *
+   * Better than single-client chains, but not as decentralized as claimed.
+   */
+  B2: 5,
   B3: 6,    // EF controls ethereum.org but many frontends exist
   B4: null, // N/A - No protocol-level treasury multisig
   B5: 10,   // No halt capability - decentralized PoS validators

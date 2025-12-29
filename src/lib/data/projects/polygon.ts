@@ -35,7 +35,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 4,    // Polygon Labs very influential, Foundation controls ecosystem
-  B2: 6,    // Open source, but Labs-dominated development
+  B2: 3,    // Open source but Polygon Labs controls all core development
   B3: 3,    // polygon.technology - Labs controls brand entirely
   B4: 5,    // Foundation treasury, some transparency
   B5: 6,    // No kill-switch, but 105 max validators is very limiting

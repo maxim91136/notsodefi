@@ -28,7 +28,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 5,    // NEAR Foundation influential but not dominant
-  B2: 6,    // Open source, community proposals exist
+  B2: 3,    // Open source but NEAR Foundation/Pagoda dominates development
   B3: 4,    // near.org, brand controlled by Foundation
   B4: 5,    // Foundation treasury, multisig governance
   B5: 8,    // No kill-switch, decentralized validator set

@@ -32,7 +32,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 4,    // Aptos Labs/Foundation very influential
-  B2: 5,    // Open source but Labs-dominated development
+  B2: 2,    // Open source but Aptos Labs controls all core development - highly concentrated
   B3: 3,    // aptos.dev, aptoslabs.com - Labs controls brand
   B4: 4,    // Foundation treasury, limited transparency
   B5: 7,    // No kill-switch, but coordinated validator set

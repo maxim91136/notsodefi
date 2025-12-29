@@ -20,7 +20,20 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 8,    // DAGlabs renounced ownership, community-run
-  B2: 7,    // Open source, multiple contributors
+  /**
+   * B2: Repo/Protocol Ownership = 5
+   *
+   * Young project with concentrated early development.
+   * Source: https://github.com/kaspanet/kaspad
+   *
+   * - Core team dominates development
+   * - rusty-kaspa alternative exists (positive)
+   * - Still early stage, development naturally concentrated
+   * - DAGlabs origins mean original team has outsized influence
+   *
+   * Better than company-controlled, but not fully decentralized.
+   */
+  B2: 5,
   B3: 8,    // No company owns brand
   B4: 7,    // Multi-sig treasury with elected treasurers
   B5: 10,   // PoW - no kill-switch possible

@@ -19,7 +19,20 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 9,    // Charlie Lee stepped back, no corporate owner, very decentralized
-  B2: 7,    // Community-driven development, Litecoin Foundation supports but doesn't control
+  /**
+   * B2: Repo/Protocol Ownership = 4
+   *
+   * Bitcoin fork with similar development concentration.
+   * Source: https://github.com/litecoin-project/litecoin
+   *
+   * - Small maintainer team (Bitcoin Core fork structure)
+   * - Litecoin Foundation has influence over development direction
+   * - Charlie Lee still influential despite "stepping back"
+   * - Similar gatekeeper structure to Bitcoin
+   *
+   * As a Bitcoin fork, inherits similar centralization patterns.
+   */
+  B2: 4,
   B3: 7,    // Litecoin Foundation holds trademark but limited authority
   B4: null, // N/A - No protocol treasury or upgrade keys
   B5: 10,   // No halt capability - truly unstoppable PoW chain

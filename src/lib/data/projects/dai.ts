@@ -30,7 +30,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 6,    // DAO governance, but Maker Foundation/Sky has significant influence
-  B2: 6,    // Open source, community proposals, but core team leads development
+  B2: 4,    // Open source, community proposals, but core team leads development - concentrated
   B3: 5,    // makerdao.com, sky.money - foundation controlled, DAO governed
   B4: 7,    // Treasury/reserves governed by MKR votes, not single entity
   B5: 8,    // NO targeted freeze capability. Emergency Shutdown is protocol-wide, requires 50K MKR

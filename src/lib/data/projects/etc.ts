@@ -19,7 +19,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 7,    // ETC Cooperative/Labs exist but limited control, community-driven
-  B2: 6,    // Core-Geth team dominant, Besu maintained by ChainSafe/ETC Coop
+  B2: 4,    // Core-Geth team dominant, Besu maintained by ChainSafe/ETC Coop - few gatekeepers
   B3: 8,    // No trademark monopoly, community-owned brand
   B4: 8,    // No protocol-level treasury, foundations are separate entities
   B5: 10,   // No admin controls - pure PoW chain like Bitcoin

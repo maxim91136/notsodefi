@@ -19,7 +19,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 5,    // ECC has significant but not total control
-  B2: 5,    // Development split between ECC and Zcash Foundation
+  B2: 4,    // Development split between ECC and Zcash Foundation - two entities control all
   B3: 6,    // Trademark shared between ECC and Foundation
   B4: 4,    // Dev fund (20% block reward) controlled by orgs
   B5: 10,   // No halt capability - PoW chain like Bitcoin

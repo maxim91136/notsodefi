@@ -19,7 +19,20 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 9,    // Founders stepped back, Dogecoin Foundation has limited power
-  B2: 7,    // Community-driven development, Foundation supports but doesn't control
+  /**
+   * B2: Repo/Protocol Ownership = 4
+   *
+   * Development is concentrated despite community ethos.
+   * Source: https://github.com/dogecoin/dogecoin/graphs/contributors
+   *
+   * - Top 3 contributors = 48% of commits (Bitcoin: 40%)
+   * - Top 5 contributors = 60% of commits (Bitcoin: 52%)
+   * - Small maintainer team with merge rights
+   * - Dogecoin Foundation has limited but real influence
+   *
+   * Similar concentration to Bitcoin, slightly worse.
+   */
+  B2: 4,
   B3: 8,    // Brand is community-owned, Foundation doesn't control it
   B4: null, // N/A - No protocol treasury
   B5: 10,   // No halt capability - truly unstoppable PoW chain

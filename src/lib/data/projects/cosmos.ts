@@ -20,7 +20,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 5,    // ICF + Tendermint influence, but distributed governance
-  B2: 5,    // Multiple contributors, but core team influence
+  B2: 4,    // Multiple contributors but ICF/Interchain Foundation heavily influences development
   B3: 4,    // Interchain Foundation owns brand
   B4: 5,    // ICF treasury, governance participation
   B5: 10,   // No halt capability - fully decentralized BFT
