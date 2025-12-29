@@ -28,6 +28,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 - **Network Data** - Daily API fetches with historical R2 archive
 - **Filter & Search** - By category, consensus type, or name
 - **[Known Problems](https://notsodefi.com/problems)** - Documented limitations across all blockchain systems
+- **[Red Flags](https://notsodefi.com/red-flags)** - Marketing-to-reality translation guide
 
 ## The Framework
 
