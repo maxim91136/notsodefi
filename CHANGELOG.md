@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.38.0-rc1] - 2025-12-29
+
+### Changed
+- **B5 Federated Systems Consistency** - Aligned scoring for indirect control mechanisms
+  - XRP B5: 0 → 2 (no direct halt mechanism, UNL influence is indirect)
+  - Stellar B5: 5 → 2 (no direct halt mechanism, validator control is indirect)
+  - Both have strong centralization but no freeze-address function like stablecoins
+  - XRP no longer capped at 1.0 (was incorrectly treated as kill-switch)
+
 ## [0.37.0-rc2] - 2025-12-29
 
 ### Added
