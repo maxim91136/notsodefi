@@ -2,6 +2,18 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.39.0-rc1] - 2025-12-29
+
+### Added
+- **Problem 14: Collateral Contagion** - "Decentralized" protocols inherit centralization from collateral
+  - DAI ~40% backed by USDC → Circle freeze = DAI destabilization
+  - Wrapped assets (WBTC, WETH) depend on custodians
+
+### Changed
+- **DAI B5: 8 → 5** - Score now reflects USDC collateral dependency
+  - No direct freeze mechanism, but ~40% USDC = indirect Circle control
+  - Emergency Shutdown still requires 50K MKR
+
 ## [0.38.0-rc1] - 2025-12-29
 
 ### Changed
