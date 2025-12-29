@@ -190,7 +190,7 @@ export default function SPOFPage() {
       <div className="mt-12 p-8 bg-gray-800/50 border border-gray-700 rounded-lg">
         <h2 className="text-xl font-bold mb-4">Key Insight</h2>
         <p className="text-gray-300 mb-4">
-          Only <span className="text-green-400 font-bold">6 out of 37 projects</span> have no identifiable Single Point of Failure.
+          Only <span className="text-green-400 font-bold">5 out of 37 projects</span> have no identifiable Single Point of Failure.
           All of them share common traits:
         </p>
         <ul className="space-y-2 text-gray-300">
