@@ -5,7 +5,7 @@ import Link from 'next/link';
 const redFlags = [
   {
     marketing: 'Community-driven',
-    reality: 'Foundation decides everything',
+    reality: 'Foundation appears to make key decisions',
   },
   {
     marketing: 'Governance token',
@@ -88,14 +88,15 @@ export default function RedFlagsPage() {
 
       <h1 className="text-3xl font-bold mb-2">Marketing Red Flags</h1>
       <p className="text-gray-400 mb-8">
-        What crypto projects say vs. what they mean. A translation guide for marketing bullshit.
+        What crypto projects say vs. what they mean. A translation guide for marketing language.
       </p>
 
       <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-lg p-4 mb-8">
         <p className="text-yellow-200 text-sm">
-          <strong>Disclaimer:</strong> Satire with a kernel of truth. Not all projects are the same -
-          but these phrases should always be questioned critically.
-          Verify the facts on our{' '}
+          <strong>Satirical Commentary:</strong> The following is satirical commentary designed to encourage
+          critical thinking about marketing language in the cryptocurrency industry. These are humorous
+          generalizations, not factual assertions about specific projects. Individual projects vary significantly.
+          Always verify claims on our{' '}
           <Link href="/projects" className="underline hover:text-yellow-100">
             projects page
           </Link>.

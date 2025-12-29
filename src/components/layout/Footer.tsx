@@ -15,9 +15,17 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="text-center text-xs text-white/40 space-y-2">
           <p>
-            Educational decentralization analysis. Not financial advice. Data may be incomplete.{' '}
+            Educational analysis. Not financial advice. Opinions only.{' '}
+            <Link href="/terms" className="text-white/60 hover:text-white underline transition-colors">
+              Terms
+            </Link>
+            <span className="mx-1.5">·</span>
+            <Link href="/privacy" className="text-white/60 hover:text-white underline transition-colors">
+              Privacy
+            </Link>
+            <span className="mx-1.5">·</span>
             <Link href="/disclaimer" className="text-white/60 hover:text-white underline transition-colors">
-              Full Disclaimer
+              Disclaimer
             </Link>
           </p>
           <div>

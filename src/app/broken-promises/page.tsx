@@ -77,7 +77,7 @@ const promisesData: PromiseEntry[] = [
     symbol: 'POL',
     promise: 'Community-driven development',
     date: '2021',
-    currentState: 'Polygon Labs controls everything',
+    currentState: 'Polygon Labs appears to maintain significant control',
     verdict: 'broken',
   },
   {
@@ -93,7 +93,7 @@ const promisesData: PromiseEntry[] = [
     symbol: 'NEAR',
     promise: 'Progressive decentralization',
     date: '2020',
-    currentState: 'NEAR Foundation still controls everything',
+    currentState: 'NEAR Foundation appears to maintain significant control',
     verdict: 'broken',
   },
 
@@ -119,7 +119,7 @@ const promisesData: PromiseEntry[] = [
     symbol: 'ICP',
     promise: 'Decentralized compute',
     date: '2021',
-    currentState: 'DFINITY controls everything, NNS votes are theater',
+    currentState: 'DFINITY appears to maintain significant control, governance voting shows limited practical impact',
     verdict: 'broken',
   },
 
@@ -179,7 +179,7 @@ const promisesData: PromiseEntry[] = [
     symbol: 'TRX',
     promise: 'Decentralized internet',
     date: '2017',
-    currentState: 'Founder controls everything',
+    currentState: 'Founder appears to maintain dominant control',
     verdict: 'broken',
   },
   {

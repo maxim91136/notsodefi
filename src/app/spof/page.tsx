@@ -52,7 +52,7 @@ const spofData: SPOFEntry[] = [
 
   // Instant Death (kill-switch + critical SPOF)
   { project: 'Hedera', symbol: 'HBAR', score: 1.0, spofType: 'foundation', element: 'Council (39 corps)', deathScenario: 'Council dissolves = dead' },
-  { project: 'Hyperliquid', symbol: 'HYPE', score: 1.0, spofType: 'foundation', element: 'Foundation (58% stake)', deathScenario: 'Team exit = instant rug' },
+  { project: 'Hyperliquid', symbol: 'HYPE', score: 1.0, spofType: 'foundation', element: 'Foundation (58% stake)', deathScenario: 'High exit risk based on stake concentration' },
   { project: 'XRP', symbol: 'XRP', score: 1.0, spofType: 'company', element: 'Ripple Labs', deathScenario: 'Ripple gone = dead' },
   { project: 'Tron', symbol: 'TRX', score: 1.0, spofType: 'person', element: 'Founder', deathScenario: 'Founder exits = dead' },
   { project: 'BNB Chain', symbol: 'BNB', score: 1.0, spofType: 'company', element: 'Binance', deathScenario: 'Binance closed = dead' },
@@ -105,7 +105,7 @@ export default function SPOFPage() {
               <th className="text-left py-2 px-2 text-gray-400">Score</th>
               <th className="text-left py-2 px-2 text-gray-400">SPOF Type</th>
               <th className="text-left py-2 px-2 text-gray-400">The ONE Element</th>
-              <th className="text-left py-2 px-2 text-gray-400">Death Scenario</th>
+              <th className="text-left py-2 px-2 text-gray-400">Hypothetical Risk</th>
             </tr>
           </thead>
           <tbody>
