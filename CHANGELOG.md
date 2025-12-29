@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.48.0-rc1] - 2025-12-30
+
+### Changed
+- **Bittensor Assessment** - Exposed fake "fair launch" narrative
+  - C1 score updated (0 → 45) reflecting VC involvement
+  - Documented: Polychain incubation (2019), DCG 2.4% supply, 4 funding rounds
+  - Added to Broken Promises page with verdict "broken"
+
 ## [0.47.0-rc1] - 2025-12-29
 
 ### Changed
