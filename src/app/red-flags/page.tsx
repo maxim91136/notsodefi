@@ -132,6 +132,16 @@ export default function RedFlagsPage() {
         </table>
       </div>
 
+      <div className="mt-12 p-8 bg-red-900/20 border border-red-700/50 rounded-lg text-center">
+        <p className="text-xl md:text-2xl font-medium text-red-200 italic">
+          &ldquo;Je mehr ein Projekt Dezentralisierung bewirbt,<br className="hidden md:block" />
+          desto skeptischer sollte man sein.&rdquo;
+        </p>
+        <p className="mt-4 text-gray-400 text-sm">
+          Wirklich dezentralisierte Projekte (Bitcoin, Monero) müssen es nicht betonen - es ist einfach wahr.
+        </p>
+      </div>
+
       <div className="mt-12 p-6 bg-gray-800/50 rounded-lg">
         <h2 className="text-xl font-bold mb-4">Wie man Marketing-Claims überprüft</h2>
         <ul className="space-y-3 text-gray-300">
