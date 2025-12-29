@@ -156,15 +156,29 @@ function CriteriaForm({
             </div>
             <p className="text-sm text-white/50">{criterion.description}</p>
             <div className="flex items-center gap-4">
-              <input
-                type="number"
-                min="0"
-                step="1"
-                value={values[criterion.id] ?? ''}
-                onChange={(e) => onChange(criterion.id, parseFloat(e.target.value) || 0)}
-                className="w-24 px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-white/30"
-                placeholder="Value"
-              />
+              <div className="relative">
+                <input
+                  type="number"
+                  min="0"
+                  max={criterion.mappings[criterion.mappings.length - 1]?.max ?? 100}
+                  step="1"
+                  value={values[criterion.id] ?? ''}
+                  onChange={(e) => {
+                    const val = parseFloat(e.target.value);
+                    if (!isNaN(val) && val >= 0) {
+                      onChange(criterion.id, val);
+                    } else if (e.target.value === '') {
+                      onChange(criterion.id, 0);
+                    }
+                  }}
+                  className={`w-24 px-3 py-2 bg-white/5 border rounded-lg text-white focus:outline-none ${
+                    values[criterion.id] !== undefined && values[criterion.id] < 0
+                      ? 'border-red-500/50 focus:border-red-500'
+                      : 'border-white/10 focus:border-white/30'
+                  }`}
+                  placeholder="Value"
+                />
+              </div>
               <div className="flex-1 text-xs text-white/40">
                 {criterion.mappings.map((m, i) => (
                   <span key={i} className="mr-4">

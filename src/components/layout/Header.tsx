@@ -102,7 +102,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="sm:hidden border-t border-white/10 py-3">
+          <nav className="sm:hidden border-t border-white/10 py-3 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <div className="flex flex-col gap-1">
               <Link
                 href="/projects"
