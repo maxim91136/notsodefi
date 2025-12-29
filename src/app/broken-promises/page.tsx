@@ -119,7 +119,7 @@ const promisesData: PromiseEntry[] = [
     symbol: 'TAO',
     promise: 'Fair launch, no VC, no premine',
     date: '2021',
-    currentState: 'Incubated by Polychain 2019. VCs hold $425M+ (DCG 2.4% supply). 4 funding rounds on Crunchbase.',
+    currentState: 'Incubated by Polychain 2019. DCG largest holder (2.4% supply). 4 funding rounds on Crunchbase.',
     verdict: 'broken',
   },
   {

@@ -6,10 +6,9 @@
  * Uses Yuma Consensus with validators and miners on subnets.
  *
  * FUNDING REALITY (contradicts "no VC" narrative):
- * - Polychain Capital: Incubated 2019, holds ~$200M in TAO
- * - DCG (Barry Silbert): Largest holder ~500k TAO (2.4% supply, ~$175M)
+ * - Polychain Capital: Incubated 2019, accumulated ~$200M in TAO (may have sold)
+ * - DCG (Barry Silbert): Largest holder ~500k TAO (2.4% supply, ~$175M) - May 2025
  * - Dao5: ~$50M in TAO
- * - Total VC holdings: $425M+
  * - Crunchbase: 4 funding rounds documented
  */
 
@@ -33,7 +32,7 @@ const rawValues: Record<string, number | null> = {
   B6: 4,   // Young chain (2021), subnet structure evolving, Substrate upgrades
 
   // Fairness Score (C1-C2)
-  C1: 45,   // VCs incubated 2019, $425M+ VC holdings despite "fair launch" claims
+  C1: 45,   // VCs incubated 2019, DCG 2.4% supply, despite "fair launch" claims
   C2: 6,   // Subnet autonomy + on-chain governance via ZIP-style proposals
 };
 
@@ -45,7 +44,7 @@ export const bittensor: Project = {
   consensusType: 'hybrid',
   website: 'https://bittensor.com',
   description:
-    'Decentralized AI/ML network. Claims "fair launch, no VC" but incubated by Polychain 2019. VCs hold $425M+ in tokens.',
+    'Decentralized AI/ML network. Claims "fair launch, no VC" but incubated by Polychain 2019. DCG largest holder (2.4% supply).',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-30',
   sources: [
