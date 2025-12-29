@@ -13,7 +13,7 @@ const rawValues: Record<string, number | null> = {
   // Chain Score (A1-A4)
   A1: 19,   // Nakamoto Coefficient ~19 (validators)
   A2: 35,   // Top 5 validators control ~35%
-  A3: 1,    // 1 dominant client (Solana Labs client)
+  A3: 5,    // 2 clients: Agave (~79%) + Firedancer (~21% of stake, Jump Crypto)
   A4: 75,   // ~75% nodes in cloud (AWS, etc.)
 
   // Control Score (B1-B6)
@@ -37,9 +37,9 @@ export const solana: Project = {
   consensusType: 'pos',
   website: 'https://solana.com',
   description:
-    'High-performance blockchain optimized for speed and low fees. Single-client architecture.',
+    'High-performance blockchain optimized for speed and low fees. Firedancer (Jump Crypto) now ~21% of stake.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-12-23',
+  lastUpdated: '2025-12-29',
   sources: [
     'https://solanabeach.io',
     'https://chainspect.app/chain/solana',
