@@ -2,6 +2,26 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.40.0-rc1] - 2025-12-29
+
+### Added
+- **Red Flags Page** - Marketing-to-Reality translation guide
+  - "Community-driven" = "Foundation entscheidet"
+  - "Decentralized network" = "Mehrere Server statt einer"
+  - "Trustless" = "Trust us instead"
+  - 18 common marketing phrases decoded
+  - Verification checklist for claims
+
+### Changed
+- **Kaspa C1: 100 → 3** - "Fair launch" myth debunked
+  - Founder Sompolinsky: "Kaspa is neither attempting nor pretending to be a fair launch coin"
+  - DAGlabs ($8M Polychain funding) mined ~2.5-3% of supply post-launch
+  - Source: hashdag.medium.com article by founder
+- **Solana A3: 1 → 5** - Firedancer client diversity acknowledged
+  - Jump Crypto's Firedancer now ~21% of stake
+  - Two production clients: Agave (~79%) + Firedancer (~21%)
+  - Fair update reflecting actual improvement
+
 ## [0.39.0-rc1] - 2025-12-29
 
 ### Added
