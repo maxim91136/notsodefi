@@ -48,7 +48,7 @@ const rawValues: Record<string, number | null> = {
   B6: 2,   // Young chain (2021) but minimal changes to GHOSTDAG PoW consensus
 
   // Fairness Score (C1-C2)
-  C1: 3,    // ~3% to DAGlabs/Polychain via VC-funded early mining. Founder: "not a fair launch"
+  C1: 15,   // ~3% to DAGlabs BUT with $8M VC funding = capital advantage. Founder: "not a fair launch"
   C2: 7,   // Mining distribution, but early capital advantage for insiders
 };
 
