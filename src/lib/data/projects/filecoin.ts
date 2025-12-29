@@ -53,7 +53,7 @@ export const filecoin: Project = {
   consensusType: 'pos', // Uses Proof-of-Spacetime, closest to PoS
   website: 'https://filecoin.io',
   description:
-    '1054 active miners, Nakamoto Coefficient 92. Top 5 power only 3%. Decentralized storage network. 30% insider allocation.',
+    'Decentralized storage network using Proof-of-Spacetime. Protocol Labs developed. No kill switch.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-27',
   sources: [

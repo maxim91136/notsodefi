@@ -39,7 +39,7 @@ export const polkadot: Project = {
   consensusType: 'npos',
   website: 'https://polkadot.com',
   description:
-    'NPoS blockchain with very high Nakamoto coefficient (~149). 600 validators, on-chain governance. No sudo since 2020.',
+    'NPoS blockchain with on-chain governance (OpenGov). Forkless upgrades. No sudo since 2020.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-24',
   sources: [

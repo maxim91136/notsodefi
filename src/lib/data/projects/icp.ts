@@ -39,7 +39,7 @@ export const icp: Project = {
   consensusType: 'pos',
   website: 'https://internetcomputer.org',
   description:
-    'Novel "World Computer" with Chain Key consensus. DFINITY controls ~40% voting. 48-50% insider allocation. 95% crash from ATH. Node providers must be approved by NNS.',
+    'Chain Key consensus with NNS governance. DFINITY Foundation controls development. Permissioned node providers.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-25',
   sources: [

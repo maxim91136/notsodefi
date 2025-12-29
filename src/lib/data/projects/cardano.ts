@@ -38,7 +38,7 @@ export const cardano: Project = {
   consensusType: 'pos',
   website: 'https://cardano.org',
   description:
-    'Research-driven PoS blockchain with Ouroboros consensus. ~3000 stake pools, on-chain governance via Catalyst.',
+    'Research-driven PoS blockchain with Ouroboros consensus. On-chain governance via Catalyst. No kill switch.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-24',
   sources: [

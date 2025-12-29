@@ -43,7 +43,7 @@ export const ton: Project = {
   consensusType: 'pos',
   website: 'https://ton.org',
   description:
-    'PoS chain with NC ~80. 85% of supply mined by whales affiliated with TON Foundation. Top 10 holders own 61%.',
+    'PoS chain originally developed by Telegram. Revived by TON Foundation. High token concentration from initial mining phase.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

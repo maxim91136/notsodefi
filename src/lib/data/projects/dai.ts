@@ -49,7 +49,7 @@ export const dai: Project = {
   consensusType: 'pos',  // DAO governance via MKR staking/voting
   website: 'https://makerdao.com',
   description:
-    '$8.4B overcollateralized stablecoin. MKR governance, no individual address freezing. Emergency Shutdown exists but requires 50K MKR. ~35% USDC collateral = indirect Circle dependency.',
+    'Overcollateralized stablecoin with MKR governance. No individual address freezing. Emergency Shutdown is protocol-wide. Significant USDC collateral exposure.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

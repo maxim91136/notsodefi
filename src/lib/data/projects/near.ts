@@ -47,7 +47,7 @@ export const near: Project = {
   consensusType: 'pos',
   website: 'https://near.org',
   description:
-    '384 validators, Nakamoto Coefficient 10. Top 5 stake 21%. Nightshade sharding, no kill-switch. ~29% insider allocation.',
+    'Sharded PoS blockchain with Nightshade consensus. No kill switch. Foundation-led development.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

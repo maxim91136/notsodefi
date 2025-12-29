@@ -56,7 +56,7 @@ export const arbitrum: Project = {
   consensusType: 'pos',
   website: 'https://arbitrum.io',
   description:
-    'Largest L2 by TVL ($16.78B). Centralized sequencer (Foundation). Security Council 9/12 multisig. 44% insider allocation. Stage 1 on L2Beat.',
+    'Ethereum L2 Optimistic Rollup. Centralized sequencer. Security Council multisig can upgrade contracts. Users can force-exit via L1.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-27',
   sources: [

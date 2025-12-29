@@ -42,7 +42,7 @@ export const sui: Project = {
   consensusType: 'pos',
   website: 'https://sui.io',
   description:
-    'PoS L1 with NC 19, 126 validators. 52% of supply controlled by Foundation. No public sale, insiders dominate.',
+    'Move-based PoS L1 from ex-Meta Diem team. Foundation controls majority of supply. No public sale.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

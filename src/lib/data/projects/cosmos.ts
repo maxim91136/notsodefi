@@ -39,7 +39,7 @@ export const cosmos: Project = {
   consensusType: 'pos',
   website: 'https://cosmos.network',
   description:
-    'BFT PoS hub for IBC ecosystem. ~200 validators, Nakamoto ~6-7. ICO 2017 with 20% founder allocation.',
+    'BFT PoS hub for IBC ecosystem. Tendermint/CometBFT consensus. On-chain governance. No kill switch.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-24',
   sources: [

@@ -51,7 +51,7 @@ export const aptos: Project = {
   consensusType: 'pos',
   website: 'https://aptosfoundation.org',
   description:
-    '136 validators, Nakamoto Coefficient 18. Top 5 stake 12%. Move-based L1 from ex-Meta team. ~49% insider allocation at launch.',
+    'Move-based L1 from ex-Meta Diem team. PoS consensus. No kill switch. Foundation-controlled development.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

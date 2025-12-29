@@ -52,7 +52,7 @@ export const kaspa: Project = {
   consensusType: 'pow',
   website: 'https://kaspa.org',
   description:
-    'PoW blockDAG with GHOSTDAG consensus. Fair launch: 0% premine, no ICO, no team allocation. Community-run since DAGlabs renounced ownership.',
+    'PoW blockDAG with GHOSTDAG consensus. Fair launch: no premine, no ICO, no team allocation. Community-run.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-25',
   sources: [

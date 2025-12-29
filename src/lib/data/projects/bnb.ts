@@ -38,7 +38,7 @@ export const bnb: Project = {
   consensusType: 'dpos',
   website: 'https://www.bnbchain.org',
   description:
-    'BNB Chain (formerly BSC) uses Proof of Staked Authority with 21 validators. Centrally controlled by Binance exchange.',
+    'Proof of Staked Authority blockchain. Controlled by Binance exchange. Kill switch active.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-23',
   sources: [

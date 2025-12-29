@@ -38,7 +38,7 @@ export const xrp: Project = {
   consensusType: 'federated',
   website: 'https://xrpl.org',
   description:
-    'XRP Ledger uses Federated Consensus with trusted validator lists (UNL). 100% premined at genesis with significant allocation to Ripple Labs and founders.',
+    'Federated Consensus with trusted validator lists (UNL). Fully premined at genesis. Ripple Labs controls escrow and default UNL.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-23',
   sources: [

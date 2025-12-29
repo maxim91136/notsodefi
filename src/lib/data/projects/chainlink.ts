@@ -40,7 +40,7 @@ export const chainlink: Project = {
   consensusType: 'federated',  // Permissioned node operators, vetted by Chainlink
   website: 'https://chain.link',
   description:
-    'Oracle monopoly powering DeFi. ETH/USD: 31 operators, 10 minimum. Undocumented multisig can manipulate any feed. 80% of LINK in 125 wallets. Sergey worth $1B+.',
+    'Oracle network with permissioned operator set. Multisig can update price feeds. Labs controls all development.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-25',
   sources: [

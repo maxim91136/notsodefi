@@ -46,7 +46,7 @@ export const tether: Project = {
   consensusType: 'federated',  // Single entity control
   website: 'https://tether.to',
   description:
-    '$118B stablecoin controlled by one company. Can freeze any address. 7th largest US Treasury holder. Same company as Bitfinex. Fined $41M for lying about reserves.',
+    'Centralized stablecoin issued by Tether Ltd (iFinex). Can freeze any address. Same ownership as Bitfinex.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

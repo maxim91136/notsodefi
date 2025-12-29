@@ -43,7 +43,7 @@ export const hedera: Project = {
   consensusType: 'federated',  // Hashgraph with permissioned council
   website: 'https://hedera.com',
   description:
-    'Corporate blockchain theater. 29 nodes run by Google, IBM, Boeing etc. No one else allowed. Council controls everything. "Decentralization roadmap" is marketing. Kill switch active.',
+    'Hashgraph consensus with permissioned council nodes. No external node operators allowed. Council controls all decisions. Kill switch active.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

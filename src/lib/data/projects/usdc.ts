@@ -45,7 +45,7 @@ export const usdc: Project = {
   consensusType: 'federated',  // Single entity control
   website: 'https://circle.com/usdc',
   description:
-    '$76B stablecoin by Circle (NYSE: CRCL). Publicly traded company with same kill-switch as Tether. Can freeze any address. Depegged during SVB collapse. Centre dissolved - Circle now sole issuer.',
+    'Centralized stablecoin issued by Circle. Can freeze any address. Centre dissolved - Circle now sole issuer. US-regulated with same freeze capability as Tether.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

@@ -38,7 +38,7 @@ export const bittensor: Project = {
   consensusType: 'hybrid',
   website: 'https://bittensor.com',
   description:
-    'Decentralized AI/ML network with 90+ subnets. Fair launch, no premine. Yuma Consensus.',
+    'Decentralized AI/ML network built on Substrate. Fair launch, no premine. Yuma Consensus with subnets.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-24',
   sources: [

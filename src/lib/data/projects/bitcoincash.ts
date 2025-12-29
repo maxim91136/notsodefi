@@ -51,7 +51,7 @@ export const bitcoincash: Project = {
   consensusType: 'pow',
   website: 'https://bitcoincash.org',
   description:
-    'Bitcoin fork focused on larger blocks. SHA-256 PoW, inherited fair launch. High mining concentration (ViaBTC 37%).',
+    'Bitcoin fork focused on larger blocks. SHA-256 PoW, inherited fair launch. No kill switch.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-24',
   sources: [

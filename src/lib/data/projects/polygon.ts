@@ -54,7 +54,7 @@ export const polygon: Project = {
   consensusType: 'pos',
   website: 'https://polygon.technology',
   description:
-    '104 validators (max 105), Nakamoto Coefficient 4. Top 5 stake ~40%. First L2 in framework. ~24% insider allocation.',
+    'Ethereum sidechain/L2 with PoS consensus. Capped validator set. Labs-controlled development.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-27',
   sources: [

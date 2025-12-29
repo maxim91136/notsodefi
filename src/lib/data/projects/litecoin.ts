@@ -51,7 +51,7 @@ export const litecoin: Project = {
   consensusType: 'pow',
   website: 'https://litecoin.org',
   description:
-    'Bitcoin fork with faster block times (2.5 min) and Scrypt PoW. Fair launch, Charlie Lee stepped back from active role.',
+    'Bitcoin fork with faster block times and Scrypt PoW. Fair launch, no premine. No kill switch.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-24',
   sources: [

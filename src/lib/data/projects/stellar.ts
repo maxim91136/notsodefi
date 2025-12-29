@@ -42,7 +42,7 @@ export const stellar: Project = {
   consensusType: 'federated',
   website: 'https://stellar.org',
   description:
-    'FBA consensus with 7 tier-1 orgs. SDF holds 35% of supply, controls development, no on-chain governance.',
+    'Federated Byzantine Agreement consensus. SDF controls development and significant supply. No on-chain governance.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

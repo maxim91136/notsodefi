@@ -38,7 +38,7 @@ export const tron: Project = {
   consensusType: 'dpos',
   website: 'https://tron.network',
   description:
-    'DPoS blockchain with 27 Super Representatives. Controlled by Justin Sun and Tron Foundation.',
+    'DPoS blockchain with fixed Super Representative set. Controlled by Justin Sun and Tron Foundation. Kill switch active.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-24',
   sources: [

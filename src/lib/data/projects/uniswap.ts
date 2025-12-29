@@ -44,7 +44,7 @@ export const uniswap: Project = {
   consensusType: 'pos',  // Token-weighted governance
   website: 'https://uniswap.org',
   description:
-    'Dr. Jekyll & Mr. Hyde of DeFi: Core contracts are IMMUTABLE (no admin keys, no kill switch - truly trustless!), but governance is plutocracy (Gini 0.938, top 1% = 47.5%). UNIfication shifted control to Labs. 40% insider allocation.',
+    'DEX with immutable core contracts (no admin keys, no kill switch). Token-weighted governance. Labs controls development.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-26',
   sources: [

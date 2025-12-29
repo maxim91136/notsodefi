@@ -39,7 +39,7 @@ export const aave: Project = {
   consensusType: 'pos',  // Token-weighted governance (like PoS: stake = power)
   website: 'https://aave.com',
   description:
-    'DeFi lending giant where governance is theater. Top 3 voters = 58% power. Founder bought $10M to swing votes. Labs controls code, domain, frontend. Treasury managed externally.',
+    'DeFi lending protocol with token-weighted governance. Labs controls code and frontend. Guardian multisig can pause protocol.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-27',
   sources: [

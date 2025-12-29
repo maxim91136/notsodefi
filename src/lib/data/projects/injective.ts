@@ -52,7 +52,7 @@ export const injective: Project = {
   consensusType: 'pos',
   website: 'https://injective.com',
   description:
-    '50 validators, Nakamoto Coefficient 5. Top 5 stake ~34%. Cosmos SDK DeFi chain. ~42% insider allocation. Backed by Binance, Jump, Pantera.',
+    'Cosmos SDK DeFi chain with Tendermint consensus. Backed by Binance, Jump, Pantera. No kill switch.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-27',
   sources: [

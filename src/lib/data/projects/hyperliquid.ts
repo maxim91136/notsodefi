@@ -40,7 +40,7 @@ export const hyperliquid: Project = {
   consensusType: 'pos',
   website: 'https://hyperliquid.xyz',
   description:
-    'Perp DEX L1 with HyperBFT. NC=3 (all Foundation!), 59% stake by Foundation. Kill-switch active.',
+    'Perp DEX L1 with HyperBFT consensus. Foundation controls majority stake. Kill switch active.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-25',
   sources: [

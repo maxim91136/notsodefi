@@ -48,7 +48,7 @@ export const lido: Project = {
   consensusType: 'pos',  // Token-weighted governance
   website: 'https://lido.fi',
   description:
-    'Controls ~25% of staked ETH - critical Ethereum infrastructure. Permissioned node operators (~30), upgradeable contracts, plutocratic governance (64% founder allocation). Dual governance gives stETH veto power. High centralization risk.',
+    'Liquid staking protocol for Ethereum. Permissioned node operators. Upgradeable contracts. Dual governance gives stETH holders veto power.',
   scores: calculateProjectScores(rawValues),
   lastUpdated: '2025-12-27',
   sources: [
