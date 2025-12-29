@@ -138,18 +138,21 @@ export default function ProblemsPage() {
           <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20">
             <h4 className="font-semibold text-red-400 mb-2">Problem</h4>
             <p className="text-sm">
-              Common hash algorithms offer limited security against quantum computers.
+              Shor&apos;s algorithm breaks elliptic curve cryptography (ECDSA, Schnorr).
+              Grover&apos;s algorithm weakens hash functions quadratically.
+              Signatures are the critical vulnerability - not hashes.
             </p>
           </div>
           <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20">
             <h4 className="font-semibold text-green-400 mb-2">Possible Approach</h4>
             <p className="text-sm">
-              Post-quantum hash algorithms like SHA3-512. Higher Grover resistance.
+              Post-quantum signatures (SPHINCS+, Dilithium, FALCON).
+              SHA3-512 for hash functions. Lattice-based cryptography for key exchange.
             </p>
           </div>
           <p className="text-white/60 italic text-sm">
             <strong>Honest limitation:</strong> Current estimates give decades of buffer.
-            But estimates have been wrong before.
+            But estimates have been wrong before. Migration is complex.
           </p>
         </div>
       </section>
@@ -197,6 +200,156 @@ export default function ProblemsPage() {
           </div>
           <p className="text-white/60 italic text-sm">
             <strong>Honest limitation:</strong> Someone has to pay. The only question is who and under what conditions.
+          </p>
+        </div>
+      </section>
+
+      {/* 8. Liquid Staking Centralization */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">8. Liquid Staking Centralization</h2>
+        <div className="space-y-4 text-white/80">
+          <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20">
+            <h4 className="font-semibold text-red-400 mb-2">Problem</h4>
+            <p className="text-sm">
+              Liquid staking protocols concentrate stake. Lido controls ~30% of staked ETH.
+              Users delegate for convenience, creating new centralization vectors in PoS systems.
+            </p>
+          </div>
+          <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20">
+            <h4 className="font-semibold text-green-400 mb-2">Possible Approach</h4>
+            <p className="text-sm">
+              Self-limiting mechanisms. Stake caps. Distributed validator technology (DVT).
+              Protocol-level incentives against concentration.
+            </p>
+          </div>
+          <p className="text-white/60 italic text-sm">
+            <strong>Honest limitation:</strong> Convenience wins. Users prefer liquid tokens over locked stake.
+            Market forces favor concentration.
+          </p>
+        </div>
+      </section>
+
+      {/* 9. MEV (Maximal Extractable Value) */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">9. MEV (Maximal Extractable Value)</h2>
+        <div className="space-y-4 text-white/80">
+          <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20">
+            <h4 className="font-semibold text-red-400 mb-2">Problem</h4>
+            <p className="text-sm">
+              Block producers extract value by reordering transactions.
+              Sophisticated actors centralize block building. Creates validator centralization pressure.
+            </p>
+          </div>
+          <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20">
+            <h4 className="font-semibold text-green-400 mb-2">Possible Approach</h4>
+            <p className="text-sm">
+              Proposer-Builder Separation (PBS). Encrypted mempools. Fair ordering protocols.
+              MEV redistribution to users.
+            </p>
+          </div>
+          <p className="text-white/60 italic text-sm">
+            <strong>Honest limitation:</strong> MEV is inherent to ordering transactions.
+            Solutions redistribute or obscure it, but don&apos;t eliminate it.
+          </p>
+        </div>
+      </section>
+
+      {/* 10. Geographic Centralization */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">10. Geographic Centralization</h2>
+        <div className="space-y-4 text-white/80">
+          <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20">
+            <h4 className="font-semibold text-red-400 mb-2">Problem</h4>
+            <p className="text-sm">
+              Nodes, miners, and validators concentrate in specific jurisdictions.
+              China mining ban (2021) showed regulatory risk. Single-country concentration enables coordinated shutdown.
+            </p>
+          </div>
+          <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20">
+            <h4 className="font-semibold text-green-400 mb-2">Possible Approach</h4>
+            <p className="text-sm">
+              Incentivize geographic distribution. Penalize concentration.
+              Make node operation accessible in more jurisdictions.
+            </p>
+          </div>
+          <p className="text-white/60 italic text-sm">
+            <strong>Honest limitation:</strong> Cheap electricity and friendly regulation attract concentration.
+            Market forces work against distribution.
+          </p>
+        </div>
+      </section>
+
+      {/* 11. RPC/Infrastructure Centralization */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">11. RPC/Infrastructure Centralization</h2>
+        <div className="space-y-4 text-white/80">
+          <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20">
+            <h4 className="font-semibold text-red-400 mb-2">Problem</h4>
+            <p className="text-sm">
+              Most users access blockchains through centralized RPC providers (Infura, Alchemy).
+              Few run their own nodes. Creates single points of failure and censorship vectors.
+            </p>
+          </div>
+          <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20">
+            <h4 className="font-semibold text-green-400 mb-2">Possible Approach</h4>
+            <p className="text-sm">
+              Light clients. Decentralized RPC networks. Make node operation easier.
+              Reduce hardware requirements for verification.
+            </p>
+          </div>
+          <p className="text-white/60 italic text-sm">
+            <strong>Honest limitation:</strong> Running nodes is inconvenient.
+            Centralized services offer better UX. Convenience wins.
+          </p>
+        </div>
+      </section>
+
+      {/* 12. Oracle Centralization */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">12. Oracle Centralization</h2>
+        <div className="space-y-4 text-white/80">
+          <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20">
+            <h4 className="font-semibold text-red-400 mb-2">Problem</h4>
+            <p className="text-sm">
+              Smart contracts need external data. Chainlink dominates oracle infrastructure.
+              Oracle failure = DeFi failure. Single provider creates systemic risk.
+            </p>
+          </div>
+          <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20">
+            <h4 className="font-semibold text-green-400 mb-2">Possible Approach</h4>
+            <p className="text-sm">
+              Multiple oracle sources. On-chain price discovery (AMM-based).
+              Decentralized oracle networks with economic guarantees.
+            </p>
+          </div>
+          <p className="text-white/60 italic text-sm">
+            <strong>Honest limitation:</strong> External data is inherently trust-dependent.
+            The oracle problem has no perfect solution.
+          </p>
+        </div>
+      </section>
+
+      {/* 13. Social Layer Attacks */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">13. Social Layer Attacks</h2>
+        <div className="space-y-4 text-white/80">
+          <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20">
+            <h4 className="font-semibold text-red-400 mb-2">Problem</h4>
+            <p className="text-sm">
+              Governance capture through social engineering. Influencer manipulation.
+              Community splits (BTC/BCH, ETH/ETC). Coordinated narrative attacks.
+            </p>
+          </div>
+          <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20">
+            <h4 className="font-semibold text-green-400 mb-2">Possible Approach</h4>
+            <p className="text-sm">
+              Minimize governance surface. Protocol rules over social consensus.
+              Reduce attack surface by reducing decisions that require coordination.
+            </p>
+          </div>
+          <p className="text-white/60 italic text-sm">
+            <strong>Honest limitation:</strong> Humans run the systems.
+            Social attacks are always possible. The goal is resilience, not immunity.
           </p>
         </div>
       </section>

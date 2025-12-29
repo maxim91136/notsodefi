@@ -2,6 +2,23 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.37.0-rc2] - 2025-12-29
+
+### Added
+- **Problems Page** - 6 new problems documented (now 13 total)
+  - Liquid Staking Centralization (Lido ~30% ETH)
+  - MEV (Maximal Extractable Value)
+  - Geographic Centralization (China mining ban example)
+  - RPC/Infrastructure Centralization (Infura/Alchemy)
+  - Oracle Centralization (Chainlink dominance)
+  - Social Layer Attacks (governance capture, community splits)
+
+### Fixed
+- **Problems Page** - Quantum Vulnerability section corrected
+  - Now correctly focuses on signatures (ECDSA/Schnorr via Shor's algorithm)
+  - Hashes (Grover's algorithm) are secondary concern
+  - Added post-quantum signature solutions (SPHINCS+, Dilithium, FALCON)
+
 ## [0.37.0-rc1] - 2025-12-29
 
 ### Added
