@@ -2,6 +2,16 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.41.0-rc1] - 2025-12-29
+
+### Added
+- **SPOF Analysis Page** - Single Point of Failure analysis for all 37 projects
+  - Unkillable (6): Bitcoin, Monero, Dogecoin, BCH, Litecoin, Kaspa
+  - Fragile (9): Can survive if person/org leaves
+  - Critical (15): Company/Foundation death = project death
+  - Instant Death (7): Kill-switch active + critical SPOF
+  - Key insight: Only 6/37 projects have no identifiable SPOF
+
 ## [0.40.0] - 2025-12-29
 
 ### Added

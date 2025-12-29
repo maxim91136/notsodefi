@@ -54,6 +54,12 @@ export function Header() {
             >
               Red Flags
             </Link>
+            <Link
+              href="/spof"
+              className="text-sm text-orange-400 hover:text-orange-300 transition-colors"
+            >
+              SPOF
+            </Link>
             <a
               href="https://github.com/maxim91136/notsodefi"
               target="_blank"
@@ -120,6 +126,13 @@ export function Header() {
                 className="px-2 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-white/5 rounded transition-colors"
               >
                 Red Flags
+              </Link>
+              <Link
+                href="/spof"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-2 py-2 text-sm text-orange-400 hover:text-orange-300 hover:bg-white/5 rounded transition-colors"
+              >
+                SPOF
               </Link>
               <a
                 href="https://github.com/maxim91136/notsodefi"

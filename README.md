@@ -29,6 +29,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 - **Filter & Search** - By category, consensus type, or name
 - **[Known Problems](https://notsodefi.com/problems)** - Documented limitations across all blockchain systems
 - **[Red Flags](https://notsodefi.com/red-flags)** - Marketing-to-reality translation guide
+- **[SPOF Analysis](https://notsodefi.com/spof)** - Single Point of Failure analysis (only 6/37 unkillable)
 
 ## The Framework
 
