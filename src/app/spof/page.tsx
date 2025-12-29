@@ -159,7 +159,7 @@ export default function SPOFPage() {
           <strong>Disclaimer:</strong> This analysis is based on publicly available data and documentation.
           It is provided for educational purposes only and does not constitute financial advice.
           All assessments represent our methodology&apos;s output based on observable data, not accusations.
-          Project structures may change. <a href="https://github.com/maxim91136/notsodefi" className="underline">Submit corrections with evidence</a>.
+          Project structures may change. <a href="https://github.com/maxim91136/notsodefi" target="_blank" rel="noopener noreferrer" className="underline">Submit corrections with evidence</a>.
         </p>
       </div>
 

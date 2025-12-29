@@ -19,6 +19,25 @@ export const metadata: Metadata = {
   description:
     'A framework for objectively measuring blockchain and protocol decentralization. Chain Score, Control Score, Fairness Score.',
   keywords: ['decentralization', 'blockchain', 'crypto', 'DeFi', 'analysis'],
+  openGraph: {
+    title: 'NotSoDeFi.com - Measuring Real Decentralization',
+    description:
+      'A framework for objectively measuring blockchain and protocol decentralization. 37 projects ranked.',
+    url: 'https://notsodefi.com',
+    siteName: 'NotSoDeFi.com',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'NotSoDeFi.com - Measuring Real Decentralization',
+    description:
+      'A framework for objectively measuring blockchain and protocol decentralization. 37 projects ranked.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
