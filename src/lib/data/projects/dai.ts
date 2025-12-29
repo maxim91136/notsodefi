@@ -33,7 +33,7 @@ const rawValues: Record<string, number | null> = {
   B2: 4,    // Open source, community proposals, but core team leads development - concentrated
   B3: 5,    // makerdao.com, sky.money - foundation controlled, DAO governed
   B4: 7,    // Treasury/reserves governed by MKR votes, not single entity
-  B5: 8,    // NO targeted freeze capability. Emergency Shutdown is protocol-wide, requires 50K MKR
+  B5: 5,    // No direct freeze, but ~40% USDC collateral = indirect Circle dependency. Emergency Shutdown requires 50K MKR
   B6: 4,   // SCD→MCD migration, PSM changes, Sky/USDS rebrand ongoing
 
   // Fairness Score (C1-C2)
@@ -51,7 +51,7 @@ export const dai: Project = {
   description:
     'Overcollateralized stablecoin with MKR governance. No individual address freezing. Emergency Shutdown is protocol-wide. Significant USDC collateral exposure.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-12-26',
+  lastUpdated: '2025-12-29',
   sources: [
     'https://docs.makerdao.com/smart-contract-modules/shutdown',
     'https://coinlaw.io/makerdao-statistics/',

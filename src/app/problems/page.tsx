@@ -354,6 +354,32 @@ export default function ProblemsPage() {
         </div>
       </section>
 
+      {/* 14. Collateral Contagion */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">14. Collateral Contagion</h2>
+        <div className="space-y-4 text-white/80">
+          <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20">
+            <h4 className="font-semibold text-red-400 mb-2">Problem</h4>
+            <p className="text-sm">
+              &quot;Decentralized&quot; protocols inherit centralization from their collateral.
+              DAI is ~40% backed by USDC. Circle freezes USDC → DAI destabilizes.
+              Wrapped assets (WBTC, WETH) depend on custodians.
+            </p>
+          </div>
+          <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20">
+            <h4 className="font-semibold text-green-400 mb-2">Possible Approach</h4>
+            <p className="text-sm">
+              Native collateral only (ETH, not USDC). Diversified collateral baskets.
+              Transparent collateral composition. Risk-weighted scoring.
+            </p>
+          </div>
+          <p className="text-white/60 italic text-sm">
+            <strong>Honest limitation:</strong> Users want stability and liquidity.
+            Centralized collateral is often more liquid. Market pressure favors convenience over purity.
+          </p>
+        </div>
+      </section>
+
       {/* Conclusion */}
       <Card>
         <CardHeader>
