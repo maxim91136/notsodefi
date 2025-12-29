@@ -1,7 +1,9 @@
 /**
  * Polygon PoS - Decentralization Assessment
  *
- * Ethereum L2/sidechain using PoS consensus. Originally Matic Network (2017).
+ * Plasma-based SIDECHAIN, not a true rollup. Originally Matic Network (2017).
+ * Security depends on Polygon validators, NOT Ethereum L1.
+ * Only checkpoints (merkle roots) posted to Ethereum - no fraud proofs.
  * MATIC→POL migration completed September 2024.
  *
  * Data from Polygon Staking API (daily fetch):
@@ -54,9 +56,9 @@ export const polygon: Project = {
   consensusType: 'pos',
   website: 'https://polygon.technology',
   description:
-    'Ethereum sidechain/L2 with PoS consensus. Capped validator set. Labs-controlled development.',
+    'Plasma-based sidechain with own validator set. Not a rollup - security depends on Polygon validators, not Ethereum. Capped at 105 validators.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-12-27',
+  lastUpdated: '2025-12-29',
   sources: [
     'https://staking-api.polygon.technology/api/v2/validators',
     'https://cryptorank.io/ico/matic-network',
