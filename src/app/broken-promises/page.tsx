@@ -117,10 +117,10 @@ const promisesData: PromiseEntry[] = [
   {
     project: 'Bittensor',
     symbol: 'TAO',
-    promise: 'Progressive decentralization',
+    promise: 'Fair launch, no VC, no premine',
     date: '2021',
-    currentState: 'Opentensor Foundation still controls core development',
-    verdict: 'pending',
+    currentState: 'Incubated by Polychain 2019. VCs hold $425M+ (DCG 2.4% supply). 4 funding rounds on Crunchbase.',
+    verdict: 'broken',
   },
   {
     project: 'Internet Computer',

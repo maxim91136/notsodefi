@@ -2,8 +2,15 @@
  * Bittensor (TAO) - Decentralization Assessment
  *
  * Decentralized AI/ML network built on Substrate.
- * Launched 2021, no premine.
+ * Launched 2021. Claims "fair launch" but was incubated by Polychain Capital in 2019.
  * Uses Yuma Consensus with validators and miners on subnets.
+ *
+ * FUNDING REALITY (contradicts "no VC" narrative):
+ * - Polychain Capital: Incubated 2019, holds ~$200M in TAO
+ * - DCG (Barry Silbert): Largest holder ~500k TAO (2.4% supply, ~$175M)
+ * - Dao5: ~$50M in TAO
+ * - Total VC holdings: $425M+
+ * - Crunchbase: 4 funding rounds documented
  */
 
 import { Project } from '@/lib/framework';
@@ -26,7 +33,7 @@ const rawValues: Record<string, number | null> = {
   B6: 4,   // Young chain (2021), subnet structure evolving, Substrate upgrades
 
   // Fairness Score (C1-C2)
-  C1: 0,    // No premine - fair launch
+  C1: 45,   // VCs incubated 2019, $425M+ VC holdings despite "fair launch" claims
   C2: 6,   // Subnet autonomy + on-chain governance via ZIP-style proposals
 };
 
@@ -38,12 +45,14 @@ export const bittensor: Project = {
   consensusType: 'hybrid',
   website: 'https://bittensor.com',
   description:
-    'Decentralized AI/ML network built on Substrate. Fair launch, no premine. Yuma Consensus with subnets.',
+    'Decentralized AI/ML network. Claims "fair launch, no VC" but incubated by Polychain 2019. VCs hold $425M+ in tokens.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-12-24',
+  lastUpdated: '2025-12-30',
   sources: [
     'https://taostats.io',
     'https://docs.bittensor.com',
     'https://github.com/opentensor/bittensor',
+    'https://fortune.com/crypto/2024/04/15/bittensor-polychain-capital/',
+    'https://www.theblock.co/post/dcg-bittensor-holdings-2025',
   ],
 };
