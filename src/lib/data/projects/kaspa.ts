@@ -1,10 +1,18 @@
 /**
  * Kaspa (KAS) - Decentralization Assessment
  *
- * Launched November 2021, developed by community after DAGlabs renounced ownership.
- * GHOSTDAG consensus (PoW blockDAG).
- * Fair launch: no premine, no ICO, no team allocation.
- * 100% mineable, kHeavyHash algorithm (ASIC mining).
+ * Launched November 2021. GHOSTDAG consensus (PoW blockDAG).
+ * kHeavyHash algorithm (ASIC mining).
+ *
+ * "FAIR LAUNCH" CONTROVERSY:
+ * - No technical premine (coins weren't pre-created)
+ * - BUT: DAGlabs ($8M Polychain funding) mined ~2.5-3% of supply post-launch
+ * - Founder Sompolinsky (Dec 2021): "Kaspa is neither attempting nor
+ *   pretending to be a 'fair launch' coin"
+ * - "DAGlabs is a for-profit entity whose business model is based on mining Kaspa"
+ * - Source: https://hashdag.medium.com/in-which-i-love-my-truly-truly-fair-60e74cbaaf7b
+ *
+ * After launch, DAGlabs dissolved and IP was waived. Now community-run.
  */
 
 import { Project } from '@/lib/framework';
@@ -40,8 +48,8 @@ const rawValues: Record<string, number | null> = {
   B6: 2,   // Young chain (2021) but minimal changes to GHOSTDAG PoW consensus
 
   // Fairness Score (C1-C2)
-  C1: 100,  // 0% premine - TRUE FAIR LAUNCH
-  C2: 8,   // 100% mining distribution, similar to Bitcoin
+  C1: 3,    // ~3% to DAGlabs/Polychain via VC-funded early mining. Founder: "not a fair launch"
+  C2: 7,   // Mining distribution, but early capital advantage for insiders
 };
 
 export const kaspa: Project = {
@@ -52,12 +60,13 @@ export const kaspa: Project = {
   consensusType: 'pow',
   website: 'https://kaspa.org',
   description:
-    'PoW blockDAG with GHOSTDAG consensus. Fair launch: no premine, no ICO, no team allocation. Community-run.',
+    'PoW blockDAG with GHOSTDAG consensus. No technical premine, but ~3% mined by VC-funded DAGlabs ($8M Polychain) at launch. Founder Sompolinsky: "Kaspa is neither attempting nor pretending to be a fair launch coin" (https://hashdag.medium.com/in-which-i-love-my-truly-truly-fair-60e74cbaaf7b)',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-12-25',
+  lastUpdated: '2025-12-29',
   sources: [
     'https://kaspa.org/tokenomics/',
-    'https://api.kaspa.org/docs',
+    'https://wiki.kaspa.org/en/prehistory',
+    'https://hashdag.medium.com/in-which-i-love-my-truly-truly-fair-60e74cbaaf7b',
     'https://explorer.kaspa.org',
   ],
 };
