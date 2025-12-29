@@ -5,15 +5,15 @@ import Link from 'next/link';
 const redFlags = [
   {
     marketing: 'Community-driven',
-    reality: 'Foundation entscheidet',
+    reality: 'Foundation decides everything',
   },
   {
     marketing: 'Governance token',
-    reality: 'Whale-Voting, keine echte Macht',
+    reality: 'Whale voting, no real power',
   },
   {
     marketing: 'Decentralized network',
-    reality: 'Mehrere Server statt einer',
+    reality: 'Multiple servers instead of one',
   },
   {
     marketing: 'Trustless',
@@ -21,59 +21,59 @@ const redFlags = [
   },
   {
     marketing: 'Permissionless',
-    reality: '...außer für Validatoren',
+    reality: '...except for validators',
   },
   {
     marketing: 'Open source',
-    reality: 'Code offen, Kontrolle geschlossen',
+    reality: 'Code is open, control is closed',
   },
   {
     marketing: 'Progressive decentralization',
-    reality: 'Vielleicht, irgendwann',
+    reality: 'Maybe, someday',
   },
   {
     marketing: 'Fair launch',
-    reality: 'Insider wussten früher Bescheid',
+    reality: 'Insiders knew earlier',
   },
   {
     marketing: 'No premine',
-    reality: 'VC-funded Team minte zuerst',
+    reality: 'VC-funded team mined first',
   },
   {
     marketing: 'Decentralized governance',
-    reality: '10 Wallets entscheiden alles',
+    reality: '10 wallets decide everything',
   },
   {
     marketing: 'Battle-tested',
-    reality: 'Wurde noch nicht gehackt (öffentlich)',
+    reality: 'Not hacked yet (publicly)',
   },
   {
     marketing: 'Immutable',
-    reality: 'Bis wir upgraden müssen',
+    reality: 'Until we need to upgrade',
   },
   {
     marketing: 'Censorship-resistant',
-    reality: 'Sequencer kann Transaktionen ignorieren',
+    reality: 'Sequencer can ignore transactions',
   },
   {
     marketing: 'Decentralized stablecoin',
-    reality: '40% USDC als Collateral',
+    reality: '40% USDC as collateral',
   },
   {
     marketing: 'DAO-governed',
-    reality: 'Plutokratie mit Extra-Schritten',
+    reality: 'Plutocracy with extra steps',
   },
   {
     marketing: 'Non-custodial',
-    reality: 'Upgradeable Proxy Contract',
+    reality: 'Upgradeable proxy contract',
   },
   {
     marketing: 'Validator network',
-    reality: '21 von der Foundation ausgewählt',
+    reality: '21 picked by the foundation',
   },
   {
     marketing: 'Layer 2 solution',
-    reality: 'Sidechain mit Ethereum-Logo',
+    reality: 'Sidechain with Ethereum logo',
   },
 ];
 
@@ -86,18 +86,18 @@ export default function RedFlagsPage() {
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold mb-2">Red Flags im Marketing</h1>
+      <h1 className="text-3xl font-bold mb-2">Marketing Red Flags</h1>
       <p className="text-gray-400 mb-8">
-        Was Crypto-Projekte sagen vs. was sie meinen. Ein Übersetzungsguide für Marketing-Bullshit.
+        What crypto projects say vs. what they mean. A translation guide for marketing bullshit.
       </p>
 
       <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-lg p-4 mb-8">
         <p className="text-yellow-200 text-sm">
-          <strong>Disclaimer:</strong> Satire mit Wahrheitskern. Nicht alle Projekte sind gleich -
-          aber diese Phrasen sollten immer kritisch hinterfragt werden.
-          Überprüfe die Fakten auf unserer{' '}
+          <strong>Disclaimer:</strong> Satire with a kernel of truth. Not all projects are the same -
+          but these phrases should always be questioned critically.
+          Verify the facts on our{' '}
           <Link href="/projects" className="underline hover:text-yellow-100">
-            Projektseite
+            projects page
           </Link>.
         </p>
       </div>
@@ -107,10 +107,10 @@ export default function RedFlagsPage() {
           <thead>
             <tr className="border-b border-gray-700">
               <th className="text-left py-4 px-4 text-gray-400 font-medium">
-                Wenn ein Projekt sagt...
+                When a project says...
               </th>
               <th className="text-left py-4 px-4 text-gray-400 font-medium">
-                ...bedeutet es oft:
+                ...it often means:
               </th>
             </tr>
           </thead>
@@ -134,50 +134,50 @@ export default function RedFlagsPage() {
 
       <div className="mt-12 p-8 bg-red-900/20 border border-red-700/50 rounded-lg text-center">
         <p className="text-xl md:text-2xl font-medium text-red-200 italic">
-          &ldquo;Je mehr ein Projekt Dezentralisierung bewirbt,<br className="hidden md:block" />
-          desto skeptischer sollte man sein.&rdquo;
+          &ldquo;The more a project advertises decentralization,<br className="hidden md:block" />
+          the more skeptical you should be.&rdquo;
         </p>
         <p className="mt-4 text-gray-400 text-sm">
-          Wirklich dezentralisierte Projekte (Bitcoin, Monero) müssen es nicht betonen - es ist einfach wahr.
+          Truly decentralized projects (Bitcoin, Monero) don&apos;t need to emphasize it - it&apos;s simply true.
         </p>
       </div>
 
       <div className="mt-12 p-6 bg-gray-800/50 rounded-lg">
-        <h2 className="text-xl font-bold mb-4">Wie man Marketing-Claims überprüft</h2>
+        <h2 className="text-xl font-bold mb-4">How to Verify Marketing Claims</h2>
         <ul className="space-y-3 text-gray-300">
           <li className="flex items-start gap-2">
             <span className="text-blue-400">1.</span>
-            <span><strong>Nakamoto Coefficient prüfen:</strong> Wie viele Entitäten könnten das Netzwerk stoppen?</span>
+            <span><strong>Check Nakamoto Coefficient:</strong> How many entities could halt the network?</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-blue-400">2.</span>
-            <span><strong>Token-Verteilung:</strong> Wer hält wie viel? Wer hatte Zugang vor dem Launch?</span>
+            <span><strong>Token Distribution:</strong> Who holds how much? Who had access before launch?</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-blue-400">3.</span>
-            <span><strong>Upgrade-Mechanismus:</strong> Kann jemand die Regeln ändern? Wer?</span>
+            <span><strong>Upgrade Mechanism:</strong> Can someone change the rules? Who?</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-blue-400">4.</span>
-            <span><strong>Kill-Switch:</strong> Kann das Netzwerk gestoppt werden? Von wem?</span>
+            <span><strong>Kill Switch:</strong> Can the network be stopped? By whom?</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-blue-400">5.</span>
-            <span><strong>Founder-Zitate lesen:</strong> Was sagen sie, wenn sie ehrlich sind?</span>
+            <span><strong>Read Founder Quotes:</strong> What do they say when they&apos;re being honest?</span>
           </li>
         </ul>
       </div>
 
       <div className="mt-8 text-center text-gray-500 text-sm">
         <p>
-          Kennst du weitere Red Flags?{' '}
+          Know more red flags?{' '}
           <a
             href="https://github.com/maxim91136/notsodefi"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:text-blue-300"
           >
-            Pull Request auf GitHub
+            Submit a Pull Request
           </a>
         </p>
       </div>
