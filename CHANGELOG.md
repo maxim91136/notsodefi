@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.36.0-rc2] - 2025-12-29
+
+### Changed
+- **README** - Updated Philosophy section
+  - "Bitcoin as the benchmark" now correctly states "reference point for decentralization scoring"
+  - Removed incorrect claim about "only project to score 10/10" (multiple PoW chains have B5=10)
+- **README** - Added link to /problems page under Features
+
 ## [0.36.0-rc1] - 2025-12-29
 
 ### Changed

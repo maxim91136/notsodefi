@@ -17,7 +17,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 ## Philosophy
 
 - **Transparency over hype** – Every score is backed by verifiable data sources
-- **Bitcoin as the benchmark** – The only project to score 10/10 in protocol immutability
+- **Bitcoin as the benchmark** – The reference point for decentralization scoring
 - **Centralization is a risk vector** – Admin keys, kill switches, and foundation control matter
 - **Progress is possible** – We track how projects evolve over time
 
@@ -27,6 +27,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 - **Trend Charts** - 7-day sparklines showing score history
 - **Network Data** - Daily API fetches with historical R2 archive
 - **Filter & Search** - By category, consensus type, or name
+- **[Known Problems](https://notsodefi.com/problems)** - Documented limitations across all blockchain systems
 
 ## The Framework
 
