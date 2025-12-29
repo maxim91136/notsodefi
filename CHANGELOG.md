@@ -2,6 +2,26 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.44.0] - 2025-12-29
+
+### Added
+- **Terms of Service Page** - /terms with legal terms
+- **Privacy Policy Page** - /privacy with data handling info
+- **Enhanced Disclaimer** - Comprehensive legal text with "Opinion and Commentary" section
+
+### Changed
+- **Stronger Satire Disclaimer** - Red Flags page now clearly marked as satirical commentary
+- **Softer Language** - Legal risk reduction
+  - "controls everything" → "appears to maintain significant control"
+  - "NNS votes are theater" → "governance voting shows limited practical impact"
+  - "instant rug" → "high exit risk based on stake concentration"
+  - "Death Scenario" → "Hypothetical Risk"
+  - "marketing bullshit" → "marketing language"
+- **Footer** - Added Terms/Privacy/Disclaimer links
+- **Mobile Menu** - Fixed scroll for narrow viewports
+- **Calculator** - Added input validation with max values
+- **Page Titles** - Consistent titles across all pages
+
 ## [0.43.0] - 2025-12-29
 
 ### Added
