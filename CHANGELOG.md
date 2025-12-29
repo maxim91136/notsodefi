@@ -2,6 +2,20 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.42.0-rc1] - 2025-12-29
+
+### Added
+- **Broken Promises Page** - Progressive Decentralization audit
+  - Tracks promises vs reality for all projects
+  - Verdicts: BROKEN, PENDING, DELIVERED, NEVER PROMISED
+  - Quote: "Progressive decentralization is just centralization with a roadmap to nowhere"
+  - Case studies: Arbitrum, Optimism, Uniswap, Solana, Hyperliquid
+- **Follow the Money Page** - VC portfolio overlap analysis
+  - a16z, Paradigm, Polychain investment matrix
+  - Same VCs control "competing" protocols
+  - Case studies: Uniswap BNB Bridge vote, Compound governance
+  - Quote: "Same VCs, same control. It's not a decentralized ecosystem - it's a portfolio."
+
 ## [0.41.0-rc1] - 2025-12-29
 
 ### Added

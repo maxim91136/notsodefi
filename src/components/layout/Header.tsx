@@ -60,6 +60,18 @@ export function Header() {
             >
               SPOF
             </Link>
+            <Link
+              href="/broken-promises"
+              className="text-sm text-yellow-400 hover:text-yellow-300 transition-colors"
+            >
+              Promises
+            </Link>
+            <Link
+              href="/follow-the-money"
+              className="text-sm text-purple-400 hover:text-purple-300 transition-colors"
+            >
+              VCs
+            </Link>
             <a
               href="https://github.com/maxim91136/notsodefi"
               target="_blank"
@@ -133,6 +145,20 @@ export function Header() {
                 className="px-2 py-2 text-sm text-orange-400 hover:text-orange-300 hover:bg-white/5 rounded transition-colors"
               >
                 SPOF
+              </Link>
+              <Link
+                href="/broken-promises"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-2 py-2 text-sm text-yellow-400 hover:text-yellow-300 hover:bg-white/5 rounded transition-colors"
+              >
+                Promises
+              </Link>
+              <Link
+                href="/follow-the-money"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-2 py-2 text-sm text-purple-400 hover:text-purple-300 hover:bg-white/5 rounded transition-colors"
+              >
+                VCs
               </Link>
               <a
                 href="https://github.com/maxim91136/notsodefi"

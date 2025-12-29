@@ -30,6 +30,8 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 - **[Known Problems](https://notsodefi.com/problems)** - Documented limitations across all blockchain systems
 - **[Red Flags](https://notsodefi.com/red-flags)** - Marketing-to-reality translation guide
 - **[SPOF Analysis](https://notsodefi.com/spof)** - Single Point of Failure analysis (only 6/37 unkillable)
+- **[Broken Promises](https://notsodefi.com/broken-promises)** - Progressive decentralization audit
+- **[Follow the Money](https://notsodefi.com/follow-the-money)** - VC portfolio overlap (a16z, Paradigm, Polychain)
 
 ## The Framework
 
