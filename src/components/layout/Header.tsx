@@ -48,6 +48,12 @@ export function Header() {
             >
               Problems
             </Link>
+            <Link
+              href="/red-flags"
+              className="text-sm text-red-400 hover:text-red-300 transition-colors"
+            >
+              Red Flags
+            </Link>
             <a
               href="https://github.com/maxim91136/notsodefi"
               target="_blank"
@@ -107,6 +113,13 @@ export function Header() {
                 className="px-2 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded transition-colors"
               >
                 Problems
+              </Link>
+              <Link
+                href="/red-flags"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-2 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-white/5 rounded transition-colors"
+              >
+                Red Flags
               </Link>
               <a
                 href="https://github.com/maxim91136/notsodefi"
