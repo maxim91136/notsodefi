@@ -19,7 +19,25 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 10,   // No corporate owner - pure grassroots project
-  B2: 8,    // Diverse maintainers, community-driven development
+  /**
+   * B2: Repo/Protocol Ownership = 3
+   *
+   * Monero development is highly concentrated despite community ethos.
+   * Source: https://github.com/monero-project/monero/graphs/contributors
+   * Source: https://github.com/monero-project/meta/issues/921
+   *
+   * Critical facts:
+   * - Top 2 contributors (fluffypony + moneromooo) = 55% of all commits
+   * - Top 3 contributors = 67% of all commits (Bitcoin: 40%)
+   * - Top 5 contributors = 73% of all commits (Bitcoin: 52%)
+   * - Core Team is explicitly a "closed workgroup" - invite only
+   * - Core Team controls: domains, website, GitHub, releases
+   * - Anonymous developers = cannot verify independence
+   * - 2023 proposal to disband Core Team cited single-point-of-failure risks
+   *
+   * More concentrated than Bitcoin with less transparency.
+   */
+  B2: 3,
   B3: 9,    // No central entity controls brand, community-owned
   B4: null, // N/A - No protocol treasury
   B5: 10,   // No halt capability - truly unstoppable PoW chain
