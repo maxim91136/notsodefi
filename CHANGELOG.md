@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.46.0] - 2025-12-29
+
+### Added
+- **Dynamic Sitemap** - Auto-generated sitemap.xml for SEO
+  - 49 URLs total (12 static pages + 37 project pages)
+  - Prioritized pages (homepage 1.0, projects 0.9, etc.)
+  - Automatically updates when new projects are added
+
 ## [0.45.0] - 2025-12-29
 
 ### Added
