@@ -2,6 +2,25 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.43.0] - 2025-12-29
+
+### Added
+- **Disclaimer Page** - Full legal disclaimer with corrections policy
+  - What this is / What this is not
+  - About these scores
+  - Limitation of liability
+  - Corrections & Feedback policy (GitHub-based)
+- **Footer Disclaimer** - One-liner on every page linking to /disclaimer
+- **Ticker Symbol Redirects** - /projects/btc → /projects/bitcoin (37 mappings)
+- **Open Graph & Twitter Cards** - Social sharing meta tags
+
+### Changed
+- **Bulletproof Language** - All research pages updated
+  - Personal names removed (→ "Founder", "Top holders")
+  - Accusatory language → descriptive/factual
+  - Yellow disclaimer boxes on SPOF, Broken Promises, Follow the Money
+  - Case studies rewritten to be neutral
+
 ## [0.42.0-rc1] - 2025-12-29
 
 ### Added
