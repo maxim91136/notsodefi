@@ -115,6 +115,14 @@ const promisesData: PromiseEntry[] = [
     verdict: 'pending',
   },
   {
+    project: 'Bittensor',
+    symbol: 'TAO',
+    promise: 'Progressive decentralization',
+    date: '2021',
+    currentState: 'Opentensor Foundation still controls core development',
+    verdict: 'pending',
+  },
+  {
     project: 'Internet Computer',
     symbol: 'ICP',
     promise: 'Decentralized compute',
