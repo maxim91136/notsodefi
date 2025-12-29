@@ -37,7 +37,7 @@ const promisesData: PromiseEntry[] = [
     symbol: 'UNI',
     promise: 'Community Governance',
     date: 'Sept 2020',
-    currentState: 'a16z holds 55M+ UNI, can flip any vote',
+    currentState: 'Top holders control majority voting power',
     verdict: 'broken',
   },
   {
@@ -61,7 +61,7 @@ const promisesData: PromiseEntry[] = [
     symbol: 'COMP',
     promise: 'Decentralized governance',
     date: '2020',
-    currentState: 'a16z + Paradigm dominate all votes',
+    currentState: 'Top holders dominate all governance votes',
     verdict: 'broken',
   },
   {
@@ -69,7 +69,7 @@ const promisesData: PromiseEntry[] = [
     symbol: 'AAVE',
     promise: 'DAO governance',
     date: '2020',
-    currentState: 'Top 3 voters control 58%, founder bought $10M before key vote',
+    currentState: 'Top 3 voters control 58% of voting power',
     verdict: 'broken',
   },
   {
@@ -179,7 +179,7 @@ const promisesData: PromiseEntry[] = [
     symbol: 'TRX',
     promise: 'Decentralized internet',
     date: '2017',
-    currentState: 'Justin Sun controls everything',
+    currentState: 'Founder controls everything',
     verdict: 'broken',
   },
   {
@@ -264,9 +264,20 @@ export default function BrokenPromisesPage() {
 
       <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-8">
         <p className="text-gray-300 text-sm">
-          <strong>The Playbook:</strong> In January 2020, a16z&apos;s Jesse Walden coined &quot;Progressive Decentralization&quot; -
+          <strong>The Playbook:</strong> In January 2020, the concept of &quot;Progressive Decentralization&quot; was coined -
           a 3-stage model where startups launch centralized, then &quot;exit to the community.&quot;
-          Five years later, most projects are stuck at Stage 1.
+          Five years later, most projects remain at Stage 1.
+        </p>
+      </div>
+
+      <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-lg p-4 mb-8">
+        <p className="text-yellow-200 text-sm">
+          <strong>Disclaimer:</strong> This page documents publicly stated roadmaps and their current status based on
+          observable data. &quot;Broken&quot; indicates a stated timeline has passed without delivery - not accusations of intent.
+          Project structures evolve. This is educational analysis, not financial advice.{' '}
+          <a href="https://github.com/maxim91136/notsodefi" target="_blank" rel="noopener noreferrer" className="underline">
+            Submit corrections with evidence
+          </a>.
         </p>
       </div>
 

@@ -45,31 +45,30 @@ const caseStudies: CaseStudy[] = [
   {
     title: 'Uniswap BNB Bridge Vote',
     date: 'Feb 2023',
-    description: 'a16z pushed for LayerZero (their portfolio company) as the bridge provider. Community voted for Wormhole instead.',
-    vcInvolved: 'a16z',
-    outcome: 'a16z voted against with 15M UNI. They hold 55M+ UNI total - enough to flip any vote.',
-    quote: 'CZ (Binance): "Uniswap controlled by a16z?"',
+    description: 'Governance proposal to select bridge provider for BNB Chain deployment. LayerZero and Wormhole were candidates.',
+    vcInvolved: 'Major token holders',
+    outcome: 'Large token holders voted with 15M+ UNI. Top wallets hold sufficient tokens to influence outcomes.',
   },
   {
-    title: 'Compound Governance Takeover',
+    title: 'Compound Governance Concentration',
     date: '2020-2024',
-    description: 'a16z and Paradigm accumulated enough COMP to control governance outcomes.',
-    vcInvolved: 'a16z + Paradigm',
-    outcome: 'Top 10 addresses control majority of voting power. "Decentralized governance" is theater.',
+    description: 'Analysis of COMP token distribution shows concentration among early investors.',
+    vcInvolved: 'Early investors',
+    outcome: 'Top 10 addresses hold majority of voting power according to on-chain data.',
   },
   {
-    title: 'Solana Foundation Delegation',
+    title: 'Solana Foundation Delegation Program',
     date: '2021-2024',
-    description: 'Foundation controls which validators receive delegated stake.',
-    vcInvolved: 'a16z + Paradigm + Polychain',
-    outcome: 'Validator count dropped 68% since March 2024. Foundation "pruned" validators.',
+    description: 'Foundation operates stake delegation program that influences validator economics.',
+    vcInvolved: 'Foundation + early investors',
+    outcome: 'Validator count changed significantly in 2024. Foundation manages delegation criteria.',
   },
   {
     title: 'Optimism Token Distribution',
     date: '2022',
-    description: 'OP token launched with massive VC allocation disguised as "ecosystem fund".',
-    vcInvolved: 'a16z + Paradigm',
-    outcome: 'VCs control governance while claiming "community ownership".',
+    description: 'OP token launched with allocations to investors, team, and ecosystem fund.',
+    vcInvolved: 'Early investors',
+    outcome: 'Token distribution included significant investor allocations alongside community airdrops.',
   },
 ];
 
@@ -95,9 +94,20 @@ export default function FollowTheMoneyPage() {
       </div>
 
       <h1 className="text-3xl font-bold mb-2">Follow the Money</h1>
-      <p className="text-gray-400 mb-8">
-        The same VCs control the &quot;decentralized&quot; ecosystem. Here&apos;s the map.
+      <p className="text-gray-400 mb-4">
+        VC portfolio overlap in the crypto ecosystem. Here&apos;s the map.
       </p>
+
+      <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-lg p-4 mb-8">
+        <p className="text-yellow-200 text-sm">
+          <strong>Disclaimer:</strong> This page visualizes publicly disclosed VC investments based on portfolio pages,
+          SEC filings, and press releases. Investment ≠ control. Token holdings and governance power vary by project.
+          This is educational analysis, not financial advice.{' '}
+          <a href="https://github.com/maxim91136/notsodefi" target="_blank" rel="noopener noreferrer" className="underline">
+            Submit corrections with evidence
+          </a>.
+        </p>
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div className="bg-purple-900/20 border border-purple-700/50 rounded-lg p-4 text-center">
@@ -191,41 +201,41 @@ export default function FollowTheMoneyPage() {
       </div>
 
       {/* Key Insight */}
-      <div className="mt-8 p-8 bg-red-900/20 border border-red-700/50 rounded-lg text-center">
-        <p className="text-xl md:text-2xl font-medium text-red-200 italic">
-          &ldquo;Same VCs, same control.<br className="hidden md:block" />
-          It&apos;s not a decentralized ecosystem - it&apos;s a portfolio.&rdquo;
+      <div className="mt-8 p-8 bg-gray-800/50 border border-gray-700 rounded-lg text-center">
+        <p className="text-xl md:text-2xl font-medium text-gray-200 italic">
+          &ldquo;Portfolio overlap is a data point, not a verdict.<br className="hidden md:block" />
+          Draw your own conclusions.&rdquo;
         </p>
       </div>
 
-      {/* The Problem */}
+      {/* Considerations */}
       <div className="mt-8 p-6 bg-gray-800/50 rounded-lg">
-        <h2 className="text-xl font-bold mb-4">The Problem</h2>
+        <h2 className="text-xl font-bold mb-4">Considerations</h2>
         <ul className="space-y-3 text-gray-300">
           <li className="flex items-start gap-2">
-            <span className="text-red-400">1.</span>
-            <span><strong>Governance capture:</strong> VCs accumulate tokens before launch, then control all votes</span>
+            <span className="text-gray-400">1.</span>
+            <span><strong>Governance concentration:</strong> Early investors often accumulate significant token holdings</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-red-400">2.</span>
-            <span><strong>Conflict of interest:</strong> Same VCs in competing protocols push their portfolio companies</span>
+            <span className="text-gray-400">2.</span>
+            <span><strong>Portfolio overlap:</strong> The same investors may hold stakes in multiple protocols</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-red-400">3.</span>
-            <span><strong>Coordinated exits:</strong> VCs can dump tokens across multiple projects simultaneously</span>
+            <span className="text-gray-400">3.</span>
+            <span><strong>Token unlocks:</strong> Vesting schedules affect when investors can move tokens</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-red-400">4.</span>
-            <span><strong>Fake competition:</strong> &quot;Competing&quot; protocols owned by the same investors</span>
+            <span className="text-gray-400">4.</span>
+            <span><strong>Transparency:</strong> On-chain data allows anyone to verify holdings and votes</span>
           </li>
         </ul>
       </div>
 
-      {/* a16z Deep Dive */}
+      {/* Major Crypto VC */}
       <div className="mt-8 p-6 bg-purple-900/20 border border-purple-700/50 rounded-lg">
-        <h2 className="text-xl font-bold mb-4 text-purple-400">a16z Crypto: The Elephant in the Room</h2>
+        <h2 className="text-xl font-bold mb-4 text-purple-400">Major Crypto VC Portfolio (a16z Example)</h2>
         <p className="text-gray-300 text-sm mb-4">
-          Andreessen Horowitz (a16z) has invested in <strong>127+ crypto companies</strong>, including:
+          a16z Crypto has publicly disclosed investments in <strong>127+ crypto companies</strong>, spanning multiple sectors:
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
           <div className="text-gray-400">Coinbase (exchange)</div>
@@ -242,8 +252,8 @@ export default function FollowTheMoneyPage() {
           <div className="text-gray-400">EigenLayer (restaking)</div>
         </div>
         <p className="text-gray-400 text-sm mt-4">
-          When a16z is invested in the exchange, the L1, the L2, the DEX, the lending protocol, AND the bridge...
-          who exactly is competing with whom?
+          This portfolio spans exchanges, L1s, L2s, DEXs, lending, bridges, and restaking protocols.
+          Source: a16z public portfolio page.
         </p>
       </div>
 

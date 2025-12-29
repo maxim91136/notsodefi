@@ -23,26 +23,26 @@ const spofData: SPOFEntry[] = [
   { project: 'Kaspa', symbol: 'KAS', score: 6.1, spofType: 'none', element: 'Small dev team', deathScenario: 'Survivable via open source' },
 
   // Fragile (can survive)
-  { project: 'Polkadot', symbol: 'DOT', score: 6.5, spofType: 'person', element: 'Gavin Wood', deathScenario: 'Vision lost, but Substrate survives' },
-  { project: 'Ethereum', symbol: 'ETH', score: 5.2, spofType: 'person', element: 'Vitalik (social only)', deathScenario: 'Survives, loses direction' },
-  { project: 'Cosmos Hub', symbol: 'ATOM', score: 5.8, spofType: 'foundation', element: 'ICF + Jae Kwon drama', deathScenario: 'SDK survives, Hub fragile' },
+  { project: 'Polkadot', symbol: 'DOT', score: 6.5, spofType: 'person', element: 'Founder', deathScenario: 'Vision lost, but Substrate survives' },
+  { project: 'Ethereum', symbol: 'ETH', score: 5.2, spofType: 'person', element: 'Founder (social influence)', deathScenario: 'Survives, loses direction' },
+  { project: 'Cosmos Hub', symbol: 'ATOM', score: 5.8, spofType: 'foundation', element: 'ICF + internal conflicts', deathScenario: 'SDK survives, Hub fragile' },
   { project: 'Ethereum Classic', symbol: 'ETC', score: 5.8, spofType: 'none', element: 'Small community', deathScenario: 'Survives as zombie chain' },
   { project: 'Zcash', symbol: 'ZEC', score: 4.9, spofType: 'foundation', element: 'ECC + ZF', deathScenario: 'Two orgs = some redundancy' },
   { project: 'Uniswap', symbol: 'UNI', score: 4.7, spofType: 'protocol', element: 'Immutable contracts', deathScenario: 'Labs gone = frontend gone, forks possible' },
-  { project: 'DAI', symbol: 'DAI', score: 5.0, spofType: 'protocol', element: 'USDC collateral risk', deathScenario: 'Circle freeze = DAI destabilized' },
-  { project: 'Aave', symbol: 'AAVE', score: 3.7, spofType: 'person', element: 'Stani Kulechov', deathScenario: 'Survivable, governance exists' },
+  { project: 'DAI', symbol: 'DAI', score: 5.0, spofType: 'protocol', element: 'USDC collateral risk', deathScenario: 'Issuer freeze = DAI destabilized' },
+  { project: 'Aave', symbol: 'AAVE', score: 3.7, spofType: 'person', element: 'Founder', deathScenario: 'Survivable, governance exists' },
   { project: 'Lido', symbol: 'LDO', score: 4.6, spofType: 'protocol', element: 'Ethereum-dependent', deathScenario: 'ETH dies = Lido dies' },
 
   // Critical (company/foundation death = project death)
   { project: 'Filecoin', symbol: 'FIL', score: 6.2, spofType: 'company', element: 'Protocol Labs', deathScenario: 'Labs gone = slow death' },
-  { project: 'Cardano', symbol: 'ADA', score: 5.4, spofType: 'multi', element: 'Charles + Single Client', deathScenario: 'Hoskinson = Cardano' },
+  { project: 'Cardano', symbol: 'ADA', score: 5.4, spofType: 'multi', element: 'Founder + Single Client', deathScenario: 'Founder-dependent' },
   { project: 'NEAR', symbol: 'NEAR', score: 5.3, spofType: 'foundation', element: 'NEAR Foundation', deathScenario: 'Foundation gone = dead' },
   { project: 'Sui', symbol: 'SUI', score: 5.1, spofType: 'company', element: 'Mysten Labs', deathScenario: 'Labs gone = dead' },
   { project: 'Bittensor', symbol: 'TAO', score: 5.0, spofType: 'multi', element: 'Opentensor + Infra', deathScenario: 'Centralized infra, Foundation-dependent' },
   { project: 'TON', symbol: 'TON', score: 5.0, spofType: 'foundation', element: 'TON Foundation', deathScenario: 'Post-Telegram, but fragile' },
   { project: 'Aptos', symbol: 'APT', score: 4.6, spofType: 'company', element: 'Aptos Labs', deathScenario: 'Labs gone = dead' },
   { project: 'Avalanche', symbol: 'AVAX', score: 4.4, spofType: 'company', element: 'Ava Labs', deathScenario: 'Labs gone = dead' },
-  { project: 'Chainlink', symbol: 'LINK', score: 4.4, spofType: 'multi', element: 'Sergey + Labs', deathScenario: 'Nazarov leaves = project fragile' },
+  { project: 'Chainlink', symbol: 'LINK', score: 4.4, spofType: 'multi', element: 'Founder + Labs', deathScenario: 'Founder leaves = project fragile' },
   { project: 'Injective', symbol: 'INJ', score: 4.2, spofType: 'company', element: 'Injective Labs', deathScenario: 'Labs gone = dead' },
   { project: 'Polygon', symbol: 'POL', score: 4.1, spofType: 'company', element: 'Polygon Labs', deathScenario: 'Labs gone = dead' },
   { project: 'Stellar', symbol: 'XLM', score: 3.8, spofType: 'foundation', element: 'SDF (35% supply)', deathScenario: 'SDF exit = collapse' },
@@ -54,7 +54,7 @@ const spofData: SPOFEntry[] = [
   { project: 'Hedera', symbol: 'HBAR', score: 1.0, spofType: 'foundation', element: 'Council (39 corps)', deathScenario: 'Council dissolves = dead' },
   { project: 'Hyperliquid', symbol: 'HYPE', score: 1.0, spofType: 'foundation', element: 'Foundation (58% stake)', deathScenario: 'Team exit = instant rug' },
   { project: 'XRP', symbol: 'XRP', score: 1.0, spofType: 'company', element: 'Ripple Labs', deathScenario: 'Ripple gone = dead' },
-  { project: 'Tron', symbol: 'TRX', score: 1.0, spofType: 'person', element: 'Justin Sun', deathScenario: 'Sun arrested/flees = dead' },
+  { project: 'Tron', symbol: 'TRX', score: 1.0, spofType: 'person', element: 'Founder', deathScenario: 'Founder exits = dead' },
   { project: 'BNB Chain', symbol: 'BNB', score: 1.0, spofType: 'company', element: 'Binance', deathScenario: 'Binance closed = dead' },
   { project: 'Tether', symbol: 'USDT', score: 1.0, spofType: 'company', element: 'Tether Ltd (iFinex)', deathScenario: 'Bank run = dead' },
   { project: 'USDC', symbol: 'USDC', score: 1.0, spofType: 'company', element: 'Circle', deathScenario: 'Regulated, but centralized' },
@@ -150,9 +150,18 @@ export default function SPOFPage() {
       </div>
 
       <h1 className="text-3xl font-bold mb-2">Single Point of Failure Analysis</h1>
-      <p className="text-gray-400 mb-8">
+      <p className="text-gray-400 mb-4">
         What&apos;s the ONE thing that could kill each project? Person, company, foundation, or infrastructure.
       </p>
+
+      <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-lg p-4 mb-8">
+        <p className="text-yellow-200 text-sm">
+          <strong>Disclaimer:</strong> This analysis is based on publicly available data and documentation.
+          It is provided for educational purposes only and does not constitute financial advice.
+          All assessments represent our methodology&apos;s output based on observable data, not accusations.
+          Project structures may change. <a href="https://github.com/maxim91136/notsodefi" className="underline">Submit corrections with evidence</a>.
+        </p>
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div className="bg-green-900/20 border border-green-700/50 rounded-lg p-4 text-center">
