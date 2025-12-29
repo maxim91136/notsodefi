@@ -42,6 +42,12 @@ export function Header() {
             >
               Methodology
             </Link>
+            <Link
+              href="/problems"
+              className="text-sm text-white/70 hover:text-white transition-colors"
+            >
+              Problems
+            </Link>
             <a
               href="https://github.com/maxim91136/notsodefi"
               target="_blank"
@@ -94,6 +100,13 @@ export function Header() {
                 className="px-2 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded transition-colors"
               >
                 Methodology
+              </Link>
+              <Link
+                href="/problems"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-2 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded transition-colors"
+              >
+                Problems
               </Link>
               <a
                 href="https://github.com/maxim91136/notsodefi"
