@@ -2,6 +2,11 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.47.0-rc1] - 2025-12-29
+
+### Changed
+- **Header Menu** - Renamed "Red Flags" to "RedFlags" (CamelCase branding)
+
 ## [0.46.0] - 2025-12-29
 
 ### Added
