@@ -129,6 +129,70 @@ export default function MethodologyPage() {
         </div>
       </section>
 
+      {/* Scoring Rubric */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">Scoring Rubric</h2>
+        <div className="space-y-6 text-white/80">
+          <p>
+            Each criterion is scored 0-10. Within each category, all criteria are
+            <strong> equally weighted</strong>. Here&apos;s what the scores mean:
+          </p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-white/20">
+                  <th className="text-left py-2 pr-4">Score</th>
+                  <th className="text-left py-2">Meaning</th>
+                </tr>
+              </thead>
+              <tbody className="text-white/70">
+                <tr className="border-b border-white/10">
+                  <td className="py-2 pr-4 font-mono text-red-400">0</td>
+                  <td>Fully centralized / Single point of failure</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-2 pr-4 font-mono text-orange-400">1-3</td>
+                  <td>Highly centralized / Few entities dominate</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-2 pr-4 font-mono text-yellow-400">4-6</td>
+                  <td>Moderately decentralized / Some concentration</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-2 pr-4 font-mono text-green-400">7-9</td>
+                  <td>Highly decentralized / Well distributed</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-mono text-emerald-400">10</td>
+                  <td>Maximum decentralization / No single point of control</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-6 space-y-4">
+            <h3 className="text-lg font-semibold">Category Weights</h3>
+            <ul className="list-disc list-inside space-y-1 ml-2">
+              <li><strong>Chain Score:</strong> A1-A4 equally weighted (each 25% of Chain Score)</li>
+              <li><strong>Control Score:</strong> B1-B6 equally weighted (each ~16.7% of Control Score)</li>
+              <li><strong>Fairness Score:</strong> C1-C2 equally weighted (each 50% of Fairness Score)</li>
+            </ul>
+            <p className="text-white/60 italic">
+              N/A values (criteria that don&apos;t apply to a consensus type) are excluded from the average.
+            </p>
+          </div>
+
+          <div className="mt-6 p-4 rounded-lg bg-blue-500/10 border border-blue-500/20">
+            <h4 className="font-semibold text-blue-400 mb-2">Example Calculation</h4>
+            <p className="text-sm">
+              Project with Chain=7.5, Control=6.0, Fairness=8.0:<br />
+              <code className="text-white/90">TotalScore = 0.4 × 7.5 + 0.4 × 6.0 + 0.2 × 8.0 = 3.0 + 2.4 + 1.6 = 7.0</code>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Bitcoin as Benchmark */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-4">Bitcoin as Benchmark</h2>

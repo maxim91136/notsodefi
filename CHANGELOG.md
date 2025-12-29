@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.37.0-rc1] - 2025-12-29
+
+### Added
+- **Methodology Page** - Added Scoring Rubric section
+  - Clear 0-10 score meanings documented
+  - Inner category weights clarified (A1-A4 each 25%, B1-B6 each ~16.7%, C1-C2 each 50%)
+  - Example calculation included
+  - Addresses feedback about missing weight transparency
+
 ## [0.36.0-rc2] - 2025-12-29
 
 ### Changed
