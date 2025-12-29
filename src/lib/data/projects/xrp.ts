@@ -22,7 +22,7 @@ const rawValues: Record<string, number | null> = {
   B2: 3,    // rippled development controlled by Ripple
   B3: 2,    // Ripple owns XRP trademark and brand
   B4: 1,    // Ripple controls escrow (55B XRP), releases up to 1B/month
-  B5: 0,    // KILL-SWITCH: Ripple's default UNL controls consensus, can exclude validators
+  B5: 2,    // Ripple's default UNL influences consensus, but no direct halt mechanism - validators can choose own UNL
   B6: 3,   // Some amendments but consensus mechanism unchanged since 2012
 
   // Fairness Score (C1-C2)
@@ -40,7 +40,7 @@ export const xrp: Project = {
   description:
     'Federated Consensus with trusted validator lists (UNL). Fully premined at genesis. Ripple Labs controls escrow and default UNL.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-12-23',
+  lastUpdated: '2025-12-29',
   sources: [
     'https://xrpl.org/consensus.html',
     'https://livenet.xrpl.org/network/validators',

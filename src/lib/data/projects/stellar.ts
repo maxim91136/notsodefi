@@ -26,7 +26,7 @@ const rawValues: Record<string, number | null> = {
   B2: 2,    // SDF owns stellar/stellar-core GitHub
   B3: 2,    // SDF owns stellar.org, all branding
   B4: 2,    // SDF holds 17.3B XLM (34.7% of total supply)
-  B5: 5,    // No explicit kill switch, but SDF runs 3 of 7 tier-1 validators
+  B5: 2,    // SDF runs 3 of 7 tier-1 validators - strong indirect control, no direct halt mechanism
   B6: 3,   // Some protocol upgrades but FBA consensus unchanged since 2015
 
   // Fairness Score (C1-C2)
@@ -44,7 +44,7 @@ export const stellar: Project = {
   description:
     'Federated Byzantine Agreement consensus. SDF controls development and significant supply. No on-chain governance.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-12-26',
+  lastUpdated: '2025-12-29',
   sources: [
     'https://stellar.org',
     'https://dashboard.stellar.org',
