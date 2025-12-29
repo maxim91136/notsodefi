@@ -52,7 +52,7 @@ export function Header() {
               href="/red-flags"
               className="text-sm text-red-400 hover:text-red-300 transition-colors"
             >
-              Red Flags
+              RedFlags
             </Link>
             <Link
               href="/spof"
@@ -137,7 +137,7 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-2 py-2 text-sm text-red-400 hover:text-red-300 hover:bg-white/5 rounded transition-colors"
               >
-                Red Flags
+                RedFlags
               </Link>
               <Link
                 href="/spof"
