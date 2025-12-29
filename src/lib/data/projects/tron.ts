@@ -19,7 +19,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 1,    // Justin Sun / Tron Foundation controls
-  B2: 1,    // Tron Foundation controls development
+  B2: 2,    // Tron Foundation controls development, but open source
   B3: 1,    // Justin Sun owns brand
   B4: 1,    // Foundation controls treasury
   B5: 0,    // KILL-SWITCH: Justin Sun can effectively control/halt chain

@@ -21,7 +21,7 @@ const rawValues: Record<string, number | null> = {
 
   // Control Score (B1-B6)
   B1: 2,    // Hyperliquid Labs controls everything
-  B2: 2,    // Closed source, single company development
+  B2: 1,    // Closed source, single company development - no public code review possible
   B3: 2,    // Single company owns brand
   B4: 2,    // 38.888% future emissions controlled by foundation
   B5: 0,    // KILL-SWITCH: Bridge pause, withdrawal freeze, forced delisting
