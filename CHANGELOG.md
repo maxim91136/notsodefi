@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.45.0] - 2025-12-29
+
+### Added
+- **Jurisdiction Clause** - German law and courts specified in Terms of Service
+  - Governing law: Federal Republic of Germany
+  - Exclusive jurisdiction: German courts
+  - EU consumer protection clause included
+
 ## [0.44.0] - 2025-12-29
 
 ### Added
