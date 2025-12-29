@@ -109,6 +109,19 @@ export default function TermsPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-xl font-bold text-white mb-4">11. Governing Law and Jurisdiction</h2>
+          <p className="mb-4">
+            These Terms shall be governed by and construed in accordance with the laws of the Federal Republic of Germany,
+            without regard to its conflict of law provisions.
+          </p>
+          <p>
+            Any disputes arising from or relating to these Terms or your use of the Website shall be subject to the
+            exclusive jurisdiction of the courts of Germany. For consumers within the European Union, mandatory consumer
+            protection laws of your country of residence may apply.
+          </p>
+        </section>
+
         <div className="text-center text-gray-500 text-sm pt-8 border-t border-gray-800">
           <p>&copy; 2025 NotSoDeFi.com - Educational Analysis - Not Financial Advice</p>
         </div>
