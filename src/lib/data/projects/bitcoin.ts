@@ -101,17 +101,27 @@ const rawValues: Record<string, number | null> = {
   B1: 10,
 
   /**
-   * B2: Repo/Protocol Ownership = 7
+   * B2: Repo/Protocol Ownership = 4
    *
-   * Bitcoin Core has diverse maintainers from multiple organizations.
+   * Bitcoin Core development is highly concentrated.
    * Source: https://github.com/bitcoin/bitcoin/graphs/contributors
+   * Source: https://www.chaincatcher.com/en/article/2227383
    *
-   * Key maintainers come from: Chaincode Labs, Spiral (Block), MIT DCI,
-   * independent contributors. No single org dominates merge rights.
+   * Critical facts:
+   * - Only 5 people globally have merge rights (100% merge control)
+   * - In 2024, 3 of 5 maintainers worked at the same company
+   * - Only 13 people have EVER held maintainer status in 16 years
+   * - Invite-only process, no transparent path to maintainership
+   * - Top 3 contributors = 40% of all commits
+   * - Top 5 contributors = 52% of all commits
+   * - Bitcoin Core runs on >95% of nodes (de facto monopoly)
    *
-   * Score: 7 (mix of orgs + community, but Core is the de facto standard)
+   * This is a 5-person oligarchy controlling code for a $1.7T network.
+   * Not a kill-switch (B5), but significant centralization risk.
+   *
+   * Score: 4 (severe concentration, opaque governance, few gatekeepers)
    */
-  B2: 7,
+  B2: 4,
 
   /**
    * B3: Brand & Frontend Control = 9
