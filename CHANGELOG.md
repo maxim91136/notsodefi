@@ -422,10 +422,10 @@ All notable changes to the NotSoDeFi.com Framework.
 ## [0.16.0-rc2] - 2025-12-27
 
 ### Added
-- **Score Tooltips** - Hover über Scores zeigt Breakdown
-  - Headers erklären Kategorien und Gewichtung
-  - Total-Score zeigt Berechnung (z.B. "5.2×40% + 4.8×40% + 6.1×20%")
-  - Subscores zeigen enthaltene Kriterien
+- **Score Tooltips** - Hover over scores shows breakdown
+  - Headers explain categories and weights
+  - Total score shows calculation (e.g. "5.2×40% + 4.8×40% + 6.1×20%")
+  - Subscores show included criteria
 
 ## [0.16.0-rc1] - 2025-12-27
 
