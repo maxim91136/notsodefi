@@ -2,6 +2,23 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.53.0] - 2025-12-30
+
+### Changed
+- **Framework: 12 → 13 Criteria** - Split C2 into two separate criteria:
+  - **C2 NEW**: Token Concentration - Insider % of circulating supply
+  - **C3 NEW**: Governance Control - Insider % of governance voting power
+  - C3=100 means "no token governance" (team decides everything) → penalized
+  - C3=null means "N/A" (PoW chains like Bitcoin/Kaspa) → no penalty
+- **Fairness Weights**: Changed from 50%/50% (C1/C2) to 33%/33%/33% (C1/C2/C3)
+- **All 38 projects updated** with new C2/C3 values
+- **Documentation updated**: README, methodology, projects page
+
+### Impact
+- PoW coins (Bitcoin, Kaspa, Monero, etc.) unchanged - C3=null excluded from average
+- Projects without token governance (Solana, Chainlink, XRP, Hedera) now penalized with C3=100
+- Projects with actual governance (Ethereum, Uniswap, Cardano) scored on voting power concentration
+
 ## [0.52.2-rc1] - 2025-12-30
 
 ### Changed
