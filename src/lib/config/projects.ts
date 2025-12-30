@@ -50,6 +50,8 @@ export const PROJECTS: ProjectConfig[] = [
   { id: 'dai', kvKey: 'dai', symbol: 'DAI' },
   { id: 'arbitrum', kvKey: 'arbitrum', symbol: 'ARB' },
   { id: 'lido', kvKey: 'lido', symbol: 'LDO' },
+  { id: 'virtuals', kvKey: 'virtuals-protocol', symbol: 'VIRTUAL' },
+  { id: 'etc', kvKey: 'etc', symbol: 'ETC' },
 ];
 
 /**

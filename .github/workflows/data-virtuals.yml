@@ -32,7 +32,7 @@ jobs:
           CF_KV_ID: ${{ secrets.CF_KV_ID }}
         run: |
           HTTP_STATUS=$(curl -s -o /tmp/kv_response.json -w "%{http_code}" -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/storage/kv/namespaces/${CF_KV_ID}/values/metrics:virtual" \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/storage/kv/namespaces/${CF_KV_ID}/values/metrics:virtuals-protocol" \
             -H "Authorization: Bearer ${CF_API_TOKEN}" \
             -H "Content-Type: application/json" \
             --data-binary @data/virtuals.json)
