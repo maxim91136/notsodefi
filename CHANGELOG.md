@@ -2,12 +2,19 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.52.1-rc1] - 2025-12-30
+
+### Changed
+- **Unified Navigation** - All pages now have consistent "← Home" link
+  - Changed SPOF, VCs, Promises, RedFlags from "← Back to Rankings" to "← Home"
+  - All 8 sub-pages now link to homepage consistently
+  - Improved link positioning (mb-8, directly before h1)
+
 ## [0.52.0-rc1] - 2025-12-30
 
 ### Added
 - **Back to Home Links** - Added "← Home" navigation links to main pages
   - Projects, Calculator, Methodology, Problems
-  - Consistent with colored pages (SPOF, VCs, Promises, RedFlags) which have "← Back to Rankings"
 
 ## [0.51.9-rc1] - 2025-12-30
 

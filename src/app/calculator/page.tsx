@@ -27,18 +27,17 @@ export default function CalculatorPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="mb-4">
+      <div className="mb-8">
         <Link href="/" className="text-blue-400 hover:text-blue-300 text-sm">
           &larr; Home
         </Link>
       </div>
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold mb-4">Score Calculator</h1>
-        <p className="text-white/60 max-w-2xl">
-          Enter raw values for each criterion to calculate decentralization
-          scores. Scores update in real-time.
-        </p>
-      </div>
+
+      <h1 className="text-4xl font-bold mb-4">Score Calculator</h1>
+      <p className="text-white/60 max-w-2xl mb-8">
+        Enter raw values for each criterion to calculate decentralization
+        scores. Scores update in real-time.
+      </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Input Forms */}

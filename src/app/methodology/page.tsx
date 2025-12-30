@@ -15,17 +15,16 @@ export default function MethodologyPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="mb-4">
+      <div className="mb-8">
         <Link href="/" className="text-blue-400 hover:text-blue-300 text-sm">
           &larr; Home
         </Link>
       </div>
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold mb-4">Methodology</h1>
-        <p className="text-white/60">
-          The reasoning behind our scoring framework.
-        </p>
-      </div>
+
+      <h1 className="text-4xl font-bold mb-4">Methodology</h1>
+      <p className="text-white/60 mb-8">
+        The reasoning behind our scoring framework.
+      </p>
 
       {/* Summary */}
       <Card className="mb-8">

@@ -14,20 +14,19 @@ export default function ProjectsPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="mb-4">
+      <div className="mb-8">
         <Link href="/" className="text-blue-400 hover:text-blue-300 text-sm">
           &larr; Home
         </Link>
       </div>
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold mb-4">Projects</h1>
-        <p className="text-white/60 max-w-2xl">
-          Decentralization scores for major blockchain projects. Scores are calculated
-          using 12 criteria across 3 categories: Chain (technical), Control (governance),
-          and Fairness (launch/distribution). Projects with admin kill-switches are capped at 1.0.
-          Click any project to see the detailed breakdown. This is an educational tool, not financial advice.
-        </p>
-      </div>
+
+      <h1 className="text-4xl font-bold mb-4">Projects</h1>
+      <p className="text-white/60 max-w-2xl mb-8">
+        Decentralization scores for major blockchain projects. Scores are calculated
+        using 12 criteria across 3 categories: Chain (technical), Control (governance),
+        and Fairness (launch/distribution). Projects with admin kill-switches are capped at 1.0.
+        Click any project to see the detailed breakdown. This is an educational tool, not financial advice.
+      </p>
 
       <Card>
         <CardContent className="p-0">
