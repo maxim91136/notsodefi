@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, ScoreRing } from '@/components/ui';
 import {
   getAllCriteria,
@@ -26,6 +27,11 @@ export default function CalculatorPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mb-4">
+        <Link href="/" className="text-blue-400 hover:text-blue-300 text-sm">
+          &larr; Home
+        </Link>
+      </div>
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-4">Score Calculator</h1>
         <p className="text-white/60 max-w-2xl">
