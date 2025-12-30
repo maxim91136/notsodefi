@@ -47,9 +47,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // PoW - no kill-switch possible
   B6: 2,   // Young chain (2021) but minimal changes to GHOSTDAG PoW consensus
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 15,   // ~3% to DAGlabs BUT with $8M VC funding = capital advantage. Founder: "not a fair launch"
-  C2: 7,   // Mining distribution, but early capital advantage for insiders
+  C2: 15,   // Token concentration: ~15% early insider advantage (DAGlabs + VC mining)
+  C3: null, // Governance: N/A - PoW chain, no token governance
 };
 
 export const kaspa: Project = {

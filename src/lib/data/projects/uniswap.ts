@@ -31,9 +31,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // IMMUTABLE CONTRACTS - no admin keys, no kill switch, no pause function!
   B6: 3,   // v1→v2→v3→v4 are NEW deployments, not upgrades. Core contracts immutable.
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 40,   // 60% community (mostly airdrop), but 21.3% team + 18% investors = 40% insiders
-  C2: 2,   // Gini 0.938, top 1% = 47.5% voting power. Plutocratic governance.
+  C2: 40,   // Token concentration: ~40% held by team + investors
+  C3: 48,   // Governance: Top 5 delegates = ~48% voting power. Gini 0.938. Plutocratic.
 };
 
 export const uniswap: Project = {

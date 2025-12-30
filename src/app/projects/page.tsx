@@ -23,7 +23,7 @@ export default function ProjectsPage() {
       <h1 className="text-4xl font-bold mb-4">Projects</h1>
       <p className="text-white/60 max-w-2xl mb-8">
         Decentralization scores for major blockchain projects. Scores are calculated
-        using 12 criteria across 3 categories: Chain (technical), Control (governance),
+        using 13 criteria across 3 categories: Chain (technical), Control (governance),
         and Fairness (launch/distribution). Projects with admin kill-switches are capped at 1.0.
         Click any project to see the detailed breakdown. This is an educational tool, not financial advice.
       </p>

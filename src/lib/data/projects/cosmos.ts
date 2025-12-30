@@ -26,9 +26,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // No halt capability - fully decentralized BFT
   B6: 4,   // IBC upgrades, Tendermint→CometBFT transition, frequent SDK updates
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 20,   // 20% to founders/foundation, 80% ICO investors
-  C2: 5,   // On-chain governance but whale concentration
+  C2: 20,   // Token concentration: ~20% held by ICF/founders
+  C3: 40,   // Governance: On-chain voting exists, but whale concentration dominates
 };
 
 export const cosmos: Project = {

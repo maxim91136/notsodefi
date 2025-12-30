@@ -26,9 +26,10 @@ const rawValues: Record<string, number | null> = {
   B5: 5,    // Guardian (5/9 community-elected multisig) can pause, not drain
   B6: 5,   // v1→v2→v3 upgrades, governance-controlled parameter changes
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 23,   // Original: 23% founders, 77% investors. Team reserve: 3M of 16M (18.75%)
-  C2: 75,  // Top 1% controls 70-80% of votes. Plutocratic governance theater.
+  C2: 30,   // Token concentration: ~30% held by team/early investors today
+  C3: 75,   // Governance: Top 1% controls 70-80% of votes. Plutocratic governance theater.
 };
 
 export const aave: Project = {

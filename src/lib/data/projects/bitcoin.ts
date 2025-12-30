@@ -195,7 +195,18 @@ const rawValues: Record<string, number | null> = {
   C1: 0,
 
   /**
-   * C2: Token Distribution & Governance Power = N/A
+   * C2: Token Concentration = N/A
+   *
+   * Bitcoin had a fair launch with no insider allocation.
+   * Satoshi's ~1M BTC was mined, not premined.
+   * No team, no VCs, no foundation holdings.
+   *
+   * This criterion doesn't meaningfully apply to Bitcoin.
+   */
+  C2: null,
+
+  /**
+   * C3: Governance Control = N/A
    *
    * Bitcoin has no on-chain governance.
    * - No token voting
@@ -204,7 +215,7 @@ const rawValues: Record<string, number | null> = {
    *
    * This criterion doesn't apply to Bitcoin.
    */
-  C2: null,
+  C3: null,
 };
 
 export const bitcoin: Project = {

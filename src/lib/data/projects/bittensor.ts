@@ -31,9 +31,10 @@ const rawValues: Record<string, number | null> = {
   B5: 7,    // Subnet structure limits halt capability, foundation influence moderate
   B6: 4,   // Young chain (2021), subnet structure evolving, Substrate upgrades
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 45,   // VCs incubated 2019, DCG 2.4% supply, despite "fair launch" claims
-  C2: 75,   // Foundation + VCs control all decisions, ZIP proposals are non-binding suggestions
+  C2: 45,   // Token concentration: ~45% accumulated by VCs/insiders (Polychain, DCG, Dao5)
+  C3: 75,   // Governance: Foundation + VCs control all decisions. ZIP proposals non-binding.
 };
 
 export const bittensor: Project = {

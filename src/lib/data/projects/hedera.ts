@@ -30,9 +30,10 @@ const rawValues: Record<string, number | null> = {
   B5: 0,    // Council can halt network at will - explicit kill switch
   B6: 5,   // Council can push updates at will, "decentralization roadmap" pending
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 45,   // 13.8% founders + 8% Swirlds + 4.4% employees + ~22% SAFT = ~45%
-  C2: 1,   // No on-chain governance. Council decides everything. Zero community power.
+  C2: 45,   // Token concentration: ~45% held by founders/Swirlds/employees/SAFT
+  C3: 100,  // Governance: No on-chain token governance. Council decides everything.
 };
 
 export const hedera: Project = {

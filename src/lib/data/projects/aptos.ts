@@ -38,9 +38,10 @@ const rawValues: Record<string, number | null> = {
   B5: 7,    // No kill-switch, but coordinated validator set
   B6: 6,   // Brand new (2022), ex-Meta team, rapid development cycle
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 49,   // ~49% to insiders (team 19% + foundation 16.5% + investors 13.5%)
-  C2: 5,   // Limited governance, Foundation-driven decisions
+  C2: 49,   // Token concentration: ~49% held by team/foundation/investors
+  C3: 100,  // Governance: Limited token governance. Foundation-driven decisions.
 };
 
 export const aptos: Project = {

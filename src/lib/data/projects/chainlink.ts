@@ -27,9 +27,10 @@ const rawValues: Record<string, number | null> = {
   B5: 3,    // Undocumented multisig CAN manipulate feeds, but not halt network
   B6: 5,   // v1→v2 upgrades, CCIP additions, "move fast" infrastructure
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 35,   // 35% team/company, 35% "node rewards" (team controls distribution)
-  C2: 100,  // NO governance - LINK holders have zero voting rights, Labs decides everything
+  C2: 35,   // Token concentration: ~35% team holdings, 80% held by 125 wallets
+  C3: 100,  // Governance: NO token governance - LINK holders have zero voting rights, Labs decides everything
 };
 
 export const chainlink: Project = {

@@ -25,9 +25,10 @@ const rawValues: Record<string, number | null> = {
   B5: 2,    // Ripple's default UNL influences consensus, but no direct halt mechanism - validators can choose own UNL
   B6: 3,   // Some amendments but consensus mechanism unchanged since 2012
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 100,  // 100% premine - all 100B XRP created at genesis
-  C2: 2,   // Amendments require 80% validator approval, but UNL controlled
+  C2: 60,   // Token concentration: Ripple controls escrow (55B XRP), ~60% effective control
+  C3: 100,  // Governance: No token governance. Ripple controls UNL and amendments.
 };
 
 export const xrp: Project = {

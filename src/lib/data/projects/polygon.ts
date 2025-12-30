@@ -43,9 +43,10 @@ const rawValues: Record<string, number | null> = {
   B5: 6,    // No kill-switch, but 105 max validators is very limiting
   B6: 5,   // Multiple pivots (Matic→Polygon, MATIC→POL, PoS→zkEVM focus)
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 24,   // ~24% to insiders (16% team + 4% advisors + ~4% seed/early)
-  C2: 5,   // Limited governance, Foundation-driven decisions
+  C2: 24,   // Token concentration: ~24% held by team/advisors/early
+  C3: 100,  // Governance: Limited token governance. Foundation-driven decisions.
 };
 
 export const polygon: Project = {

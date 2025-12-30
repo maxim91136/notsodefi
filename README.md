@@ -35,7 +35,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 
 ## The Framework
 
-Three scores, twelve criteria. Projects with admin kill-switches (B5=0) are capped at 1.0.
+Three scores, thirteen criteria. Projects with admin kill-switches (B5=0) are capped at 1.0.
 
 **[Read the full methodology →](https://notsodefi.com/methodology)**
 
@@ -43,7 +43,7 @@ Three scores, twelve criteria. Projects with admin kill-switches (B5=0) are capp
 |-------|--------|------------------|
 | **Chain Score** | 40% | Technical/economic decentralization (Nakamoto Coefficient, validator concentration, client independence, node geography) |
 | **Control Score** | 40% | Power structures (corporate capture, repo ownership, brand control, treasury keys, protocol immutability) |
-| **Fairness Score** | 20% | Launch/distribution fairness (premine, token distribution, governance power) |
+| **Fairness Score** | 20% | Launch/distribution fairness (premine, token concentration, governance control) |
 
 ```
 TotalScore = 0.4 × Chain + 0.4 × Control + 0.2 × Fairness

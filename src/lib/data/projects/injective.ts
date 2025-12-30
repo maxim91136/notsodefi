@@ -39,9 +39,10 @@ const rawValues: Record<string, number | null> = {
   B5: 7,    // No kill-switch, standard Cosmos governance
   B6: 4,   // Cosmos SDK upgrades, IBC integrations, Labs-driven development
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 42,   // ~42% to insiders (20% team + 20% private + 2% advisors)
-  C2: 6,   // Cosmos-style governance, token-weighted
+  C2: 42,   // Token concentration: ~42% held by team/investors/advisors
+  C3: 45,   // Governance: Cosmos-style voting exists, but insiders dominate
 };
 
 export const injective: Project = {

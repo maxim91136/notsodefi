@@ -29,9 +29,10 @@ const rawValues: Record<string, number | null> = {
   B5: 6,    // No clear kill switch, but Foundation has significant influence
   B6: 6,   // Brand new (2023), Mysten Labs controlled, rapid iteration
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 20,   // ~20% direct founders/team (Mysten 1.6% + Early Contributors 6% + unlocks)
-  C2: 3,   // Token voting exists but 84% of staked supply controlled by insiders
+  C2: 52,   // Token concentration: 52% "unallocated" but controlled by Foundation
+  C3: 84,   // Governance: Token voting exists but 84% of staked supply controlled by insiders
 };
 
 export const sui: Project = {

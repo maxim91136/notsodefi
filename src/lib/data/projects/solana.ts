@@ -24,9 +24,10 @@ const rawValues: Record<string, number | null> = {
   B5: 3,    // Has had coordinated halts, validators can be pressured
   B6: 6,   // Frequent upgrades, outages with restarts, "move fast" culture
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 48,   // ~48% to team/VCs/foundation
-  C2: 45,  // Significant insider control
+  C2: 45,   // Token concentration: ~45% held by insiders
+  C3: 100,  // Governance: No token governance. Foundation/Labs control all decisions.
 };
 
 export const solana: Project = {

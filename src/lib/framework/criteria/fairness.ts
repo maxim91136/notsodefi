@@ -26,15 +26,32 @@ export const fairnessCriteria: Criterion[] = [
   },
   {
     id: 'C2',
-    name: 'Token Distribution & Governance Power',
+    name: 'Token Concentration',
     description:
-      'Share of insiders (team/VC/exchanges) in supply and governance votes. Less insider control is better.',
+      'Share of circulating supply held by insiders (team/VC/foundation). Less concentration is better.',
+    category: 'fairness',
+    mappings: [
+      { min: 0, max: 20, score: [8, 10], label: 'Insider < 20% of supply' },
+      { min: 20, max: 40, score: [5, 7], label: 'Insider 20-40%' },
+      { min: 40, max: 60, score: [2, 4], label: 'Insider 40-60%' },
+      { min: 60, max: 101, score: [0, 2], label: 'Insider > 60%' },
+    ],
+    sources: [
+      'https://cryptobriefing.com/top-defi-projects-the-6-most-decentralized-protocols/',
+      'https://oakresearch.io/en/reports/sectors/layer-1-report-year-2024',
+    ],
+  },
+  {
+    id: 'C3',
+    name: 'Governance Control',
+    description:
+      'Share of governance voting power held by insiders. 100% = no token governance (team decides everything). Less insider control is better.',
     category: 'fairness',
     mappings: [
       { min: 0, max: 20, score: [8, 10], label: 'Insider < 20% voting power' },
       { min: 20, max: 40, score: [5, 7], label: 'Insider 20-40%' },
       { min: 40, max: 60, score: [2, 4], label: 'Insider 40-60%' },
-      { min: 60, max: 101, score: [0, 2], label: 'Insider > 60%' },
+      { min: 60, max: 101, score: [0, 2], label: 'Insider > 60% or no governance' },
     ],
     sources: [
       'https://cryptobriefing.com/top-defi-projects-the-6-most-decentralized-protocols/',

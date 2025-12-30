@@ -35,9 +35,10 @@ const rawValues: Record<string, number | null> = {
   B5: 4,    // Smart contracts ARE upgradeable. Node operators permissioned. Not trustless.
   B6: 5,   // Upgradeable contracts, CSM additions, Dual Governance changes
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 64,   // 64% to founders/team (vested over 1yr), ~18% investors, ~18% community
-  C2: 5,   // Extremely concentrated. Top delegates dominate. stETH veto helps slightly.
+  C2: 64,   // Token concentration: ~64% held by founders/team
+  C3: 65,   // Governance: Token voting exists, but top delegates dominate. stETH veto helps slightly.
 };
 
 export const lido: Project = {

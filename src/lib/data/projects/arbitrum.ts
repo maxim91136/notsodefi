@@ -43,9 +43,10 @@ const rawValues: Record<string, number | null> = {
   B5: 5,    // Security Council can upgrade, but users can exit via L1
   B6: 5,   // L2 with upgrades (Nitro, BoLD), Security Council can change rules
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 44,   // ~44% to insiders (27% team + 17.5% investors)
-  C2: 5,   // DAO governance, but early token concentration
+  C2: 44,   // Token concentration: ~44% held by team + investors
+  C3: 50,   // Governance: DAO exists, but early token concentration dominates votes
 };
 
 export const arbitrum: Project = {

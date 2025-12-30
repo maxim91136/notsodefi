@@ -25,9 +25,10 @@ const rawValues: Record<string, number | null> = {
   B5: 8,    // No single-entity halt - decentralized validators
   B6: 5,   // New chain (2020), regular upgrades, "move fast" culture
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 42,   // ~42% to team/investors (10% team, 9.26% foundation, etc.)
-  C2: 3,   // Limited governance, Ava Labs influence
+  C2: 42,   // Token concentration: ~42% held by team/foundation/investors
+  C3: 100,  // Governance: Limited token governance. Ava Labs controls most decisions.
 };
 
 export const avalanche: Project = {

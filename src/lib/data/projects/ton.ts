@@ -30,9 +30,10 @@ const rawValues: Record<string, number | null> = {
   B5: 7,    // Config changes require validator consensus, no single admin halt
   B6: 4,   // Revived from Telegram, some changes from original design
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 85,   // 85% mined by interconnected whales affiliated with TON Foundation
-  C2: 2,   // Top 10 holders own 61%, top 100 control 92% - massive concentration
+  C2: 85,   // Token concentration: 85% held by connected whales, top 10 = 61%
+  C3: 92,   // Governance: Limited governance. Top 100 holders control 92% of power.
 };
 
 export const ton: Project = {

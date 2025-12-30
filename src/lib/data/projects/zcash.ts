@@ -25,9 +25,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // No halt capability - PoW chain like Bitcoin
   B6: 3,   // Sapling/Orchard upgrades, dev fund changes, but PoW consensus stable
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 10,   // 10% founders reward (2016-2020), now 20% dev fund
-  C2: 6,   // ZIP governance process, but centralized decision making
+  C2: 30,   // Token concentration: ~30% accumulated by ECC/Foundation via dev fund
+  C3: 60,   // Governance: ZIP process exists, but ECC/Foundation dominate decisions
 };
 
 export const zcash: Project = {

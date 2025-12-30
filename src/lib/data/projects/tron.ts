@@ -25,9 +25,10 @@ const rawValues: Record<string, number | null> = {
   B5: 0,    // KILL-SWITCH: Justin Sun can effectively control/halt chain
   B6: 5,   // Centralized control, upgrades at Justin Sun's discretion
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 40,   // Private sale + foundation allocation
-  C2: 1,   // Voting controlled by few large holders
+  C2: 40,   // Token concentration: ~40% held by foundation/insiders
+  C3: 100,  // Governance: No real token governance. Justin Sun controls everything.
 };
 
 export const tron: Project = {

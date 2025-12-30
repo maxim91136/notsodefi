@@ -25,9 +25,10 @@ const rawValues: Record<string, number | null> = {
   B5: 0,    // KILL-SWITCH: Binance can halt/freeze chain unilaterally
   B6: 5,   // Centralized control, frequent upgrades at Binance's discretion
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 50,   // BNB was ICO token, Binance holds large supply
-  C2: 1,   // Governance controlled by Binance
+  C2: 50,   // Token concentration: Binance holds significant supply (~50%)
+  C3: 100,  // Governance: No token governance. Binance controls everything.
 };
 
 export const bnb: Project = {

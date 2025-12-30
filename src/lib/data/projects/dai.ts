@@ -36,9 +36,10 @@ const rawValues: Record<string, number | null> = {
   B5: 5,    // No direct freeze, but ~40% USDC collateral = indirect Circle dependency. Emergency Shutdown requires 50K MKR
   B6: 4,   // SCD→MCD migration, PSM changes, Sky/USDS rebrand ongoing
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 40,   // ~40% to Maker Foundation + early investors (a16z, Polychain, etc.)
-  C2: 7,   // MKR governance - anyone can buy and vote, proposal process exists
+  C2: 40,   // Token concentration: ~40% MKR held by foundation + early investors
+  C3: 35,   // Governance: Top holders (a16z, delegates) control ~35% of voting power
 };
 
 export const dai: Project = {

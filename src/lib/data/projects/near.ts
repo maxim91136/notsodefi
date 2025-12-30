@@ -34,9 +34,10 @@ const rawValues: Record<string, number | null> = {
   B5: 8,    // No kill-switch, decentralized validator set
   B6: 5,   // New chain (2020), Nightshade sharding upgrades, Phase 2 changes
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 29,   // ~29% to team (8.5%) + VCs (14.4%) + foundation (6%)
-  C2: 6,   // Limited on-chain governance, community input exists
+  C2: 29,   // Token concentration: ~29% held by team/VCs/foundation
+  C3: 50,   // Governance: Limited on-chain governance. Foundation influence significant.
 };
 
 export const near: Project = {

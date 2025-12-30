@@ -38,9 +38,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // No halt capability - truly unstoppable PoW chain
   B6: 3,   // BCH/BSV/eCash splits, block size changes, but PoW unchanged
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 0,    // 0% premine - inherited Bitcoin's fair launch
-  C2: null, // N/A - No on-chain governance
+  C2: null, // Token concentration: N/A - fair launch, no insider allocation
+  C3: null, // Governance: N/A - No on-chain governance
 };
 
 export const bitcoincash: Project = {

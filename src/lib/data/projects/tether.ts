@@ -33,9 +33,10 @@ const rawValues: Record<string, number | null> = {
   B5: 0,    // KILL-SWITCH: Can freeze ANY address instantly
   B6: null, // N/A - Not a protocol, corporate product
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 100,  // 100% minted by Tether - no distribution mechanism
-  C2: 1,   // Zero governance - Tether decides everything
+  C2: 0,    // Token concentration: N/A for stablecoin - users hold USDT, not insiders
+  C3: 100,  // Governance: Zero token governance - Tether Ltd decides everything
 };
 
 export const tether: Project = {

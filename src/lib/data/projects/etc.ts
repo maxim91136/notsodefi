@@ -25,9 +25,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // No admin controls - pure PoW chain like Bitcoin
   B6: 9,   // THE immutable chain - refused DAO fork, "Code is Law" ethos
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 15,   // Same as ETH - 72M presale in 2014 (~15% of current supply)
-  C2: 7,   // ECIP governance process, rough consensus, no on-chain voting
+  C2: 15,   // Token concentration: ~15% from original ETH presale
+  C3: null, // Governance: N/A - ECIP rough consensus, no token voting
 };
 
 export const etc: Project = {

@@ -45,9 +45,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // No halt capability - decentralized PoS validators
   B6: 4,   // DAO Fork (2016) + The Merge PoW→PoS (2022) + frequent EIPs
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 20,   // ~20% premine (9.9% founders + 9.9% foundation)
-  C2: 25,  // Insiders hold significant but diluted share
+  C2: 25,   // Token concentration: insiders hold ~25% (diluted over time)
+  C3: null, // Governance: No on-chain token governance. Core devs decide via rough consensus.
 };
 
 export const ethereum: Project = {

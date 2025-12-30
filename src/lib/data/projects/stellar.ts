@@ -29,9 +29,10 @@ const rawValues: Record<string, number | null> = {
   B5: 2,    // SDF runs 3 of 7 tier-1 validators - strong indirect control, no direct halt mechanism
   B6: 3,   // Some protocol upgrades but FBA consensus unchanged since 2015
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 35,   // SDF holds 35% of supply; 100% premined
-  C2: 1,   // No on-chain governance, XLM has no voting rights
+  C2: 35,   // Token concentration: SDF holds 35% of total supply
+  C3: 100,  // Governance: No on-chain governance. XLM has no voting rights. SDF decides.
 };
 
 export const stellar: Project = {

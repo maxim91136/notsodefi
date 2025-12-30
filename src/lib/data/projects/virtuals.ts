@@ -37,9 +37,10 @@ const rawValues: Record<string, number | null> = {
   B5: 5,    // Unknown if contracts upgradeable, Base dependency adds risk
   B6: 4,    // Young protocol (2024 rebrand), likely upgradeable contracts
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 40,   // 60% public, but 35% treasury + VCs from 2021 seed = insider advantage
-  C2: 4,    // veVIRTUAL governance exists, but early/concentrated
+  C2: 40,   // Token concentration: ~40% controlled by treasury + early VCs
+  C3: 60,   // Governance: veVIRTUAL governance exists, but early/concentrated
 };
 
 export const virtuals: Project = {

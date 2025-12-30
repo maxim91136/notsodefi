@@ -26,9 +26,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // No sudo since July 2020 - fully decentralized, no kill switch
   B6: 4,   // "Forkless upgrades" via governance - frequent runtime changes
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 30,   // 30% to founders, 58% to ICO/investors
-  C2: 5,   // OpenGov but whales have more voting power, W3F voting bloc
+  C2: 30,   // Token concentration: ~30% held by W3F/Parity/founders
+  C3: 35,   // Governance: OpenGov exists, but W3F voting bloc + whales dominate
 };
 
 export const polkadot: Project = {

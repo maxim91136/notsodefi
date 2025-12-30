@@ -38,9 +38,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // No halt capability - truly unstoppable PoW chain
   B6: 1,   // Bitcoin fork, minimal changes since launch (MimbleWimble optional)
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 0,    // 0% premine - fair launch like Bitcoin
-  C2: null, // N/A - No on-chain governance
+  C2: null, // Token concentration: N/A - fair launch, no insider allocation
+  C3: null, // Governance: N/A - No on-chain governance
 };
 
 export const litecoin: Project = {

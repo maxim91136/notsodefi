@@ -27,9 +27,10 @@ const rawValues: Record<string, number | null> = {
   B5: 0,    // KILL-SWITCH: Bridge pause, withdrawal freeze, forced delisting
   B6: 6,   // Brand new (2024), moving fast, centralized control over upgrades
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 40,   // 23.8% team + 38.9% future emissions = ~63% not freely distributed
-  C2: 6,   // Airdrop to 94k users was fairly distributed
+  C2: 63,   // Token concentration: ~63% controlled by team + future emissions
+  C3: 100,  // Governance: No token governance. Labs controls all decisions.
 };
 
 export const hyperliquid: Project = {

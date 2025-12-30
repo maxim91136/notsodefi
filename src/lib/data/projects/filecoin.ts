@@ -40,9 +40,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // No kill-switch - miners operate independently, no admin keys
   B6: 4,   // FIPs and network upgrades, Protocol Labs driven development
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 30,   // ~30% to insiders (15% Labs + 5% Foundation + 10% ICO)
-  C2: 4,   // Limited governance, FIPs exist but Labs-dominated
+  C2: 30,   // Token concentration: ~30% held by Labs/Foundation/ICO investors
+  C3: 60,   // Governance: FIPs exist but Protocol Labs dominates decision-making
 };
 
 export const filecoin: Project = {

@@ -26,9 +26,10 @@ const rawValues: Record<string, number | null> = {
   B5: 4,    // NNS can do anything but requires proposals/voting (not single entity)
   B6: 5,   // DFINITY-controlled development, frequent NNS upgrades
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 50,   // ~48-50% insider allocation (DFINITY, team, seed, strategic)
-  C2: 3,   // NNS governance but insiders dominate voting
+  C2: 50,   // Token concentration: ~50% held by DFINITY/team/seed/strategic
+  C3: 40,   // Governance: NNS governance exists, but DFINITY+IC Association = 40% voting power
 };
 
 export const icp: Project = {

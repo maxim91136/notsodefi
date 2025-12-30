@@ -43,9 +43,10 @@ const rawValues: Record<string, number | null> = {
   B5: 10,   // No halt capability - truly unstoppable PoW chain
   B6: 2,   // Privacy/ASIC-resistance upgrades but no consensus mechanism change
 
-  // Fairness Score (C1-C2)
+  // Fairness Score (C1-C3)
   C1: 0,    // 0% premine - fair launch
-  C2: null, // N/A - No on-chain governance
+  C2: null, // Token concentration: N/A - fair launch, no insider allocation
+  C3: null, // Governance: N/A - No on-chain governance
 };
 
 export const monero: Project = {

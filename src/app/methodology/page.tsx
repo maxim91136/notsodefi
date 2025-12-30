@@ -89,9 +89,9 @@ export default function MethodologyPage() {
         </div>
       </section>
 
-      {/* Why These 12 Criteria */}
+      {/* Why These 13 Criteria */}
       <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">Why These 12 Criteria?</h2>
+        <h2 className="text-2xl font-bold mb-4">Why These 13 Criteria?</h2>
         <div className="space-y-6 text-white/80">
           <p>
             We selected criteria that are <strong>measurable</strong>, <strong>meaningful</strong>,
@@ -122,7 +122,7 @@ export default function MethodologyPage() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-green-400 mb-2">Fairness Score (C1-C2)</h3>
+            <h3 className="text-lg font-semibold text-green-400 mb-2">Fairness Score (C1-C3)</h3>
             <ul className="list-disc list-inside space-y-1 ml-2">
               {fairnessCriteria.map((c) => (
                 <li key={c.id}>
@@ -181,7 +181,7 @@ export default function MethodologyPage() {
             <ul className="list-disc list-inside space-y-1 ml-2">
               <li><strong>Chain Score:</strong> A1-A4 equally weighted (each 25% of Chain Score)</li>
               <li><strong>Control Score:</strong> B1-B6 equally weighted (each ~16.7% of Control Score)</li>
-              <li><strong>Fairness Score:</strong> C1-C2 equally weighted (each 50% of Fairness Score)</li>
+              <li><strong>Fairness Score:</strong> C1-C3 equally weighted (each ~33.3% of Fairness Score)</li>
             </ul>
             <p className="text-white/60 italic">
               N/A values (criteria that don&apos;t apply to a consensus type) are excluded from the average.
@@ -283,13 +283,14 @@ export default function MethodologyPage() {
 
             {/* Fairness Score */}
             <div className="p-4 rounded-lg bg-purple-500/10 border border-purple-500/20">
-              <h3 className="text-lg font-semibold text-purple-400 mb-3">Fairness Score (C1-C2) - Mixed</h3>
+              <h3 className="text-lg font-semibold text-purple-400 mb-3">Fairness Score (C1-C3) - Mixed</h3>
               <p className="text-sm text-white/60 mb-3">
-                Historical data that doesn&apos;t change. Verifiable from tokenomics sources.
+                Historical and current distribution data. Verifiable from tokenomics sources.
               </p>
               <ul className="list-disc list-inside space-y-1 text-sm">
                 <li><strong>C1</strong> - Premine % - Historical, verifiable (Messari, docs, blockchain explorers)</li>
-                <li><strong>C2</strong> - Governance power - Snapshot voting data, token distribution analysis</li>
+                <li><strong>C2</strong> - Token concentration - Current insider holdings (on-chain data, Etherscan, etc.)</li>
+                <li><strong>C3</strong> - Governance control - Voting power distribution (Snapshot, governance dashboards)</li>
               </ul>
             </div>
 
