@@ -118,8 +118,8 @@ const promisesData: PromiseEntry[] = [
     project: 'Bittensor',
     symbol: 'TAO',
     promise: 'Fair launch, no VC, no premine',
-    date: '2021',
-    currentState: 'Incubated by Polychain 2019. DCG largest holder (2.4% supply). 4 funding rounds on Crunchbase.',
+    date: '2019',
+    currentState: 'Incubated by Polychain 2019. DCG largest holder (2.4% supply). 4 funding rounds on Crunchbase. Launched 2021 claiming "no VC".',
     verdict: 'broken',
   },
   {
