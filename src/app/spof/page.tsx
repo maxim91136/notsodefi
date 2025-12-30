@@ -58,6 +58,7 @@ const spofData: SPOFEntry[] = [
   { project: 'BNB Chain', symbol: 'BNB', score: 1.0, spofType: 'company', element: 'Binance', deathScenario: 'Binance closed = dead' },
   { project: 'Tether', symbol: 'USDT', score: 1.0, spofType: 'company', element: 'Tether Ltd (iFinex)', deathScenario: 'Bank run = dead' },
   { project: 'USDC', symbol: 'USDC', score: 1.0, spofType: 'company', element: 'Circle', deathScenario: 'Regulated, but centralized' },
+  { project: 'Virtuals Protocol', symbol: 'VIRTUAL', score: 3.0, spofType: 'company', element: 'Virtuals Team', deathScenario: 'Team gone = dead, Base-dependent' },
 ];
 
 const getTierInfo = (entry: SPOFEntry) => {
@@ -190,7 +191,7 @@ export default function SPOFPage() {
       <div className="mt-12 p-8 bg-gray-800/50 border border-gray-700 rounded-lg">
         <h2 className="text-xl font-bold mb-4">Key Insight</h2>
         <p className="text-gray-300 mb-4">
-          Only <span className="text-green-400 font-bold">5 out of 37 projects</span> have no identifiable Single Point of Failure.
+          Only <span className="text-green-400 font-bold">{unkillable.length} out of {spofData.length} projects</span> have no identifiable Single Point of Failure.
           All of them share common traits:
         </p>
         <ul className="space-y-2 text-gray-300">

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'NotSoDeFi.com - Measuring Real Decentralization',
     description:
-      'A framework for objectively measuring blockchain and protocol decentralization. 37 projects ranked.',
+      'A framework for objectively measuring blockchain and protocol decentralization. 38 projects ranked.',
     url: 'https://notsodefi.com',
     siteName: 'NotSoDeFi.com',
     locale: 'en_US',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'NotSoDeFi.com - Measuring Real Decentralization',
     description:
-      'A framework for objectively measuring blockchain and protocol decentralization. 37 projects ranked.',
+      'A framework for objectively measuring blockchain and protocol decentralization. 38 projects ranked.',
   },
   robots: {
     index: true,
