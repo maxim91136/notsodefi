@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.50.0-rc1] - 2025-12-30
+
+### Added
+- **Virtuals Protocol API Fetcher** - Live data from DefiLlama
+  - Market cap, fees (24h/7d/30d/all-time)
+  - Chain breakdown (Base/Ethereum/Solana)
+  - Daily automated fetch via GitHub Actions
+
 ## [0.49.0-rc1] - 2025-12-30
 
 ### Added
