@@ -12,7 +12,28 @@ export default function HomePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      {/* Bitcoin Benchmark - First thing visitors see */}
+      {/* Beta Notice - First thing visitors see */}
+      <section className="mb-8">
+        <div className="p-4 rounded-lg bg-yellow-500/15 border border-yellow-500/40 text-center">
+          <p className="text-yellow-400 font-bold text-lg mb-1">
+            🚧 BETA - Work in Progress
+          </p>
+          <p className="text-white/70 text-sm max-w-2xl mx-auto">
+            Scores may contain errors. If you spot inaccuracies, please{' '}
+            <a
+              href="https://github.com/maxim91136/notsodefi/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-yellow-400 hover:text-yellow-300 underline font-medium"
+            >
+              open an issue
+            </a>{' '}
+            or submit a PR. Community contributions make this framework better.
+          </p>
+        </div>
+      </section>
+
+      {/* Bitcoin Benchmark */}
       <section className="mb-12">
         <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-orange-500/10 to-orange-500/0 border border-orange-500/20">
           <p className="text-orange-400/80 text-sm font-mono uppercase tracking-wider mb-4">The Benchmark</p>
@@ -77,27 +98,6 @@ export default function HomePage() {
           >
             Score Calculator
           </Link>
-        </div>
-      </section>
-
-      {/* Beta Notice */}
-      <section className="mb-12">
-        <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30 text-center">
-          <p className="text-yellow-400 font-semibold mb-1">
-            🚧 BETA - Work in Progress
-          </p>
-          <p className="text-white/60 text-sm max-w-2xl mx-auto">
-            Scores may contain errors. If you spot inaccuracies, please{' '}
-            <a
-              href="https://github.com/maxim91136/notsodefi/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-yellow-400 hover:text-yellow-300 underline"
-            >
-              open an issue
-            </a>{' '}
-            or submit a PR. Community contributions make this framework better.
-          </p>
         </div>
       </section>
 

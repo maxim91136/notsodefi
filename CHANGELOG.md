@@ -2,6 +2,12 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.9-rc1] - 2025-12-30
+
+### Changed
+- **Beta Notice More Prominent** - Moved to very top of homepage (above Bitcoin benchmark)
+  - Larger text, stronger colors for immediate visibility
+
 ## [0.51.8-rc1] - 2025-12-30
 
 ### Added
