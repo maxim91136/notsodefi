@@ -29,7 +29,7 @@ export default function MethodologyPage() {
         <CardContent className="space-y-2 text-white/80">
           <p><strong>Formula:</strong> TotalScore = 0.4 * Chain + 0.4 * Control + 0.2 * Fairness</p>
           <p><strong>Kill-Switch Cap:</strong> B5=0 caps total score at 1.0</p>
-          <p><strong>Benchmark:</strong> Bitcoin is the reference for maximum decentralization</p>
+          <p><strong>Current #1:</strong> Bitcoin scores highest in our framework</p>
         </CardContent>
       </Card>
 
@@ -208,7 +208,7 @@ export default function MethodologyPage() {
             <li>Satoshi disappeared - the project survives without its creator</li>
           </ul>
           <p className="text-white/60 italic">
-            When evaluating any project, ask: &quot;How does this compare to Bitcoin?&quot;
+            Bitcoin currently scores highest. Not because we compare against it, but because it scores best on our criteria.
           </p>
         </div>
       </section>

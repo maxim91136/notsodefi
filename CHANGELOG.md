@@ -2,6 +2,13 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.5-rc1] - 2025-12-30
+
+### Changed
+- **Bitcoin Benchmark Wording** - Clarified that Bitcoin scores highest, not that projects are "compared against" it
+  - Each project is evaluated independently against the same criteria
+  - Updated: methodology page, bitcoin.ts notes
+
 ## [0.51.4-rc1] - 2025-12-30
 
 ### Changed

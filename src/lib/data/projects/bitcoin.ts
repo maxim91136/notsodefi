@@ -225,7 +225,7 @@ export const bitcoin: Project = {
     'https://github.com/bitcoin/bitcoin',
   ],
   notes: [
-    'Bitcoin is the benchmark for decentralization. All other projects are compared against it.',
+    'Bitcoin demonstrates what decentralization can look like. It currently scores highest in our framework.',
     'Node count shows only publicly reachable nodes (~15-20k). Actual total estimated 50-100k (non-listening, Tor, NAT).',
     'Pool concentration ≠ miner concentration. Miners can switch pools instantly.',
   ],
