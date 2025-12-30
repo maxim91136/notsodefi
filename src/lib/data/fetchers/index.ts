@@ -95,3 +95,6 @@ export { LidoFetcher, getLidoFetcher } from './lido';
 
 // Ethereum Classic fetchers
 export { ETCFetcher, getETCFetcher } from './etc';
+
+// Virtuals Protocol fetchers
+export { VirtualsFetcher, getVirtualsFetcher } from './virtuals';

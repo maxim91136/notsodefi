@@ -111,7 +111,7 @@ Some criteria may be N/A depending on the consensus type.
 | Arbitrum | ARB | PoS | [Arbitrum RPC](https://arb1.arbitrum.io/rpc) |
 | Lido | LDO | PoS | [DefiLlama](https://defillama.com) |
 | Ethereum Classic | ETC | PoW | [Blockscout](https://etc.blockscout.com) |
-| Virtuals Protocol | VIRTUAL | PoS | [Virtuals Whitepaper](https://whitepaper.virtuals.io) |
+| Virtuals Protocol | VIRTUAL | PoS | [DefiLlama](https://defillama.com) |
 
 Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily.
 
