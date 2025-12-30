@@ -1,5 +1,5 @@
 /**
- * Fairness Score Criteria (C1-C2)
+ * Fairness Score Criteria (C1-C3)
  *
  * Measures launch, distribution, and governance fairness.
  */

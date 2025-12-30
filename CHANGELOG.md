@@ -2,6 +2,11 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.53.1] - 2025-12-30
+
+### Fixed
+- **Documentation**: Fixed comment header in fairness.ts (C1-C2 → C1-C3)
+
 ## [0.53.0] - 2025-12-30
 
 ### Changed
