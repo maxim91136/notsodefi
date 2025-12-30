@@ -46,6 +46,18 @@ fi
 
 echo -e "${YELLOW}[2/9] Checking documentation...${NC}"
 
+# Manual checklist reminder for new projects
+echo -e "  ${YELLOW}!${NC} New project checklist:"
+echo -e "      [ ] projects/xxx.ts created"
+echo -e "      [ ] projects/index.ts updated"
+echo -e "      [ ] README.md (count 2x + token table)"
+echo -e "      [ ] layout.tsx (OG/Twitter meta)"
+echo -e "      [ ] spof/page.tsx (add entry)"
+echo -e "      [ ] spof/layout.tsx (count)"
+echo -e "      [ ] follow-the-money (if VC-backed)"
+echo -e "      [ ] broken-promises (if relevant)"
+echo ""
+
 # Check VERSION file
 echo "$VERSION" > VERSION
 echo -e "  ${GREEN}✓${NC} VERSION updated to ${VERSION}"
