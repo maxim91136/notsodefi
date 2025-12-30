@@ -17,7 +17,7 @@ import { calculateProjectScores } from '@/lib/framework';
 const rawValues: Record<string, number | null> = {
   // Chain Score (A1-A4)
   A1: 19,   // Nakamoto coefficient 19 (above median for PoS)
-  A2: 12,   // Top 5 concentration ~12%
+  A2: 84,   // 84% staked supply controlled by insiders (Foundation stakes 52% across validators)
   A3: 1,    // Single implementation (Mysten Labs)
   A4: 50,   // Estimated cloud/datacenter percentage
 
