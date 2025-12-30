@@ -245,6 +245,20 @@ export default function MethodologyPage() {
           </p>
 
           <div className="space-y-6 mt-6">
+            {/* Chain Score - API Integration Planned */}
+            <div className="p-4 rounded-lg bg-blue-500/10 border border-blue-500/20">
+              <h3 className="text-lg font-semibold text-blue-400 mb-3">Chain Score (A1-A4) - API Integration Planned</h3>
+              <p className="text-sm text-white/60 mb-3">
+                Currently manual assessment. API automation in development.
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-sm">
+                <li><strong>A1</strong> - Nakamoto Coefficient - Target: nakaflow.io API</li>
+                <li><strong>A2</strong> - Validator concentration - Target: chain-specific APIs</li>
+                <li><strong>A3</strong> - Client diversity - Target: node explorer APIs</li>
+                <li><strong>A4</strong> - Hosting distribution - Target: bitnodes, datacenter analysis</li>
+              </ul>
+            </div>
+
             {/* Control Score - Expert Assessment */}
             <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/20">
               <h3 className="text-lg font-semibold text-yellow-400 mb-3">Control Score (B1-B6) - Expert Assessment</h3>
@@ -271,20 +285,6 @@ export default function MethodologyPage() {
               <ul className="list-disc list-inside space-y-1 text-sm">
                 <li><strong>C1</strong> - Premine % - Historical, verifiable (Messari, docs, blockchain explorers)</li>
                 <li><strong>C2</strong> - Governance power - Snapshot voting data, token distribution analysis</li>
-              </ul>
-            </div>
-
-            {/* Chain Score - Under Development */}
-            <div className="p-4 rounded-lg bg-blue-500/10 border border-blue-500/20">
-              <h3 className="text-lg font-semibold text-blue-400 mb-3">Chain Score (A1-A4) - API Integration Planned</h3>
-              <p className="text-sm text-white/60 mb-3">
-                Currently manual assessment. API automation in development.
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-sm">
-                <li><strong>A1</strong> - Nakamoto Coefficient - Target: nakaflow.io API</li>
-                <li><strong>A2</strong> - Validator concentration - Target: chain-specific APIs</li>
-                <li><strong>A3</strong> - Client diversity - Target: node explorer APIs</li>
-                <li><strong>A4</strong> - Hosting distribution - Target: bitnodes, datacenter analysis</li>
               </ul>
             </div>
           </div>
