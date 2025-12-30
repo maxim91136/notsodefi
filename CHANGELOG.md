@@ -2,6 +2,23 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.0-rc1] - 2025-12-30
+
+### Added
+- **Bitcoin Benchmark Section** - Homepage hero shows BTC score dynamically
+  - First thing visitors see - "The Benchmark"
+  - Score updates automatically when BTC assessment changes
+
+### Changed
+- **Bittensor (TAO)** - C2 Governance score corrected (6→75)
+  - Foundation + VCs control ~75% of governance decisions
+  - Score: 4.6 → 3.8
+- **SUI** - A2 Validator concentration corrected (12→84)
+  - Foundation stakes 52% across validators to appear decentralized
+  - Justin Bons: 84% of staked supply controlled by insiders
+  - Score: 5.1 → 4.3
+- **Methodology Page** - Data Sources section reordered A→B→C
+
 ## [0.50.0-rc1] - 2025-12-30
 
 ### Added
