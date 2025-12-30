@@ -2,6 +2,15 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.49.0-rc1] - 2025-12-30
+
+### Added
+- **Virtuals Protocol (VIRTUAL)** - 38th project assessment
+  - AI Agent launchpad on Base (Coinbase L2)
+  - Formerly PathDAO (2021 gaming guild)
+  - VC-backed ($16M seed from DeFiance, Merit Circle)
+  - No false decentralization claims - honest about centralization
+
 ## [0.48.0-rc1] - 2025-12-30
 
 ### Changed

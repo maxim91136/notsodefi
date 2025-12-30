@@ -29,7 +29,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 - **Filter & Search** - By category, consensus type, or name
 - **[Known Problems](https://notsodefi.com/problems)** - Documented limitations across all blockchain systems
 - **[Red Flags](https://notsodefi.com/red-flags)** - Marketing-to-reality translation guide
-- **[SPOF Analysis](https://notsodefi.com/spof)** - Single Point of Failure analysis (only 6/37 unkillable)
+- **[SPOF Analysis](https://notsodefi.com/spof)** - Single Point of Failure analysis (only 6/38 unkillable)
 - **[Broken Promises](https://notsodefi.com/broken-promises)** - Progressive decentralization audit
 - **[Follow the Money](https://notsodefi.com/follow-the-money)** - VC portfolio overlap (a16z, Paradigm, Polychain)
 
@@ -111,6 +111,7 @@ Some criteria may be N/A depending on the consensus type.
 | Arbitrum | ARB | PoS | [Arbitrum RPC](https://arb1.arbitrum.io/rpc) |
 | Lido | LDO | PoS | [DefiLlama](https://defillama.com) |
 | Ethereum Classic | ETC | PoW | [Blockscout](https://etc.blockscout.com) |
+| Virtuals Protocol | VIRTUAL | PoS | [Virtuals Whitepaper](https://whitepaper.virtuals.io) |
 
 Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily.
 
