@@ -29,7 +29,7 @@ const rawValues: Record<string, number | null> = {
 
   // Fairness Score (C1-C2)
   C1: 35,   // 35% team/company, 35% "node rewards" (team controls distribution)
-  C2: 2,   // No on-chain governance, Chainlink Labs makes all decisions
+  C2: 100,  // NO governance - LINK holders have zero voting rights, Labs decides everything
 };
 
 export const chainlink: Project = {

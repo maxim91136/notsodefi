@@ -2,6 +2,13 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.7-rc1] - 2025-12-30
+
+### Fixed
+- **Chainlink C2 Score** - LINK holders have zero governance rights
+  - Was: C2=2 (incorrectly suggesting 2% insider control)
+  - Now: C2=100 (Labs controls 100% of decisions, no token governance)
+
 ## [0.51.6-rc1] - 2025-12-30
 
 ### Changed
