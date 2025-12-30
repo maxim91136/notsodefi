@@ -33,7 +33,7 @@ const rawValues: Record<string, number | null> = {
 
   // Fairness Score (C1-C2)
   C1: 45,   // VCs incubated 2019, DCG 2.4% supply, despite "fair launch" claims
-  C2: 6,   // Subnet autonomy + on-chain governance via ZIP-style proposals
+  C2: 2,    // Foundation + VCs control all decisions, ZIP proposals are non-binding suggestions
 };
 
 export const bittensor: Project = {
