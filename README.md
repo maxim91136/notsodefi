@@ -1,6 +1,6 @@
 # NotSoDeFi.com
 
-**Measuring Real Decentralization** • 37 Projects • Open Source
+**Measuring Real Decentralization** • 38 Projects • Open Source
 
 > *"Don't trust, verify."*
 
@@ -8,7 +8,7 @@
 
 The crypto industry has a decentralization problem: everyone claims it, few deliver it. Marketing departments label centralized systems "decentralized" while VCs, foundations, and insiders retain control. Users deserve to know the truth.
 
-NotSoDeFi.com provides **objective, data-driven measurements** of actual decentralization – not promises, not whitepapers, not marketing. We track validator concentration, token distribution, governance power, corporate control, and protocol immutability across 37 projects.
+NotSoDeFi.com provides **objective, data-driven measurements** of actual decentralization – not promises, not whitepapers, not marketing. We track validator concentration, token distribution, governance power, corporate control, and protocol immutability across 38 projects.
 
 **The goal:** Cut through the noise. Help users understand what they're actually trusting when they use a "decentralized" protocol.
 
