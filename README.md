@@ -41,7 +41,7 @@ Three scores, twelve criteria. Projects with admin kill-switches (B5=0) are capp
 
 | Score | Weight | What it measures |
 |-------|--------|------------------|
-| **Chain Score** | 40% | Technical/economic decentralization (Nakamoto Coefficient, validator concentration, client diversity, node geography) |
+| **Chain Score** | 40% | Technical/economic decentralization (Nakamoto Coefficient, validator concentration, client independence, node geography) |
 | **Control Score** | 40% | Power structures (corporate capture, repo ownership, brand control, treasury keys, protocol immutability) |
 | **Fairness Score** | 20% | Launch/distribution fairness (premine, token distribution, governance power) |
 

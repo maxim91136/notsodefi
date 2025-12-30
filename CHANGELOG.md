@@ -2,6 +2,13 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.4-rc1] - 2025-12-30
+
+### Changed
+- **A3 Criterion Renamed** - "Client Diversity" → "Client Independence"
+  - Clarifies that we measure independently developed implementations, not just count
+  - Updated: framework definition, methodology page, README, mappings
+
 ## [0.51.3-rc1] - 2025-12-30
 
 ### Added

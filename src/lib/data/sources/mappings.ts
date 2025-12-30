@@ -43,7 +43,7 @@ export const criterionMappings: CriterionDataMapping[] = [
     chainSpecific: true,
   },
   {
-    criterionId: 'A3', // Client Diversity
+    criterionId: 'A3', // Client Independence
     primary: {
       provider: 'ethernodes', // For ETH
       endpoint: '/clients',

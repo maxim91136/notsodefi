@@ -42,9 +42,9 @@ export const chainCriteria: Criterion[] = [
   },
   {
     id: 'A3',
-    name: 'Client Diversity',
+    name: 'Client Independence',
     description:
-      'Number of independent full-node implementations with relevant market share. More diversity is better.',
+      'Number of independently developed full-node implementations. Measures resilience against single-codebase bugs and single-entity control.',
     category: 'chain',
     mappings: [
       { min: 3, max: Infinity, score: [9, 10], label: 'Excellent (>= 3 clients, none > 70%)' },

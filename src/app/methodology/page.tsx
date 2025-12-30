@@ -254,7 +254,7 @@ export default function MethodologyPage() {
               <ul className="list-disc list-inside space-y-1 text-sm">
                 <li><strong>A1</strong> - Nakamoto Coefficient - Target: nakaflow.io API</li>
                 <li><strong>A2</strong> - Validator concentration - Target: chain-specific APIs</li>
-                <li><strong>A3</strong> - Client diversity - Target: node explorer APIs</li>
+                <li><strong>A3</strong> - Client independence - Target: node explorer APIs</li>
                 <li><strong>A4</strong> - Hosting distribution - Target: bitnodes, datacenter analysis</li>
               </ul>
             </div>
