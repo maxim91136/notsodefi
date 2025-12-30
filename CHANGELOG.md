@@ -2,6 +2,13 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.6-rc1] - 2025-12-30
+
+### Changed
+- **Homepage Bitcoin Section** - Fixed "measured against" wording on homepage hero
+  - Was: "All projects are measured against Bitcoin"
+  - Now: "Currently scores highest"
+
 ## [0.51.5-rc1] - 2025-12-30
 
 ### Changed

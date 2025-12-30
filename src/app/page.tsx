@@ -31,7 +31,7 @@ export default function HomePage() {
             </div>
           </div>
           <p className="text-white/40 text-sm max-w-xl mx-auto">
-            All projects are measured against Bitcoin — the only cryptocurrency that achieved decentralization without VCs, foundations, or insider allocations.
+            The only cryptocurrency that achieved decentralization without VCs, foundations, or insider allocations. Currently scores highest.
           </p>
         </div>
       </section>
