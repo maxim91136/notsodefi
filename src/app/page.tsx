@@ -15,8 +15,15 @@ export default function HomePage() {
       {/* Bitcoin Benchmark - First thing visitors see */}
       <section className="mb-12">
         <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-orange-500/10 to-orange-500/0 border border-orange-500/20">
-          <p className="text-orange-400/80 text-sm font-mono uppercase tracking-wider mb-2">The Benchmark</p>
-          <div className="flex items-center justify-center gap-4 mb-4">
+          <p className="text-orange-400/80 text-sm font-mono uppercase tracking-wider mb-4">The Benchmark</p>
+          <div className="flex items-center justify-center gap-6 mb-4">
+            <Image
+              src="/bitcoin-logo.svg"
+              alt="Bitcoin"
+              width={64}
+              height={64}
+              className="flex-shrink-0"
+            />
             <span className="text-5xl font-bold text-orange-400">{bitcoin.scores.totalScore}</span>
             <div className="text-left">
               <p className="text-2xl font-bold text-white">Bitcoin</p>

@@ -2,6 +2,11 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.2-rc1] - 2025-12-30
+
+### Added
+- **Bitcoin Logo** - Benchmark hero section now includes BTC logo for visual balance
+
 ## [0.51.1-rc1] - 2025-12-30
 
 ### Fixed
