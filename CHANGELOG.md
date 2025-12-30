@@ -2,6 +2,13 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.52.2-rc1] - 2025-12-30
+
+### Changed
+- **Reduced Page Padding** - Main pages now have py-8 instead of py-16
+  - Consistent with SPOF and other colored pages
+  - "← Home" link now closer to header, less wasted space
+
 ## [0.52.1-rc1] - 2025-12-30
 
 ### Changed

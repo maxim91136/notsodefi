@@ -26,7 +26,7 @@ export default function CalculatorPage() {
   const hasAnyValue = Object.keys(values).length > 0;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-8">
         <Link href="/" className="text-blue-400 hover:text-blue-300 text-sm">
           &larr; Home

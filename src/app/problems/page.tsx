@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ProblemsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-8">
         <Link href="/" className="text-blue-400 hover:text-blue-300 text-sm">
           &larr; Home
