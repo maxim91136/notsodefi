@@ -2,6 +2,14 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.8-rc1] - 2025-12-30
+
+### Added
+- **Beta Notice on Homepage** - Prominent notice explaining:
+  - This is a work in progress (BETA)
+  - Scores may contain errors
+  - Community contributions via GitHub issues/PRs welcome
+
 ## [0.51.7-rc1] - 2025-12-30
 
 ### Fixed

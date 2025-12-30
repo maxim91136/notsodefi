@@ -80,6 +80,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Beta Notice */}
+      <section className="mb-12">
+        <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30 text-center">
+          <p className="text-yellow-400 font-semibold mb-1">
+            🚧 BETA - Work in Progress
+          </p>
+          <p className="text-white/60 text-sm max-w-2xl mx-auto">
+            Scores may contain errors. If you spot inaccuracies, please{' '}
+            <a
+              href="https://github.com/maxim91136/notsodefi/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-yellow-400 hover:text-yellow-300 underline"
+            >
+              open an issue
+            </a>{' '}
+            or submit a PR. Community contributions make this framework better.
+          </p>
+        </div>
+      </section>
+
       {/* Framework Overview */}
       <section className="mb-20">
         <h2 className="text-3xl font-bold text-center mb-4">The Framework</h2>
