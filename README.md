@@ -16,7 +16,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 
 ## Philosophy
 
-- **Transparency over hype** – Every score is backed by verifiable data sources
+- **Transparency over hype** – Scores combine verifiable data with editorial assessment
 - **Bitcoin as the benchmark** – The reference point for decentralization scoring
 - **Centralization is a risk vector** – Admin keys, kill switches, and foundation control matter
 - **Progress is possible** – We track how projects evolve over time
