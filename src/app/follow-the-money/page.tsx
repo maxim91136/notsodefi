@@ -30,6 +30,7 @@ const vcData: VCInvestment[] = [
   { project: 'Polygon', symbol: 'POL', a16z: false, paradigm: false, polychain: true },
   { project: 'Internet Computer', symbol: 'ICP', a16z: true, paradigm: false, polychain: true },
   { project: 'Filecoin', symbol: 'FIL', a16z: false, paradigm: true, polychain: true },
+  { project: 'Virtuals Protocol', symbol: 'VIRTUAL', a16z: false, paradigm: false, polychain: false, other: ['DeFiance Capital', 'Merit Circle'] },
 ];
 
 interface CaseStudy {
