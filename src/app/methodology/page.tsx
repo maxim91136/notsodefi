@@ -287,6 +287,17 @@ export default function MethodologyPage() {
                 <li><strong>C2</strong> - Governance power - Snapshot voting data, token distribution analysis</li>
               </ul>
             </div>
+
+            {/* N/A Values */}
+            <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+              <h3 className="text-lg font-semibold text-white/80 mb-3">N/A Values</h3>
+              <p className="text-sm text-white/60">
+                N/A values indicate genuine absence of a centralization vector (e.g., Bitcoin has no
+                treasury because there is no foundation). Projects cannot score poorly on metrics that
+                don&apos;t apply to them - this is intentional, as absence of control structures is
+                itself a form of decentralization.
+              </p>
+            </div>
           </div>
 
           <p className="mt-6">

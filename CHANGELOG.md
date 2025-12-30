@@ -2,6 +2,12 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.3-rc1] - 2025-12-30
+
+### Added
+- **N/A Values Documentation** - Methodology page now explains how N/A values work
+  - Absence of centralization vectors (no treasury, no governance) is itself decentralization
+
 ## [0.51.2-rc1] - 2025-12-30
 
 ### Added
