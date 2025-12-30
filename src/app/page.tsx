@@ -12,6 +12,23 @@ export default function HomePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Bitcoin Benchmark - First thing visitors see */}
+      <section className="mb-12">
+        <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-orange-500/10 to-orange-500/0 border border-orange-500/20">
+          <p className="text-orange-400/80 text-sm font-mono uppercase tracking-wider mb-2">The Benchmark</p>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <span className="text-5xl font-bold text-orange-400">{bitcoin.scores.totalScore}</span>
+            <div className="text-left">
+              <p className="text-2xl font-bold text-white">Bitcoin</p>
+              <p className="text-white/50 text-sm">15+ years, no premine, no foundation, no kill-switch</p>
+            </div>
+          </div>
+          <p className="text-white/40 text-sm max-w-xl mx-auto">
+            All projects are measured against Bitcoin — the only cryptocurrency that achieved decentralization without VCs, foundations, or insider allocations.
+          </p>
+        </div>
+      </section>
+
       {/* Hero */}
       <section className="text-center mb-20">
         <Image
@@ -53,23 +70,6 @@ export default function HomePage() {
           >
             Score Calculator
           </Link>
-        </div>
-      </section>
-
-      {/* Bitcoin Benchmark */}
-      <section className="mb-20">
-        <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-orange-500/10 to-orange-500/0 border border-orange-500/20">
-          <p className="text-orange-400/80 text-sm font-mono uppercase tracking-wider mb-2">The Benchmark</p>
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <span className="text-5xl font-bold text-orange-400">{bitcoin.scores.totalScore}</span>
-            <div className="text-left">
-              <p className="text-2xl font-bold text-white">Bitcoin</p>
-              <p className="text-white/50 text-sm">15+ years, no premine, no foundation, no kill-switch</p>
-            </div>
-          </div>
-          <p className="text-white/40 text-sm max-w-xl mx-auto">
-            All projects are measured against Bitcoin — the only cryptocurrency that achieved decentralization without VCs, foundations, or insider allocations.
-          </p>
         </div>
       </section>
 
