@@ -2,6 +2,16 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [0.51.1-rc1] - 2025-12-30
+
+### Fixed
+- **KV Key Mismatches** - 4 projects had broken Network Data sections
+  - TRON: config `trx` → workflow `tron`
+  - Cardano: config `ada` → workflow `cardano`
+  - Avalanche: config `avax` → workflow `avalanche`
+  - Bittensor: config `tao` → workflow `bittensor`
+  - Fixed in `src/lib/config/projects.ts`
+
 ## [0.51.0-rc1] - 2025-12-30
 
 ### Added
