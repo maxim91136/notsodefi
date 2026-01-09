@@ -6,6 +6,7 @@ All notable changes to the NotSoDeFi.com Framework.
 
 ### Added
 - **Fetch.ai (FET)** - Project #43: Cosmos SDK AI agent chain (Score: 3.6)
+- Roadmap Tracking: ASI Alliance entry (Ocean Protocol exit October 2025)
 
 ## [1.0.2] - 2026-01-09
 

@@ -300,6 +300,14 @@ const promisesData: PromiseEntry[] = [
     verdict: 'broken',
   },
   {
+    project: 'Fetch.ai',
+    symbol: 'FET',
+    promise: 'ASI Alliance - Unified AI Ecosystem',
+    date: 'March 2024',
+    currentState: 'Ocean Protocol exited October 2025. Legal proceedings initiated.',
+    verdict: 'broken',
+  },
+  {
     project: 'Lido',
     symbol: 'LDO',
     promise: 'Decentralized liquid staking',
