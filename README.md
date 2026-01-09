@@ -78,7 +78,7 @@ Some criteria may be N/A depending on the consensus type.
 | Bitcoin | BTC | PoW | [Bitnodes](https://bitnodes.io) + [Blockchain.info](https://blockchain.info) |
 | Bitcoin Cash | BCH | PoW | [Blockchair](https://blockchair.com) |
 | Bittensor | TAO | Hybrid | [Taostats](https://taostats.io) |
-| BNB Chain | BNB | DPoS | [BNB Chain RPC](https://bsc-dataseed.binance.org) |
+| BNB Chain | BNB | DPoS | [BscScan](https://bscscan.com) |
 | Cardano | ADA | PoS | [Blockfrost](https://blockfrost.io) |
 | Chainlink | LINK | Federated | [data.chain.link](https://data.chain.link) |
 | Cosmos Hub | ATOM | PoS | [Cosmos REST API](https://rest.cosmos.directory) |
