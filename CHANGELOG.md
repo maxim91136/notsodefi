@@ -2,6 +2,12 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [1.0.5] - 2026-01-09
+
+### Changed
+- Clarified B5 kill-switch methodology: Only intentional halt mechanisms (admin keys, safe mode, governance halt-authority) trigger 1.0 cap
+- Bug-crashes (SOL, SUI, AVAX, POL) no longer penalized as kill-switches - technical immaturity ≠ architectural centralization
+
 ## [1.0.4] - 2026-01-09
 
 ### Added
