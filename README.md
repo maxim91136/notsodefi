@@ -78,13 +78,13 @@ Some criteria may be N/A depending on the consensus type.
 | Bitcoin | BTC | PoW | [Bitnodes](https://bitnodes.io) + [Blockchain.info](https://blockchain.info) |
 | Bitcoin Cash | BCH | PoW | [Blockchair](https://blockchair.com) |
 | Bittensor | TAO | Hybrid | [Taostats](https://taostats.io) |
-| BNB Chain | BNB | DPoS | BNB Chain RPC |
+| BNB Chain | BNB | DPoS | [BNB Chain RPC](https://bsc-dataseed.binance.org) |
 | Cardano | ADA | PoS | [Blockfrost](https://blockfrost.io) |
 | Chainlink | LINK | Federated | [data.chain.link](https://data.chain.link) |
 | Cosmos Hub | ATOM | PoS | [Cosmos REST API](https://rest.cosmos.directory) |
 | DAI | DAI | PoS | [DaiStats](https://daistats.com) |
 | Dogecoin | DOGE | PoW | [Blockchair](https://blockchair.com) |
-| Ethereum | ETH | PoS | Beacon API |
+| Ethereum | ETH | PoS | [Beacon API](https://beaconcha.in) |
 | Ethereum Classic | ETC | PoW | [Blockscout](https://etc.blockscout.com) |
 | Figure / Provenance | FIGR_HELOC | PoS | [CoinGecko](https://www.coingecko.com/en/coins/figure-heloc) |
 | Filecoin | FIL | PoS | [Filfox](https://filfox.info) |
@@ -100,7 +100,7 @@ Some criteria may be N/A depending on the consensus type.
 | Polygon | POL | PoS | [Polygon Staking API](https://staking-api.polygon.technology) |
 | Polkadot | DOT | NPoS | [Subscan](https://polkadot.subscan.io) |
 | Render Network | RENDER | PoS | [Render Foundation](https://renderfoundation.com) |
-| Solana | SOL | PoS | Solana RPC |
+| Solana | SOL | PoS | [Solana RPC](https://api.mainnet-beta.solana.com) |
 | Stellar | XLM | Federated | [Stellar Horizon](https://horizon.stellar.org) |
 | Sui | SUI | PoS | [SUI JSON-RPC](https://fullnode.mainnet.sui.io) |
 | Tether | USDT | Federated | [DefiLlama Stablecoins](https://stablecoins.llama.fi) |
