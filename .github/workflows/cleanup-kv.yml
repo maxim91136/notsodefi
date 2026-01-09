@@ -1,0 +1,29 @@
+name: "Cleanup: Delete old KV keys"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete old KV keys
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_KV_ID: ${{ secrets.CF_KV_ID }}
+        run: |
+          for KEY in "metrics:ada" "metrics:avax" "metrics:tao" "metrics:trx"; do
+            echo "Deleting $KEY..."
+            HTTP_STATUS=$(curl -s -o /tmp/response.json -w "%{http_code}" -X DELETE \
+              "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/storage/kv/namespaces/${CF_KV_ID}/values/${KEY}" \
+              -H "Authorization: Bearer ${CF_API_TOKEN}")
+
+            if [ "$HTTP_STATUS" = "200" ]; then
+              echo "  Deleted $KEY"
+            else
+              echo "  Failed to delete $KEY (HTTP $HTTP_STATUS)"
+              cat /tmp/response.json
+            fi
+          done
+          echo "Done!"

@@ -1,0 +1,42 @@
+name: "AVAX: Fetch Network Data"
+
+on:
+  schedule:
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+
+      - name: Fetch AVAX data
+        run: npx tsx scripts/fetch-avax.ts
+
+      - name: Push to Cloudflare KV
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_KV_ID: ${{ secrets.CF_KV_ID }}
+        run: |
+          HTTP_STATUS=$(curl -s -o /tmp/kv_response.json -w "%{http_code}" -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/storage/kv/namespaces/${CF_KV_ID}/values/metrics:avalanche" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data-binary @data/avax.json)
+
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "✅ Metrics pushed to KV"
+          else
+            echo "❌ KV push failed (HTTP $HTTP_STATUS)"
+            cat /tmp/kv_response.json
+            exit 1
+          fi
