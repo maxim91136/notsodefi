@@ -2,6 +2,11 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [1.0.4] - 2026-01-09
+
+### Added
+- Search filters on SPOF and Roadmap Tracking pages
+
 ## [1.0.3] - 2026-01-09
 
 ### Added

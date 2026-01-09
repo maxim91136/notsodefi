@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
 type Verdict = 'broken' | 'pending' | 'delivered' | 'never_promised' | 'honest';
@@ -391,10 +392,23 @@ const getVerdictInfo = (verdict: Verdict) => {
 };
 
 export default function BrokenPromisesPage() {
-  const broken = promisesData.filter(p => p.verdict === 'broken');
-  const pending = promisesData.filter(p => p.verdict === 'pending');
-  const delivered = promisesData.filter(p => p.verdict === 'delivered');
-  const honest = promisesData.filter(p => p.verdict === 'honest');
+  const [search, setSearch] = useState('');
+  const [verdictFilter, setVerdictFilter] = useState<Verdict | 'all'>('all');
+
+  const filteredData = useMemo(() => {
+    return promisesData.filter(entry => {
+      const matchesSearch = search === '' ||
+        entry.project.toLowerCase().includes(search.toLowerCase()) ||
+        entry.symbol.toLowerCase().includes(search.toLowerCase());
+      const matchesVerdict = verdictFilter === 'all' || entry.verdict === verdictFilter;
+      return matchesSearch && matchesVerdict;
+    });
+  }, [search, verdictFilter]);
+
+  const broken = filteredData.filter(p => p.verdict === 'broken');
+  const pending = filteredData.filter(p => p.verdict === 'pending');
+  const delivered = filteredData.filter(p => p.verdict === 'delivered');
+  const honest = filteredData.filter(p => p.verdict === 'honest');
 
   const renderTable = (entries: PromiseEntry[], verdictType: Verdict) => {
     const info = getVerdictInfo(verdictType);
@@ -462,6 +476,27 @@ export default function BrokenPromisesPage() {
             Submit corrections with evidence
           </a>.
         </p>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-4 mb-6">
+        <input
+          type="text"
+          placeholder="Search project..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-500"
+        />
+        <select
+          value={verdictFilter}
+          onChange={(e) => setVerdictFilter(e.target.value as Verdict | 'all')}
+          className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-500"
+        >
+          <option value="all">All Status</option>
+          <option value="broken">Timeline Passed</option>
+          <option value="pending">In Progress</option>
+          <option value="delivered">Delivered</option>
+          <option value="honest">No Commitment</option>
+        </select>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">

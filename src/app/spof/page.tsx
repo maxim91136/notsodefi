@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { projects } from '@/lib/data/projects';
 
@@ -114,10 +115,23 @@ const getSpofTypeLabel = (type: SPOFType) => {
 };
 
 export default function SPOFPage() {
-  const unkillable = spofData.filter(e => getTierInfo(e).tier === 'unkillable');
-  const fragile = spofData.filter(e => getTierInfo(e).tier === 'fragile');
-  const critical = spofData.filter(e => getTierInfo(e).tier === 'critical');
-  const instant = spofData.filter(e => getTierInfo(e).tier === 'instant');
+  const [search, setSearch] = useState('');
+  const [typeFilter, setTypeFilter] = useState<SPOFType | 'all'>('all');
+
+  const filteredData = useMemo(() => {
+    return spofData.filter(entry => {
+      const matchesSearch = search === '' ||
+        entry.project.toLowerCase().includes(search.toLowerCase()) ||
+        entry.symbol.toLowerCase().includes(search.toLowerCase());
+      const matchesType = typeFilter === 'all' || entry.spofType === typeFilter;
+      return matchesSearch && matchesType;
+    });
+  }, [search, typeFilter]);
+
+  const unkillable = filteredData.filter(e => getTierInfo(e).tier === 'unkillable');
+  const fragile = filteredData.filter(e => getTierInfo(e).tier === 'fragile');
+  const critical = filteredData.filter(e => getTierInfo(e).tier === 'critical');
+  const instant = filteredData.filter(e => getTierInfo(e).tier === 'instant');
 
   const renderTable = (entries: SPOFEntry[], tierInfo: ReturnType<typeof getTierInfo>) => (
     <div className={`${tierInfo.bg} border ${tierInfo.border} rounded-lg p-4 mb-6`}>
@@ -188,6 +202,30 @@ export default function SPOFPage() {
           All assessments represent our methodology&apos;s output based on observable data, not accusations.
           Project structures may change. <a href="https://github.com/maxim91136/notsodefi" target="_blank" rel="noopener noreferrer" className="underline">Submit corrections with evidence</a>.
         </p>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-4 mb-6">
+        <input
+          type="text"
+          placeholder="Search project..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-500"
+        />
+        <select
+          value={typeFilter}
+          onChange={(e) => setTypeFilter(e.target.value as SPOFType | 'all')}
+          className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-500"
+        >
+          <option value="all">All Types</option>
+          <option value="none">None</option>
+          <option value="person">Person</option>
+          <option value="company">Company</option>
+          <option value="foundation">Foundation</option>
+          <option value="infra">Infrastructure</option>
+          <option value="protocol">Protocol</option>
+          <option value="multi">Multiple</option>
+        </select>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
