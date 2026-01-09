@@ -22,7 +22,7 @@ const rawValues: Record<string, number | null> = {
   B2: 2,    // Almost entirely Solana Labs controlled
   B3: 2,    // Solana Labs controls brand, main frontend
   B4: 4,    // Foundation multisig, limited signers
-  B5: 2,    // 7+ coordinated halts since 2020, 50+ hours cumulative downtime - halt capability PROVEN
+  B5: 2,    // Bug-crashes with coordinated restarts, no intentional halt mechanism
   B6: 6,   // Frequent upgrades, outages with restarts, "move fast" culture
 
   // Fairness Score (C1-C3)

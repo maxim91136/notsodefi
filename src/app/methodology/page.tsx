@@ -69,22 +69,24 @@ export default function MethodologyPage() {
         <h2 className="text-2xl font-bold mb-4">Why Cap at 1.0 for Kill-Switches?</h2>
         <div className="space-y-4 text-white/80">
           <p>
-            If a single entity can halt, freeze, or censor the chain (B5=0), the project is
-            <strong> fundamentally not decentralized</strong> - regardless of how well it scores
+            If a project has an architectural kill-switch (B5=0), it is
+            <strong> fundamentally not decentralized</strong>, regardless of how well it scores
             on other criteria.
           </p>
           <p>
-            A project with excellent validator distribution, diverse clients, and fair launch
-            is still centralized if one admin key can pause everything. The kill-switch is a
-            binary property: either you have one or you don&apos;t.
+            <strong>B5=0 applies to:</strong> Smart contract pause functions (admin keys),
+            documented emergency stops (explicit &quot;safe mode&quot;), governance with halt-authority
+            (foundation/council can stop chain by design), and centralized sequencers
+            (L2s where one entity controls transaction inclusion).
           </p>
           <p>
-            The 1.0 cap reflects this binary property. Projects with halt capability receive the
-            minimum score regardless of other criteria.
+            <strong>B5=0 does NOT apply to:</strong> Bug-crashes (unintentional outages),
+            coordinated restarts after crashes, or low validator concentration
+            (assessed separately in B1/B3).
           </p>
           <p className="text-white/60 italic">
-            We display the uncapped score for transparency, so users can see what the project
-            would score without the penalty.
+            Bug-crash = technical immaturity. Kill-switch = architectural centralization.
+            Different problems, different scores. We display the uncapped score for transparency.
           </p>
         </div>
       </section>

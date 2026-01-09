@@ -41,7 +41,7 @@ const rawValues: Record<string, number | null> = {
   B2: 3,    // Open source but Polygon Labs controls all core development
   B3: 3,    // polygon.technology - Labs controls brand entirely
   B4: 5,    // Foundation treasury, some transparency
-  B5: 2,    // Multiple halts (2022: 11h, 2024: 1h+10h). NC=4, max 105 validators.
+  B5: 2,    // Multiple halts (2022: 11h, 2024: 1h+10h) bug crashes, no intentional halt mechanism
   B6: 5,   // Multiple pivots (Matic→Polygon, MATIC→POL, PoS→zkEVM focus)
 
   // Fairness Score (C1-C3)

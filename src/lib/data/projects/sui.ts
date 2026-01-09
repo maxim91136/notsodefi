@@ -27,7 +27,7 @@ const rawValues: Record<string, number | null> = {
   B2: 2,    // Mysten Labs owns github.com/MystenLabs/sui
   B3: 2,    // Mysten Labs/Foundation controls sui.io
   B4: 3,    // 52% "unallocated" controlled by Foundation, staked for network
-  B5: 2,    // Nov 2024: 2h halt (crash loop). 84% insider-staked = de facto kill switch
+  B5: 2,    // Nov 2024: 2h halt (bug crash loop), no intentional halt mechanism
   B6: 6,   // Brand new (2023), Mysten Labs controlled, rapid iteration
 
   // Fairness Score (C1-C3)

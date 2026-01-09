@@ -28,7 +28,7 @@ const rawValues: Record<string, number | null> = {
   B2: 3,    // Opentensor controls main implementations
   B3: 3,    // Foundation controls trademark and branding
   B4: 4,    // Foundation-controlled treasury
-  B5: 2,    // NETWORK HALTED July 2024 after $8M hack - "safe mode" used, halt capability CONFIRMED
+  B5: 0,    // NETWORK HALTED July 2024 after $8M hack - "safe mode" - DEMONSTRATED HALT CAPABILITY
   B6: 4,   // Young chain (2021), subnet structure evolving, Substrate upgrades
 
   // Fairness Score (C1-C3)

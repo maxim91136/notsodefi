@@ -23,7 +23,7 @@ const rawValues: Record<string, number | null> = {
   B2: 2,    // Ava Labs controls core development
   B3: 2,    // Ava Labs owns brand and main frontends
   B4: 3,    // Foundation treasury, limited governance
-  B5: 2,    // Feb 2024: 5h halt (bug + coordinated restart). Ava Labs controls everything.
+  B5: 2,    // Feb 2024: 5h halt (bug crash), no intentional halt mechanism
   B6: 5,   // New chain (2020), regular upgrades, "move fast" culture
 
   // Fairness Score (C1-C3)
