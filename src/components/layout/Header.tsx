@@ -17,9 +17,6 @@ export function Header() {
               <span className="text-red-500">DeFi</span>
               <span className="text-white">.com</span>
             </Link>
-            <span className="px-1 py-0.5 text-[9px] font-medium bg-yellow-500/20 text-yellow-400 rounded border border-yellow-500/30">
-              Beta
-            </span>
           </div>
 
           {/* Desktop Navigation */}

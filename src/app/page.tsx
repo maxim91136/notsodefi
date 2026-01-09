@@ -12,11 +12,11 @@ export default function HomePage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      {/* Beta Notice - First thing visitors see */}
+      {/* Notice - First thing visitors see */}
       <section className="mb-8">
         <div className="p-4 rounded-lg bg-yellow-500/15 border border-yellow-500/40 text-center">
           <p className="text-yellow-400 font-bold text-lg mb-1">
-            🚧 BETA - Work in Progress
+            🚧 Work in Progress
           </p>
           <p className="text-white/70 text-sm max-w-2xl mx-auto">
             Scores may contain errors. If you spot inaccuracies, please{' '}
