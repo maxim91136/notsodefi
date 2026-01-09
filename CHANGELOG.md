@@ -2,6 +2,11 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [1.0.3] - 2026-01-09
+
+### Added
+- **Fetch.ai (FET)** - Project #43: Cosmos SDK AI agent chain (Score: 3.6)
+
 ## [1.0.2] - 2026-01-09
 
 ### Changed

@@ -45,8 +45,9 @@ import { render } from './render';
 import { algorand } from './algorand';
 import { usd1 } from './usd1';
 import { figrHeloc } from './figr-heloc';
+import { fetchai } from './fetchai';
 
-export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink, aave, ton, stellar, sui, uniswap, hedera, tether, usdc, dai, near, aptos, polygon, injective, filecoin, arbitrum, lido, etc, virtuals, render, algorand, usd1, figrHeloc];
+export const projects: Project[] = [bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink, aave, ton, stellar, sui, uniswap, hedera, tether, usdc, dai, near, aptos, polygon, injective, filecoin, arbitrum, lido, etc, virtuals, render, algorand, usd1, figrHeloc, fetchai];
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
@@ -71,4 +72,4 @@ export function getProjectsByScore(
   });
 }
 
-export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink, aave, ton, stellar, sui, uniswap, hedera, tether, usdc, dai, near, aptos, polygon, injective, filecoin, arbitrum, lido, etc, virtuals, render, algorand, usd1, figrHeloc };
+export { bitcoin, ethereum, solana, xrp, bnb, zcash, bittensor, cardano, avalanche, tron, litecoin, monero, dogecoin, bitcoincash, polkadot, cosmos, hyperliquid, kaspa, icp, chainlink, aave, ton, stellar, sui, uniswap, hedera, tether, usdc, dai, near, aptos, polygon, injective, filecoin, arbitrum, lido, etc, virtuals, render, algorand, usd1, figrHeloc, fetchai };

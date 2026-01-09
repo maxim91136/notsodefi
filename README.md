@@ -86,6 +86,7 @@ Some criteria may be N/A depending on the consensus type.
 | Dogecoin | DOGE | PoW | [Blockchair](https://blockchair.com) |
 | Ethereum | ETH | PoS | [Beacon API](https://beaconcha.in) |
 | Ethereum Classic | ETC | PoW | [Blockscout](https://etc.blockscout.com) |
+| Fetch.ai | FET | PoS | [Fetch.ai LCD API](https://rest-fetchhub.fetch.ai) |
 | Figure / Provenance | FIGR_HELOC | PoS | [CoinGecko](https://www.coingecko.com/en/coins/figure-heloc) |
 | Filecoin | FIL | PoS | [Filfox](https://filfox.info) |
 | Hedera | HBAR | Federated | [Hedera Mirror Node](https://mainnet-public.mirrornode.hedera.com) |

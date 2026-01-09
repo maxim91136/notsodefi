@@ -50,6 +50,7 @@ const spofDataRaw: SPOFData[] = [
   { symbol: 'AVAX', spofType: 'company', element: 'Ava Labs + Halt capability', deathScenario: 'Feb 2024: 5h halt. Labs controls everything. Labs gone = dead' },
   { symbol: 'LINK', spofType: 'multi', element: 'Founder + Labs', deathScenario: 'Founder leaves = project fragile' },
   { symbol: 'INJ', spofType: 'company', element: 'Injective Labs', deathScenario: 'Labs gone = dead' },
+  { symbol: 'FET', spofType: 'company', element: 'Fetch.ai Ltd', deathScenario: 'ASI Alliance-dependent, Labs gone = dead' },
   { symbol: 'POL', spofType: 'company', element: 'Polygon Labs + Halt capability', deathScenario: 'Multiple halts (11h 2022, 1h+10h 2024). NC=4. Labs gone = dead' },
   { symbol: 'XLM', spofType: 'foundation', element: 'SDF (35% supply)', deathScenario: 'SDF exit = collapse' },
   { symbol: 'ARB', spofType: 'infra', element: 'Centralized Sequencer', deathScenario: 'Sequencer down = L2 down' },

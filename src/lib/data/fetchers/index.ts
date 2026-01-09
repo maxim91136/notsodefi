@@ -98,3 +98,6 @@ export { ETCFetcher, getETCFetcher } from './etc';
 
 // Virtuals Protocol fetchers
 export { VirtualsFetcher, getVirtualsFetcher } from './virtuals';
+
+// Fetch.ai fetchers
+export { FetchaiFetcher, getFetchaiFetcher } from './fetchai';
