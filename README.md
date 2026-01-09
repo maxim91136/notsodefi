@@ -78,11 +78,11 @@ Some criteria may be N/A depending on the consensus type.
 | Bitcoin | BTC | PoW | [Bitnodes](https://bitnodes.io) + [Blockchain.info](https://blockchain.info) |
 | Bitcoin Cash | BCH | PoW | [Blockchair](https://blockchair.com) |
 | Bittensor | TAO | Hybrid | [Taostats](https://taostats.io) |
-| BNB Chain | BNB | DPoS | [BscScan](https://bscscan.com) |
+| BNB Chain | BNB | DPoS | BNB Chain RPC |
 | Cardano | ADA | PoS | [Blockfrost](https://blockfrost.io) |
-| Chainlink | LINK | Federated | [data.chain.link](https://data.chain.link) |
+| Chainlink | LINK | Federated | [Etherscan](https://etherscan.io) |
 | Cosmos Hub | ATOM | PoS | [Cosmos REST API](https://rest.cosmos.directory) |
-| DAI | DAI | PoS | [DaiStats](https://daistats.com) |
+| DAI | DAI | PoS | [DefiLlama Stablecoins](https://stablecoins.llama.fi) |
 | Dogecoin | DOGE | PoW | [Blockchair](https://blockchair.com) |
 | Ethereum | ETH | PoS | [Beacon API](https://beaconcha.in) |
 | Ethereum Classic | ETC | PoW | [Blockscout](https://etc.blockscout.com) |

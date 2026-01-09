@@ -2,6 +2,12 @@
 
 All notable changes to the NotSoDeFi.com Framework.
 
+## [1.0.2] - 2026-01-09
+
+### Changed
+- Removed beta labels from header and homepage
+- Corrected data source links in README (BNB, Chainlink, DAI)
+
 ## [1.0.1] - 2026-01-09
 
 ### Changed
