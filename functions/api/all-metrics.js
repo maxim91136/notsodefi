@@ -19,15 +19,19 @@ export async function onRequest(context) {
     });
   }
 
+  // Only the current, active project roster - stale KV keys from removed
+  // projects must never be surfaced here.
+  const ACTIVE_PROJECTS = [
+    'bitcoin', 'ethereum', 'litecoin', 'monero', 'dogecoin',
+    'bitcoincash', 'polkadot', 'kaspa', 'etc',
+  ];
+
   try {
-    // List all keys with prefix metrics:
-    const list = await KV.list({ prefix: 'metrics:' });
     const results = {};
 
     // Fetch all values in parallel
-    const promises = list.keys.map(async (key) => {
-      const project = key.name.replace('metrics:', '');
-      const data = await KV.get(key.name, { type: 'json' });
+    const promises = ACTIVE_PROJECTS.map(async (project) => {
+      const data = await KV.get(`metrics:${project}`, { type: 'json' });
       return { project, data };
     });
 

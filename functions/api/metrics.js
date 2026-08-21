@@ -21,6 +21,20 @@ export async function onRequest(context) {
     });
   }
 
+  // Only the current, active project roster - stale KV entries from removed
+  // projects must never be served, even on a direct request.
+  const ACTIVE_PROJECTS = [
+    'bitcoin', 'ethereum', 'litecoin', 'monero', 'dogecoin',
+    'bitcoincash', 'polkadot', 'kaspa', 'etc',
+  ];
+
+  if (!ACTIVE_PROJECTS.includes(project)) {
+    return new Response(JSON.stringify({ error: 'Project not found', project }), {
+      status: 404,
+      headers: cors
+    });
+  }
+
   const KV = context.env?.METRICS_KV;
   if (!KV) {
     return new Response(JSON.stringify({ error: 'KV not configured' }), {
