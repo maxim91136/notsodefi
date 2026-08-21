@@ -24,10 +24,9 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 - **Network Data** - Daily API fetches with historical R2 archive
 - **Filter & Search** - By category, consensus type, or name
 - **[Known Problems](https://notsodefi.com/problems)** - Documented limitations across all blockchain systems
-- **[Marketing Analysis](https://notsodefi.com/risk-indicators)** - Marketing claims vs. observable patterns
+- **[Risk Indicators](https://notsodefi.com/risk-indicators)** - Marketing claims vs. observable patterns
 - **[SPOF Analysis](https://notsodefi.com/spof)** - Single Point of Failure analysis
 - **[Roadmap Tracking](https://notsodefi.com/roadmap-tracking)** - Progressive decentralization timelines
-- **[VC Portfolio](https://notsodefi.com/funding-analysis)** - Venture capital relationships
 
 ## The Framework
 
@@ -100,7 +99,7 @@ npm run dev
 npm run build
 
 # Create a release
-./scripts/release.sh 0.3.0-rc3
+./scripts/release.sh 1.0.1
 ```
 
 ## Project Structure
@@ -123,7 +122,9 @@ src/
     └── utils/             # Helper functions
 
 functions/
-└── api/                    # Cloudflare Functions
+└── api/                    # Cloudflare Pages Functions (legacy - not wired up
+    │                       # under the current Workers static-asset deploy;
+    │                       # network-data widgets degrade gracefully without them)
     ├── metrics.js         # GET /api/metrics?project=xxx
     ├── all-metrics.js     # GET /api/all-metrics
     ├── history.js         # GET /api/history (R2)
@@ -137,10 +138,10 @@ workers/
 
 ## Tech Stack
 
-- Next.js 15 (Static Export)
+- Next.js 16 (Static Export)
 - TypeScript
 - Tailwind CSS
-- Cloudflare Pages + KV + R2 + Functions + Workers
+- Cloudflare Workers (static assets) + KV + R2 + Workers (cron)
 
 ## Contributing
 
