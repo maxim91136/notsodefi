@@ -249,7 +249,7 @@ export const bitcoin: Project = {
   description:
     'The first decentralized cryptocurrency. Proof-of-Work consensus with no central authority.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-01-09',
+  lastUpdated: '2026-01-09',
   sources: [
     'https://nakaflow.io',
     'https://miningpoolstats.stream/bitcoin',

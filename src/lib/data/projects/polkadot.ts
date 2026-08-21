@@ -237,7 +237,7 @@ export const polkadot: Project = {
   description:
     'NPoS blockchain. NC discrepancy: official 149 validators, ~93 unique operators. A single major exchange runs 15+ validators (~37% stake). Top 50 wallets hold 50%+. Parity Technologies remains the primary development team. Frequent forkless upgrades.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-01-09',
+  lastUpdated: '2026-01-09',
   sources: [
     'https://polkadot.api.subscan.io - Validator data Jan 2025',
     'CCN - Nakamoto Coefficient 93, Top 50 wallets 50%+',

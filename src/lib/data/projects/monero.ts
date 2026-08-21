@@ -79,7 +79,7 @@ export const monero: Project = {
   description:
     'Privacy-focused cryptocurrency with RandomX (CPU-friendly) PoW. Fair launch, no premine, community-operated.',
   scores: calculateProjectScores(rawValues),
-  lastUpdated: '2025-01-09',
+  lastUpdated: '2026-01-09',
   sources: [
     'https://poolbay.io/crypto/23/monero',
     'https://blockchair.com/monero',
