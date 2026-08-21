@@ -4,8 +4,6 @@ import { useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Project, ConsensusType, ProjectCategory } from '@/lib/framework';
 import { getScoreTextColor } from '@/lib/utils';
-import { Sparkline } from '@/components/ui';
-import { useSparklineData } from '@/hooks';
 
 interface ProjectTableProps {
   projects: Project[];
@@ -62,10 +60,6 @@ export function ProjectTable({ projects }: ProjectTableProps) {
   const [selectedCategories, setSelectedCategories] = useState<Set<ProjectCategory>>(new Set());
   const [selectedConsensus, setSelectedConsensus] = useState<Set<ConsensusType>>(new Set());
   const [compareIds, setCompareIds] = useState<Set<string>>(new Set());
-
-  // Sparkline data (7-day history)
-  const projectIds = useMemo(() => projects.map(p => p.id), [projects]);
-  const { data: sparklineData, daysAvailable } = useSparklineData(projectIds);
 
   const { categories: availableCategories, consensusTypes: availableConsensus } = useMemo(
     () => getAvailableFilters(projects),
@@ -182,11 +176,6 @@ export function ProjectTable({ projects }: ProjectTableProps) {
       <div className="flex items-center justify-between p-4 border-b border-white/10">
         <div className="flex items-center gap-3">
           <h2 className="font-semibold text-white">All Projects</h2>
-          {daysAvailable < 7 && (
-            <span className="text-xs text-white/30 hidden sm:inline">
-              📊 Collecting trend data ({daysAvailable}/7 days)
-            </span>
-          )}
         </div>
         <span className="text-sm text-white/50">
           {filteredAndSortedProjects.length === projects.length
@@ -402,9 +391,6 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             >
               Total<SortIcon field="total" sortField={sortField} sortDir={sortDir} />
             </th>
-            <th className="hidden md:table-cell text-center py-3 px-4 text-sm font-medium text-white/30" title="7-day trend">
-              Trend
-            </th>
             <th
               className="hidden lg:table-cell text-center py-3 px-4 text-sm font-medium text-blue-400/70 cursor-pointer hover:text-blue-300"
               onClick={() => toggleSort('chain')}
@@ -486,9 +472,6 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                 >
                   {project.scores.totalScore.toFixed(1)}
                 </span>
-              </td>
-              <td className="hidden md:table-cell py-4 px-4 text-center">
-                <Sparkline data={sparklineData[project.id] || []} />
               </td>
               <td className="hidden lg:table-cell py-4 px-4 text-center">
                 <span

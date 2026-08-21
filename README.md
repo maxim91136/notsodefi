@@ -20,8 +20,7 @@ Live: **[notsodefi.com](https://notsodefi.com)**
 ## Features
 
 - **Compare Mode** - Select up to 3 projects for side-by-side comparison
-- **Trend Charts** - 7-day sparklines showing score history
-- **Network Data** - Daily API fetches with historical R2 archive
+- **Network Data** - Daily API fetches, cached in Cloudflare KV
 - **Filter & Search** - By category, consensus type, or name
 - **[Known Problems](https://notsodefi.com/problems)** - Documented limitations across all blockchain systems
 - **[Risk Indicators](https://notsodefi.com/risk-indicators)** - Marketing claims vs. observable patterns
@@ -79,12 +78,11 @@ Some criteria may be N/A depending on the consensus type.
 | Monero | XMR | PoW | [Blockchair](https://blockchair.com) |
 | Polkadot | DOT | NPoS | [Subscan](https://polkadot.subscan.io) |
 
-Data is fetched daily via GitHub Actions and stored in Cloudflare KV. Historical snapshots are archived to R2 daily.
+Data is fetched daily via GitHub Actions and stored in Cloudflare KV.
 
 **API Endpoints:**
 - `/api/metrics?project=xxx` - Current metrics from KV
 - `/api/all-metrics` - All project metrics
-- `/api/history?project=xxx&date=YYYY-MM-DD` - Historical snapshot from R2
 
 ## Development
 
@@ -122,18 +120,9 @@ src/
     └── utils/             # Helper functions
 
 functions/
-└── api/                    # Cloudflare Pages Functions (legacy - not wired up
-    │                       # under the current Workers static-asset deploy;
-    │                       # network-data widgets degrade gracefully without them)
+└── api/                    # Cloudflare Pages Functions
     ├── metrics.js         # GET /api/metrics?project=xxx
-    ├── all-metrics.js     # GET /api/all-metrics
-    ├── history.js         # GET /api/history (R2)
-    └── archive.js         # Manual archive trigger
-
-workers/
-└── archive-cron/          # Scheduled Worker
-    ├── index.js           # KV → R2 archiver
-    └── wrangler.toml      # Cron trigger config
+    └── all-metrics.js     # GET /api/all-metrics
 ```
 
 ## Tech Stack
@@ -141,7 +130,7 @@ workers/
 - Next.js 16 (Static Export)
 - TypeScript
 - Tailwind CSS
-- Cloudflare Workers (static assets) + KV + R2 + Workers (cron)
+- Cloudflare Pages + KV
 
 ## Contributing
 
