@@ -1,0 +1,22 @@
+name: Deploy Archive Worker
+
+on:
+  push:
+    paths:
+      - 'workers/archive-cron/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          cd workers/archive-cron
+          sed -i "s/\${CF_KV_ID}/${{ secrets.CF_KV_ID }}/" wrangler.toml
+          npx wrangler deploy
