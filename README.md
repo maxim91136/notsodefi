@@ -143,4 +143,6 @@ This is a community project. Contributions welcome:
 
 ## License
 
-MIT – Free to use, modify, and distribute.
+The application code is MIT-licensed – free to use, modify, and distribute.
+
+The scoring methodology, framework criteria, and per-project analyses are **not** covered by the MIT license and remain All Rights Reserved – see [LICENSE-METHODOLOGY](./LICENSE-METHODOLOGY).

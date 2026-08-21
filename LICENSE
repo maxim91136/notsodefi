@@ -1,5 +1,10 @@
 MIT License
 
+This license covers the software (application code, UI components, build
+tooling, and infrastructure) in this repository only. The scoring
+methodology, framework criteria, and per-project analyses are NOT covered
+by this license — see LICENSE-METHODOLOGY for those terms.
+
 Copyright (c) 2025 maxim91136
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

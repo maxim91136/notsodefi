@@ -1,3 +1,4 @@
+// Methodology content: All Rights Reserved, see LICENSE-METHODOLOGY (not covered by the repo's MIT license)
 /**
  * Control Score Criteria (B1-B6)
  *

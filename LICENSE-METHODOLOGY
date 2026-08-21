@@ -1,0 +1,30 @@
+NotSoDeFi Methodology & Analysis — All Rights Reserved
+
+Copyright (c) 2026 maxim91136
+
+This license applies specifically to the NotSoDeFi decentralization-scoring
+methodology and its written application, including but not limited to:
+
+  - The 14 scoring criteria and their definitions, weighting, and scoring
+    bands (src/lib/framework/criteria/*, src/lib/framework/scoring.ts,
+    src/lib/framework/types.ts)
+  - The methodology write-up and its explanations (src/app/methodology/*)
+  - Per-project analyses, descriptions, notes, and raw assessment values
+    (src/lib/data/projects/*)
+
+This content is NOT covered by the MIT license that applies to the rest of
+this repository (see LICENSE). All rights to this content are reserved by
+the copyright holder.
+
+No permission is granted to copy, reproduce, redistribute, adapt, or create
+derivative works from this content — in whole or in part, with or without
+attribution, for commercial or non-commercial purposes — without the prior
+express written permission of the copyright holder.
+
+Reading, linking to, and citing brief excerpts of this content for
+commentary, criticism, or educational purposes consistent with fair use /
+fair dealing principles remains permitted, as it would be regardless of
+this notice.
+
+For permission requests, open an issue at:
+https://github.com/maxim91136/notsodefi/issues

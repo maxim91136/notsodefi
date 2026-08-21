@@ -1,3 +1,4 @@
+// Methodology content: All Rights Reserved, see LICENSE-METHODOLOGY (not covered by the repo's MIT license)
 /**
  * NotSoDeFi.com Framework v0.1 - Scoring Logic
  *

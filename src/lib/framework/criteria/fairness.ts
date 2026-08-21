@@ -1,3 +1,4 @@
+// Methodology content: All Rights Reserved, see LICENSE-METHODOLOGY (not covered by the repo's MIT license)
 /**
  * Fairness Score Criteria (C1-C3)
  *
