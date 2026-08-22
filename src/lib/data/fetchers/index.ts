@@ -26,9 +26,6 @@ export { DogecoinFetcher } from './dogecoin';
 // Bitcoin Cash fetchers
 export { BitcoinCashFetcher } from './bitcoincash';
 
-// Polkadot fetchers
-export { PolkadotFetcher, getPolkadotFetcher } from './polkadot';
-
 // Kaspa fetchers
 export { KaspaFetcher, getKaspaFetcher } from './kaspa';
 

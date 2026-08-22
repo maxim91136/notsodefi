@@ -17,7 +17,6 @@ export const PROJECTS: ProjectConfig[] = [
   { id: 'bitcoin', kvKey: 'bitcoin', symbol: 'BTC' },
   { id: 'ethereum', kvKey: 'ethereum', symbol: 'ETH' },
   { id: 'dogecoin', kvKey: 'dogecoin', symbol: 'DOGE' },
-  { id: 'polkadot', kvKey: 'polkadot', symbol: 'DOT' },
   { id: 'litecoin', kvKey: 'litecoin', symbol: 'LTC' },
   { id: 'bitcoin-cash', kvKey: 'bitcoincash', symbol: 'BCH' },
   { id: 'monero', kvKey: 'monero', symbol: 'XMR' },

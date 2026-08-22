@@ -74,14 +74,6 @@ const promisesData: PromiseEntry[] = [
     verdict: 'delivered',
   },
   {
-    project: 'Polkadot',
-    symbol: 'DOT',
-    promise: 'Decentralized interoperability',
-    date: '2020',
-    currentState: 'Sudo removed July 2020. OpenGov on-chain. Core development team maintains the client but cannot override governance.',
-    verdict: 'delivered',
-  },
-  {
     project: 'Ethereum',
     symbol: 'ETH',
     promise: 'World computer',

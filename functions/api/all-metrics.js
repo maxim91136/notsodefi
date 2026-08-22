@@ -23,7 +23,7 @@ export async function onRequest(context) {
   // projects must never be surfaced here.
   const ACTIVE_PROJECTS = [
     'bitcoin', 'ethereum', 'litecoin', 'monero', 'dogecoin',
-    'bitcoincash', 'polkadot', 'kaspa', 'etc',
+    'bitcoincash', 'kaspa', 'etc',
   ];
 
   try {

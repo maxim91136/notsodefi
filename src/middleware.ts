@@ -9,7 +9,6 @@ const tickerToId: Record<string, string> = {
   xmr: 'monero',
   doge: 'dogecoin',
   bch: 'bitcoincash',
-  dot: 'polkadot',
   kas: 'kaspa',
   etc: 'etc',
 };

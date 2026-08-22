@@ -30,7 +30,6 @@ const spofDataRaw: SPOFData[] = [
   { symbol: 'ETC', spofType: 'none', element: 'Small community', deathScenario: 'Survives as zombie chain' },
 
   // Fragile (can survive)
-  { symbol: 'DOT', spofType: 'person', element: 'Founder influence', deathScenario: 'Vision lost, but Substrate survives' },
   { symbol: 'ETH', spofType: 'person', element: 'Founder (social influence)', deathScenario: 'Survives, loses direction' },
 ];
 

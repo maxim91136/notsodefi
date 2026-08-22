@@ -76,7 +76,6 @@ Some criteria may be N/A depending on the consensus type.
 | Kaspa | KAS | PoW | [Kaspa REST API](https://api.kaspa.org) |
 | Litecoin | LTC | PoW | [Blockchair](https://blockchair.com) |
 | Monero | XMR | PoW | [Blockchair](https://blockchair.com) |
-| Polkadot | DOT | NPoS | [Subscan](https://polkadot.subscan.io) |
 
 Data is fetched daily via GitHub Actions and stored in Cloudflare KV.
 

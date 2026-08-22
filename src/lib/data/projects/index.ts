@@ -9,11 +9,10 @@ import { litecoin } from './litecoin';
 import { monero } from './monero';
 import { dogecoin } from './dogecoin';
 import { bitcoincash } from './bitcoincash';
-import { polkadot } from './polkadot';
 import { kaspa } from './kaspa';
 import { etc } from './etc';
 
-export const projects: Project[] = [bitcoin, ethereum, litecoin, monero, dogecoin, bitcoincash, polkadot, kaspa, etc];
+export const projects: Project[] = [bitcoin, ethereum, litecoin, monero, dogecoin, bitcoincash, kaspa, etc];
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
@@ -38,4 +37,4 @@ export function getProjectsByScore(
   });
 }
 
-export { bitcoin, ethereum, litecoin, monero, dogecoin, bitcoincash, polkadot, kaspa, etc };
+export { bitcoin, ethereum, litecoin, monero, dogecoin, bitcoincash, kaspa, etc };

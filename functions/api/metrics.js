@@ -25,7 +25,7 @@ export async function onRequest(context) {
   // projects must never be served, even on a direct request.
   const ACTIVE_PROJECTS = [
     'bitcoin', 'ethereum', 'litecoin', 'monero', 'dogecoin',
-    'bitcoincash', 'polkadot', 'kaspa', 'etc',
+    'bitcoincash', 'kaspa', 'etc',
   ];
 
   if (!ACTIVE_PROJECTS.includes(project)) {
