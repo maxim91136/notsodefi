@@ -114,7 +114,7 @@ feat: v${VERSION}
 
 $(grep -A 20 "\[${VERSION}\]" CHANGELOG.md | head -20)
 
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
 EOF
 )"
 echo -e "  ${GREEN}✓${NC} Committed"
