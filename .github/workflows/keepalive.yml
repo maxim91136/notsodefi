@@ -4,7 +4,7 @@ name: Keepalive
 # Re-enabling them via the API resets that timer (no dummy commits needed).
 on:
   schedule:
-    - cron: '0 4 1 * *'
+    - cron: '0 4 1,15 * *'
   workflow_dispatch:
 
 permissions:
