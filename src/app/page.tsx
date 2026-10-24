@@ -191,7 +191,7 @@ export default function HomePage() {
         <p className="text-white/40 text-xs font-mono uppercase tracking-wider mb-4">
           Part of a series on network decentralization
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <a
             href="https://nosinglepoint.com"
             target="_blank"
@@ -209,6 +209,15 @@ export default function HomePage() {
           >
             <p className="font-semibold text-white">SatoshisGrid</p>
             <p className="text-sm text-white/50">Bitcoin network visualization</p>
+          </a>
+          <a
+            href="https://bittensor-labs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-4 rounded-lg border border-white/10 hover:border-white/20 hover:bg-white/5 transition-colors"
+          >
+            <p className="font-semibold text-white">Bittensor-Labs</p>
+            <p className="text-sm text-white/50">Bittensor network &amp; subnet dashboard</p>
           </a>
         </div>
       </section>
