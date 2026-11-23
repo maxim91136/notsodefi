@@ -41,6 +41,14 @@ export function Footer() {
             >
               maxim91136
             </a>
+            <span className="mx-1.5">·</span>
+            <a href="https://dreierlabs.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
+              Dreier Labs
+            </a>
+            <span className="mx-1.5">·</span>
+            <a href="https://dreierlabs.com/impressum.html" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white underline transition-colors">
+              Impressum
+            </a>
           </div>
         </div>
       </div>
