@@ -26,6 +26,7 @@ interface BitcoinData {
     top5PoolConcentration: number | null;
     largestPoolPercentage: number | null;
     poolDiversity: number | null;
+    nodesStaleSince?: string | null;
   };
   fetchStatus: 'success' | 'partial' | 'failed';
 }
@@ -62,6 +63,30 @@ async function main() {
     }
   } catch (e) {
     console.log('   Error:', e);
+  }
+
+  // Bitnodes unreachable: carry over the last known node values from KV (marked, not hidden).
+  if (data.metrics.totalNodes === null) {
+    const { CF_ACCOUNT_ID, CF_API_TOKEN, CF_KV_ID } = process.env;
+    if (CF_ACCOUNT_ID && CF_API_TOKEN && CF_KV_ID) {
+      try {
+        const res = await fetch(
+          `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/storage/kv/namespaces/${CF_KV_ID}/values/metrics:bitcoin`,
+          { headers: { Authorization: `Bearer ${CF_API_TOKEN}` } },
+        );
+        if (res.ok) {
+          const prev = (await res.json()) as BitcoinData;
+          if (typeof prev.metrics?.totalNodes === 'number') {
+            data.metrics.totalNodes = prev.metrics.totalNodes;
+            data.metrics.cloudPercentage = data.metrics.cloudPercentage ?? prev.metrics.cloudPercentage ?? null;
+            data.metrics.nodesStaleSince = prev.metrics.nodesStaleSince ?? prev.lastUpdated.slice(0, 10);
+            console.log(`   Bitnodes unreachable, carrying over ${prev.metrics.totalNodes} nodes from ${data.metrics.nodesStaleSince}`);
+          }
+        }
+      } catch (e) {
+        console.log('   Could not read previous value:', e);
+      }
+    }
   }
 
   // 2. Fetch mining pool data (Blockchain.info - no rate limit)

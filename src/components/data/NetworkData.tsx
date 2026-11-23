@@ -111,7 +111,7 @@ function MetricsDisplay({ projectId, metrics }: { projectId: string; metrics: Re
     case 'bitcoin':
       return (
         <>
-          <MetricRow label="Total Nodes" value={num(m.totalNodes)} />
+          <MetricRow label={typeof m.nodesStaleSince === 'string' ? `Total Nodes (as of ${m.nodesStaleSince})` : 'Total Nodes'} value={num(m.totalNodes)} />
           <MetricRow label="Top 5 Pool Concentration" value={num(m.top5PoolConcentration) ? `${m.top5PoolConcentration}%` : null} />
           <MetricRow label="Largest Pool" value={num(m.largestPoolPercentage) ? `${m.largestPoolPercentage}%` : null} />
           <MetricRow label="Pool Diversity" value={num(m.poolDiversity) ? `${m.poolDiversity} pools` : null} />

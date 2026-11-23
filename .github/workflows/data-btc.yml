@@ -24,6 +24,10 @@ jobs:
       - run: npm ci
 
       - name: Fetch Bitcoin data
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_KV_ID: ${{ secrets.CF_KV_ID }}
         run: npx tsx scripts/fetch-btc.ts ${{ inputs.full && '--full' || '' }}
 
       - name: Push to Cloudflare KV

@@ -14,6 +14,8 @@ export interface BtcMetrics {
   top5PoolConcentration: number | null;
   largestPoolPercentage: number | null;
   poolDiversity: number | null;
+  /** Set when bitnodes.io was unreachable and the node values are carried over: date of that data. */
+  nodesStaleSince?: string | null;
 }
 
 export interface EthMetrics {
