@@ -1,0 +1,22 @@
+# NotSoDeFi.com
+
+> Open decentralization metrics for blockchain networks and protocols. Three scores (Chain, Control, Fairness) from fourteen criteria, combining verifiable data with documented editorial assessment. A project of Dreier Labs (Steve Dreier). Not investment advice.
+
+## Core pages
+
+- [Home](https://notsodefi.com/): overview and ranking
+- [Projects](https://notsodefi.com/projects): all assessed networks (Bitcoin, Ethereum, Litecoin, Monero, Dogecoin, Bitcoin Cash, Kaspa, Ethereum Classic) with scores
+- [Methodology](https://notsodefi.com/methodology): the framework, criteria and weights
+- [Calculator](https://notsodefi.com/calculator): compute a score with your own inputs
+- [Known problems](https://notsodefi.com/problems): documented limitations across blockchain systems
+- [Risk indicators](https://notsodefi.com/risk-indicators): marketing claims versus observable patterns
+- [Single points of failure](https://notsodefi.com/spof): SPOF analysis
+- [Roadmap tracking](https://notsodefi.com/roadmap-tracking): progressive decentralization timelines
+
+## Source and legal
+
+- [Source code and data (GitHub)](https://github.com/maxim91136/notsodefi)
+- [Disclaimer](https://notsodefi.com/disclaimer)
+- [Terms](https://notsodefi.com/terms)
+- [Privacy](https://notsodefi.com/privacy)
+- [Legal notice](https://dreierlabs.com/impressum.html)

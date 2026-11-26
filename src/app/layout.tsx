@@ -40,6 +40,28 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://notsodefi.com/#site',
+      url: 'https://notsodefi.com/',
+      name: 'NotSoDeFi.com',
+      description:
+        'Open decentralization metrics for blockchain networks and protocols: Chain Score, Control Score, Fairness Score.',
+      inLanguage: 'en',
+      publisher: { '@id': 'https://dreierlabs.com/#steve' },
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://dreierlabs.com/#steve',
+      name: 'Steve Dreier',
+      url: 'https://dreierlabs.com/',
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +72,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white min-h-screen flex flex-col`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
