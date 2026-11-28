@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && node scripts/csp.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --import ./tests/ts-hooks.mjs --test 'tests/*.test.mjs'"
   },
   "dependencies": {
     "next": "16.4.6",
